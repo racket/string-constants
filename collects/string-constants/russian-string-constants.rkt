@@ -36,14 +36,14 @@ please adhere to these guidelines:
   has changed and needs to be re-translated.  Do not erase the old
   version, it might help us translate the new one.  Do not move it
   either.  Just comment it out and add the short comment.  After the
-  next svn update DrScheme will automatically tell us translators that
+  next svn update DrRacket will automatically tell us translators that
   a new string needs to be translated, we will find your comment in
   the file, and know what to do.
-	Some evil evil people might think that, since DrScheme automatically
+	Some evil evil people might think that, since DrRacket automatically
   informs us of new strings to be translated, an easier thing to do
   when modifying an existing string would be to simply rename it at
   the same time.  This works, except that if you do that, we
-  translators will get two warnings from DrScheme:
+  translators will get two warnings from DrRacket:
 		language english had but french does not:
 		(new-name "New String")
 		language french had but english does not:
@@ -93,9 +93,9 @@ please adhere to these guidelines:
  (is-this-your-native-language "Русский - это Ваш родной язык?")
 
  (are-you-sure-you-want-to-switch-languages
-  "Смена языка интерфейса пользователя потребует перезапустить DrScheme. Вы уверены, что действительно хотите этого?")
+  "Смена языка интерфейса пользователя потребует перезапустить DrRacket. Вы уверены, что действительно хотите этого?")
 
- (interact-with-drscheme-in-language "Работать с русским интерфейсом DrScheme")
+ (interact-with-drscheme-in-language "Работать с русским интерфейсом DrRacket")
 
  ;; these two should probably be the same in all languages excepet English.
  ;; they are the button labels (under macos and windows, respectively)
@@ -103,9 +103,9 @@ please adhere to these guidelines:
  (accept-and-quit "Применить и выйти")
  (accept-and-exit "Применить и выйти")
  
- ;;; general purpose (DrScheme is hereby a word in every language, by decree of Robby :)
+ ;;; general purpose (DrRacket is hereby a word in every language, by decree of Robby :)
  (plt "PLT")
- (drscheme "DrScheme")
+ (drscheme "DrRacket")
  (ok "OK")
  (cancel "Отмена")
  (abort "Отмена")
@@ -127,14 +127,13 @@ please adhere to these guidelines:
  ;; dialog isn't going to be shown again.
  ;; One version for always using the current choice:
  (dont-ask-again-always-current "Не переспрашивать (всегда использовать текущий выбор)")
- ;; One generic version (ie, on the Quit DrScheme dialog)
+ ;; One generic version (ie, on the Quit DrRacket dialog)
  (dont-ask-again                "Не переспрашивать")
 
  ;;; important urls
  (web-materials "Связанные Web-сайты") ;; menu item title
  (tool-web-sites "Web-сайты установленных инструментов")   ;; menu item title
- (drscheme-homepage "DrScheme")
- (plt-homepage "PLT")
+ (plt-homepage "Racket")
  (how-to-use-scheme "Как использовать Scheme") ;; title of a book.
  (teachscheme!-homepage "TeachScheme!") ;; probably this should be a `word' in all languages
 
@@ -210,10 +209,10 @@ please adhere to these guidelines:
  (welcome-to-something "Добро пожаловать в ~a")
  
  ; this appears in the drscheme about box.
- (welcome-to-drscheme-version/language "Добро пожаловать в DrScheme, версия ~a, ~a")
+ (welcome-to-drscheme-version/language "Добро пожаловать в DrRacket, версия ~a, ~a")
 
- ; these appear on subsequent lines in the `Help|Добро пожаловать в DrScheme' dialog.
- (welcome-to-drscheme "Добро пожаловать в DrScheme")
+ ; these appear on subsequent lines in the `Help|Добро пожаловать в DrRacket' dialog.
+ (welcome-to-drscheme "Добро пожаловать в DrRacket")
 
  (goto-line "Перейти к строке")
  (goto-line-invalid-number
@@ -254,7 +253,7 @@ please adhere to these guidelines:
 
  ;; modes
  (mode-submenu-label "Режимы")
- (scheme-mode "Режим Scheme")
+ (scheme-mode "Режим Racket")
  (text-mode "Режим текста")
 
  (scheme-mode-color-symbol "Символ")
@@ -316,7 +315,7 @@ please adhere to these guidelines:
  (plt:hd:refreshing-manuals-finished "Готово.")
  (plt:hd:about-help-desk "О помощи")
  (plt:hd:help-desk-about-string
-  "Помощь - это полный источник информации о программном обеспечении PLT, включая DrScheme, MzScheme и MrEd.\n\nВерсия ~a\nCopyright (c) ~a-~a PLT")
+  "Помощь - это полный источник информации о программном обеспечении PLT, включая DrRacket, MzScheme и MrEd.\n\nВерсия ~a\nCopyright (c) ~a-~a PLT")
  (plt:hd:help-on-help "Справка по справке")
  (plt:hd:help-on-help-details "Для получения справки по использованию помощи, выберите первую ссылку `Помощь' на её домашней странице. (Для перехода на домашнюю страницу нажмите кнопку `Домой' в верхней части окна помощи.)")
   (reload "Обновить") ;; refresh the page in a web browser
@@ -332,7 +331,7 @@ please adhere to these guidelines:
   (plt:hd:manual-search-ordering "Руководство по поиску")
   
   ;; in the help-desk standalone font preference dialog, on a check box
-  (use-drscheme-font-size "Использовать размер шрифта DrScheme")
+  (use-drscheme-font-size "Использовать размер шрифта DrRacket")
   
   ;; in the preferences dialog in drscheme there is example text for help desk font size.
   ;; clicking the links in that text produces a dialog with this message
@@ -393,7 +392,7 @@ please adhere to these guidelines:
  (plt-installer-aborted "Прервано.") ;; msg that appears in the installation window when installation is aborted
 
  ;;; about box
- (about-drscheme-frame-title "О DrScheme")
+ (about-drscheme-frame-title "О DrRacket")
  
  ;;; save file in particular format prompting.
  (save-as-plain-text "Сохранить этот файл в обычном текcтовом формате?")
@@ -413,7 +412,7 @@ please adhere to these guidelines:
  (prefs-file-locked "Файл настроек пользователя заблокирован (так как файл ~a существует), поэтому измененные настройки не будут сохранены. Отменить изменения?")
  (try-again "Попытаться снова") ;; button label
  (prefs-file-still-locked "Файл настроек пользователя все еще заблокирован (так как файл ~a существует), поэтому изменения настроек не будут сохранены..")
- (scheme-prefs-panel-label "Scheme")
+ (scheme-prefs-panel-label "Racket")
  (warnings-prefs-panel-label "Предупреждения")
  (editor-prefs-panel-label "Редактирование")
  (general-prefs-panel-label "Общее")
@@ -483,7 +482,7 @@ please adhere to these guidelines:
  ; warning message when lockfile is around
  (waiting-for-pref-lock "Ожидание завершения блокировки настроек пользователя...")
  (pref-lock-not-gone
-  "Файл блокировки настроек пользователя: \n\n   ~a\n\nне позволяет сохранить изменения настроек. Убедитесь в отсутствии работающего програмного обеспечения PLT и удалите этот файл.")
+  "Файл блокировки настроек пользователя: \n\n   ~a\n\nне позволяет сохранить изменения настроек. Убедитесь в отсутствии работающего програмного обеспечения Racket и удалите этот файл.")
  (still-locked-exit-anyway? "Настройки не сохранены. Все равно выйти?")
  
  ;;; indenting preferences panel
@@ -541,7 +540,7 @@ please adhere to these guidelines:
  (mfs-recur-over-subdirectories "Искать во вложенных каталогах")
  (mfs-regexp-filename-filter "Фильтровать имена файлов по регулярных выражениях")
  (mfs-search-string "Искать строки")
- (mfs-drscheme-multi-file-search "DrScheme - многофайловый поиск") ;; results window and error message title
+ (mfs-drscheme-multi-file-search "DrRacket - многофайловый поиск") ;; results window and error message title
  (mfs-not-a-dir "\"~a\" не каталог")
  (mfs-open-file "Открыть файл")
  (mfs-stop-search "Остановить поиск")
@@ -586,7 +585,7 @@ please adhere to these guidelines:
  
  ;;; raw menu names -- these must match the 
  ;;; versions below, once the &s have been stripped.
- ;;; if they don't, DrScheme's menus will appear
+ ;;; if they don't, DrRacket's menus will appear
  ;;; in the wrong order.
  (file-menu "Файл")
  (edit-menu "Правка")
@@ -773,7 +772,7 @@ please adhere to these guidelines:
   ;; if you have leftover autosave files. to see the dialog,
   ;; start up drscheme and modify (but don't save) a file
   ;; (also, do this with an unsaved file). Wait for the autosave
-  ;; files to appear (typically 5 minutes). Kill DrScheme
+  ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
   (autosave-autosave-label: "Автосохранение файла:")
   (autosave-original-label: "Исходный файл:")
@@ -783,7 +782,7 @@ please adhere to these guidelines:
 
   (autosave-show-autosave "Автосохранение файла") ;; title of a window showing the autosave file
 
-  (autosave-explanation "DrScheme нашел Ваши файлы автосохранения, которые могут содержать несохраненную работу.")
+  (autosave-explanation "DrRacket нашел Ваши файлы автосохранения, которые могут содержать несохраненную работу.")
 
   (autosave-recovered! "Восстановить!") ;; status of an autosave file
   (autosave-deleted "Удалить")       ;; status of an autosave file
@@ -804,7 +803,7 @@ please adhere to these guidelines:
  
  (definitions-modified 
   "Текст файла определений был изменен. Пожалуйста, сохраните или переоткройте определения.")
- (drscheme-internal-error "Внутренняя ошибка DrScheme")
+ (drscheme-internal-error "Внутренняя ошибка DrRacket")
  
  ;;; tools
  (invalid-tool-spec "Некорректный файл info.ss, содержащий описание инструмента в коллекции ~a. Ожидается строка или непустой список строк, получено: ~e")
@@ -849,7 +848,7 @@ please adhere to these guidelines:
  (save-definitions-as "Сохранить определения &как...")
  (save-definitions "Сохранить определения")
  (print-definitions "Печать определений...")
- (about-drscheme "О DrScheme")
+ (about-drscheme "О DrRacket")
  (save-other "Другие способы сохранения")
  (save-definitions-as-text "Сохранить определения как текст...")
  (save-interactions "Сохранить окно интерпретатора")
@@ -868,7 +867,7 @@ please adhere to these guidelines:
  (language-menu-name "&Язык")
  
  ;;; scheme-menu
- (scheme-menu-name "&Scheme")
+ (scheme-menu-name "&Racket")
  (execute-menu-item-label "Выполнить")
  (execute-menu-item-help-string "Перезапустить программу в окне определений")
  (ask-quit-menu-item-label "Прервать программу")
@@ -966,11 +965,11 @@ please adhere to these guidelines:
  ;;; Teachpack messages
  (select-a-teachpack "Выбрать учебный пакет")
  (clear-teachpack "Очистить учебный пакет ~a")
- (teachpack-error-label "DrScheme - ошибка учебного пакета")
+ (teachpack-error-label "DrRacket - ошибка учебного пакета")
  (teachpack-didnt-load "Файл учебного пакета ~a не загружается должным образом.")
  (add-teachpack-menu-item-label "Добавить учебный пакет...")
  (clear-all-teachpacks-menu-item-label "Очистить все учебные пакеты")
- (drscheme-teachpack-message-title "Учебный пакет DrScheme")
+ (drscheme-teachpack-message-title "Учебный пакет DrRacket")
  (already-added-teachpack "Учебный пакет ~a уже добавлен")
   
   ; ~a is filled with the teachpack's name; the message appears in the teachpack selection dialog when a user installs a new teachpack
@@ -1059,7 +1058,7 @@ please adhere to these guidelines:
   (module-language-auto-text "Автоматическая строка #lang") ;; shows up in the details section of the module language  
 
   ;;; from the `not a language language' used initially in drscheme.
-  (must-choose-language "DrScheme не способен выполнять программы при невыбранном языке программирования.")
+  (must-choose-language "DrRacket не способен выполнять программы при невыбранном языке программирования.")
   
   ; next two appear before and after the name of a text book (which will be in italics)
   (using-a-textbook-before "Использовать ")
@@ -1080,7 +1079,7 @@ please adhere to these guidelines:
     
  ;;; debug language
  (unknown-debug-frame "[неизвестный]")
- (backtrace-window-title "Обратная трассировка DrScheme")
+ (backtrace-window-title "Обратная трассировка DrRacket")
  (files-interactions "При выполнении ~a") ;; filled with a filename
  (current-interactions "вызовов")
  (current-definitions "определений")
@@ -1157,14 +1156,14 @@ please adhere to these guidelines:
  ;;; version checker
  (version:update-menu-item   "Проверить обновления...")
  (version:update-check       "Проверка обновлений") ; dialog title, with the next line
- (version:connecting-server  "Соединение с сервером версии PLT")
- (version:results-title      "Проверка версии PLT")
- (version:do-periodic-checks "Периодически проверять более новые версии PLT Scheme")
+ (version:connecting-server  "Соединение с сервером версии Racket")
+ (version:results-title      "Проверка версии Racket")
+ (version:do-periodic-checks "Периодически проверять более новые версии Racket")
  (version:take-me-there      "Обновить") ; ...to the download website
  ;; the next one can appear alone, or followed by a comma and the one after that
- (version:plt-up-to-date     "У Вас новейшая версия PLT")
+ (version:plt-up-to-date     "У Вас новейшая версия Racket")
  (version:but-newer-alpha    "однако заметьте, что есть более новая альфа-версия")
- ;; This is used in this context: "PLT Scheme vNNN <<<*>>> http://download..."
+ ;; This is used in this context: "Racket vNNN <<<*>>> http://download..."
  (version:now-available-at   "теперь доступно в")
 
  ;; insert menu
@@ -1191,8 +1190,8 @@ please adhere to these guidelines:
  (module-browser-show-lib-paths/short "Показывать пути к библиотекам") ;; check box label in show module browser pane in drscheme window.
  (module-browser-show-planet-paths/short "Показывать пути к PLanet") ;; check box label in show module browser pane in drscheme window.
  (module-browser-refresh "Обновить") ;; button label in show module browser pane in drscheme window.
- (module-browser-only-in-plt-and-module-langs
-  "Браузер модуля доступен только для программ на PLT-языках и на языке модуля (и только для программ, которые содержат модули).")
+; (module-browser-only-in-plt-and-module-langs
+;  "Браузер модуля доступен только для программ на PLT-языках и на языке модуля (и только для программ, которые содержат модули).")
  (module-browser-name-length "Длина имени")
  (module-browser-name-short "Короткая")
  (module-browser-name-medium "Средняя")
@@ -1231,13 +1230,13 @@ please adhere to these guidelines:
  (snips-and-arrows-hide-all-snips-in-editor "Скрыть все инструменты, вставленные в редактор")
 
  (xml-tool-insert-xml-box "Вставить блок XML")
- (xml-tool-insert-scheme-box "Вставить блок Scheme")
- (xml-tool-insert-scheme-splice-box "Присоединить блок Scheme")
+ (xml-tool-insert-scheme-box "Вставить блок Racket")
+ (xml-tool-insert-scheme-splice-box "Присоединить блок Racket")
  (xml-tool-xml-box "XML блок")
- (xml-tool-scheme-box "Scheme блок")
- (xml-tool-scheme-splice-box "Присоединенный блок Scheme")
- (xml-tool-switch-to-scheme "Переключиться на блок Scheme")
- (xml-tool-switch-to-scheme-splice "Переключиться присоединенный на блок Scheme")
+ (xml-tool-scheme-box "Racket блок")
+ (xml-tool-scheme-splice-box "Присоединенный блок Racket")
+ (xml-tool-switch-to-scheme "Переключиться на блок Racket")
+ (xml-tool-switch-to-scheme-splice "Переключиться присоединенный на блок Racket")
  (xml-tool-eliminate-whitespace-in-empty-tags
   "Убирать пробелы в пустых тегах")
  (xml-tool-leave-whitespace-alone
@@ -1375,10 +1374,10 @@ please adhere to these guidelines:
   ;;The Test engine tool
   ;;
   (test-engine-window-title "Результаты тестирования")
-  ;;Following two appear in View menu, attach and free test report window from DrScheme frame
+  ;;Following two appear in View menu, attach and free test report window from DrRacket frame
   (test-engine-dock-report "Прикрепить отчет о тестировании")
   (test-engine-undock-report "Открепить отчет о тестировании")
-  ;;Following two appear in Scheme (Java, etc) menu, cause Tests to be Run automatically or not
+  ;;Following two appear in Racket (Java, etc) menu, cause Tests to be Run automatically or not
   (test-engine-enable-tests "Разрешить тестирование")
   (test-engine-disable-tests "Запретить тестирование")
  
@@ -1410,7 +1409,7 @@ please adhere to these guidelines:
   (test-engine-trace-error "Ошибка трассировки")
 
   ; The ~F is special marker for the offending values, which may be
-  ; printed specially in DrScheme.
+  ; printed specially in DrRacket.
   (test-engine-check-encountered-error
    "ошибка проверки: вместо ожидаемого значения ~F. ~n   :: ~a")
   (test-engine-actual-value-differs-error
@@ -1445,7 +1444,7 @@ please adhere to these guidelines:
   ;; Errors
   (test-case-empty-error "Пустой тестовый набор")
   (test-case-too-many-expressions-error "Слишком много выражений в тестовом наборе.")
-  ;; Dr. Scheme window menu items
+  ;; DrRacket window menu items
   (test-case-insert "Вставить тестовый набор")
   (test-case-disable-all "Отключить все тестовые наборы")
   (test-case-enable-all "Включить все тестовые наборы")
@@ -1518,7 +1517,7 @@ please adhere to these guidelines:
   (planet-finished "PLaneT: закончена с ~a.")
   (planet-no-status "PLaneT") ;; this can happen when there is status shown in a different and then the user switches to a tab where planet hasn't been used
   
-  ;; string normalization. To see this, paste some text with a ligature into DrScheme
+  ;; string normalization. To see this, paste some text with a ligature into DrRacket
   ;; the first three strings are in the dialog that appears. The last one is in the preferences dialog
   (normalize "Нормализировать")
   (leave-alone "Оставить без изменений")

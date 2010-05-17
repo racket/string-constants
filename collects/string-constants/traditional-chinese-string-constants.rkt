@@ -1,28 +1,27 @@
-;                                                              
-;           #                    #                             
-;       #   ##             ##    #     #       #       #       
-;       #   ##             #     #     #       #   ##  #   ##  
-;      ##   ##    ##       ###### ######       #   #   #   #   
-;      # #########               #             ##  #   #   #   
-;     #     ##            #      #      #    # # # #### ####   
-;    #      ##            ####### #######    # #          #    
-;   #################    #           #      ## #    ###### #   
-;          ####             #########          #           #   
-;         #### #                        #      #           #   
-;        ## ## ##        ###############       #    ########   
-;       ##  ##  ##           ##  #             #    #          
-;      #    ##   ###        ##   #  ##         #    #       #  
-;     #     ##     ##      #     #    ##       #    #       #  
-;   ##      ##           ##   ####     ##      #    #       ## 
-;           #                   #                    #######   
-;                                                              
-(module simplified-chinese-string-constants "string-constant-lang.ss"
-  (is-this-your-native-language "中文是你的母语吗？")
+;            ;                                                       
+;            ;;               ;     ;     ;;       ;;   ;   ;;       
+;       ;;   ;;               ;     ;     ;        ;    ;   ;    ;   
+;       ;    ;;     ;        ;;     ;     ;;       ;    ;   ;    ;   
+;       ;;;;;;;;;;;;;;         ;;;;;;;;;;;;        ; ;  ;   ;    ;   
+;      ;     ;;                     ;            ; ; ;;; ;;; ;;;;    
+;     ;      ;;             ;;;;;;;;;;;;;;;;;   ;; ;              ;  
+;            ;;      ;     ;;              ;    ;  ;   ;;;;;;;;;;;   
+;    ;;;;;;;;;;;;;;;; ;                 ;          ;    ;       ;    
+;           ;;;;               ;;;;;;;;;           ;     ;;;;;;;;    
+;          ; ;; ;                          ;;      ;     ;      ;    
+;         ;  ;;  ;         ;;;;;;;;;;;;;;;;        ;     ;      ;    
+;        ;   ;;   ;;            ;   ;  ;           ;    ;;;;;;;;;    
+;       ;    ;;    ;;;         ;    ;   ;;         ;      ;    ;     
+;     ;;     ;;      ;;      ;;     ;     ;;       ;;     ;;  ;      
+;   ;;       ;;             ;    ;;;;      ;       ;;     ;  ;    ;  
+;            ;;                    ;               ;   ;;; ;; ;;;;   
+(module traditional-chinese-string-constants "string-constant-lang.ss"
+  (is-this-your-native-language "中文是你的母語嗎？")
   
   (are-you-sure-you-want-to-switch-languages
-   "为了改变界面语言，现在需要重新启动DrScheme。你确定吗？")
+   "為了改變界面語言，現在需要重新啟動DrRacket。你確定嗎？")
   
-  (interact-with-drscheme-in-language "使用简体中文作DrScheme界面语言")
+  (interact-with-drscheme-in-language "使用繁體中文作DrRacket界面語言")
   
   ;; these two should probably be the same in all languages excepet English.
   ;; they are the button labels (under macos and windows, respectively)
@@ -30,9 +29,9 @@
   (accept-and-quit "接受并退出")
   (accept-and-exit "接受并退出")
   
-  ;;; general purpose (DrScheme is hereby a word in every language, by decree of Robby :)
+  ;;; general purpose (DrRacket is hereby a word in every language, by decree of Robby :)
   (plt "PLT")
-  (drscheme "DrScheme")
+  (drscheme "DrRacket")
   (ok "确定")
   (cancel "取消")
   (abort "中止")
@@ -54,14 +53,13 @@
   ;; dialog isn't going to be shown again.
   ;; One version for always using the current choice:
   (dont-ask-again-always-current "不再询问(总是使用当前设置)")
-  ;; One generic version (ie, on the Quit DrScheme dialog)
+  ;; One generic version (ie, on the Quit DrRacket dialog)
   (dont-ask-again                "不再询问")
   
   ;;; important urls
   (web-materials "相关网站") ;; menu item title
   (tool-web-sites "Tools网站")   ;; menu item title
-  (drscheme-homepage "DrScheme")
-  (plt-homepage "PLT")
+  (plt-homepage "Racket")
   (how-to-use-scheme "How to Use Scheme") ;; title of a book.
   (teachscheme!-homepage "TeachScheme!") ;; probably this should be a `word' in all languages
   
@@ -135,10 +133,10 @@
   (welcome-to-something "欢迎来到~a")
   
   ; this appears in the drscheme about box.
-  (welcome-to-drscheme-version/language "欢迎使用DrScheme，版本~a，~a")
+  (welcome-to-drscheme-version/language "欢迎使用DrRacket，版本~a，~a")
   
-  ; these appear on subsequent lines in the `Help|Welcome to DrScheme' dialog.
-  (welcome-to-drscheme "欢迎使用DrScheme")
+  ; these appear on subsequent lines in the `Help|Welcome to DrRacket' dialog.
+  (welcome-to-drscheme "欢迎使用DrRacket")
   
   (goto-line "跳至...行")
   (goto-line-invalid-number
@@ -171,7 +169,7 @@
   
   ;; modes
   (mode-submenu-label "模式")
-  (scheme-mode "Scheme模式")
+  (scheme-mode "Racket模式")
   (text-mode "文本模式")
   
   (scheme-mode-color-symbol "符号")
@@ -233,7 +231,7 @@
   (plt:hd:refreshing-manuals-finished "完成。")
   (plt:hd:about-help-desk "关于Help Desk")
   (plt:hd:help-desk-about-string
-   "Help Desk是PLT软件的信息来源，其中包含了DrScheme，MzScheme和MrEd的全部信息。\n\n版本~a\n版权所有(c)~a-~a PLT")
+   "Help Desk是PLT软件的信息来源，其中包含了DrRacket，MzScheme和MrEd的全部信息。\n\n版本~a\n版权所有(c)~a-~a PLT")
   (plt:hd:help-on-help "关于帮助的帮助")
   (plt:hd:help-on-help-details "关于使用Help Desk的帮助，请参见Help Desk主页中的第一个链接“Help Desk”。（要进入Help Desk的主页，请单击Help Desk视窗上方的“主页”按钮。）")
   (reload "刷新") ;; refresh the page in a web browser
@@ -249,7 +247,7 @@
   (plt:hd:manual-search-ordering "搜索手册的顺序")
   
   ;; in the help-desk standalone font preference dialog, on a check box
-  (use-drscheme-font-size "使用和DrScheme相同的字号")
+  (use-drscheme-font-size "使用和DrRacket相同的字号")
   
   ;; in the preferences dialog in drscheme there is example text for help desk font size.
   ;; clicking the links in that text produces a dialog with this message
@@ -310,7 +308,7 @@
   (plt-installer-aborted "安装中止。") ;; msg that appears in the installation window when installation is aborted
   
   ;;; about box
-  (about-drscheme-frame-title "关于DrScheme")
+  (about-drscheme-frame-title "关于DrRacket")
   
   ;;; save file in particular format prompting.
   (save-as-plain-text "保存本文件为纯文本？")
@@ -330,7 +328,7 @@
   (prefs-file-locked "存储参数的文件被锁定了（由于文件~a的存在），所以这些参数无法被保存。放弃修改？")
   (try-again "重试") ;; button label
   (prefs-file-still-locked "存储参数的文件仍然被锁定（由于文件~a的存在）, 所以这些参数将不会被保存。")
-  (scheme-prefs-panel-label "Scheme")
+  (scheme-prefs-panel-label "Racket")
   (warnings-prefs-panel-label "警告")
   (editor-prefs-panel-label "编辑")
   (general-prefs-panel-label "常规")
@@ -400,7 +398,7 @@
   ; warning message when lockfile is around
   (waiting-for-pref-lock "等待参数设置文件解锁...")
   (pref-lock-not-gone
-   "参数设置封锁文件：\n\n ~a\n\n禁止保存参数设置。请确定没有其他PLT软件正在运行中，然后删除该封锁文件。")
+   "参数设置封锁文件：\n\n ~a\n\n禁止保存参数设置。请确定没有其他Racket软件正在运行中，然后删除该封锁文件。")
   (still-locked-exit-anyway? "参数无法保存。仍然退出？")
   
   ;;; indenting preferences panel
@@ -453,7 +451,7 @@
   (mfs-recur-over-subdirectories "包含子目录")
   (mfs-regexp-filename-filter "文件名筛选(正则表达式)")
   (mfs-search-string "查找字符串")
-  (mfs-drscheme-multi-file-search "DrScheme——多文件查找") ;; results window and error message title
+  (mfs-drscheme-multi-file-search "DrRacket——多文件查找") ;; results window and error message title
   (mfs-not-a-dir "\"~a\"不是目录")
   (mfs-open-file "打开文件")
   (mfs-stop-search "停止搜索")
@@ -498,7 +496,7 @@
   
   ;;; raw menu names -- these must match the 
   ;;; versions below, once the &s have been stripped.
-  ;;; if they don't, DrScheme's menus will appear
+  ;;; if they don't, DrRacket's menus will appear
   ;;; in the wrong order.
   (file-menu "文件")
   (edit-menu "编辑")
@@ -651,7 +649,7 @@
   (clear-current "清空当前")
   (new-window "新视窗")
   
-  ;;; exiting and quitting ``are you sure'' dialog
+  ;;; exiting and quitting ``are you sure dialog
   ;;; exit is used on windows, quit on macos, in English. Other
   ;;; languages probably use the same word on both platforms.
   (exit "退出")
@@ -677,7 +675,7 @@
   ;; if you have leftover autosave files. to see the dialog,
   ;; start up drscheme and modify (but don't save) a file
   ;; (also, do this with an unsaved file). Wait for the autosave
-  ;; files to appear (typically 5 minutes). Kill DrScheme
+  ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
   (autosave-autosave-label: "自动保存文件：")
   (autosave-original-label: "原始文件：")
@@ -687,7 +685,7 @@
   
   (autosave-show-autosave "自动保存文件") ;; title of a window showing the autosave file
   
-  (autosave-explanation "DrScheme发现了自动保存的文件，其中可能包含你没有保存过的程序")
+  (autosave-explanation "DrRacket发现了自动保存的文件，其中可能包含你没有保存过的程序")
   
   (autosave-recovered! "已恢复！") ;; status of an autosave file
   (autosave-deleted "已删除")       ;; status of an autosave file
@@ -708,7 +706,7 @@
   
   (definitions-modified 
     "当前磁盘文件已被修改；请保存或恢复文件。")
-  (drscheme-internal-error "DrScheme内部错误")
+  (drscheme-internal-error "DrRacket内部错误")
   
   ;;; tools
   (invalid-tool-spec "Collection ~a中info.ss的tool定义不正确。需要一个字符串或者一个非空表，得到：~e")
@@ -752,7 +750,7 @@
   (save-definitions-as "将定义另存为(&A)")
   (save-definitions "保存定义")
   (print-definitions "打印定义...")
-  (about-drscheme "关于DrScheme")
+  (about-drscheme "关于DrRacket")
   (save-other "其他保存方式")
   (save-definitions-as-text "将定义保存为文本...")
   (save-interactions "保存交互")
@@ -771,7 +769,7 @@
   (language-menu-name "语言(&L)")
   
   ;;; scheme-menu
-  (scheme-menu-name "S&cheme")
+  (scheme-menu-name "Ra&cket")
   (execute-menu-item-label "运行")
   (execute-menu-item-help-string "运行定义视窗中的程序")
   (ask-quit-menu-item-label "中断")
@@ -798,12 +796,12 @@
   (create-executable-menu-item-label "创建可执行程序...")
   (create-executable-title "创建可执行程序")
   (must-save-before-executable "在创建可执行程序之前，你必须保存源程序")
-  (save-a-mred-launcher "保存为MrEd程序")
-  (save-a-mzscheme-launcher "保存为MzScheme程序")
-  (save-a-mred-stand-alone-executable "保存为MrEd可执行程序")
-  (save-a-mzscheme-stand-alone-executable "保存为MzScheme可执行程序")
-  (save-a-mred-distribution "保存为MrEd可发布程序")
-  (save-a-mzscheme-distribution "保存为MzScheme可发布程序")
+  (save-a-mred-launcher "保存为GRacket程序")
+  (save-a-mzscheme-launcher "保存为Racket程序")
+  (save-a-mred-stand-alone-executable "保存为GRacket可执行程序")
+  (save-a-mzscheme-stand-alone-executable "保存为Racket可执行程序")
+  (save-a-mred-distribution "保存为GRacket可发布程序")
+  (save-a-mzscheme-distribution "保存为Racket可发布程序")
   
   (definitions-not-saved "当前定义视窗中的程序并没有被保存过。将使用最近保存过的版本来生成可执行程序。是否继续？")
   ;; The "-explanatory-label" variants are the labels used for the radio buttons in
@@ -855,9 +853,7 @@
   (whole-part "整数部分")
   (numerator "分子")
   (denominator "分母")
-  (insert-number/bad-whole-part "必须输入一个整数")
-  (insert-number/bad-numerator "分子必须是非负整数")
-  (insert-number/bad-denominator "分母必须是正整数")
+  (invalid-number "无效的输入：必须输入一个精确的、不是整数的实数")
   (insert-fraction-menu-item-label "插入分数...")
   
   ;; number snip popup menu
@@ -869,11 +865,11 @@
   ;;; Teachpack messages
   (select-a-teachpack "选择教学包")
   (clear-teachpack "卸载教学包~a")
-  (teachpack-error-label "DrScheme——教学包出错")
+  (teachpack-error-label "DrRacket——教学包出错")
   (teachpack-didnt-load "无法装载教学包~a。")
   (add-teachpack-menu-item-label "加载教学包...")
   (clear-all-teachpacks-menu-item-label "卸载全部教学包")
-  (drscheme-teachpack-message-title "DrScheme教学包")
+  (drscheme-teachpack-message-title "DrRacket教学包")
   (already-added-teachpack "教学包~a已装载")
   
   ; ~a is filled with the teachpack's name; the message appears in the teachpack selection dialog when a user installs a new teachpack
@@ -894,7 +890,7 @@
   (constructor-printing-style "构造器")
   (quasiquote-printing-style "Quasiquote")
   (write-printing-style "write")
-  (print-printing-style "current-print")
+  (print-printing-style "print")
   (sharing-printing-label "Show sharing in values")
   (use-pretty-printer-label "print多个对象时自动换行")
   (input-syntax "输入语法")
@@ -956,7 +952,7 @@
   ;(module-language-one-line-summary "运行程序将提供一个包含该module的REPL")
   
   ;;; from the `not a language language' used initially in drscheme.
-  (must-choose-language "在继续操作之前，你必须为DrScheme选择一种语言。")
+  (must-choose-language "在继续操作之前，你必须为DrRacket选择一种语言。")
   
   ; next two appear before and after the name of a text book (which will be in italics)
   (using-a-textbook-before "使用")
@@ -972,12 +968,12 @@
   ; the three string constants are concatenated together and the middle
   ; one is hyperlinked to the dialog that suggests various languages
   (get-guidance-before "请通过“语言”菜单中的“选择语言”命名进行语言选择，或者")
-  (get-guidance-during "由DrScheme帮助你选择")
+  (get-guidance-during "由DrRacket帮助你选择")
   (get-guidance-after "。")
   
   ;;; debug language
   (unknown-debug-frame "[未知]")
-  (backtrace-window-title "向后跟踪 - DrScheme")
+  (backtrace-window-title "向后跟踪 - DrRacket")
   (files-interactions "~a的交互") ;; filled with a filename
   (current-interactions "交互")
   (current-definitions "定义")
@@ -1014,10 +1010,10 @@
   ;;The Test engine tool
   ;;
   (test-engine-window-title "测试结果")
-  ;;Following two appear in View menu, attach and free test report window from DrScheme frame
+  ;;Following two appear in View menu, attach and free test report window from DrRacket frame
   (test-engine-dock-report "在面板中显示测试报告")
   (test-engine-undock-report "独立显示测试报告")
-  ;;Following two appear in Scheme (Java, etc) menu, cause Tests to be Run automatically or not
+  ;;Following two appear in Racket (Java, etc) menu, cause Tests to be Run automatically or not
   (test-engine-enable-tests "启用测试功能")
   (test-engine-disable-tests "停用测试功能")
   
@@ -1064,14 +1060,14 @@
   ;;; version checker
   (version:update-menu-item   "检查更新...")
   (version:update-check       "检查更新") ; dialog title, with the next line
-  (version:connecting-server  "连接PLT版本服务器")
-  (version:results-title      "PLT版本检查")
-  (version:do-periodic-checks "自动定期检查PLT Scheme版本更新")
+  (version:connecting-server  "连接Racket版本服务器")
+  (version:results-title      "Racket版本检查")
+  (version:do-periodic-checks "自动定期检查Racket版本更新")
   (version:take-me-there      "下载") ; ...to the download website
   ;; the next one can appear alone, or followed by a comma and the one after that
-  (version:plt-up-to-date     "您现在使用的已经是当前版的PLT")
+  (version:plt-up-to-date     "您现在使用的已经是当前版的Racket")
   (version:but-newer-alpha    "但是还有一个更新的alpha版本")
-  ;; This is used in this context: "PLT Scheme vNNN <<<*>>> http://download..."
+  ;; This is used in this context: "Racket vNNN <<<*>>> http://download..."
   (version:now-available-at   "可以从这里获取：")
   
   ;; insert menu
@@ -1098,8 +1094,8 @@
   (module-browser-show-lib-paths/short "显示lib调用") ;; check box label in show module browser pane in drscheme window.
   (module-browser-show-planet-paths/short "显示planet调用") ;; check box label in show module browser pane in drscheme window.
   (module-browser-refresh "刷新") ;; button label in show module browser pane in drscheme window.
-  (module-browser-only-in-plt-and-module-langs
-   "Module浏览器只能在PLT语言和module语言(并且要求程序中有module)中使用。")
+;  (module-browser-only-in-plt-and-module-langs
+;   "Module浏览器只能在PLT语言和module语言(并且要求程序中有module)中使用。")
   (module-browser-name-length "名称长度")
   (module-browser-name-short "短")
   (module-browser-name-medium "中")
@@ -1129,13 +1125,13 @@
   ;(mrflow-language-primitives-error "Wrong filename for language primitives types table: ~a")
   
   (xml-tool-insert-xml-box "插入XML框")
-  (xml-tool-insert-scheme-box "插入Scheme框")
-  (xml-tool-insert-scheme-splice-box "插入Scheme接合框")
+  (xml-tool-insert-scheme-box "插入Racket框")
+  (xml-tool-insert-scheme-splice-box "插入Racket接合框")
   (xml-tool-xml-box "XML框")
-  (xml-tool-scheme-box "Scheme框")
-  (xml-tool-scheme-splice-box "Scheme接合框")
-  (xml-tool-switch-to-scheme "转变成Scheme框")
-  (xml-tool-switch-to-scheme-splice "转变成Scheme接合框")
+  (xml-tool-scheme-box "Racket框")
+  (xml-tool-scheme-splice-box "Racket接合框")
+  (xml-tool-switch-to-scheme "转变成Racket框")
+  (xml-tool-switch-to-scheme-splice "转变成Racket接合框")
   
   (show-recent-items-window-menu-item "在单独视窗中显示最近使用的文件")
   (show-recent-items-window-label "最近使用的文件")
@@ -1169,7 +1165,7 @@
   (profj-insert-java-interactions-box "插入Java交互框")
   
   ;; The Test Suite Tool
-  ;; Dr. Scheme window menu items
+  ;; DrRacket window menu items
   (test-case-insert "插入Test Case")
   (test-case-disable-all "禁用所有Test Cases")
   (test-case-enable-all "允许所有Test Cases")
@@ -1185,16 +1181,4 @@
   (gui-tool-show-gui-toolbar "显示GUI工具栏")
   (gui-tool-hide-gui-toolbar "隐藏GUI工具栏")
   (gui-tool-insert-gui "插入GUI")
-
-  ;; contract violation tracking
-  
-  ; tooltip for new planet icon in drscheme window (must have a planet violation logged to see it)
-  (show-planet-contract-violations "显示PLaneT中的违背contract")
-
-  (ml-always-show-#lang-line "在Module语言中,总是显示#lang行")
-  
-  ; buttons in the dialog that lists the recorded bug reports
-  (bug-track-report "File Ticket")
-  (bug-track-forget "Forget")
-  (bug-track-forget-all "Forget All")
   )

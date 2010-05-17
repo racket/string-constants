@@ -4,15 +4,15 @@
   "Ist Deutsch Ihre Muttersprache?")
 
  (are-you-sure-you-want-to-switch-languages
-  "Dies wird die Sprache der DrScheme-Benutzeroberfläche ändern und erfordert einen Neustart von DrScheme.  Sind Sie sicher?")
+  "Dies wird die Sprache der DrRacket-Benutzeroberfläche ändern und erfordert einen Neustart von DrRacket.  Sind Sie sicher?")
 
- (interact-with-drscheme-in-language "Deutsche Benutzeroberfläche für DrScheme")
+ (interact-with-drscheme-in-language "Deutsche Benutzeroberfläche für DrRacket")
 
  (accept-and-quit "In Ordnung - Beenden")
  (accept-and-exit "In Ordnung - Beenden")
- ;;; general purpose (DrScheme is hereby a word in every language, by decree of Robby :)
+ ;;; general purpose (DrRacket is hereby a word in every language, by decree of Robby :)
  (plt "PLT")
- (drscheme "DrScheme")
+ (drscheme "DrRacket")
  (ok "OK")
  ;; We can't use "Abbrechen" here because that's much closer in
  ;; meaning to "abort", and it appears in dialogs saying "Quit?" "OK"
@@ -35,8 +35,7 @@
 
  (web-materials "Verwandte Web-Seiten")
  (tool-web-sites "Web-Seiten mit Tools")
- (drscheme-homepage "DrScheme")
- (plt-homepage "PLT")
+ (plt-homepage "Racket")
  (how-to-use-scheme "How to Use Scheme")
  (teachscheme!-homepage "TeachScheme!")
 
@@ -113,10 +112,10 @@
  (welcome-to-something "Willkommen bei ~a")
  
  ; this appears in the drscheme about box.
- (welcome-to-drscheme-version/language "Willkommen bei DrScheme! (Version ~a, ~a)")
+ (welcome-to-drscheme-version/language "Willkommen bei DrRacket! (Version ~a, ~a)")
 
- ; these appear on subsequent lines in the `Help|Welcome to DrScheme' dialog.
- (welcome-to-drscheme "Willkommen bei DrScheme")
+ ; these appear on subsequent lines in the `Help|Welcome to DrRacket' dialog.
+ (welcome-to-drscheme "Willkommen bei DrRacket")
 
  (goto-line "Zu Zeile springen")
  (goto-line-invalid-number
@@ -155,7 +154,7 @@
 
  ;; modes
  (mode-submenu-label "Modi")
- (scheme-mode "Scheme-Modus")
+ (scheme-mode "Racket-Modus")
  (text-mode "Text-Modus")
 
  (scheme-mode-color-symbol "Symbol")
@@ -216,7 +215,7 @@
  (plt:hd:refreshing-manuals-finished "Fertig.")
  (plt:hd:about-help-desk "Über das Hilfezentrum")
  (plt:hd:help-desk-about-string
-  "Das Hilfezentrum ist die primäre Quelle für Information über die PLT-Software,insbesondere DrScheme, MzScheme und MrEd.\n\nVersion ~a\nCopyright (c) ~a-~a PLT")
+  "Das Hilfezentrum ist die primäre Quelle für Information über die PLT-Software,insbesondere DrRacket, MzScheme und MrEd.\n\nVersion ~a\nCopyright (c) ~a-~a PLT")
  (plt:hd:help-on-help "Hilfe zur Hilfe")
  (plt:hd:help-on-help-details "Hilfe zum Hilfezentrum befindet sich auf der Homepage des Hilfezentrums unter `Help Desk'.   (Die Homepage des Hilfezentrums ist über den `Home'-Knopf zu erreichen.)")
   (reload "Aktualisieren") ;; refresh the page in a web browser
@@ -231,7 +230,7 @@
   ;; in the Help Desk language dialog, title on the right.
   (plt:hd:manual-search-ordering "Suchreihenfolge Handbuch")
 
-  (use-drscheme-font-size "DrScheme-Schriftgröße verwenden")
+  (use-drscheme-font-size "DrRacket-Schriftgröße verwenden")
 
   (help-desk-this-is-just-example-text
    "Dies ist nur ein Beispieltext für das Setzen der Schriftgröße.  Öffnen sie das Hilfezentrum (im \"Hilfe\"-Menü), um diesen Links zu folgen.")
@@ -289,11 +288,11 @@
  (plt-installer-aborted "Abgebrochen.")
   
  ;;; about box
- (about-drscheme-frame-title "Über DrScheme")
+ (about-drscheme-frame-title "Über DrRacket")
  
  ;;; save file in particular format prompting.
  (save-as-plain-text "Diese Datei als Text speichern?")
- (save-in-drs-format "Diese Datei im DrScheme-Format (kein Text) speichern?")
+ (save-in-drs-format "Diese Datei im DrRacket-Format (kein Text) speichern?")
  (yes "Ja")
  (no "Nein")
  
@@ -309,7 +308,7 @@
  (prefs-file-locked "Die Datei mit den Einstellungen ist gesperrt (weil die Datei ~a existiert), weshalb die Änderungen an den Einstellungen nicht gespeichert werden konnten. Änderung an den Einstellungen rückgängig machen?")
  (try-again "Nochmal versuchen") ;; button label
  (prefs-file-still-locked "Die Datei mit den Einstellungen ist immer noch gesperrt (weil die Datei ~a existiert), weshalb die Änderungen an den Einstellungen nicht gespeichert werden konnten.")
- (scheme-prefs-panel-label "Scheme")
+ (scheme-prefs-panel-label "Racket")
  (warnings-prefs-panel-label "Warnmeldungen")
  (editor-prefs-panel-label "Editieren")
  (general-prefs-panel-label "Allgemein")
@@ -381,7 +380,7 @@
  ; warning message when lockfile is around
  (waiting-for-pref-lock "Auf Lock-Datei für Einstellungen warten...")
  (pref-lock-not-gone
-  "Die Lock-Datei für die Einstellungen:\n\n   ~a\n\nverhindert, dass die Einstellungen abgespeichert werden können. Bitte stellen Sie sicher, dass keine andere PLT-Software läuft und löschen Sie dann diese Datei.")
+  "Die Lock-Datei für die Einstellungen:\n\n   ~a\n\nverhindert, dass die Einstellungen abgespeichert werden können. Bitte stellen Sie sicher, dass keine andere Racket-Software läuft und löschen Sie dann diese Datei.")
  (still-locked-exit-anyway? "Die Einstellungen wurden nicht korrekt gespeichert.  Trotzdem beenden?")
  
  ;;; indenting preferences panel
@@ -439,7 +438,7 @@
  (mfs-recur-over-subdirectories "In Unterverzeichnisse abtauchen")
  (mfs-regexp-filename-filter "Regulärer Ausdruck Dateinamen-Filter")
  (mfs-search-string "Zeichenkette suchen")
- (mfs-drscheme-multi-file-search "DrScheme - Suche in mehreren Dateien") ;; results window and error message title
+ (mfs-drscheme-multi-file-search "DrRacket - Suche in mehreren Dateien") ;; results window and error message title
  (mfs-not-a-dir "\"~a\" ist kein Verzeichnis")
  (mfs-open-file "Datei öffnen")
  (mfs-stop-search "Suche stoppen")
@@ -484,7 +483,7 @@
  
  ;;; raw menu names -- these must match the 
  ;;; versions below, once the &s have been stripped.
- ;;; if they don't, DrScheme's menus will appear
+ ;;; if they don't, DrRacket's menus will appear
  ;;; in the wrong order.
  (file-menu "Datei")
  (edit-menu "Bearbeiten")
@@ -668,7 +667,7 @@
   ;; if you have leftover autosave files. to see the dialog,
   ;; start up drscheme and modify (but don't save) a file
   ;; (also, do this with an unsaved file). Wait for the autosave
-  ;; files to appear (typically 5 minutes). Kill DrScheme
+  ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
   (autosave-autosave-label: "Automatisch gespeicherte Datei:")
   (autosave-original-label: "Ursprüngliche Datei:")
@@ -678,7 +677,7 @@
 
   (autosave-show-autosave "Automatisch gespeicherte Datei") ;; title of a window showing the autosave file
 
-  (autosave-explanation "DrScheme hat automatisch gespeicherte Dateien gefunden, die nicht regulär gespeicherten Inhalt enthalten könnten.")
+  (autosave-explanation "DrRacket hat automatisch gespeicherte Dateien gefunden, die nicht regulär gespeicherten Inhalt enthalten könnten.")
 
   (autosave-recovered! "Zurückgeholt!") ;; status of an autosave file
   (autosave-deleted "Gelöscht")       ;; status of an autosave file
@@ -699,7 +698,7 @@
  
  (definitions-modified 
   "Die Definitionen wurden auf der Platte geändert; bitte speichern sie die Definitionen oder holen Sie diese von der Platte zurück.")
- (drscheme-internal-error "Interner Fehler in DrScheme")
+ (drscheme-internal-error "Interner Fehler in DrRacket")
  
  ;;; tools
  (invalid-tool-spec "Die Tool-Spezifikation in der Datei info.ss der Kollektion ~a enthält Fehler. Da sollte eine Zeichenkette oder eine Liste von Zeichenketten stehen, tatsächlich steht dort aber: ~e")
@@ -744,7 +743,7 @@
  (save-definitions-as "Definitionen speichern unter...")
  (save-definitions "Definitionen speichern")
  (print-definitions "Definition drucken...")
- (about-drscheme "Über DrScheme")
+ (about-drscheme "Über DrRacket")
  (save-other "Speichern unter")
  (save-definitions-as-text "Definitionen als Text speichern...")
  (save-interactions "Interaktionen speichern")
@@ -764,7 +763,7 @@
  (language-menu-name "&Sprache")
  
  ;;; scheme-menu
- (scheme-menu-name "S&cheme")
+ (scheme-menu-name "Ra&cket")
  (execute-menu-item-label "Start")
  (execute-menu-item-help-string "Das Programm im Definitionsfenster neu starten")
 
@@ -793,12 +792,12 @@
  (create-executable-menu-item-label "Programmdatei generieren...")
  (create-executable-title "Programmdatei generieren")
  (must-save-before-executable "Sie müssen vor der Generierung einer Programmdatei speichern.")
- (save-a-mred-launcher "MrEd-Launcher speichern")
- (save-a-mzscheme-launcher "MzScheme-Launcher speichern")
- (save-a-mred-stand-alone-executable "MrEd-Stand-Alone-Programmdatei speichern")
- (save-a-mzscheme-stand-alone-executable "MzScheme-Stand-Alone-Programmdatei speichern")
- (save-a-mred-distribution "MrEd-Distribution speichern")
- (save-a-mzscheme-distribution "MzScheme-Distribution speichern")
+ (save-a-mred-launcher "GRacket-Launcher speichern")
+ (save-a-mzscheme-launcher "Racket-Launcher speichern")
+ (save-a-mred-stand-alone-executable "GRacket-Stand-Alone-Programmdatei speichern")
+ (save-a-mzscheme-stand-alone-executable "Racket-Stand-Alone-Programmdatei speichern")
+ (save-a-mred-distribution "GRacket-Distribution speichern")
+ (save-a-mzscheme-distribution "Racket-Distribution speichern")
 
  (definitions-not-saved "Die Definitionen sind nicht gespeichert. Die Programmdatei wird von der letzten gespeicherten Version gezogen. Weitermachen?")
  (launcher "Launcher")
@@ -863,11 +862,11 @@
  ;;; Teachpack messages
  (select-a-teachpack "Teachpack auswählen")
  (clear-teachpack "Teachpack ~a entfernen")
- (teachpack-error-label "DrScheme - Teachpack-Fehler")
+ (teachpack-error-label "DrRacket - Teachpack-Fehler")
  (teachpack-didnt-load "Die Teachpack-Datei ~a konnte nicht korrekt geladen werden.")
  (add-teachpack-menu-item-label "Teachpack hinzufügen...")
  (clear-all-teachpacks-menu-item-label "Alle Teachpacks entfernen")
- (drscheme-teachpack-message-title "DrScheme-Teachpack")
+ (drscheme-teachpack-message-title "DrRacket-Teachpack")
  (already-added-teachpack "Teachpack ~a ist schon dabei")
 
  ; ~a is filled with the teachpack's name; the message appears in the teachpack selection dialog when a user installs a new teachpack
@@ -957,8 +956,15 @@
   
  (module-language-auto-text "Automatisch Zeile mit #lang") ;; shows up in the details section of the module language
 
+ ;; for the upper portion of the language dialog
+ (use-language-in-source "Im Quelltext angegebene Sprache benutzen")
+ (choose-a-language "Sprache auswählen")
+ (lang-in-source-discussion
+ "Die Zeile mit \"#lang\" am Anfang eines Programms legt die Sprache fest. Das ist der präferierte Standard-Modus von DrRacket.")
+ 
+
   ;;; from the `not a language language' used initially in drscheme.
- (must-choose-language "DrScheme kann keine Programme verarbeiten, bis Sie eine Sprache auswählen.")
+ (must-choose-language "DrRacket kann keine Programme verarbeiten, bis Sie eine Sprache auswählen.")
  
  ;; next two appear before and after the name of a text book (which will be in italics)
  (using-a-textbook-before "Benutzen Sie ")
@@ -970,6 +976,7 @@
  (start-with-after "anfangen?")
 
  (seasoned-plt-schemer? "Erfahrener PLT-Schemer?")
+ (racketeer? "Sind Sie ein Racketeer?")
  (looking-for-standard-scheme? "Wollen Sie Standard-Scheme?")
  
  ;; the three string constants are concatenated together and the middle
@@ -980,7 +987,7 @@
 
  ;;; debug language
  (unknown-debug-frame "[unbekannt]")
- (backtrace-window-title "Backtrace - DrScheme")
+ (backtrace-window-title "Backtrace - DrRacket")
  (files-interactions "Interaktionen von ~a") ;; filled with a filename
  (current-interactions "Interaktionen")
  (current-definitions "Definitionen")
@@ -1057,14 +1064,14 @@
  ;;; version checker
  (version:update-menu-item "Nach Updates schauen...")
  (version:update-check "Update-Prüfung")
- (version:connecting-server  "Mit PLT-Versions-Server verbinden")
- (version:results-title      "PLT-Versions-Check")
- (version:do-periodic-checks "Regelmäßig nach neueren PLT-Scheme-Versionen schauen")
+ (version:connecting-server  "Mit Racket-Versions-Server verbinden")
+ (version:results-title      "Racket-Versions-Check")
+ (version:do-periodic-checks "Regelmäßig nach neueren Racket-Versionen schauen")
  (version:take-me-there      "Dorthin gehen") ; ...to the download website
  ;; the next one can appear alone, or followed by a comma and the one after that
- (version:plt-up-to-date     "Die PLT-Version ist aktuell")
+ (version:plt-up-to-date     "Die Racket-Version ist aktuell")
  (version:but-newer-alpha    "aber es gibt eine neuere Alpha-Version")
- ;; This is used in this context: "PLT Scheme vNNN <<<*>>> http://download..."
+ ;; This is used in this context: "Racket vNNN <<<*>>> http://download..."
  (version:now-available-at   "ist jetzt verfügbar bei")
 
  ;; insert menu
@@ -1092,7 +1099,7 @@
  (module-browser-show-planet-paths/short "\"PLaneT\"-requires folgen") ;; check box label in show module browser pane in drscheme window.
  (module-browser-refresh "Aktualisieren") ;; button label in show module browser pane in drscheme window.
  (module-browser-only-in-plt-and-module-langs
-  "Der Modul-Browser ist nur für Programme in den PLT-Sprachen und in der Modul-Sprache verfügbar (und nur für Programme mit Modulen).")
+  "Der Modul-Browser ist nur für modulbasierte Programme verfügbar.")
  (module-browser-name-length "Länge der Namen")
  (module-browser-name-short "Kurz")
  (module-browser-name-medium "Mittel")
@@ -1131,13 +1138,13 @@
  (snips-and-arrows-hide-all-snips-in-editor "Alle Snips im Editor ausblenden")
 
  (xml-tool-insert-xml-box "XML-Kasten einfügen")
- (xml-tool-insert-scheme-box "Scheme-Kasten einfügen")
- (xml-tool-insert-scheme-splice-box "Scheme-Spleiß-Kasten einfügen")
+ (xml-tool-insert-scheme-box "Racket-Kasten einfügen")
+ (xml-tool-insert-scheme-splice-box "Racket-Spleiß-Kasten einfügen")
  (xml-tool-xml-box "XML-Kasten")
- (xml-tool-scheme-box "Scheme-Kasten")
- (xml-tool-scheme-splice-box "Scheme-Spleiß-Kasten")
- (xml-tool-switch-to-scheme "In Scheme-Kasten verwandeln")
- (xml-tool-switch-to-scheme-splice "In Scheme-Spleiß-Kasten verwandeln")
+ (xml-tool-scheme-box "Racket-Kasten")
+ (xml-tool-scheme-splice-box "Racket-Spleiß-Kasten")
+ (xml-tool-switch-to-scheme "In Racket-Kasten verwandeln")
+ (xml-tool-switch-to-scheme-splice "In Racket-Spleiß-Kasten verwandeln")
  (xml-tool-eliminate-whitespace-in-empty-tags
   "Überflüssigen Whitespace in leeren Tags entfernen")
  (xml-tool-leave-whitespace-alone
@@ -1277,10 +1284,10 @@
   ;;The test engine tool
   ;;
   (test-engine-window-title "Testresultate")
-  ;;Following two appear in View menu, attach and free test report window from DrScheme frame
+  ;;Following two appear in View menu, attach and free test report window from DrRacket frame
   (test-engine-dock-report "Testresultate andocken")
  (test-engine-undock-report "Testresultate abdocken")
-  ;;Following two appear in Scheme (Java, etc) menu, cause Tests to be Run automatically or not
+  ;;Following two appear in Racket (Java, etc) menu, cause Tests to be Run automatically or not
   (test-engine-enable-tests "Test aktivieren")
   (test-engine-disable-tests "Tests deaktivieren")
   
@@ -1348,7 +1355,7 @@
   ;; Errors
   (test-case-empty-error "Leerer Testfall")
   (test-case-too-many-expressions-error "Zu viele Ausdrücke in einem Testfall")
-  ;; Dr. Scheme window menu items
+  ;; DrRacket window menu items
   (test-case-insert "Testfall einfügen")
   (test-case-disable-all "Alle Testfälle deaktivieren")
   (test-case-enable-all "Alle Testfälle aktivieren")
@@ -1421,7 +1428,7 @@
   (planet-finished "PLaneT: fertig mit ~a.")
   (planet-no-status "PLaneT") ;; this can happen when there is status shown in a different and then the user switches to a tab where planet hasn't been used
 
- ;; string normalization. To see this, paste some text with a ligature into DrScheme
+ ;; string normalization. To see this, paste some text with a ligature into DrRacket
  ;; the first three strings are in the dialog that appears. The last one is in the preferences dialog
  (normalize "Normalisieren")
  (leave-alone "Unverändert lassen")

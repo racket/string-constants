@@ -36,14 +36,14 @@ please adhere to these guidelines:
   has changed and needs to be re-translated.  Do not erase the old
   version, it might help us translate the new one.  Do not move it
   either.  Just comment it out and add the short comment.  After the
-  next svn update DrScheme will automatically tell us translators that
+  next svn update DrRacket will automatically tell us translators that
   a new string needs to be translated, we will find your comment in
   the file, and know what to do.
-	Some evil evil people might think that, since DrScheme automatically
+	Some evil evil people might think that, since DrRacket automatically
   informs us of new strings to be translated, an easier thing to do
   when modifying an existing string would be to simply rename it at
   the same time.  This works, except that if you do that, we
-  translators will get two warnings from DrScheme:
+  translators will get two warnings from DrRacket:
 		language english had but french does not:
 		(new-name "New String")
 		language french had but english does not:
@@ -95,7 +95,7 @@ please adhere to these guidelines:
   (are-you-sure-you-want-to-switch-languages
       "Dette ændrer sproget i den grafiske brugerflade. Er du sikker?")
   
-  (interact-with-drscheme-in-language "Arbejd med DrScheme på Dansk")
+  (interact-with-drscheme-in-language "Arbejd med DrRacket på Dansk")
   
   ;; these two should probably be the same in all languages except English.
   ;; they are the button labels (under macos and windows, respectively)
@@ -103,9 +103,9 @@ please adhere to these guidelines:
   (accept-and-quit "Accepter og afslut")
   (accept-and-exit "Accepter og afslut")
   
-  ;;; general purpose (DrScheme is hereby a word in every language, by decree of Robby :)
+  ;;; general purpose (DrRacket is hereby a word in every language, by decree of Robby :)
   (plt "PLT")
-  (drscheme "DrScheme")
+  (drscheme "DrRacket")
   (ok "Ok")
   (cancel "Fortryd")
   (abort "Afbryd")
@@ -125,14 +125,13 @@ please adhere to these guidelines:
   ;; dialog isn't going to be shown again.
   ;; One version for always using the current choice:
   (dont-ask-again-always-current "Spørg ikke igen (brugt altid nuværende valg)")
-  ;; One generic version (ie, on the Quit DrScheme dialog)
+  ;; One generic version (ie, on the Quit DrRacket dialog)
   (dont-ask-again                "Spørg ikke igen")
   
   ;;; important urls
   (web-materials "Relaterede websites") ;; menu item title
   (tool-web-sites "Tool Web Sites")   ;; menu item title
-  (drscheme-homepage "DrScheme")
-  (plt-homepage "PLT")
+  (plt-homepage "Racket")
   (how-to-use-scheme "How to Use Scheme") ;; title of a book.
   (teachscheme!-homepage "TeachScheme!") ;; probably this should be a `word' in all languages
   
@@ -206,10 +205,10 @@ please adhere to these guidelines:
   (welcome-to-something "Velkommen til ~a")
   
   ; this appears in the drscheme about box.
-  (welcome-to-drscheme-version/language "Velkommen til DrScheme, version ~a, ~a")
+  (welcome-to-drscheme-version/language "Velkommen til DrRacket, version ~a, ~a")
   
-  ; these appear on subsequent lines in the `Help|Welcome to DrScheme' dialog.
-  (welcome-to-drscheme "Velkommen til DrScheme")
+  ; these appear on subsequent lines in the `Help|Welcome to DrRacket' dialog.
+  (welcome-to-drscheme "Velkommen til DrRacket")
   
   (goto-line "Gå til linje")
   (goto-line-invalid-number
@@ -241,7 +240,7 @@ please adhere to these guidelines:
   
   ;; modes
   (mode-submenu-label "Tilstande")
-  (scheme-mode "Scheme-tilstand")
+  (scheme-mode "Racket-tilstand")
   (text-mode "Tekst-tilstand")
   
   (scheme-mode-color-symbol "Symbol")
@@ -294,7 +293,7 @@ please adhere to these guidelines:
   (plt:hd:refreshing-manuals-finished "Færdig.")
   (plt:hd:about-help-desk "Om hjælpebord")
   (plt:hd:help-desk-about-string
-   "Hjælpebordet er en fuldstændig kilde af information om PLT-software, inklusive DrScheme, MzScheme og MrEd.\n\nVersion ~a\nCopyright (c) ~a-~a PLT")
+   "Hjælpebordet er en fuldstændig kilde af information om PLT-software, inklusive DrRacket, MzScheme og MrEd.\n\nVersion ~a\nCopyright (c) ~a-~a PLT")
   (plt:hd:help-on-help "Hjælp om hjælp")
   (plt:hd:help-on-help-details "For hjælp om Hjælpebord, følg linket `How to use Help Desk'-linket på hjælpebordets startside.")
   (reload "Opdater") ;; refresh the page in a web browser
@@ -310,7 +309,7 @@ please adhere to these guidelines:
   (plt:hd:manual-search-ordering "Søgeorden")
   
   ;; in the help-desk standalone font preference dialog, on a check box
-  (use-drscheme-font-size "Brug DrScheme's fontstørrelse")
+  (use-drscheme-font-size "Brug DrRacket's fontstørrelse")
   
   ;; in the preferences dialog in drscheme there is example text for help desk font size.
   ;; clicking the links in that text produces a dialog with this message
@@ -367,11 +366,11 @@ please adhere to these guidelines:
   
   
   ;;; about box
-  (about-drscheme-frame-title "Om DrScheme")
+  (about-drscheme-frame-title "Om DrRacket")
   
   ;;; save file in particular format prompting.
   (save-as-plain-text "Gem denne fil som tekt?")
-  (save-in-drs-format "Gem denne fil i det DrScheme-specifikke ikke-tekst format?")
+  (save-in-drs-format "Gem denne fil i det DrRacket-specifikke ikke-tekst format?")
   (yes "Ja")
   (no "Nej")
   
@@ -379,7 +378,7 @@ please adhere to these guidelines:
   (preferences "Indstillinger")
   (error-saving-preferences "Fejl under lagring af indstillinger: ~a")
   (error-reading-preferences "Fejl ved indlæsning af indstillinger")
-  (scheme-prefs-panel-label "Scheme")
+  (scheme-prefs-panel-label "Racket")
   (warnings-prefs-panel-label "Advarsler")
   (editor-prefs-panel-label "Redigering")
   (general-prefs-panel-label "Generelt")
@@ -443,7 +442,7 @@ please adhere to these guidelines:
   ; warning message when lockfile is around
   (waiting-for-pref-lock "Venter på indstillingernes låsefil...")
   (pref-lock-not-gone
-   "Indstillingernes låsefil:\n\n   ~a\n\nforhindrer indstillingerne i at blive gemt. Sørg for, at du ikke kører PLT-programmer og slet denne fil.")
+   "Indstillingernes låsefil:\n\n   ~a\n\nforhindrer indstillingerne i at blive gemt. Sørg for, at du ikke kører Racket-programmer og slet denne fil.")
   (still-locked-exit-anyway? "Indstillingerne blev ikke gemt rigtigt. Afslut alligevel?")
   
   ;;; indenting preferences panel
@@ -489,7 +488,7 @@ please adhere to these guidelines:
   (mfs-recur-over-subdirectories "Rekursivt i undermapper")
   (mfs-regexp-filename-filter "Regexp filnavnsfilter")
   (mfs-search-string "Søgestreng")
-  (mfs-drscheme-multi-file-search "DrScheme - Søgning i flere filer") ;; results window and error message title
+  (mfs-drscheme-multi-file-search "DrRacket - Søgning i flere filer") ;; results window and error message title
   (mfs-not-a-dir "\"~a\" er ikke en mappe")
   (mfs-open-file "Åbn fil")
   (mfs-stop-search "Stop søgning")
@@ -533,7 +532,7 @@ please adhere to these guidelines:
   
   ;;; raw menu names -- these must match the
   ;;; versions below, once the &s have been stripped.
-  ;;; if they don't, DrScheme's menus will appear
+  ;;; if they don't, DrRacket's menus will appear
   ;;; in the wrong order.
   (file-menu "Filer")
   (edit-menu "Rediger")
@@ -693,7 +692,7 @@ please adhere to these guidelines:
   ;; if you have leftover autosave files. to see the dialog,
   ;; start up drscheme and modify (but don't save) a file
   ;; (also, do this with an unsaved file). Wait for the autosave
-  ;; files to appear (typically 5 minutes). Kill DrScheme
+  ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
   (autosave-autosave-label: "Autosave-fil:")
   (autosave-original-label: "Original fil:")
@@ -703,7 +702,7 @@ please adhere to these guidelines:
   
   (autosave-show-autosave "Autosave-fil") ;; title of a window showing the autosave file
   
-  (autosave-explanation "DrScheme fandt autosavede filer, som måske indeholde ugemt arbejde.")
+  (autosave-explanation "DrRacket fandt autosavede filer, som måske indeholde ugemt arbejde.")
   
   (autosave-recovered! "Gendannet!") ;; status of an autosave file
   (autosave-deleted "Slettet")       ;; status of an autosave file
@@ -724,7 +723,7 @@ please adhere to these guidelines:
   
   (definitions-modified
     "Definitionsteksten er blevet ændret i filsystemet; gem venligst eller brug 'vend tilbage' for at bruge den gamle version")
-  (drscheme-internal-error "Intern fejl i DrScheme")
+  (drscheme-internal-error "Intern fejl i DrRacket")
   
   ;;; tools
   (invalid-tool-spec "Værkstøjsspecifikationen i collection ~a's info.ss filen er ugyldig. Forventede enten en streng eller en ikke-tom liste af strenge, fik: ~e")
@@ -763,7 +762,7 @@ please adhere to these guidelines:
   (save-definitions-as "Gem definitioner som...")
   (save-definitions "Gem definitioner")
   (print-definitions "Udskriv definitioner...")
-  (about-drscheme "Om DrScheme")
+  (about-drscheme "Om DrRacket")
   (save-other "Gem andet")
   (save-definitions-as-text "Gem definitioner som tekst...")
   (save-interactions "Gem interaktioner")
@@ -781,7 +780,7 @@ please adhere to these guidelines:
   (language-menu-name "&Sprog")
   
   ;;; scheme-menu
-  (scheme-menu-name "S&cheme")
+  (scheme-menu-name "Ra&cket")
   (execute-menu-item-label "Kør")
   (execute-menu-item-help-string "Genstart programmet i definitionsvinduet")
   (break-menu-item-label "Afbryd")
@@ -803,12 +802,12 @@ please adhere to these guidelines:
   (create-executable-menu-item-label "Lav binær kørselfil...")
   (create-executable-title "Lav binær kørselsfil")
   (must-save-before-executable "Du skal gemme dit program, før du laver en binær fil")
-  (save-a-mred-launcher "Gem en MrEd-starter")
-  (save-a-mzscheme-launcher "Gem en MzScheme-starter")
-  (save-a-mred-stand-alone-executable "Gem en selvstændig MrEd-kørselsfil")
-  (save-a-mzscheme-stand-alone-executable "Gen en selvstændig MzScheme kørselsfil")
-  (save-a-mred-distribution "Gem en MrEd-distribution")
-  (save-a-mzscheme-distribution "Gem en MzScheme-distribution")
+  (save-a-mred-launcher "Gem en GRacket-starter")
+  (save-a-mzscheme-launcher "Gem en Racket-starter")
+  (save-a-mred-stand-alone-executable "Gem en selvstændig GRacket-kørselsfil")
+  (save-a-mzscheme-stand-alone-executable "Gen en selvstændig Racket kørselsfil")
+  (save-a-mred-distribution "Gem en GRacket-distribution")
+  (save-a-mzscheme-distribution "Gem en Racket-distribution")
   
   (definitions-not-saved "Definitionsvinduet har ikke været gemt. Den binære kørselsfil vil bruge den senest gemte version af definitionsvinduet. Fortsæt?")
   (launcher "Starter")
@@ -873,11 +872,11 @@ please adhere to these guidelines:
   ;;; TeachPack messages
   (select-a-teachpack "Vælg undervisningspakke")
   (clear-teachpack "Fjern undervisningspakken ~a")
-  (teachpack-error-label "DrScheme - Undervisningspakkefejl")
+  (teachpack-error-label "DrRacket - Undervisningspakkefejl")
   (teachpack-didnt-load "Undervisningspakkefilen ~a blev ikke hentet rigtigt.")
   (add-teachpack-menu-item-label "Tilføj Undervisningspakke")
   (clear-all-teachpacks-menu-item-label "Fjern alle undervisningspakker")
-  (drscheme-teachpack-message-title "DrScheme Undervisningspakke")
+  (drscheme-teachpack-message-title "DrRacket Undervisningspakke")
   (already-added-teachpack "Undervisningspakken ~a er allerede tilføjet")
   
   ;;; Language dialog
@@ -924,7 +923,7 @@ please adhere to these guidelines:
   (advanced-student "Rutineret")
   (advanced-one-line-summary "Øvet med lambda og mutation")
   (how-to-design-programs "How to Design Programs") ;; should agree with MIT Press on this one...
-  (pretty-big-scheme "Temmelig omfattende Scheme")
+  (pretty-big-scheme "Temmelig omfattende Racket")
   (pretty-big-scheme-one-line-summary "Grafisk, med mange standardbiblioteker")
   (r5rs-language-name "R5RS")
   (r5rs-one-line-summary "R5RS, uden dikkedarer")
@@ -939,7 +938,7 @@ please adhere to these guidelines:
   ;(module-language-one-line-summary "En kørsel åbner en REPL i i modulets sammenhæng, inkluderer modulets deklarede sprog")
   
   ;;; from the `not a language language' used initially in drscheme.
-  (must-choose-language "DrScheme kan ikke køre programmer før du vælger et programmeringssprog.")
+  (must-choose-language "DrRacket kan ikke køre programmer før du vælger et programmeringssprog.")
   
   ; next two appear before and after the name of a text book (which will be in italics)
   (using-a-textbook-before "Bruger du ")
@@ -959,7 +958,7 @@ please adhere to these guidelines:
   
   ;;; debug language
   (unknown-debug-frame "[ukendt]")
-  (backtrace-window-title "Tilbagesporing - DrScheme")
+  (backtrace-window-title "Tilbagesporing - DrRacket")
   (files-interactions "~a's interaktioner") ;; filled with a filename
   (current-interactions "interaktioner")
   (current-definitions "definitioner")
@@ -1032,14 +1031,14 @@ please adhere to these guidelines:
   ;;; version checker
  (version:update-menu-item   "Undersøger om der er opdateringer...")
  (version:update-check       "Opdateringstjek") ; dialog title, with the next line
- (version:connecting-server  "Forbinder til PLTs versionsserver")
- (version:results-title      "PLT Versionstjek")
- (version:do-periodic-checks "Tjek med mellemrum om der er kommet nye PLT Scheme-versioner")
+ (version:connecting-server  "Forbinder til Rackets versionsserver")
+ (version:results-title      "Racket Versionstjek")
+ (version:do-periodic-checks "Tjek med mellemrum om der er kommet nye Racket-versioner")
  (version:take-me-there      "Til download") ; ...to the download website
  ;; the next one can appear alone, or followed by a comma and the one after that
- (version:plt-up-to-date     "Din PLT version er up-to-date")
+ (version:plt-up-to-date     "Din Racket version er up-to-date")
  (version:but-newer-alpha    "men læg mærke til, at der er en nyere alpha-udgave")
- ;; This is used in this context: "PLT Scheme vNNN <<<*>>> http://download..."
+ ;; This is used in this context: "Racket vNNN <<<*>>> http://download..."
  (version:now-available-at   "er nu klar på")
 
   ;; special menu
@@ -1066,8 +1065,8 @@ please adhere to these guidelines:
   (module-browser-show-lib-paths/short "Følg lib requires") ;; check box label in show module browser pane in drscheme window.
   (module-browser-show-planet-paths/short "Følg planet requires") ;; check box label in show module browser pane in drscheme window.
   (module-browser-refresh "Opdater") ;; button label in show module browser pane in drscheme window.
-  (module-browser-only-in-plt-and-module-langs
-   "Moduloversigten er kun tilgængelig for programmer i PLT-sprogene og i modul-sproget (og kun for de programmer, som benytter moduler).")
+;  (module-browser-only-in-plt-and-module-langs
+;   "Moduloversigten er kun tilgængelig for programmer i PLT-sprogene og i modul-sproget (og kun for de programmer, som benytter moduler).")
   (module-browser-name-length "Navnelængde")
   (module-browser-name-short "Kort")
   (module-browser-name-medium "Mellem")
@@ -1106,13 +1105,13 @@ please adhere to these guidelines:
   (snips-and-arrows-hide-all-snips-in-editor "Skjul alle snips i editoren")
   
   (xml-tool-insert-xml-box "Indsæt XML-kasse")
-  (xml-tool-insert-scheme-box "Indsæt Scheme-kasse")
-  (xml-tool-insert-scheme-splice-box "Indsæt Scheme-splejningskasse (Splice Box)")
+  (xml-tool-insert-scheme-box "Indsæt Racket-kasse")
+  (xml-tool-insert-scheme-splice-box "Indsæt Racket-splejningskasse (Splice Box)")
   (xml-tool-xml-box "XML-Kasse")
-  (xml-tool-scheme-box "Scheme-Kasse")
-  (xml-tool-scheme-splice-box "Scheme-splejsningskasse Scheme Splice Box")
-  (xml-tool-switch-to-scheme "Skift til Scheme-kasse")
-  (xml-tool-switch-to-scheme-splice "Skift til Scheme-splejsningskasse")
+  (xml-tool-scheme-box "Racket-Kasse")
+  (xml-tool-scheme-splice-box "Racket-splejsningskasse Racket Splice Box")
+  (xml-tool-switch-to-scheme "Skift til Racket-kasse")
+  (xml-tool-switch-to-scheme-splice "Skift til Racket-splejsningskasse")
   (xml-tool-eliminate-whitespace-in-empty-tags "Fjern blanktegn i tomme tags")
   (xml-tool-leave-whitespace-alone "Bevar blanktegn")
   
@@ -1189,7 +1188,7 @@ please adhere to these guidelines:
   ;; Errors
   (test-case-empty-error "Tomt test")
   (test-case-too-many-expressions-error "For mange udtryk i testen.")
-  ;; Dr. Scheme window menu items
+  ;; DrRacket window menu items
   (test-case-insert "Indsæt test")
   (test-case-disable-all "Slå alle tests fra")
   (test-case-enable-all "Slp alle tests til")

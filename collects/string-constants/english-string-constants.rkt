@@ -36,14 +36,14 @@ please adhere to these guidelines:
   has changed and needs to be re-translated.  Do not erase the old
   version, it might help us translate the new one.  Do not move it
   either.  Just comment it out and add the short comment.  After the
-  next svn update DrScheme will automatically tell us translators that
+  next svn update DrRacket will automatically tell us translators that
   a new string needs to be translated, we will find your comment in
   the file, and know what to do.
-	Some evil evil people might think that, since DrScheme automatically
+	Some evil evil people might think that, since DrRacket automatically
   informs us of new strings to be translated, an easier thing to do
   when modifying an existing string would be to simply rename it at
   the same time.  This works, except that if you do that, we
-  translators will get two warnings from DrScheme:
+  translators will get two warnings from DrRacket:
 		language english had but french does not:
 		(new-name "New String")
 		language french had but english does not:
@@ -93,9 +93,9 @@ please adhere to these guidelines:
  (is-this-your-native-language "Is English Your Native Language?")
 
  (are-you-sure-you-want-to-switch-languages
-  "This will change the language of the GUI, which requires you to restart DrScheme. Are you sure?")
+  "This will change the language of the GUI, which requires you to restart DrRacket. Are you sure?")
 
- (interact-with-drscheme-in-language "Interact with DrScheme in English")
+ (interact-with-drscheme-in-language "Interact with DrRacket in English")
 
  ;; these two should probably be the same in all languages excepet English.
  ;; they are the button labels (under macos and windows, respectively)
@@ -103,9 +103,9 @@ please adhere to these guidelines:
  (accept-and-quit "Accept and Quit")
  (accept-and-exit "Accept and Exit")
  
- ;;; general purpose (DrScheme is hereby a word in every language, by decree of Robby :)
+ ;;; general purpose (DrRacket is hereby a word in every language, by decree of Robby :)
  (plt "PLT")
- (drscheme "DrScheme")
+ (drscheme "DrRacket")
  (ok "OK")
  (cancel "Cancel")
  (abort "Abort")
@@ -127,14 +127,13 @@ please adhere to these guidelines:
  ;; dialog isn't going to be shown again.
  ;; One version for always using the current choice:
  (dont-ask-again-always-current "Do not ask again (always use current choice)")
- ;; One generic version (ie, on the Quit DrScheme dialog)
+ ;; One generic version (ie, on the Quit DrRacket dialog)
  (dont-ask-again                "Do not ask again")
 
  ;;; important urls
  (web-materials "Related Web Sites") ;; menu item title
  (tool-web-sites "Tool Web Sites")   ;; menu item title
- (drscheme-homepage "DrScheme")
- (plt-homepage "PLT")
+ (plt-homepage "Racket")
  (how-to-use-scheme "How to Use Scheme") ;; title of a book.
  (teachscheme!-homepage "TeachScheme!") ;; probably this should be a `word' in all languages
 
@@ -210,10 +209,10 @@ please adhere to these guidelines:
  (welcome-to-something "Welcome to ~a")
  
  ; this appears in the drscheme about box.
- (welcome-to-drscheme-version/language "Welcome to DrScheme, version ~a, ~a")
+ (welcome-to-drscheme-version/language "Welcome to DrRacket, version ~a, ~a")
 
- ; these appear on subsequent lines in the `Help|Welcome to DrScheme' dialog.
- (welcome-to-drscheme "Welcome to DrScheme")
+ ; these appear on subsequent lines in the `Help|Welcome to DrRacket' dialog.
+ (welcome-to-drscheme "Welcome to DrRacket")
 
  (goto-line "Goto line")
  (goto-line-invalid-number
@@ -254,7 +253,7 @@ please adhere to these guidelines:
   
  ;; modes
  (mode-submenu-label "Modes")
- (scheme-mode "Scheme mode")
+ (scheme-mode "Racket mode")
  (text-mode "Text mode")
 
  (scheme-mode-color-symbol "Symbol")
@@ -316,7 +315,7 @@ please adhere to these guidelines:
  (plt:hd:refreshing-manuals-finished "Finished.")
  (plt:hd:about-help-desk "About Help Desk")
  (plt:hd:help-desk-about-string
-  "Help Desk is a complete source of information about PLT software, including DrScheme, MzScheme, and MrEd.\n\nVersion ~a\nCopyright (c) ~a-~a PLT")
+  "Help Desk is a complete source of information about Racket software.\n\nVersion ~a\nCopyright (c) ~a-~a PLT")
  (plt:hd:help-on-help "Help on Help")
  (plt:hd:help-on-help-details "For help on using Help Desk, follow the first link `Help Desk' on Help Desk's home page. (To get to the home page if you're not already there, click the `Home' button at the top of the Help Desk window.)")
   (reload "Reload") ;; refresh the page in a web browser
@@ -332,7 +331,7 @@ please adhere to these guidelines:
   (plt:hd:manual-search-ordering "Manual Search Order")
   
   ;; in the help-desk standalone font preference dialog, on a check box
-  (use-drscheme-font-size "Use DrScheme's font size")
+  (use-drscheme-font-size "Use DrRacket's font size")
   
   ;; in the preferences dialog in drscheme there is example text for help desk font size.
   ;; clicking the links in that text produces a dialog with this message
@@ -393,7 +392,7 @@ please adhere to these guidelines:
  (plt-installer-aborted "Aborted.") ;; msg that appears in the installation window when installation is aborted
 
  ;;; about box
- (about-drscheme-frame-title "About DrScheme")
+ (about-drscheme-frame-title "About DrRacket")
  
  ;;; save file in particular format prompting.
  (save-as-plain-text "Save this file as plain text?")
@@ -413,7 +412,7 @@ please adhere to these guidelines:
  (prefs-file-locked "The preferences file is locked (because the file ~a exists), so your preference change could not be saved. Cancel preference change?")
  (try-again "Try again") ;; button label
  (prefs-file-still-locked "The preferences file is still locked (because the file ~a exists), so your preference change will not be saved.")
- (scheme-prefs-panel-label "Scheme")
+ (scheme-prefs-panel-label "Racket")
  (warnings-prefs-panel-label "Warnings")
  (editor-prefs-panel-label "Editing")
  (general-prefs-panel-label "General")
@@ -483,7 +482,7 @@ please adhere to these guidelines:
  ; warning message when lockfile is around
  (waiting-for-pref-lock "Waiting for the preferences lockfile...")
  (pref-lock-not-gone
-  "The preferences lockfile:\n\n   ~a\n\nprevents the preferences from being saved. Ensure that no PLT software is running and delete this file.")
+  "The preferences lockfile:\n\n   ~a\n\nprevents the preferences from being saved. Ensure that no Racket software is running and delete this file.")
  (still-locked-exit-anyway? "The preferences were not saved sucessfully. Exit anyway?")
  
  ;;; indenting preferences panel
@@ -541,7 +540,7 @@ please adhere to these guidelines:
  (mfs-recur-over-subdirectories "Recur over subdirectories")
  (mfs-regexp-filename-filter "Regexp filename filter")
  (mfs-search-string "Search string")
- (mfs-drscheme-multi-file-search "DrScheme - Multi File Search") ;; results window and error message title
+ (mfs-drscheme-multi-file-search "DrRacket - Multi File Search") ;; results window and error message title
  (mfs-not-a-dir "\"~a\" is not a directory")
  (mfs-open-file "Open File")
  (mfs-stop-search "Stop Search")
@@ -586,7 +585,7 @@ please adhere to these guidelines:
  
  ;;; raw menu names -- these must match the 
  ;;; versions below, once the &s have been stripped.
- ;;; if they don't, DrScheme's menus will appear
+ ;;; if they don't, DrRacket's menus will appear
  ;;; in the wrong order.
  (file-menu "File")
  (edit-menu "Edit")
@@ -774,7 +773,7 @@ please adhere to these guidelines:
   ;; if you have leftover autosave files. to see the dialog,
   ;; start up drscheme and modify (but don't save) a file
   ;; (also, do this with an unsaved file). Wait for the autosave
-  ;; files to appear (typically 5 minutes). Kill DrScheme
+  ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
   (autosave-autosave-label: "Autosave file:")
   (autosave-original-label: "Original file:")
@@ -784,7 +783,7 @@ please adhere to these guidelines:
 
   (autosave-show-autosave "Autosave file") ;; title of a window showing the autosave file
 
-  (autosave-explanation "DrScheme found autosave files, which may contain your unsaved work.")
+  (autosave-explanation "DrRacket found autosave files, which may contain your unsaved work.")
 
   (autosave-recovered! "Recovered!") ;; status of an autosave file
   (autosave-deleted "Deleted")       ;; status of an autosave file
@@ -805,7 +804,7 @@ please adhere to these guidelines:
  
  (definitions-modified 
   "The definitions text has been modified in the file-system; please save or revert the definitions text.")
- (drscheme-internal-error "DrScheme Internal Error")
+ (drscheme-internal-error "DrRacket Internal Error")
  
  ;;; tools
  (invalid-tool-spec "The tool specification in collection ~a's info.ss file is invalid. Expected either a string or a non-empty list of strings, got: ~e")
@@ -850,7 +849,7 @@ please adhere to these guidelines:
  (save-definitions-as "Save Definitions &As...")
  (save-definitions "Save Definitions")
  (print-definitions "Print Definitions...")
- (about-drscheme "About DrScheme")
+ (about-drscheme "About DrRacket")
  (save-other "Save Other")
  (save-definitions-as-text "Save Definitions As Text...")
  (save-interactions "Save Interactions")
@@ -869,7 +868,7 @@ please adhere to these guidelines:
  (language-menu-name "&Language")
  
  ;;; scheme-menu
- (scheme-menu-name "S&cheme")
+ (scheme-menu-name "Ra&cket")
  (execute-menu-item-label "Run")
  (execute-menu-item-help-string "Restart the program in the definitions window")
  (ask-quit-menu-item-label "Ask the Program to Quit")
@@ -896,12 +895,12 @@ please adhere to these guidelines:
  (create-executable-menu-item-label "Create Executable...")
  (create-executable-title "Create Executable")
  (must-save-before-executable "You must save your program before creating an executable.")
- (save-a-mred-launcher "Save a MrEd Launcher")
- (save-a-mzscheme-launcher "Save a MzScheme Launcher")
- (save-a-mred-stand-alone-executable "Save a MrEd Stand-alone Executable")
- (save-a-mzscheme-stand-alone-executable "Save a MzScheme Stand-alone Executable")
- (save-a-mred-distribution "Save a MrEd Distribution")
- (save-a-mzscheme-distribution "Save a MzScheme Distribution")
+ (save-a-mred-launcher "Save a GRacket Launcher")
+ (save-a-mzscheme-launcher "Save a Racket Launcher")
+ (save-a-mred-stand-alone-executable "Save a GRacket Stand-alone Executable")
+ (save-a-mzscheme-stand-alone-executable "Save a Racket Stand-alone Executable")
+ (save-a-mred-distribution "Save a GRacket Distribution")
+ (save-a-mzscheme-distribution "Save a Racket Distribution")
 
  (definitions-not-saved "The definitions window has not been saved. The executable will use the latest saved version of the definitions window. Continue?")
  ;; The "-explanatory-label" variants are the labels used for the radio buttons in
@@ -967,11 +966,11 @@ please adhere to these guidelines:
  ;;; Teachpack messages
  (select-a-teachpack "Select a Teachpack")
  (clear-teachpack "Clear ~a Teachpack")
- (teachpack-error-label "DrScheme - Teachpack error")
+ (teachpack-error-label "DrRacket - Teachpack error")
  (teachpack-didnt-load "The teachpack file ~a did not load properly.")
  (add-teachpack-menu-item-label "Add Teachpack...")
  (clear-all-teachpacks-menu-item-label "Clear All Teachpacks")
- (drscheme-teachpack-message-title "DrScheme Teachpack")
+ (drscheme-teachpack-message-title "DrRacket Teachpack")
  (already-added-teachpack "Already added ~a teachpack")
   
   ; ~a is filled with the teachpack's name; the message appears in the teachpack selection dialog when a user installs a new teachpack
@@ -1060,8 +1059,14 @@ please adhere to these guidelines:
  (module-language-one-line-summary "Reads the #lang line to specify the actual language")
   (module-language-auto-text "Automatic #lang line") ;; shows up in the details section of the module language
    
+  ;; for the upper portion of the language dialog
+  (use-language-in-source "Use the language declared in the source")
+  (choose-a-language "Choose a language")
+  (lang-in-source-discussion
+   "The #lang line at the start of a program declares its language. This is the default and preferred mode for DrRacket.")
+  
   ;;; from the `not a language language' used initially in drscheme.
-  (must-choose-language "DrScheme cannot process programs until you choose a programming language.")
+  (must-choose-language "DrRacket cannot process programs until you choose a programming language.")
   
   ; next two appear before and after the name of a text book (which will be in italics)
   (using-a-textbook-before "Using ")
@@ -1072,6 +1077,7 @@ please adhere to these guidelines:
   (start-with-after "")
   
   (seasoned-plt-schemer? "Seasoned PLT Schemer?")
+  (racketeer? "Are you a Racketeer?")
   (looking-for-standard-scheme? "Looking for standard Scheme?")
 
   ; the three string constants are concatenated together and the middle
@@ -1082,7 +1088,7 @@ please adhere to these guidelines:
     
  ;;; debug language
  (unknown-debug-frame "[unknown]")
- (backtrace-window-title "Backtrace - DrScheme")
+ (backtrace-window-title "Backtrace - DrRacket")
  (files-interactions "~a's interactions") ;; filled with a filename
  (current-interactions "interactions")
  (current-definitions "definitions")
@@ -1159,14 +1165,14 @@ please adhere to these guidelines:
  ;;; version checker
  (version:update-menu-item   "Check for Updates...")
  (version:update-check       "Update check") ; dialog title, with the next line
- (version:connecting-server  "Connecting to PLT version server")
- (version:results-title      "PLT Version Check")
- (version:do-periodic-checks "Periodically check for newer PLT Scheme versions")
+ (version:connecting-server  "Connecting to Racket version server")
+ (version:results-title      "Racket Version Check")
+ (version:do-periodic-checks "Periodically check for newer Racket versions")
  (version:take-me-there      "Take Me There") ; ...to the download website
  ;; the next one can appear alone, or followed by a comma and the one after that
- (version:plt-up-to-date     "Your PLT version is up-to-date")
+ (version:plt-up-to-date     "Your Racket version is up-to-date")
  (version:but-newer-alpha    "but note that there is a newer alpha-release")
- ;; This is used in this context: "PLT Scheme vNNN <<<*>>> http://download..."
+ ;; This is used in this context: "Racket vNNN <<<*>>> http://download..."
  (version:now-available-at   "is now available at")
 
  ;; insert menu
@@ -1194,7 +1200,7 @@ please adhere to these guidelines:
  (module-browser-show-planet-paths/short "Follow PLaneT requires") ;; check box label in show module browser pane in drscheme window.
  (module-browser-refresh "Refresh") ;; button label in show module browser pane in drscheme window.
  (module-browser-only-in-plt-and-module-langs
-  "The module browser is only available for programs in the PLT languages and in the module language (and only for programs that have modules in them).")
+  "The module browser is only available for module-based programs.")
  (module-browser-name-length "Name length")
  (module-browser-name-short "Short")
  (module-browser-name-medium "Medium")
@@ -1233,13 +1239,13 @@ please adhere to these guidelines:
  (snips-and-arrows-hide-all-snips-in-editor "Hide all snips in editor")
 
  (xml-tool-insert-xml-box "Insert XML Box")
- (xml-tool-insert-scheme-box "Insert Scheme Box")
- (xml-tool-insert-scheme-splice-box "Insert Scheme Splice Box")
+ (xml-tool-insert-scheme-box "Insert Racket Box")
+ (xml-tool-insert-scheme-splice-box "Insert Racket Splice Box")
  (xml-tool-xml-box "XML Box")
- (xml-tool-scheme-box "Scheme Box")
- (xml-tool-scheme-splice-box "Scheme Splice Box")
- (xml-tool-switch-to-scheme "Switch to Scheme box")
- (xml-tool-switch-to-scheme-splice "Switch to Scheme splice box")
+ (xml-tool-scheme-box "Racket Box")
+ (xml-tool-scheme-splice-box "Racket Splice Box")
+ (xml-tool-switch-to-scheme "Switch to Racket box")
+ (xml-tool-switch-to-scheme-splice "Switch to Racket splice box")
  (xml-tool-eliminate-whitespace-in-empty-tags
   "Eliminiate whitespace in empty tags")
  (xml-tool-leave-whitespace-alone
@@ -1377,10 +1383,10 @@ please adhere to these guidelines:
   ;;The Test engine tool
   ;;
   (test-engine-window-title "Test Results")
-  ;;Following two appear in View menu, attach and free test report window from DrScheme frame
+  ;;Following two appear in View menu, attach and free test report window from DrRacket frame
   (test-engine-dock-report "Dock Test Report")
   (test-engine-undock-report "Undock Test Report")
-  ;;Following two appear in Scheme (Java, etc) menu, cause Tests to be Run automatically or not
+  ;;Following two appear in Racket (Java, etc) menu, cause Tests to be Run automatically or not
   (test-engine-enable-tests "Enable Tests")
   (test-engine-disable-tests "Disable Tests")
 
@@ -1412,7 +1418,7 @@ please adhere to these guidelines:
   (test-engine-trace-error "Trace error")
 
   ; The ~F is special marker for the offending values, which may be
-  ; printed specially in DrScheme.
+  ; printed specially in DrRacket.
   (test-engine-check-encountered-error
    "check-expect encountered the following error instead of the expected value, ~F. ~n   :: ~a")
   (test-engine-actual-value-differs-error
@@ -1447,7 +1453,7 @@ please adhere to these guidelines:
   ;; Errors
   (test-case-empty-error "Empty test case")
   (test-case-too-many-expressions-error "Too many expressions in a test case.")
-  ;; Dr. Scheme window menu items
+  ;; DrRacket window menu items
   (test-case-insert "Insert Test Case")
   (test-case-disable-all "Disable all Test Cases")
   (test-case-enable-all "Enable all Test Cases")
@@ -1520,7 +1526,7 @@ please adhere to these guidelines:
   (planet-finished "PLaneT: Finished with ~a.")
   (planet-no-status "PLaneT") ;; this can happen when there is status shown in a different and then the user switches to a tab where planet hasn't been used
   
-  ;; string normalization. To see this, paste some text with a ligature into DrScheme
+  ;; string normalization. To see this, paste some text with a ligature into DrRacket
   ;; the first three strings are in the dialog that appears. The last one is in the preferences dialog
   (normalize "Normalize")
   (leave-alone "Leave alone")

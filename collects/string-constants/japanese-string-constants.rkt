@@ -36,14 +36,14 @@ please adhere to these guidelines:
   has changed and needs to be re-translated.  Do not erase the old
   version, it might help us translate the new one.  Do not move it
   either.  Just comment it out and add the short comment.  After the
-  next svn update DrScheme will automatically tell us translators that
+  next svn update DrRacket will automatically tell us translators that
   a new string needs to be translated, we will find your comment in
   the file, and know what to do.
-	Some evil evil people might think that, since DrScheme automatically
+	Some evil evil people might think that, since DrRacket automatically
   informs us of new strings to be translated, an easier thing to do
   when modifying an existing string would be to simply rename it at
   the same time.  This works, except that if you do that, we
-  translators will get two warnings from DrScheme:
+  translators will get two warnings from DrRacket:
 		language english had but french does not:
 		(new-name "New String")
 		language french had but english does not:
@@ -93,9 +93,9 @@ please adhere to these guidelines:
  (is-this-your-native-language "Is Japanese Your Native Language?")
 
  (are-you-sure-you-want-to-switch-languages
-  "GUI で使用する自然言語を変更します。DrScheme を再起動する必要があります。よろしいですか？")
+  "GUI で使用する自然言語を変更します。DrRacket を再起動する必要があります。よろしいですか？")
 
- (interact-with-drscheme-in-language "DrScheme を日本語で使う")
+ (interact-with-drscheme-in-language "DrRacket を日本語で使う")
 
  ;; these two should probably be the same in all languages excepet English.
  ;; they are the button labels (under macos and windows, respectively)
@@ -103,9 +103,9 @@ please adhere to these guidelines:
  (accept-and-quit "承認して終了")
  (accept-and-exit "承認して終了")
 
- ;;; general purpose (DrScheme is hereby a word in every language, by decree of Robby :)
+ ;;; general purpose (DrRacket is hereby a word in every language, by decree of Robby :)
  (plt "PLT")
- (drscheme "DrScheme")
+ (drscheme "DrRacket")
  (ok "OK")
  (cancel "キャンセル")
  (abort "中止")
@@ -127,14 +127,13 @@ please adhere to these guidelines:
  ;; dialog isn't going to be shown again.
   ;; One version for always using the current choice:
  (dont-ask-again-always-current "今後このメッセージを表示しない (現在の選択が使われます)")
-  ;; One generic version (ie, on the Quit DrScheme dialog)
+  ;; One generic version (ie, on the Quit DrRacket dialog)
  (dont-ask-again                "今後このメッセージを表示しない")
 
  ;;; important urls
  (web-materials "関連するウェブサイト") ;; menu item title
  (tool-web-sites "ツールのウェブサイト")   ;; menu item title
- (drscheme-homepage "DrScheme")
- (plt-homepage "PLT")
+ (plt-homepage "Racket")
  (how-to-use-scheme "How to Use Scheme") ;; title of a book.
  (teachscheme!-homepage "TeachScheme!") ;; probably this should be a `word' in all languages
 
@@ -208,10 +207,10 @@ please adhere to these guidelines:
  (welcome-to-something "~a にようこそ！")
 
  ; this appears in the drscheme about box.
- (welcome-to-drscheme-version/language "Welcome to DrScheme, version ~a, ~a")
+ (welcome-to-drscheme-version/language "Welcome to DrRacket, version ~a, ~a")
 
- ; these appear on subsequent lines in the `Help|Welcome to DrScheme' dialog.
- (welcome-to-drscheme "Welcome to DrScheme")
+ ; these appear on subsequent lines in the `Help|Welcome to DrRacket' dialog.
+ (welcome-to-drscheme "Welcome to DrRacket")
 
  (goto-line "行番号を指定して移動")
  (goto-line-invalid-number
@@ -249,7 +248,7 @@ please adhere to these guidelines:
 
  ;; modes
  (mode-submenu-label "モード")
- (scheme-mode "Scheme モード")
+ (scheme-mode "Racket モード")
  (text-mode "Text モード")
 
  (scheme-mode-color-symbol "シンボル")
@@ -311,7 +310,7 @@ please adhere to these guidelines:
  (plt:hd:refreshing-manuals-finished "完了しました。")
  (plt:hd:about-help-desk "ヘルプデスクについて")
  (plt:hd:help-desk-about-string
-  "ヘルプデスクは PLT ソフトウェア (DrScheme, MzScheme, MrEd など) に関する完全な情報を提供します。\n\nバージョン ~a\nCopyright (c) ~a-~a PLT")
+  "ヘルプデスクは PLT ソフトウェア (DrRacket, MzScheme, MrEd など) に関する完全な情報を提供します。\n\nバージョン ~a\nCopyright (c) ~a-~a PLT")
  (plt:hd:help-on-help "ヘルプのヘルプ")
  (plt:hd:help-on-help-details "ヘルプデスクの使い方については、ヘルプデスクのホームページにある最初の `Help Desk' というリンクをたどってください。(ホームページを表示するには、ヘルプデスク ウィンドウの上部にある [ホーム] ボタンを押します。)")
   (reload "再読み込み") ;; refresh the page in a web browser
@@ -327,7 +326,7 @@ please adhere to these guidelines:
   (plt:hd:manual-search-ordering "マニュアルの検索順序")
 
   ;; in the help-desk standalone font preference dialog, on a check box
-  (use-drscheme-font-size "DrScheme のフォンサイズを使用する")
+  (use-drscheme-font-size "DrRacket のフォンサイズを使用する")
   
   ;; in the preferences dialog in drscheme there is example text for help desk font size.
   ;; clicking the links in that text produces a dialog with this message
@@ -388,11 +387,11 @@ please adhere to these guidelines:
  (plt-installer-aborted "中止しました") ;; msg that appears in the installation window when installation is aborted
 
  ;;; about box
- (about-drscheme-frame-title "DrScheme について")
+ (about-drscheme-frame-title "DrRacket について")
 
  ;;; save file in particular format prompting.
  (save-as-plain-text "このファイルをプレーンテキストで保存しますか？")
- (save-in-drs-format "このファイルを DrScheme 専用のバイナリ形式で保存しますか？")
+ (save-in-drs-format "このファイルを DrRacket 専用のバイナリ形式で保存しますか？")
  (yes "はい")
  (no "いいえ")
 
@@ -408,7 +407,7 @@ please adhere to these guidelines:
  (prefs-file-locked "環境設定ファイルがロックされています (ファイル ~a が存在します), 環境設定の変更を保存できません。環境設定の変更をキャンセルしますか？")
  (try-again "再試行") ;; button label
  (prefs-file-still-locked "環境設定ファイルが依然としてロックされているため (ファイル ~a が存在します), 環境設定の変更を保存できません。")
- (scheme-prefs-panel-label "Scheme")
+ (scheme-prefs-panel-label "Racket")
  (warnings-prefs-panel-label "警告")
  (editor-prefs-panel-label "編集")
  (general-prefs-panel-label "一般")
@@ -419,7 +418,7 @@ please adhere to these guidelines:
  (auto-save-files "ファイルを自動保存する")
  (backup-files "ファイルをバックアップする")
  (map-delete-to-backspace "Delete キーを Backspace キーとして処理する")
- (verify-exit "DrScheme 終了時に確認をとる")
+ (verify-exit "DrRacket 終了時に確認をとる")
  (ask-before-changing-format "保存形式を変更する前に確認をとる")
  (wrap-words-in-editor-buffers "エディタでテキストを折り返して表示する")
  (show-status-line "ステータス行を表示する")
@@ -478,7 +477,7 @@ please adhere to these guidelines:
  ; warning message when lockfile is around
  (waiting-for-pref-lock "環境設定のロックファイルを待っています...")
  (pref-lock-not-gone
-  "環境設定のロックファイル:\n\n   ~a\n\n があるために、環境設定の保存ができません。PLT のソフトウェアが実行されていないことを確認した上で、このファイルを削除してください。")
+  "環境設定のロックファイル:\n\n   ~a\n\n があるために、環境設定の保存ができません。Racket のソフトウェアが実行されていないことを確認した上で、このファイルを削除してください。")
  (still-locked-exit-anyway? "環境設定が保存できませんでした。とりあえず終了しますか？")
 
  ;;; indenting preferences panel
@@ -536,7 +535,7 @@ please adhere to these guidelines:
  (mfs-recur-over-subdirectories "サブディレクトリ内を再帰的に検索")
  (mfs-regexp-filename-filter "ファイル名を正規表現でフィルタ")
  (mfs-search-string "検索語")
- (mfs-drscheme-multi-file-search "DrScheme - 複数ファイルからの検索") ;; results window and error message title
+ (mfs-drscheme-multi-file-search "DrRacket - 複数ファイルからの検索") ;; results window and error message title
  (mfs-not-a-dir "\"~a\" はディレクトリではありません")
  (mfs-open-file "ファイルを開く")
  (mfs-stop-search "検索を中止")
@@ -581,7 +580,7 @@ please adhere to these guidelines:
 
  ;;; raw menu names -- these must match the
  ;;; versions below, once the &s have been stripped.
- ;;; if they don't, DrScheme's menus will appear
+ ;;; if they don't, DrRacket's menus will appear
  ;;; in the wrong order.
  (file-menu "ファイル")
  (edit-menu "編集")
@@ -767,7 +766,7 @@ please adhere to these guidelines:
   ;; if you have leftover autosave files. to see the dialog,
   ;; start up drscheme and modify (but don't save) a file
   ;; (also, do this with an unsaved file). Wait for the autosave
-  ;; files to appear (typically 5 minutes). Kill DrScheme
+  ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
   (autosave-autosave-label: "自動保存ファイル:")
   (autosave-original-label: "元のファイル:")
@@ -777,7 +776,7 @@ please adhere to these guidelines:
 
   (autosave-show-autosave "自動保存ファイル") ;; title of a window showing the autosave file
 
-  (autosave-explanation "DrScheme は自動保存ファイルを検出しました。自動保存ファイルには、未保存の作業結果が含まれている可能性があります。")
+  (autosave-explanation "DrRacket は自動保存ファイルを検出しました。自動保存ファイルには、未保存の作業結果が含まれている可能性があります。")
 
   (autosave-recovered! "復元しました！") ;; status of an autosave file
   (autosave-deleted "削除しました")       ;; status of an autosave file
@@ -798,7 +797,7 @@ please adhere to these guidelines:
 
  (definitions-modified
   "定義テキストがファイルシステム上で変更されました。定義テキストを保存するか復元してください。")
- (drscheme-internal-error "DrScheme 内部エラー")
+ (drscheme-internal-error "DrRacket 内部エラー")
 
  ;;; tools
  (invalid-tool-spec "コレクション ~a の info.ss ファイルに記述されているツール仕様が不正です。文字列か空でない文字列リストでなければなりませんが、次の値が記述されています: ~e")
@@ -842,7 +841,7 @@ please adhere to these guidelines:
  (save-definitions-as "定義に名前を付けて保存(&A)...")
  (save-definitions "定義の保存")
  (print-definitions "定義を印刷...")
- (about-drscheme "DrSchemeについて")
+ (about-drscheme "DrRacketについて")
  (save-other "その他の保存")
  (save-definitions-as-text "定義をテキストに保存...")
  (save-interactions "対話の保存")
@@ -861,7 +860,7 @@ please adhere to these guidelines:
  (language-menu-name "言語(&L)")
 
  ;;; scheme-menu
- (scheme-menu-name "S&cheme")
+ (scheme-menu-name "Ra&cket")
  (execute-menu-item-label "実行")
  (execute-menu-item-help-string "定義ウィンドウのプログラムを再開始します")
  (ask-quit-menu-item-label "プログラムを停止しますか？")
@@ -888,12 +887,12 @@ please adhere to these guidelines:
  (create-executable-menu-item-label "実行ファイルの作成...")
  (create-executable-title "実行ファイルの作成")
  (must-save-before-executable "実行ファイルを作成する前に、プログラムを保存してください。")
- (save-a-mred-launcher "MrEd ランチャの保存")
- (save-a-mzscheme-launcher "MzScheme ランチャの保存")
- (save-a-mred-stand-alone-executable "MrEd スタンドアロン実行ファイルの保存")
- (save-a-mzscheme-stand-alone-executable "MzScheme スタンドアロン実行ファイルの保存")
- (save-a-mred-distribution "MrEd 配布物の保存")
- (save-a-mzscheme-distribution "MzScheme 配布物の保存")
+ (save-a-mred-launcher "GRacket ランチャの保存")
+ (save-a-mzscheme-launcher "Racket ランチャの保存")
+ (save-a-mred-stand-alone-executable "GRacket スタンドアロン実行ファイルの保存")
+ (save-a-mzscheme-stand-alone-executable "Racket スタンドアロン実行ファイルの保存")
+ (save-a-mred-distribution "GRacket 配布物の保存")
+ (save-a-mzscheme-distribution "Racket 配布物の保存")
 
  (definitions-not-saved "定義ウィンドウが保存されていません。実行ファイルでは定義ウィンドウの最新の保存が使われます。よろしいですか？")
  ;; The "-explanatory-label" variants are the labels used for the radio buttons in
@@ -959,11 +958,11 @@ please adhere to these guidelines:
  ;;; Teachpack messages
  (select-a-teachpack "ティーチパックの選択")
  (clear-teachpack "ティーチパック ~a を消去")
- (teachpack-error-label "DrScheme - ティーチパック エラー")
+ (teachpack-error-label "DrRacket - ティーチパック エラー")
  (teachpack-didnt-load "ティーチパック ファイル ~a は、正しくロードされませんでした。")
  (add-teachpack-menu-item-label "ティーチパックの追加...")
  (clear-all-teachpacks-menu-item-label "すべてのティーチパックを消去")
- (drscheme-teachpack-message-title "DrScheme ティーチパック")
+ (drscheme-teachpack-message-title "DrRacket ティーチパック")
  (already-added-teachpack "ティーチパック ~a はすでに追加されています")
 
   ; ~a is filled with the teachpack's name; the message appears in the teachpack selection dialog when a user installs a new teachpack
@@ -1049,7 +1048,7 @@ please adhere to these guidelines:
   (module-language-auto-text "#lang 行を自動的に追加する") ;; shows up in the details section of the module language
 
   ;;; from the `not a language language' used initially in drscheme.
-  (must-choose-language "DrScheme は、プログラミング言語を選択しなければプログラムを実行できません。")
+  (must-choose-language "DrRacket は、プログラミング言語を選択しなければプログラムを実行できません。")
 
   ; next two appear before and after the name of a text book (which will be in italics)
   (using-a-textbook-before "")
@@ -1070,7 +1069,7 @@ please adhere to these guidelines:
 
  ;;; debug language
  (unknown-debug-frame "[unknown]")
- (backtrace-window-title "バックトレース - DrScheme")
+ (backtrace-window-title "バックトレース - DrRacket")
  (files-interactions "~a's interactions") ;; filled with a filename
  (current-interactions "interactions")
  (current-definitions "definitions")
@@ -1147,14 +1146,14 @@ please adhere to these guidelines:
  ;;; version checker
  (version:update-menu-item   "アップデートの確認...")
  (version:update-check       "アップデートの確認") ; dialog title, with the next line
- (version:connecting-server  "PLT バージョン サーバーに接続しています")
- (version:results-title      "PLT バージョンの確認")
- (version:do-periodic-checks "PLT Scheme の新しいバージョンを定期的に確認してください")
+ (version:connecting-server  "Racket バージョン サーバーに接続しています")
+ (version:results-title      "Racket バージョンの確認")
+ (version:do-periodic-checks "Racket の新しいバージョンを定期的に確認してください")
  (version:take-me-there      "ダウンロードする") ; ...to the download website
  ;; the next one can appear alone, or followed by a comma and the one after that
- (version:plt-up-to-date     "この PLT バージョンは最新です")
+ (version:plt-up-to-date     "この Racket バージョンは最新です")
  (version:but-newer-alpha    "しかし、これより新しいアルファ リリースが存在します")
- ;; This is used in this context: "PLT Scheme vNNN <<<*>>> http://download..."
+ ;; This is used in this context: "Racket vNNN <<<*>>> http://download..."
  (version:now-available-at   "が次のサイトから入手できます")
 
  ;; insert menu
@@ -1181,8 +1180,8 @@ please adhere to these guidelines:
  (module-browser-show-lib-paths/short "必要なライブラリを含める") ;; check box label in show module browser pane in drscheme window.
  (module-browser-refresh "更新") ;; button label in show module browser pane in drscheme window.
  (module-browser-refresh "再表示") ;; button label in show module browser pane in drscheme window.
- (module-browser-only-in-plt-and-module-langs
-  "モジュール ブラウザは PLT 言語、または、モジュール言語のプログラム (あるいは、それらの言語のモジュールを持つプログラム) でのみ利用可能です。")
+; (module-browser-only-in-plt-and-module-langs
+;  "モジュール ブラウザは PLT 言語、または、モジュール言語のプログラム (あるいは、それらの言語のモジュールを持つプログラム) でのみ利用可能です。")
  (module-browser-name-length "名前の長さ")
  (module-browser-name-short "短い")
  (module-browser-name-medium "普通")
@@ -1220,13 +1219,13 @@ please adhere to these guidelines:
  (snips-and-arrows-hide-all-snips-in-editor "Hide all snips in editor")
 
  (xml-tool-insert-xml-box "XML ボックスを挿入")
- (xml-tool-insert-scheme-box "Scheme ボックスを挿入")
- (xml-tool-insert-scheme-splice-box "Scheme Splice ボックスを挿入")
+ (xml-tool-insert-scheme-box "Racket ボックスを挿入")
+ (xml-tool-insert-scheme-splice-box "Racket Splice ボックスを挿入")
  (xml-tool-xml-box "XML ボックス")
- (xml-tool-scheme-box "Scheme ボックス")
- (xml-tool-scheme-splice-box "Scheme Splice ボックス")
- (xml-tool-switch-to-scheme "Scheme ボックスに切り替え")
- (xml-tool-switch-to-scheme-splice "Scheme Splice ボックスに切り替え")
+ (xml-tool-scheme-box "Racket ボックス")
+ (xml-tool-scheme-splice-box "Racket Splice ボックス")
+ (xml-tool-switch-to-scheme "Racket ボックスに切り替え")
+ (xml-tool-switch-to-scheme-splice "Racket Splice ボックスに切り替え")
  (xml-tool-eliminate-whitespace-in-empty-tags
   "空タグ内の空白を削除")
  (xml-tool-leave-whitespace-alone
@@ -1356,10 +1355,10 @@ please adhere to these guidelines:
   ;;The Test engine tool
   ;;
   (test-engine-window-title "テスト結果")
-  ;;Following two appear in View menu, attach and free test report window from DrScheme frame
+  ;;Following two appear in View menu, attach and free test report window from DrRacket frame
   (test-engine-dock-report "テスト結果を切り離して表示する")
   (test-engine-undock-report "テスト結果を統合して表示する")
-  ;;Following two appear in Scheme (Java, etc) menu, cause Tests to be Run automatically or not
+  ;;Following two appear in Racket (Java, etc) menu, cause Tests to be Run automatically or not
   (test-engine-enable-tests "テストを有効にする")
   (test-engine-disable-tests "テストを無効にする")
   
@@ -1370,7 +1369,7 @@ please adhere to these guidelines:
   ;; Errors
   (test-case-empty-error "空のテストケース")
   (test-case-too-many-expressions-error "テストケース内に式が多過ぎます。")
-  ;; Dr. Scheme window menu items
+  ;; DrRacket window menu items
   (test-case-insert "テストケースを挿入")
   (test-case-disable-all "すべてのテストケースを無効にする")
   (test-case-enable-all "すべてのテストケースを有効にする")
@@ -1443,7 +1442,7 @@ please adhere to these guidelines:
   (planet-finished "PLaneT: 完了 ~a.")
   (planet-no-status "PLaneT") ;; this can happen when there is status shown in a different and then the user switches to a tab where planet hasn't been used
   
-  ;; string normalization. To see this, paste some text with a ligature into DrScheme
+  ;; string normalization. To see this, paste some text with a ligature into DrRacket
   ;; the first three strings are in the dialog that appears. The last one is in the preferences dialog
   (normalize "Normalize")
   (leave-alone "Leave alone")
