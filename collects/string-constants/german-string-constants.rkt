@@ -1331,21 +1331,25 @@
    "check-error bekam den folgenden Fehler anstatt des erwarteten ~a~n   :: ~a")
   (test-engine-expected-error-error
    "check-error erwartete den folgenden Fehler, bekam aber den Wert ~F.~n ~a")
+  (test-engine-not-mem-error  "Tatsächlicher Wert ~F ist keins der Elemente ")
+  (test-engine-not-range-error "Tatsächlicher Wert ~F liegt nicht zwischen ~F und ~F (inklusive).")
+  (test-engine-property-fail-error "Eigenschaft falsifizierbar mit")
+  (test-engine-property-error-error "`check-property' bekam den folgenden Fehler~n:: ~a")
 
   ; section header
   (test-engine-check-failures "Check-Fehler:")
   ; section header
-  (test-engine-contract-violations "Vertragsverletzungen:")
+  (test-engine-signature-violations "Vertragsverletzungen:")
 
-  ; part of one phrase "contract <at line ...> to blame: procedure <at line ...>
-  (test-engine-contract "Vertrag")
+  ; part of one phrase "signature <at line ...> to blame: procedure <at line ...>
+  (test-engine-signature "Vertrag")
   (test-engine-to-blame "verantwortlich: Prozedur")
 
-  (test-engine-no-contract-violations "Keine Vertragsverletzungen.")
-  (test-engine-1-contract-violation "1 Vertragsverletzung.")
-  (test-engine-n-contract-violations "~a Vertragsverletzungen.")
+  (test-engine-no-signature-violations "Keine Vertragsverletzungen.")
+  (test-engine-1-signature-violation "1 Vertragsverletzung.")
+  (test-engine-n-signature-violations "~a Vertragsverletzungen.")
 
-  ; as in got <value>, contract <at ...>
+  ; as in got <value>, signature <at ...>
   (test-engine-got "bekam")
 
   (profjWizward-insert-java-class "Java-Klasse einfügen")

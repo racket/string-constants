@@ -1429,21 +1429,28 @@ please adhere to these guidelines:
    "check-error encountered the following error instead of the expected ~a~n   :: ~a")
   (test-engine-expected-error-error
    "check-error expected the following error, but instead received the value ~F.~n ~a")
+  ;; members are appended to the message
+  (test-engine-not-mem-error "Actual value ~F differs from all given members in ")
+  (test-engine-not-range-error "Actual value ~F is not between ~F and ~F, inclusive.")
+
+  ;; followed by list of variable bindings
+  (test-engine-property-fail-error "Property falsifiable with")
+  (test-engine-property-error-error "check-property encountered the following error~n:: ~a")
 
   ; section header
   (test-engine-check-failures "Check failures:")
   ; section header
-  (test-engine-contract-violations "Contract violations:")
+  (test-engine-signature-violations "Signature violations:")
 
-  ; part of one phrase "contract <at line ...> to blame: procedure <...>
-  (test-engine-contract "contract")
+  ; part of one phrase "signature <at line ...> to blame: procedure <...>
+  (test-engine-signature "signature")
   (test-engine-to-blame "to blame: procedure")
 
-  (test-engine-no-contract-violations "No contract violations.")
-  (test-engine-1-contract-violation "1 contract violation.")
-  (test-engine-n-contract-violations "~a contract violations.")
+  (test-engine-no-signature-violations "No signature violations.")
+  (test-engine-1-signature-violation "1 signature violation.")
+  (test-engine-n-signature-violations "~a signature violations.")
 
-  ; as in got <value>, contract <at ...>
+  ; as in got <value>, signature <at ...>
   (test-engine-got "got")
 
   (profjWizward-insert-java-class "Insert Java Class")
