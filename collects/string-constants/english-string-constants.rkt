@@ -1015,7 +1015,7 @@ please adhere to these guidelines:
  (enforce-primitives-group-box-label "Initial Bindings")
  (enforce-primitives-check-box-label "Disallow redefinition of initial bindings")
  (automatically-compile "Populate compiled/ directories (for faster loading)")
- (preserve-stacktrace-information "Preserve stacktrace (disable some JIT optimizations)")
+ (preserve-stacktrace-information "Preserve stacktrace (disable some optimizations)")
  (expression-level-stacktrace "Expression-level stacktrace")
  (function-level-stacktrace "Function-level stacktrace")
   
@@ -1531,6 +1531,7 @@ please adhere to these guidelines:
   (planet-downloading "PLaneT: Downloading ~a...")
   (planet-installing "PLaneT: Installing ~a...")
   (planet-finished "PLaneT: Finished with ~a.")
+  (planet-docs-building "PLaneT: Building docs (triggered by ~a)...")
   (planet-no-status "PLaneT") ;; this can happen when there is status shown in a different and then the user switches to a tab where planet hasn't been used
   
   ;; string normalization. To see this, paste some text with a ligature into DrRacket
