@@ -134,8 +134,7 @@
   (web-materials "Sites web apparentés") ;; menu item title
   (tool-web-sites "Sites web d'outils")   ;; menu item title
   (plt-homepage "Racket")
-  (how-to-use-scheme "How to Use Scheme") ;; title of a book.
-  (teachscheme!-homepage "TeachScheme!") ;; probably this should be a `word' in all languages
+  (pbd-homepage "Program by Design")
   
   ;;; bug report form
   (cancel-bug-report? "Annuler la soumission du rapport de bogue ?")
@@ -540,7 +539,7 @@
   (mfs-recur-over-subdirectories "Récursion dans les sous-répertoires")
   (mfs-regexp-filename-filter "Expression régulière pour filtrer les noms de fichiers")
   (mfs-search-string "Chercher la chaîne de caractères")
-  (mfs-drscheme-multi-file-search "DrRacket - Recherche dans des fichiers multiples") ;; results window and error message title
+  (mfs-drscheme-multi-file-search "Recherche dans des fichiers multiples - DrRacket") ;; results window and error message title
   (mfs-not-a-dir "\"~a\" n'est pas un répertoire")
   (mfs-open-file "Ouvrir le fichier")
   (mfs-stop-search "Stopper la recherche")
@@ -1015,7 +1014,7 @@
   (enforce-primitives-group-box-label "Définitions initiales")
   (enforce-primitives-check-box-label "Interdire la redéfinition des définition initiales")
   (automatically-compile "Peupler les répertoires \"compiled/\" (pour un chargement plus rapide)")
-  (preserve-stacktrace-information "Préserver la trace de la pile (ceci invalide certaines optimizations du compilateur JIT)")
+  (preserve-stacktrace-information "Préserver la trace de la pile (ceci invalide certaines optimisations)")
   (expression-level-stacktrace "Traçage de la pile au niveau des expressions")
   (function-level-stacktrace "Traçage de la pile au niveau des fonctions")
   

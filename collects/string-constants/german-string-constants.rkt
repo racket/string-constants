@@ -36,8 +36,7 @@
  (web-materials "Verwandte Web-Seiten")
  (tool-web-sites "Web-Seiten mit Tools")
  (plt-homepage "Racket")
- (how-to-use-scheme "How to Use Scheme")
- (teachscheme!-homepage "TeachScheme!")
+ (pbd-homepage "Program by Design")
 
  ;;; bug report form
  (cancel-bug-report? "Bug-Report verwerfen?")
@@ -99,6 +98,12 @@
  (cs-lexical-variable "lexikalische Variable")
  (cs-set!d-variable "geset!zte Variable")
  (cs-imported-variable "importierte Variable")
+
+  ;; mode sub-menu in the "view" menu
+  (cs-check-syntax-mode "Syntax-Check-Modus")
+  (cs-mode-menu-show-my-obligations "Meine Vertragsobligationen")
+  (cs-mode-menu-show-client-obligations "Vertragsobligationen des Klienten")
+  (cs-mode-menu-show-syntax "Syntaktische Kategorien")
 
  ;;; info bar at botttom of drscheme frame
  (collect-button-label "GC")
@@ -339,12 +344,17 @@
  (show-interactions-on-execute "Interaktionen beim Programmstart automatisch öffnen")
  (switch-to-module-language-automatically "Automatisch in die `module'-Sprache wechseln, wenn ein Modul geöffnet wird")
  (interactions-beside-definitions "Interaktionen neben den Definitionen anzeigen") ;; in preferences, below the checkbox one line above this one
+ (show-line-numbers "Zeilennummern einblenden")
+ (show-line-numbers/menu "Zeilennummern einblenden")
+ (hide-line-numbers/menu "Zeilennummern ausblenden")
+
  (limit-interactions-size "Umfang der Interaktionen einschränken")
  (background-color "Hintergrundfarbe")
  (default-text-color "Standard für Text") ;; used for configuring colors, but doesn't need the word "color"
  (choose-a-background-color "Hintergrundfarbe auswählen")
 
  (revert-to-defaults "Standardeinstellung wiederherstellen")
+ (undo-changes "Änderungen rückgängig machen und schließen") ;; used in the preferences dialog to undo preference changes
 
   (black-on-white-color-scheme "Schwarz auf Weiß") ;; these two appear in the color preferences dialog on butttons
   (white-on-black-color-scheme "Weiß auf Schwarz") ;; clicking the buttons changes the color schemes to some defaults that've been set up.
@@ -438,7 +448,7 @@
  (mfs-recur-over-subdirectories "In Unterverzeichnisse abtauchen")
  (mfs-regexp-filename-filter "Regulärer Ausdruck Dateinamen-Filter")
  (mfs-search-string "Zeichenkette suchen")
- (mfs-drscheme-multi-file-search "DrRacket - Suche in mehreren Dateien") ;; results window and error message title
+ (mfs-drscheme-multi-file-search "Suche in mehreren Dateien - DrRacket") ;; results window and error message title
  (mfs-not-a-dir "\"~a\" ist kein Verzeichnis")
  (mfs-open-file "Datei öffnen")
  (mfs-stop-search "Suche stoppen")
@@ -489,6 +499,8 @@
  (edit-menu "Bearbeiten")
  (help-menu "Hilfe")
  (windows-menu "Fenster")
+
+ (tabs-menu "Tabs")
  
  ;;; menus
  ;;; - in menu labels, the & indicates a alt-key based shortcut.
@@ -620,6 +632,7 @@
 
  ;; windows menu
  (windows-menu-label "&Fenster")
+ (tabs-menu-label "&Tabs")
  (minimize "Minimieren") ;; minimize and zoom are only used under mac os x
  (zoom "Zoomen")
  (bring-frame-to-front "Fenster nach vorn")       ;;; title of dialog
@@ -873,6 +886,8 @@
  (compiling-teachpack "Teachpack ~a compilieren...")
  
   (teachpack-pre-installed "Vorinstallierte Teachpacks")
+  (teachpack-pre-installed/htdp "Vorinstallierte HtDP-Teachpacks")
+  (teachpack-pre-installed/2htdp "Vorinstallierte HtDP/2e-Teachpacks")
   (teachpack-user-installed "selbst installierte Teachpacks")
   (add-teachpack-to-list... "Teachpack zu Liste hinzufügen...")
   (teachpack-already-installed "Ein Teachpack names '~a' ist schon installiert. Überschreiben?")
@@ -912,7 +927,7 @@
  (enforce-primitives-check-box-label "Änderungen von initialen Bindungen verbieten")
 
  (automatically-compile "compiled/-Verzeichnisse bestücken (für schnelleres laden)")
- (preserve-stacktrace-information "Stack-Trace aufbewahren (einige JIT-Optimierungen werden abgeschaltet)")
+ (preserve-stacktrace-information "Stack-Trace behalten (einige Optimierungen werden abgeschaltet)")
  (expression-level-stacktrace "Stack-Trace mit Ausdrücken")
  (function-level-stacktrace "Stack-Trace mit Funktionen")
 
@@ -1163,18 +1178,18 @@
   "Der Stepper unterstützt die Sprachebene \"~a\" nicht.")
  (stepper-button-label "Stepper")
 
- (stepper-previous-application "|< Applikation")
  (stepper-previous "< Schritt")
  (stepper-next "Schritt >")
- (stepper-next-application "Applikation >|")
- (stepper-jump "Springen ...")
+ (stepper-jump "Springen...")
+ (stepper-jump-to-beginning "an den Anfang")
+ (stepper-jump-to-end "ans Ende")
+ (stepper-jump-to-selected "an den Anfang der Selektion")
+ (stepper-jump-to-previous-application "zur vorigen Applikation")
+ (stepper-jump-to-next-application "zur nächsten Applikation")
  (stepper-out-of-steps "Ende der Auswertung erreicht, bevor ein angemessener Schritt gefunden werden konnte.")
  (stepper-no-such-step/title "Kein Schritt gefunden.")
  (stepper-no-such-step "Kein Schritt gefunden, der das Kriterium erfüllt.")
  (stepper-no-such-step/earlier "Kein früherer Schritt gefunden, der das Kriterium erfüllt.")
- (stepper-jump-to-beginning "an den Anfang") ;; name changed from stepper-home to stepper-jump-to-beginning
- (stepper-jump-to-end "ans Ende") ;; content changed
- (stepper-jump-to-selected "an den Anfang des markierten Ausdrucks") ;; new
  
  (debug-tool-button-name "Debugger")
 
@@ -1331,23 +1346,28 @@
    "check-error bekam den folgenden Fehler anstatt des erwarteten ~a~n   :: ~a")
   (test-engine-expected-error-error
    "check-error erwartete den folgenden Fehler, bekam aber den Wert ~F.~n ~a")
+  (test-engine-expected-an-error-error
+   "check-error erwartete einen Fehler, bekam aber den Wert ~F.")
   (test-engine-not-mem-error  "Tatsächlicher Wert ~F ist keins der Elemente ")
   (test-engine-not-range-error "Tatsächlicher Wert ~F liegt nicht zwischen ~F und ~F (inklusive).")
   (test-engine-property-fail-error "Eigenschaft falsifizierbar mit")
   (test-engine-property-error-error "`check-property' bekam den folgenden Fehler~n:: ~a")
 
+  (signature-enable-checks "Signaturüberprüfung aktivieren")
+  (signature-disable-checks "Signaturüberprüfung deaktivieren")
+
   ; section header
   (test-engine-check-failures "Check-Fehler:")
   ; section header
-  (test-engine-signature-violations "Vertragsverletzungen:")
+  (test-engine-signature-violations "Signaturverletzungen:")
 
   ; part of one phrase "signature <at line ...> to blame: procedure <at line ...>
-  (test-engine-signature "Vertrag")
+  (test-engine-signature "Signatur")
   (test-engine-to-blame "verantwortlich: Prozedur")
 
-  (test-engine-no-signature-violations "Keine Vertragsverletzungen.")
-  (test-engine-1-signature-violation "1 Vertragsverletzung.")
-  (test-engine-n-signature-violations "~a Vertragsverletzungen.")
+  (test-engine-no-signature-violations "Keine Signaturverletzungen.")
+  (test-engine-1-signature-violation "1 Signaturverletzung.")
+  (test-engine-n-signature-violations "~a Signaturverletzungen.")
 
   ; as in got <value>, signature <at ...>
   (test-engine-got "bekam")
@@ -1430,6 +1450,7 @@
   (planet-downloading "PLaneT: ~a herunterladen ...")
   (planet-installing "PLaneT: ~a installieren ...")
   (planet-finished "PLaneT: fertig mit ~a.")
+  (planet-docs-building "PLaneT: Dokumentation bauen (ausgelöst durch ~a)...")
   (planet-no-status "PLaneT") ;; this can happen when there is status shown in a different and then the user switches to a tab where planet hasn't been used
 
  ;; string normalization. To see this, paste some text with a ligature into DrRacket

@@ -134,8 +134,7 @@ please adhere to these guidelines:
  (web-materials "Related Web Sites") ;; menu item title
  (tool-web-sites "Tool Web Sites")   ;; menu item title
  (plt-homepage "Racket")
- (how-to-use-scheme "How to Use Scheme") ;; title of a book.
- (teachscheme!-homepage "TeachScheme!") ;; probably this should be a `word' in all languages
+ (pbd-homepage "Program by Design")
 
  ;;; bug report form
  (cancel-bug-report? "Cancel Bug Report?")
@@ -197,6 +196,12 @@ please adhere to these guidelines:
  (cs-set!d-variable "set!’d variable")
  (cs-imported-variable "imported variable")
 
+  ;; mode sub-menu in the "view" menu
+  (cs-check-syntax-mode "Check Syntax Mode")
+  (cs-mode-menu-show-my-obligations "My Contract Obligations")
+  (cs-mode-menu-show-client-obligations "Client Contract Obligations")
+  (cs-mode-menu-show-syntax "Syntactic Categories")
+  
  ;;; info bar at botttom of drscheme frame
  (collect-button-label "GC")
   (read-only "Read only")
@@ -440,13 +445,17 @@ please adhere to these guidelines:
  (online-coloring-active "Color syntax interactively")
  (open-files-in-tabs "Open files in separate tabs (not separate windows)")
  (show-interactions-on-execute "Automatically open interactions window when running a program")
-  (switch-to-module-language-automatically "Automatically switch to the module language when opening a module")
-  (interactions-beside-definitions "Put the interactions window beside the definitions window") ;; in preferences, below the checkbox one line above this one
+ (switch-to-module-language-automatically "Automatically switch to the module language when opening a module")
+ (interactions-beside-definitions "Put the interactions window beside the definitions window") ;; in preferences, below the checkbox one line above this one
+ (show-line-numbers "Show line numbers")
+ (show-line-numbers/menu "Show Line Numbers")  ;; just like the above, but capitalized for appearance in a menu item
+ (hide-line-numbers/menu "Hide Line Numbers")
  (limit-interactions-size "Limit interactions size")
  (background-color "Background Color")
  (default-text-color "Default text") ;; used for configuring colors, but doesn't need the word "color"
  (choose-a-background-color "Please choose a background color")
  (revert-to-defaults "Revert to Defaults")
+ (undo-changes "Undo Changes and Close") ;; used in the preferences dialog to undo preference changes
   
   (black-on-white-color-scheme "Black on White") ;; these two appear in the color preferences dialog on butttons
   (white-on-black-color-scheme "White on Black") ;; clicking the buttons changes the color schemes to some defaults that've been set up.
@@ -540,14 +549,15 @@ please adhere to these guidelines:
  (mfs-recur-over-subdirectories "Recur over subdirectories")
  (mfs-regexp-filename-filter "Regexp filename filter")
  (mfs-search-string "Search string")
- (mfs-drscheme-multi-file-search "DrRacket - Multi File Search") ;; results window and error message title
+ (mfs-drscheme-multi-file-search "Multi File Search - DrRacket") ;; error message window title
  (mfs-not-a-dir "\"~a\" is not a directory")
  (mfs-open-file "Open File")
  (mfs-stop-search "Stop Search")
  (mfs-case-sensitive-label "Case sensitive")
  (mfs-no-matches-found "No matches found.")
  (mfs-search-interrupted "Search aborted.")
- 
+ (mfs-drscheme-multi-file-search-title "Multi File Search for \"~a\" - DrRacket") ;; the ~a format specifier is filled in with the search string
+  
  ;;; reverting a file
  (are-you-sure-revert
   "Are you sure that you want to revert this file? This change cannot be undone.")
@@ -591,7 +601,8 @@ please adhere to these guidelines:
  (edit-menu "Edit")
  (help-menu "Help")
  (windows-menu "Windows")
- 
+ (tabs-menu "Tabs") ;; this is the name of the "Windows" menu under linux & windows
+  
  ;;; menus
  ;;; - in menu labels, the & indicates a alt-key based shortcut.
  ;;; - sometimes, things are stuck in the middle of 
@@ -722,6 +733,7 @@ please adhere to these guidelines:
 
   ;; windows menu
  (windows-menu-label "&Windows")
+ (tabs-menu-label "&Tabs") ;; this is the name of the menu under linux & windows
  (minimize "Minimize") ;; minimize and zoom are only used under mac os x
  (zoom "Zoom")
  (bring-frame-to-front "Bring Frame to Front")       ;;; title of dialog
@@ -976,6 +988,8 @@ please adhere to these guidelines:
   ; ~a is filled with the teachpack's name; the message appears in the teachpack selection dialog when a user installs a new teachpack
   (compiling-teachpack "Compiling ~a teachpack ...")
   (teachpack-pre-installed "Preinstalled Teachpacks")
+  (teachpack-pre-installed/htdp "Preinstalled HtDP Teachpacks")
+  (teachpack-pre-installed/2htdp "Preinstalled HtDP/2e Teachpacks")
   (teachpack-user-installed "User-installed Teachpacks")
   (add-teachpack-to-list... "Add Teachpack to List...")
   (teachpack-already-installed "A teachpack with the name '~a' has already been installed. Overwrite it?")
@@ -1015,7 +1029,7 @@ please adhere to these guidelines:
  (enforce-primitives-group-box-label "Initial Bindings")
  (enforce-primitives-check-box-label "Disallow redefinition of initial bindings")
  (automatically-compile "Populate compiled/ directories (for faster loading)")
- (preserve-stacktrace-information "Preserve stacktrace (disable some JIT optimizations)")
+ (preserve-stacktrace-information "Preserve stacktrace (disable some optimizations)")
  (expression-level-stacktrace "Expression-level stacktrace")
  (function-level-stacktrace "Function-level stacktrace")
   
@@ -1263,18 +1277,20 @@ please adhere to these guidelines:
  (stepper-language-level-message "The stepper does not work for language \"~a\".")
  (stepper-button-label "Step")
 
- (stepper-previous-application "|< Application")
  (stepper-previous "< Step")
  (stepper-next "Step >")
- (stepper-next-application "Application >|")
- (stepper-jump "Jump...") ;; this one is changed.  action?
+ (stepper-jump "Jump...")
+ (stepper-jump-to-beginning "to beginning")
+ (stepper-jump-to-end "to end")
+ (stepper-jump-to-selected "to beginning of selected")
+ (stepper-jump-to-previous-application "to previous application step")
+ (stepper-jump-to-next-application "to next application step")
  (stepper-out-of-steps "Reached the end of evaluation before finding the kind of step you were looking for.")
  (stepper-no-such-step/title "Step Not Found")
  (stepper-no-such-step "Couldn't find a step matching that criterion.")
  (stepper-no-such-step/earlier "Couldn't find an earlier step matching that criterion.")
- (stepper-jump-to-beginning "to beginning") ;; name changed from stepper-home to stepper-jump-to-beginning
- (stepper-jump-to-end "to end") ;; content changed
- (stepper-jump-to-selected "to beginning of selected") ;; new
+  
+
   
  (debug-tool-button-name "Debug")
 
@@ -1429,6 +1445,8 @@ please adhere to these guidelines:
    "check-error encountered the following error instead of the expected ~a~n   :: ~a")
   (test-engine-expected-error-error
    "check-error expected the following error, but instead received the value ~F.~n ~a")
+  (test-engine-expected-an-error-error
+   "check-error expected an error, but instead received the value ~F.")
   ;; members are appended to the message
   (test-engine-not-mem-error "Actual value ~F differs from all given members in ")
   (test-engine-not-range-error "Actual value ~F is not between ~F and ~F, inclusive.")
@@ -1436,6 +1454,9 @@ please adhere to these guidelines:
   ;; followed by list of variable bindings
   (test-engine-property-fail-error "Property falsifiable with")
   (test-engine-property-error-error "check-property encountered the following error~n:: ~a")
+
+  (signature-enable-checks "Enable Signature Checks")
+  (signature-disable-checks "Disable Signature Checks")
 
   ; section header
   (test-engine-check-failures "Check failures:")
@@ -1531,6 +1552,7 @@ please adhere to these guidelines:
   (planet-downloading "PLaneT: Downloading ~a...")
   (planet-installing "PLaneT: Installing ~a...")
   (planet-finished "PLaneT: Finished with ~a.")
+  (planet-docs-building "PLaneT: Building docs (triggered by ~a)...")
   (planet-no-status "PLaneT") ;; this can happen when there is status shown in a different and then the user switches to a tab where planet hasn't been used
   
   ;; string normalization. To see this, paste some text with a ligature into DrRacket

@@ -134,8 +134,7 @@ please adhere to these guidelines:
  (web-materials "Sítios Web Relacionados") ;; menu item title
  (tool-web-sites "Sítios Web de Ferramentas")   ;; menu item title
  (plt-homepage "Racket")
- (how-to-use-scheme "Como Usar o Scheme") ;; title of a book.
- (teachscheme!-homepage "AprenderScheme!") ;; probably this should be a `word' in all languages
+ (pbd-homepage "Program by Design")
 
  ;;; bug report form
  (cancel-bug-report? "Cancelar relatório de erro?")
@@ -488,7 +487,7 @@ please adhere to these guidelines:
  (mfs-recur-over-subdirectories "Recursão sobre subdirectorias")
  (mfs-regexp-filename-filter "Expressão Regular para filtro do nome do ficheiro")
  (mfs-search-string "String de Procura")
- (mfs-drscheme-multi-file-search "DrRacket - Procura Multi Ficheiro") ;; results window and error message title
+ (mfs-drscheme-multi-file-search "Procura Multi Ficheiro - DrRacket") ;; results window and error message title
  (mfs-not-a-dir "\"~a\" não é um directorio")
  (mfs-open-file "Abrir Ficheiro")
  (mfs-stop-search "Parar Procura")

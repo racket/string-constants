@@ -134,8 +134,7 @@ please adhere to these guidelines:
  (web-materials "Пов'язані Web-сайти") ;; menu item title
  (tool-web-sites "Web-сайти встановлених інструментів")   ;; menu item title
  (plt-homepage "Racket")
- (how-to-use-scheme "Як використовувати Scheme") ;; title of a book.
- (teachscheme!-homepage "TeachScheme!") ;; probably this should be a `word' in all languages
+ (pbd-homepage "Program by Design")
 
  ;;; bug report form
  (cancel-bug-report? "Скасувати відправлення звіту про помилки?")
@@ -540,7 +539,7 @@ please adhere to these guidelines:
  (mfs-recur-over-subdirectories "Шукати у вкладених каталогах")
  (mfs-regexp-filename-filter "Фільтрувати імена файлів за регулярними виразами")
  (mfs-search-string "Шукати рядки")
- (mfs-drscheme-multi-file-search "DrRacket - багатофайловый пошук") ;; results window and error message title
+ (mfs-drscheme-multi-file-search "багатофайловый пошук - DrRacket") ;; results window and error message title
  (mfs-not-a-dir "\"~a\" не каталог")
  (mfs-open-file "Відкрити файл")
  (mfs-stop-search "Зупинити пошук")
@@ -1014,7 +1013,7 @@ please adhere to these guidelines:
  (enforce-primitives-group-box-label "Початкові прив'язки")
  (enforce-primitives-check-box-label "Заборонити перевизначення початкових прив'язок")
  (automatically-compile "Заповнити каталоги compiled/ (для більш швидкого завантаження)")
- (preserve-stacktrace-information "Зберегти трасування стеку (відключає деякі JIT-оптимізації")
+ (preserve-stacktrace-information "Зберегти трасування стеку (відключає деякі оптимізації")
  (expression-level-stacktrace "Вираз рівню трасування стеку")
  (function-level-stacktrace "Функція рівню трасування стеку")
 
