@@ -16,7 +16,8 @@
          (prefix-in simplified-chinese: "private/simplified-chinese-string-constants.rkt")
          (prefix-in russian: "private/russian-string-constants.rkt")
          (prefix-in ukrainian: "private/ukrainian-string-constants.rkt")
-         (prefix-in korean: "private/korean-string-constants.rkt"))
+         (prefix-in korean: "private/korean-string-constants.rkt")
+         (prefix-in turkish: "private/turkish-string-constants.rkt"))
 
 (provide string-constant string-constants 
          this-language all-languages set-language-pref)
@@ -80,7 +81,8 @@
    (make-sc 'simplified-chinese  simplified-chinese:string-constants  #f)
    (make-sc 'russian             russian:string-constants             #f)
    (make-sc 'ukrainian           ukrainian:string-constants           #f)
-   (make-sc 'korean              korean:string-constants              #f)))
+   (make-sc 'korean              korean:string-constants              #f)
+   (make-sc 'turkish             turkish:string-constants             #f)))
 
 (define first-string-constant-set (car available-string-constant-sets))
 
