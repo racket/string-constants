@@ -49,7 +49,8 @@
     (simplified-chinese  #rx"^zh_CN"      #rx"Chinese_China")
     (russian             #rx"^ru_"        #rx"^Russian_")
     (ukrainian           #rx"^uk_"        #rx"^Ukrainian_")
-    (korean              #rx"^ko_"        #rx"^Korean_")))
+    (korean              #rx"^ko_"        #rx"^Korean_")
+    (turkish             #rx"^tr_"        #rx"^Turkish_")))
 
 ;; default-language : -> symbol
 ;; uses `table' and system-language+contry to find what language to start with
