@@ -50,5 +50,50 @@
  (plt-homepage "Racket")
  (pbd-homepage "Program by Design")
 
+  ;;; bug report form
+ (cancel-bug-report? "Hata Raporunu İptal Et?")
+ (are-you-sure-cancel-bug-report?
+  "Bu hata raporunu göndermeyi iptal etmek istediğinizden emin misiniz??")
+ (do-you-want-to-discard-or-save-this-bug-report
+  "Bu hata raporunu silmek mi yoksa kaydetmek mi istersiniz?")
+ (discard "Sil") ;; a button label for a dialog box with the above question
+ (bug-report-form "Hata Raporu Formu")
+ (bug-report-field-name "İsim")
+ (bug-report-field-email "E-posta")
+ (bug-report-field-summary "Özet")
+ (bug-report-field-severity "Ciddiyet")
+ (bug-report-field-class "Sınıf")
+ (bug-report-field-description "Açıklama")
+ (bug-report-field-reproduce1 "Hatayı Yeniden Oluşturmak")
+ (bug-report-field-reproduce2 "İçin Adımlar")
+ (bug-report-field-environment "Çevre")
+ (bug-report-field-docs-installed "Yüklü Dökümanlar")
+ (bug-report-field-collections "Koleksiyonlar")
+ (bug-report-field-links "Bağlantılar")  ;; from 'raco link'
+ (bug-report-field-human-language "İnsan Dili")
+ (bug-report-field-memory-use "Bellek Kullanımı")
+ (bug-report-field-version "Sürüm")
+ (bug-report-synthesized-information "Sentezlenen Bilgi")  ;; dialog title
+ (bug-report-show-synthesized-info "Sentezlenen Bilgiyi Göster")
+ (bug-report-submit "Gönder")
+ (close-and-save-bug-report "Kapat && Kaydet") ;; button in bug report dialog, next to cancel and bug-report-submit
+ (bug-report-submit-menu-item "Hata Raporu Gönder...")  ;; same as above, but used when there are saved bug reports
+ (saved-bug-reports-menu-item "Kayıtlı Hata Raporları") ;; in Help Menu, submenu title
+ (disacard-all-saved-bug-reports "Bütün Kayıtlı Hata Raporlarını Sil") ;; menu item: only shows up when there is more than one saved bug report
+ (no-saved-bug-reports "Kayıtlı hiç hata raporu yok") ;; an info message that shows up as a disabled menu item when no saved bug reports are around
+ (new-bug-report "Yeni Hata Raporu") ;; button label the user sees when there are saved bug reports, but the user asks to save another one.
+ (close-and-save "Kapat ve Kaydet") ;; button on the bottom of the bug report form
+ (saved-unsubmitted-bug-reports "Kayıtlı, gönderilememiş hata raporları:") 
+  ;; the above string constant is next to previous line in same dialog, followed by list of bug report subjects (as buttons)
+ (error-sending-bug-report "Hata raporu gönderirken sorun oluştu")
+ (error-sending-bug-report-expln
+  "Bu hata raporunu gönderirken bir sorun oluştu."
+  " Eğer internet bağlantınız sorunsuz çalışıyorsa, lütfen şu adresi ziyaret edin:\n\n    http://bugs.racket-lang.org/\n\nand"
+  " hata raporunu online formumuz ile gönderin. Rahatsızlıktan dolayı özür dileriz.\n\nSorun mesajı:\n~a")
+ (illegal-bug-report "Usülsüz hata raporu")
+ (pls-fill-in-field "Lütfen \"~a\" alanını doldurunuz")
+ (malformed-email-address "Kusurlu e-posta adresi")
+ (pls-fill-in-either-description-or-reproduce "Lütfen, ya Açıklama alanını veya Hatayı Yeniden Oluşturmak İçin Adımlar alanını doldurun.")
+
 
   )
