@@ -147,7 +147,7 @@ please adhere to these guidelines:
   "Do you want to discard or save this bug report?")
  (discard "Discard") ;; a button label for a dialog box with the above question
  (bug-report-form "Bug Report Form")
- (bug-report-field-name "Name")
+ (bug-report-field-name "Your Name")
  (bug-report-field-email "Email")
  (bug-report-field-summary "Summary")
  (bug-report-field-severity "Severity")
