@@ -6,3 +6,5 @@
 (define pkg-desc "String constants to support internationalization, especially in DrRacket")
 
 (define pkg-authors '(robby))
+
+(define version "1.0")

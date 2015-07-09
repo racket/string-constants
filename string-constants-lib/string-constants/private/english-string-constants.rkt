@@ -516,6 +516,7 @@ please adhere to these guidelines:
  (warnings-prefs-panel-label "Warnings")
  (editor-prefs-panel-label "Editing")
  (general-prefs-panel-label "General")
+ (editor-general-prefs-panel-label "General Editing")
  (highlight-parens "Highlight between matching parens")
  (fixup-open-brackets "Automatically adjust opening square brackets")
  (fixup-close-parens "Automatically adjust closing parens")
