@@ -403,6 +403,7 @@
  (warnings-prefs-panel-label "Warnmeldungen")
  (editor-prefs-panel-label "Editieren")
  (general-prefs-panel-label "Allgemein")
+ (editor-general-prefs-panel-label "Editieren allgemein")
  (highlight-parens "Geklammerten Text hervorheben")
  (fixup-open-brackets "Öffnende eckige Klammern automatisch anpassen")
  (fixup-close-parens "Schließende Klammern automatisch anpassen")
