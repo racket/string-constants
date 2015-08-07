@@ -781,7 +781,8 @@ please adhere to these guidelines:
 
  (paste-info "Paste the most recently copied or cut items, in place of the selected items")
  (paste-menu-item "&Paste")
-
+ (paste-and-indent-menu-item "Paste and Indent")
+  
  (clear-info "Erase the selected items without affecting the clipboard or pasting")
  (clear-menu-item-windows "&Delete")
 
