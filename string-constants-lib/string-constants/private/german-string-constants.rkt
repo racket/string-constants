@@ -671,6 +671,7 @@
 
  (paste-info "Ersetze die aktuelle Selektion durch die zuletzt kopierte oder ausgeschnittene Selektion")
  (paste-menu-item "&Einfügen")
+ (paste-and-indent-menu-item "Einfügen und Einrücken")
 
  (clear-info "Lösche die Selektion, ohne das Clipboard dabei zu ändern oder etwas einzufügen")
  (clear-menu-item-windows "&Löschen")
