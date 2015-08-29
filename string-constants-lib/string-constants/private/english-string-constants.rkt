@@ -193,6 +193,7 @@ please adhere to these guidelines:
  (cs-foreground-color "Foreground Color")
  (cs-background-color "Background Color")
  (cs-tack/untack-arrow "Tack/Untack Arrow(s)")
+ (cs-tack-crossing-arrows "Tack Crossing Arrows")
  (cs-jump-to-next-bound-occurrence "Jump to Next Bound Occurrence")
  (cs-jump-to-previous-bound-occurrence "Jump to Previous Bound Occurrence")
  (cs-jump-to-binding "Jump to Binding Occurrence")
@@ -210,6 +211,7 @@ please adhere to these guidelines:
  (cs-status-eval-compile-time "Check Syntax: eval compile time")
  (cs-status-expanding-expression "Check Syntax: expanding expression")
  (cs-status-loading-docs-index "Check Syntax: loading documentation index")
+ (cs-syncheck-running "Check Syntax Running")
  (cs-mouse-over-import "binding ~s imported from ~s")
  (cs-view-docs "View documentation for ~a")
  (cs-view-docs-from "~a from ~a")  ;; a completed version of the line above
