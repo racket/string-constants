@@ -599,6 +599,11 @@ please adhere to these guidelines:
  (font-smoothing-some "Some")
  (font-smoothing-all "All")
  (font-smoothing-default "Use system-wide default")
+ (font-weight-label "Weight")
+ (font-weight-light "Light")
+ (font-weight-normal "Normal")
+ (font-weight-bold "Bold")
+
  (select-font-name "Select Font Name")
  (example-text "Example Text:")
  (only-warn-once "Only warn once when definitions and interactions are not synchronized")
