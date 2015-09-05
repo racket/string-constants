@@ -93,6 +93,7 @@
  (cs-foreground-color "Vordergrundfarbe")
  (cs-background-color "Hintergrundfarbe")
  (cs-tack/untack-arrow "Pfeil befestigen/lösen")
+ (cs-tack-crossing-arrows "Querpfeile befestigen")
  (cs-jump-to-next-bound-occurrence "Zum nächsten gebundenen Vorkommen springen")
  (cs-jump-to-previous-bound-occurrence "Zum vorigen gebundenen Vorkommen springen")
  (cs-jump-to-binding "Zu bindendem Vorkommen springen")
@@ -110,6 +111,7 @@
  (cs-status-eval-compile-time "Syntaxprüfung: Compile-Time-Code ausführen")
  (cs-status-expanding-expression "Syntaxprüfung: Ausdruck expandieren")
  (cs-status-loading-docs-index "Syntaxprüfung: Dokumentations-Index laden")
+ (cs-syncheck-running "Syntaprüfung läuft")
  (cs-mouse-over-import "Bindung ~s importiert aus ~s")
 
  (cs-view-docs "Dokumentation für ~a anschauen")
