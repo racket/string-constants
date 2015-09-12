@@ -488,6 +488,11 @@
  (font-smoothing-some "Bißchen")
  (font-smoothing-all "Total")
  (font-smoothing-default "System-Einstellung verwenden")
+ (font-weight-label "Schriftstärke")
+ (font-weight-light "Leicht")
+ (font-weight-normal "Normal")
+ (font-weight-bold "Fett")
+
  (select-font-name "Schriftart-Name auswählen")
  (example-text "Beispieltext:")
  (only-warn-once "Nur einmal warnen, wenn Definitionen und Interaktionen nicht synchron sind")
