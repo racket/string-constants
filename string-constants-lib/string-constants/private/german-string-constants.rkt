@@ -71,7 +71,7 @@
  (bug-report-submit "Abschicken")
  (close-and-save-bug-report "Schließen && Speichern") ;; button in bug report dialog, next to cancel and bug-report-submit
  (bug-report-submit-menu-item "Bug-Report abschicken...") ;; in Help Menu (drs & help desk)
- (saved-bug-reports-menu-item "Gepeicherte Bug-Reports") ;; in Help Menu, submenu title
+ (saved-bug-reports-menu-item "Gespeicherte Bug-Reports") ;; in Help Menu, submenu title
  (disacard-all-saved-bug-reports "Alle gespeicherten Bug-Reports verwerfen") ;; menu item: only shows up when there is more than one saved bug report
  (no-saved-bug-reports "Kein Bug-Report wurde gespeichert") ;; an info message that shows up as a disabled menu item when no saved bug reports are around
  (new-bug-report "Neuer Bug-Report") ;; button label the user sees when there are saved bug reports, but the user asks to save another one.
