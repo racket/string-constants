@@ -562,7 +562,7 @@ please adhere to these guidelines:
  (background-color "Background") ;; this is in the color section already, so shorten the name a little
  (default-text-color "Default text") ;; used for configuring colors, but doesn't need the word "color"
  (choose-a-background-color "Please choose a background color")
- (revert-to-defaults "Revert to Defaults")
+ (revert-to-defaults "Revert All Preferences to Defaults")
  (undo-changes "Undo Changes and Close") ;; used in the preferences dialog to undo preference changes
   
   (color-schemes "Color Schemes") ;; the label in the preferences dialog for the color scheme panel
