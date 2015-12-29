@@ -180,7 +180,7 @@ please adhere to these guidelines:
   " If your internet connection is otherwise working fine, please visit:\n\n    http://bugs.racket-lang.org/\n\nand"
   " submit the bug via our online web-form. Sorry for the difficulties.\n\nThe error message is:\n~a")
  (illegal-bug-report "Illegal Bug Report")
- (pls-fill-in-field "Please fill in the \"~a\" field")
+ (pls-fill-in-field "Please fill in the “~a” field")
  (malformed-email-address "Malformed email address")
  (pls-fill-in-either-description-or-reproduce "Please fill in either the Description field or the Steps to Reproduce field.")
 
@@ -310,7 +310,7 @@ please adhere to these guidelines:
   (editor-changed-since-srcloc-recorded
    "This editor has been changed since the source location was recorded, so the highlighted region may no longer correspond to the correct source location.")
   
- (file-is-not-saved "The file \"~a\" is not saved.")
+ (file-is-not-saved "The file “~a” is not saved.")
  (save "Save")
  (close-anyway "Close Anyway")
  (dont-save "Don't Save")
@@ -585,7 +585,7 @@ please adhere to these guidelines:
  (other... "Other...") ;; used in the font choice menu item
 
  ; filled with type of font, eg modern, swiss, etc.
- (choose-a-new-font "Please choose a new \"~a\" font")
+ (choose-a-new-font "Please choose a new “~a” font")
 
  (font-size-slider-label "Size")
  (restart-to-see-font-changes "Restart to see font changes")
@@ -633,7 +633,7 @@ please adhere to these guidelines:
  (skip-subexpressions "Number of sub-expressions to skip")
 
  (expected-a-symbol "expected a symbol, found: ~a")
- (already-used-keyword "\"~a\" is already a specially indented keyword")
+ (already-used-keyword "“~a” is already a specially indented keyword")
  (add-keyword "Add")
  (remove-keyword "Remove")
  
@@ -674,13 +674,13 @@ please adhere to these guidelines:
  (mfs-regexp-filename-filter "Regexp filename filter")
  (mfs-search-string "Search string")
  (mfs-drscheme-multi-file-search "Multi File Search - DrRacket") ;; error message window title
- (mfs-not-a-dir "\"~a\" is not a directory")
+ (mfs-not-a-dir "“~a” is not a directory")
  (mfs-open-file "Open File")
  (mfs-stop-search "Stop Search")
  (mfs-case-sensitive-label "Case sensitive")
  (mfs-no-matches-found "No matches found.")
  (mfs-search-interrupted "Search aborted.")
- (mfs-drscheme-multi-file-search-title "Multi File Search for \"~a\" - DrRacket") ;; the ~a format specifier is filled in with the search string
+ (mfs-drscheme-multi-file-search-title "Multi File Search for “~a” - DrRacket") ;; the ~a format specifier is filled in with the search string
   
  ;;; reverting a file
  (are-you-sure-revert
@@ -698,9 +698,9 @@ please adhere to these guidelines:
 
  ;;; finder dialog
  (must-specify-a-filename "You must specify a file name")
- (file-does-not-exist "The file \"~a\" does not exist.")
- (ask-because-file-exists "The file \"~a\" already exists. Replace it?")
- (dne-or-cycle "The file \"~a\" contains a nonexistent directory or a cycle.")
+ (file-does-not-exist "The file “~a” does not exist.")
+ (ask-because-file-exists "The file “~a” already exists. Replace it?")
+ (dne-or-cycle "The file “~a” contains a nonexistent directory or a cycle.")
  (get-file "Get file")
  (put-file "Put file")
  (full-pathname "Full pathname")
@@ -913,7 +913,7 @@ please adhere to these guidelines:
  (dont-quit "Cancel")
   
  ;;; autosaving
- (error-autosaving "Error autosaving \"~a\".") ;; ~a will be a filename
+ (error-autosaving "Error autosaving “~a”.") ;; ~a will be a filename
  (autosaving-turned-off "Autosaving is turned off\nuntil the file is saved.")
  (recover-autosave-files-frame-title "Recover Autosaved Files")
  (autosave-details "Details")
@@ -1091,7 +1091,7 @@ please adhere to these guidelines:
  (files-for-icons-etc "Files for icons, etc.")
  (please-specify-a-filename "Please specify a filename to create.")
  (~a-must-end-with-~a
-  "The ~a filename\n\n  ~a\n\nis illegal. The filename must end with \".~a\".")
+  "The ~a filename\n\n  ~a\n\nis illegal. The filename must end with “.~a”.")
  (macosx-executables-must-end-with-app
   "The filename\n\n  ~a\n\nis illegal. Under MacOS X, an executable must be a directory whose name ends with .app.")
  (warning-directory-will-be-replaced
@@ -1114,8 +1114,8 @@ please adhere to these guidelines:
  (break-button-label "Stop")
  
  ;;; search help desk popup menu
- (search-help-desk-for "Search in Help Desk for \"~a\"")
- (exact-lucky-search-help-desk-for "Exact lucky search in Help Desk for \"~a\"")
+ (search-help-desk-for "Search in Help Desk for “~a”")
+ (exact-lucky-search-help-desk-for "Exact lucky search in Help Desk for “~a”")
 
  ;; collapse and expand popup menu items
  (collapse-sexp "Collapse S-expression")
@@ -1198,7 +1198,7 @@ please adhere to these guidelines:
  (decimal-notation-for-rationals "Use decimal notation for rationals")
  (enforce-primitives-group-box-label "Initial Bindings")
  (enforce-primitives-check-box-label "Disallow redefinition of initial bindings")
- (automatically-compile "Populate \"compiled\" directories (for faster loading)")
+ (automatically-compile "Populate “compiled” directories (for faster loading)")
  (preserve-stacktrace-information "Preserve stacktrace (disable some optimizations)")
  (enforce-module-constants-checkbox-label "Enforce constant definitions (enables some inlining)")
  (expression-level-stacktrace "Expression-level stacktrace")
@@ -1487,7 +1487,7 @@ please adhere to these guidelines:
  (stepper-program-window-closed "WARNING: The program window is gone.")
 
  (stepper-name "Stepper")
- (stepper-language-level-message "The stepper does not work for language \"~a\".")
+ (stepper-language-level-message "The stepper does not work for language “~a”.")
  (stepper-button-label "Step")
 
  (stepper-previous "Step")
@@ -1761,7 +1761,7 @@ please adhere to these guidelines:
   ;; GUI Tool
   (gui-tool-heading "GUI Tool")
   (gui-tool-before-clicking-message 
-   "Before clicking a tool icon, use \"Insert GUI\" from the \"Special\" menu"
+   "Before clicking a tool icon, use “Insert GUI” from the “Special” menu"
    " to insert a root GUI item, or select an already inserted GUI.")
   (gui-tool-show-gui-toolbar "Show GUI Toolbar")
   (gui-tool-hide-gui-toolbar "Hide GUI Toolbar")
@@ -1926,7 +1926,7 @@ please adhere to these guidelines:
   ; third ~a is filled with the path to the bin directory of the current drracket
   (adding-racket/bin-to-path-failed 
    "Attempt to add racket support to the command line failed.~aSpecifically,"
-   " could not create \"~a\" with the contents \"~a\".")
+   " could not create “~a” with the contents “~a”.")
   ; first and third ~a are filled with /etc/paths.d/racket (or some other path like it in the future)
   ; and the second one is filled with the path to the bin directory that was put into that file.
   (added-racket/bin-to-path
