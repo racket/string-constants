@@ -80,9 +80,9 @@
  (error-sending-bug-report "Versendung des Bug-Reports fehlgeschlagen")
  (error-sending-bug-report-expln "Ein Fehler ist beim Versenden des Bug-Reports aufgetreten. Falls Ihre Internet-Verbindung eigentlich funktioniert, besuchen Sie bitte:\n\n    http://bugs.racket-lang.org/ \n\nund teilen Sie uns den Bug mit unserem Online-Formular mit. Wir bitten um Ihr Verständnis.\n\nDie Fehlermeldung lautet:\n~a")
  (illegal-bug-report "Ungültiger Bug-Report")
- (pls-fill-in-field "Bitte auch das \"~a\" Feld ausfüllen")
+ (pls-fill-in-field "Bitte auch das „~a“ Feld ausfüllen")
  (malformed-email-address "Ungültige Email-Adresse")
- (pls-fill-in-either-description-or-reproduce "Bitte füllen Sie entweder das Feld \"Beschreibung\" oder das Feld \"Schritte, um das Problem zu reproduzieren\" aus.")
+ (pls-fill-in-either-description-or-reproduce "Bitte füllen Sie entweder das Feld „Beschreibung“ oder das Feld „Schritte, um das Problem zu reproduzieren“ aus.")
 
  ;;; check syntax
  (check-syntax "Syntaxprüfung")
@@ -201,16 +201,16 @@
   "Die Datei hat noch keinen Namen, weil sie noch nicht abgespeichert wurde.")
  (cannot-open-because-dne "Die Datei ~a kann nicht geöffnet werden, weil sie nicht existiert.")
  (needs-execute-language-changed
-   "WARNUNG: Die Sprache hat sich geändert. \"Start\" drücken.")
+   "WARNUNG: Die Sprache hat sich geändert. „Start“ drücken.")
  (needs-execute-teachpack-changed
-  "WARNUNG: Die Teachpacks haben sich geändert. \"Start\" drücken.")
+  "WARNUNG: Die Teachpacks haben sich geändert. „Start“ drücken.")
  (needs-execute-defns-edited
-  "WARNUNG: Die Definitionen haben sich geändert. \"Start\" drücken.")
+  "WARNUNG: Die Definitionen haben sich geändert. „Start“ drücken.")
 
  (editor-changed-since-srcloc-recorded
   "Dieser Editor wurde geändert seit die Quelltext-Stellen zugeordnet wurden: die markierte Region entspricht möglicherweise nicht mehr der korrekten Stelle im Quelltext.")
 
- (file-is-not-saved "Die Datei \"~a\" ist nicht gespeichert.")
+ (file-is-not-saved "Die Datei „~a“ ist nicht gespeichert.")
  (save "Speichern")
  (close-anyway "Trotzdem schließen")
  (dont-save "Nicht speichern")
@@ -314,7 +314,7 @@
   (use-drscheme-font-size "DrRacket-Schriftgröße verwenden")
 
   (help-desk-this-is-just-example-text
-   "Dies ist nur ein Beispieltext für das Setzen der Schriftgröße.  Öffnen sie das Hilfezentrum (im \"Hilfe\"-Menü), um diesen Links zu folgen.")
+   "Dies ist nur ein Beispieltext für das Setzen der Schriftgröße.  Öffnen sie das Hilfezentrum (im „Hilfe“-Menü), um diesen Links zu folgen.")
 
   ;; this appears in the bottom part of the frame the first time the user hits `f1' 
   ;; (assuming nothing else has loaded the documentation index first)
@@ -431,7 +431,7 @@
  (alt-as-meta "Alt-Taste als Meta behandeln")
  (reuse-existing-frames "Existierende Fenster für neu geöffnete Dateien wiederverwenden")
  (default-fonts "Standard-Fonts")
- (basic-gray-paren-match-color "Farbe für Klammern-Hervorhebung \"Grau Standard\"") ; in prefs dialog
+ (basic-gray-paren-match-color "Farbe für Klammern-Hervorhebung „Grau Standard“") ; in prefs dialog
 
  (online-coloring-active "Syntax interaktiv einfärben")
  (open-files-in-tabs "Dateien in separaten Tabs öffnen (nicht separaten Fenstern)")
@@ -474,7 +474,7 @@
  (other... "Andere...") ;; used in the font choice menu item
 
  ; filled with type of font, eg modern, swiss, etc.
- (choose-a-new-font "Neuen Font für \"~a\" wählen")
+ (choose-a-new-font "Neuen Font für „~a“ wählen")
 
  (font-size-slider-label "Größe")
  (restart-to-see-font-changes "Neu starten, damit die Schriftänderung wirksam wird")
@@ -522,7 +522,7 @@
  (skip-subexpressions "Anzahl zu überspringender Unterausdrücke")
 
  (expected-a-symbol "Symbol erwartet, stattdessen bekommen: ~a")
- (already-used-keyword "\"~a\" ist bereits ein Schlüsselwort mit Spezial-Einrückung")
+ (already-used-keyword "„~a“ ist bereits ein Schlüsselwort mit Spezial-Einrückung")
  (add-keyword "Hinzufügen")
  (remove-keyword "Entfernen")
 
@@ -563,13 +563,13 @@
  (mfs-regexp-filename-filter "Regulärer Ausdruck Dateinamen-Filter")
  (mfs-search-string "Zeichenkette suchen")
  (mfs-drscheme-multi-file-search "Suchen in mehreren Dateien - DrRacket") ;; results window and error message title
- (mfs-not-a-dir "\"~a\" ist kein Verzeichnis")
+ (mfs-not-a-dir "„~a“ ist kein Verzeichnis")
  (mfs-open-file "Datei öffnen")
  (mfs-stop-search "Suche stoppen")
  (mfs-case-sensitive-label "Groß-/Kleinschreibung beachten")
  (mfs-no-matches-found "Keine Treffer gefunden.")
  (mfs-search-interrupted "Suche abgebrochen.")
- (mfs-drscheme-multi-file-search-title "Suchen in mehreren Dateien nach \"~a\" - DrRacket") ;; the ~a format specifier is filled in with the search string
+ (mfs-drscheme-multi-file-search-title "Suchen in mehreren Dateien nach „~a“ - DrRacket") ;; the ~a format specifier is filled in with the search string
  
  ;;; reverting a file
  (are-you-sure-revert
@@ -587,9 +587,9 @@
 
  ;;; finder dialog
  (must-specify-a-filename "Sie müssen einen Dateinamen angeben")
- (file-does-not-exist "Die Datei \"~a\" existiert nicht.")
- (ask-because-file-exists "Die Datei \"~a\" existiert schon. Ersetzen?")
- (dne-or-cycle "Der Dateiname \"~a\" enthält ein nicht existentes Verzeichnis oder einen Zyklus.")
+ (file-does-not-exist "Die Datei „~a“ existiert nicht.")
+ (ask-because-file-exists "Die Datei „~a“ existiert schon. Ersetzen?")
+ (dne-or-cycle "Der Dateiname „~a“ enthält ein nicht existentes Verzeichnis oder einen Zyklus.")
  (get-file "Datei lesen")
  (put-file "Datei schreiben")
  (full-pathname "Gesamter Dateiname")
@@ -796,7 +796,7 @@
  (dont-quit "Widerrufen")
  
  ;;; autosaving
- (error-autosaving "Fehler beim automatischen Speichern von \"~a\".") ;; ~a will be a filename
+ (error-autosaving "Fehler beim automatischen Speichern von „~a“.") ;; ~a will be a filename
  (autosaving-turned-off "Automatisches Speichern abgeschaltet\nbis die Datei wieder gespeichert wird.")
  (recover-autosave-files-frame-title "Automatisch gespeicherte Dateien zurückholen")
  (autosave-details "Details")
@@ -948,7 +948,7 @@
   " wenn eine Lehrsprache (DMdA oder HtDP) im Dialog “Sprache auswählen”"
   " ausgewählt ist, oder wenn dort “Die Sprache Racket” ausgewählt ist und"
   " eine #lang-Zeile am Anfang des Programms steht.\n\nZiehen"
-  " Sie das Kommandozeilenprogramm \"raco exe\" in Betracht.")
+  " Sie das Kommandozeilenprogramm „raco exe“ in Betracht.")
  (must-save-before-executable "Sie müssen vor der Generierung einer Programmdatei speichern.")
  (save-a-mred-launcher "GRacket-Launcher speichern")
  (save-a-mzscheme-launcher "Racket-Launcher speichern")
@@ -973,9 +973,9 @@
  (files-for-icons-etc "Dateien für für Bildchen etc.")
  (please-specify-a-filename "Bitte einen Dateinamen angeben.")
  (~a-must-end-with-~a
-  "Der Dateiname auf \".~a\"\n\n  ~a\n\nist nicht zulässig. Der Dateiname muss auf \".~a\" enden.")
+  "Der Dateiname auf „.~a“\n\n  ~a\n\nist nicht zulässig. Der Dateiname muss auf „.~a“ enden.")
  (macosx-executables-must-end-with-app
-  "Der Dateiname auf \".~a\"\n\n  ~a\n\nist nicht zulässig. Unter Mac OS X muss der Dateiname auf \".app\" enden.")
+  "Der Dateiname auf „.~a“\n\n  ~a\n\nist nicht zulässig. Unter Mac OS X muss der Dateiname auf „.app“ enden.")
  (warning-directory-will-be-replaced
   "WARNUNG: Das Verzeichnis:\n\n  ~a\n\nsoll überschrieben werden. Weitermachen?")
  
@@ -988,7 +988,7 @@
 
  ; the ~a is a language such as "module" or "algol60"
  (create-servlet-unsupported-language
-  "Servlet lassen sich nicht aus einem Programm in der Sprache \"~a\" erzeugen.")
+  "Servlet lassen sich nicht aus einem Programm in der Sprache „~a“ erzeugen.")
   
  ;;; buttons
  (execute-button-label "Start") 
@@ -996,8 +996,8 @@
  (break-button-label "Stop")
  
  ;;; search help desk popup menu
- (search-help-desk-for "Suche im Hilfezentrum nach \"~a\"")
- (exact-lucky-search-help-desk-for "Exakte Suche im Hilfezentrum auf gut Glück nach \"~a\"")
+ (search-help-desk-for "Suche im Hilfezentrum nach „~a“")
+ (exact-lucky-search-help-desk-for "Exakte Suche im Hilfezentrum auf gut Glück nach „~a“")
 
  ;; collapse and expand popup menu items
  (collapse-sexp "S-Expression einfalten")
@@ -1082,7 +1082,7 @@
  (enforce-primitives-group-box-label "Initiale Bindungen")
  (enforce-primitives-check-box-label "Änderungen von initialen Bindungen verbieten")
 
- (automatically-compile "\"compiled\"-Verzeichnisse bestücken (für schnelleres laden)")
+ (automatically-compile "„compiled“-Verzeichnisse bestücken (für schnelleres laden)")
  (preserve-stacktrace-information "Stack-Trace behalten (einige Optimierungen werden abgeschaltet)")
  (enforce-module-constants-checkbox-label "Konstantendefinitionen durchsetzen (sorgt für etwas Inlining)")
  (expression-level-stacktrace "Stack-Trace mit Ausdrücken")
@@ -1106,7 +1106,7 @@
  (beginning-student "Anfänger")
  (beginning-one-line-summary "define, cond, Strukturen, Konstanten und Primitiva")
  (beginning-student/abbrev "Anfänger mit Listen-Abkürzungen")
- (beginning/abbrev-one-line-summary "Anfänger, wobei Listen mit \"list\" in der REPL ausgedruckt werden")
+ (beginning/abbrev-one-line-summary "Anfänger, wobei Listen mit „list“ in der REPL ausgedruckt werden")
  (intermediate-student "Zwischenstufe")
  (intermediate-one-line-summary "Anfänger plus lexikalische Bindung")
  (intermediate-student/lambda "Zwischenstufe mit lambda")
@@ -1180,7 +1180,7 @@
  
  ;; the three string constants are concatenated together and the middle
  ;; one is hyperlinked to the dialog that suggests various languages
- (get-guidance-before "Wählen Sie \"Sprache auswählen...\" im \"Sprache\"-Menü oder ")
+ (get-guidance-before "Wählen Sie „Sprache auswählen...“ im „Sprache“-Menü oder ")
  (get-guidance-during "Hilfe anfordern")
  (get-guidance-after ".")
 
@@ -1198,8 +1198,8 @@
  ;; profiling
  (profiling-low-color "Wenig")
  (profiling-high-color "Viel")
- (profiling-choose-low-color "Bitte Farbe für \"wenig\" auswählen")
- (profiling-choose-high-color "Bitte Farbe für \"viel\" auswählen")
+ (profiling-choose-low-color "Bitte Farbe für „wenig“ auswählen")
+ (profiling-choose-high-color "Bitte Farbe für „viel“ auswählen")
  (profiling "Profiling")
  (profiling-example-text "(define (whee) (whee))")
  (profiling-color-config "Farbbereich für Profiling") 
@@ -1302,8 +1302,8 @@
  (module-browser-show-lib-paths "Dateien anzeigen, die über (lib ..)-Pfade eingebunden wurden")
  (module-browser-progress "Modul-Browser: ~a") ;; prefix in the status line
  (module-browser-compiling-defns "Modul-Browser: Definition compilieren")
- (module-browser-show-lib-paths/short "\"lib\"-requires folgen") ;; check box label in show module browser pane in drscheme window.
- (module-browser-show-planet-paths/short "\"PLaneT\"-requires folgen") ;; check box label in show module browser pane in drscheme window.
+ (module-browser-show-lib-paths/short "„lib“-requires folgen") ;; check box label in show module browser pane in drscheme window.
+ (module-browser-show-planet-paths/short "„PLaneT“-requires folgen") ;; check box label in show module browser pane in drscheme window.
  (module-browser-refresh "Aktualisieren") ;; button label in show module browser pane in drscheme window.
  (module-browser-highlight "Hervorheben") ;; used to search in the graph; the label on a text-field% object
  (module-browser-only-in-plt-and-module-langs
@@ -1368,7 +1368,7 @@
 
  (stepper-name "Stepper")
  (stepper-language-level-message
-  "Der Stepper unterstützt die Sprachebene \"~a\" nicht.")
+  "Der Stepper unterstützt die Sprachebene „~a“ nicht.")
  (stepper-button-label "Stepper")
 
  (stepper-previous "Schritt")
@@ -1474,14 +1474,14 @@
   (profj-language-config-testing-preferences "Einstellungen Testen") ; Heading for preferences controlling test behavior
   ;(profj-language-config-testing-enable "Testresultate bei Start anzeigen?") ; Run should be the word found on the Run button
   (profj-language-config-testing-coverage "Abdeckungsinformationen für Tests sammeln?")
-  (profj-language-config-support-test-language "Spracherweiterung \"test\" unterstützen?")
+  (profj-language-config-support-test-language "Spracherweiterung „test“ unterstützen?")
   (profj-language-config-testing-check "Check-Ausdruck zulassen?") ; check should not be translated
   (profj-language-config-classpath "Klassenpfad")
   (profj-language-config-choose-classpath-directory "Verzeichnis für den Klassenpfad auswählren")
   (profj-language-config-classpath-display "Aktuellen Wert anzeigen") ; Button label to print the current classpath
 
-  (profj-test-name-close-to-example "Der Name von Klasse ~a enhält etwas, das so ähnlich wie \"Example\" aussieht.")
-  (profj-test-name-example-miscapitalized "Das \"example\" im Namen der Klasse ~a sollte \"Example\" geschrieben werden.")
+  (profj-test-name-close-to-example "Der Name von Klasse ~a enhält etwas, das so ähnlich wie „Example“ aussieht.")
+  (profj-test-name-example-miscapitalized "Das „example“ im Namen der Klasse ~a sollte „Example“ geschrieben werden.")
 
    ;; Close testing window and do not run test cases any more
   ;(profj-test-results-close-and-disable "Schließen und Testen deaktivieren")
@@ -1634,7 +1634,7 @@
 
   ;; GUI Tool
   (gui-tool-heading "GUI-Werkzeug")
-  (gui-tool-before-clicking-message "Befor Sie auf ein Tool-Icon klicken, benutzen Sie \"GUI einfügen\" vom \"Spezial\"-Menü, um ein Wurzel-GUI-Element einzufügen, oder selektieren Sie eine schon vorher eingefügte GUI.")
+  (gui-tool-before-clicking-message "Befor Sie auf ein Tool-Icon klicken, benutzen Sie „GUI einfügen“ vom „Spezial“-Menü, um ein Wurzel-GUI-Element einzufügen, oder selektieren Sie eine schon vorher eingefügte GUI.")
   (gui-tool-show-gui-toolbar "GUI-Toolbar einblenden")
   (gui-tool-hide-gui-toolbar "GUI-Toolbar ausblenden")
   (gui-tool-insert-gui "GUI einfügen")
@@ -1753,8 +1753,8 @@
   (install-pkg-update-catalogs "Aktualisieren")
   (install-pkg-do-not-update-catalogs "Nicht aktualisieren")
   (install-pkg-really-remove? "Sind Sie sicher, dass Sie die folgenden selektierten Pakete entfernen wollen?")
-  (install-pkg-promote "Von \"automatisch installiert\" befördern")
-  (install-pkg-demote "Nach \"automatisch installiert\" zurückstufen")
+  (install-pkg-promote "Von „automatisch installiert“ befördern")
+  (install-pkg-demote "Nach „automatisch installiert“ zurückstufen")
   (install-pkg-abort-install "Installation abbrechen")
   (install-pkg-abort-update "Aktualisierung abbrechen")
   (install-pkg-abort-remove "Entfernung abbrechen")
@@ -1804,7 +1804,7 @@
   ; third ~a is filled with the path to the bin directory of the current drracket
   (adding-racket/bin-to-path-failed 
    "Versuch fehlgeschlagen, Racket-Unterstützung zur Kommandozeile hinzufügen.~aGenauer:"
-   " konnte \"~a\" mit Inhalt \"~a\" nicht erzeugen.")
+   " konnte „~a“ mit Inhalt „~a“ nicht erzeugen.")
   ; first and third ~a are filled with /etc/paths.d/racket (or some other path like it in the future)
   ; and the second one is filled with the path to the bin directory that was put into that file.
   (added-racket/bin-to-path
