@@ -894,6 +894,7 @@
  (sort-by-position "Подредба по местоположение във файла")
  (no-definitions-found "«липсват дефиниции»")
  (jump-to-defn "Към дефиницията на „~a“")
+ (define-menu-configure "Настройки")
 
  (recent-items-sort-by-age "Подредба по възраст")
  (recent-items-sort-by-name "Подредба по име")
@@ -1288,7 +1289,7 @@
  (language "Език")
  (custom "потребителски")
  (teachpack "Учебен модул")
- (welcome-to "Добре дошли")
+ (welcome-to "Добре дошли в")
  (version "версия")
 
  ;;; kill evaluation dialog
