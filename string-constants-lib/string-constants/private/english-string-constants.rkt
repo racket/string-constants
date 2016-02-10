@@ -1113,6 +1113,7 @@ please adhere to these guidelines:
  (execute-button-label "Run") 
  (save-button-label "Save")
  (break-button-label "Stop")
+ (break-button-kill-label "Kill")
  
  ;;; search help desk popup menu
  (search-help-desk-for "Search in Help Desk for “~a”")
