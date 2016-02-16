@@ -1344,6 +1344,9 @@ please adhere to these guidelines:
  (test-coverage-clear? "Changing the definitions window invalidates the test coverage information. Continue?")
  (test-coverage-clear-and-do-not-ask-again "Yes, and don't ask again")
  (test-coverage-ask? "Ask about clearing test coverage")
+ (test-coverage-entirely-covered "All expressions are covered")
+ (test-coverage-next-time-check-box "Show next time?")
+ (test-coverage-summary "Show test coverage results summary")
   
  (test-coverage-on "Tests covered")
  (test-coverage-off "Tests didn't cover")
