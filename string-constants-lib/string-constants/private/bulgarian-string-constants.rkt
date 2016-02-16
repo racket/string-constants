@@ -1027,6 +1027,7 @@
  (execute-button-label "Изпълнение")
  (save-button-label "Запазване")
  (break-button-label "Спиране")
+ (break-button-kill-label "Принудително спиране")
 
  ;;; search help desk popup menu
  (search-help-desk-for "Търсене в ръководството за „~a“")
@@ -1255,6 +1256,9 @@
  (test-coverage-clear? "Промяна в прозореца за дефиниции прави информацията за покритото от тестовете недействителна. Да се продължи ли въпреки това?")
  (test-coverage-clear-and-do-not-ask-again "Да и без повече въпроси за тестовете")
  (test-coverage-ask? "Питане за изчистването на информацията за покритото от тестовете")
+ (test-coverage-entirely-covered "Всички изрази са покрити")
+ (test-coverage-next-time-check-box "Да се покаже ли пак?")
+ (test-coverage-summary "Обобщение за покритието на тестовете")
 
  (test-coverage-on "Тестовете покриха")
  (test-coverage-off "Тестовете не покриха")
