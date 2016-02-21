@@ -140,7 +140,7 @@
  (cs-mode-menu-show-syntax "Syntaktische Kategorien")
 
   ;; the documentation blue boxes in the upper-right corner of the drracket window
-  (sc-read-more… "Mehr hier nachlesen …")
+  (sc-read-more... "Mehr hier nachlesen …")
   (sc-f2-to-un/lock "f2 um zu (ent)blockieren")
 
  ;; the online check syntax status messages (mouse over the bottom right of drracket's window to see the messages during online expansion's various phases)
@@ -258,9 +258,9 @@
  (paren-color-winter "Winter")
 
  (url: "URL:")
- (open-url… "URL öffnen…")
+ (open-url... "URL öffnen…")
  (open-url "URL öffnen")
- (browse… "Browsen…")
+ (browse... "Browsen…")
  (bad-url "Ungültige URL")
  (bad-url:this "Ungültige URL: ~a")
  
@@ -289,9 +289,9 @@
  ;; refreshing manuals
 ;; should not mention `SVN' (plt:hd:refresh-done "Aktualisierung der Handbücher aus SVN abgeschlossen")
  (plt:hd:refreshing-manuals "Handbücher aktualisieren")
- (plt:hd:refresh-downloading… "~a herunterladen…")
- (plt:hd:refresh-deleting… "Alte Version von ~a löschen…")
- (plt:hd:refresh-installing… "Neue Version von ~a installieren…")
+ (plt:hd:refresh-downloading... "~a herunterladen…")
+ (plt:hd:refresh-deleting... "Alte Version von ~a löschen…")
+ (plt:hd:refresh-installing... "Neue Version von ~a installieren…")
  (plt:hd:refresh-clearing-indices "Gecachte Indizes löschen")
  (plt:hd:refreshing-manuals-finished "Fertig.")
  (plt:hd:about-help-desk "Über das Hilfezentrum")
@@ -349,11 +349,11 @@
  (save-downloaded-file/size "Datei (~a Bytes) speichern als") ;; label for get-file dialog
  (save-downloaded-file "Datei speichern als")  ;; label for get-file dialog
  (downloading "Herunterladen") ;; dialog title
- (downloading-file… "Datei herunterladen…")
+ (downloading-file... "Datei herunterladen…")
  (package-was-installed "Das Paket wurde erfolgreich installiert.")
  (download-was-saved "Die Datei wurde erfolgreich gespeichert.")
 
- (install-plt-file-menu-item… ".plt-Datei installieren…")
+ (install-plt-file-menu-item... ".plt-Datei installieren…")
  (install-plt-file-dialog-title ".plt-Datei installieren")
  (install-plt-web-tab "Web")
  (install-plt-file-tab "Datei")
@@ -471,7 +471,7 @@
 
  (change-font-button-label "Ändern")
  (fonts "Schriften")
- (other… "Andere…") ;; used in the font choice menu item
+ (other... "Andere…") ;; used in the font choice menu item
 
  ; filled with type of font, eg modern, swiss, etc.
  (choose-a-new-font "Neuen Font für „~a“ wählen")
@@ -554,7 +554,7 @@
  (mfs-multi-file-search-menu-item "In Dateien suchen…")
  (mfs-string-match/graphics "per Text (auch in Dateien mit Grafik)")
  (mfs-regexp-match/no-graphics "per regulärem Ausdruck (nur reine Textdateien)")
- (mfs-searching… "Suche…")
+ (mfs-searching... "Suche…")
  (mfs-configure-search "Einstellungen Suche") ;; dialog title
  (mfs-files-section "Dateien")   ;; section in config dialog
  (mfs-search-section "Suche") ;; section in config dialog
@@ -631,7 +631,7 @@
 
  (new-info  "Neue Datei öffnen")
  (new-menu-item "&Neu")
- (new-…-menu-item "&Neu…")
+ (new-...-menu-item "&Neu…")
 
  (open-info "Datei öffnen")
  (open-menu-item "&Öffnen…")
@@ -755,7 +755,7 @@
  (minimize "Minimieren") ;; minimize and zoom are only used under mac os x
  (zoom "Zoomen")
  (bring-frame-to-front "Fenster nach vorn")       ;;; title of dialog
- (bring-frame-to-front… "Fenster nach vorn…") ;;; corresponding title of menu item
+ (bring-frame-to-front... "Fenster nach vorn…") ;;; corresponding title of menu item
  (most-recent-window "Letztes Fenster")
  (next-tab "Nächster Tab")
  (prev-tab "Vorheriger Tab")
@@ -862,6 +862,7 @@
  (sort-by-position "Nach Position in der Datei sortieren")
  (no-definitions-found "<< keine Definitionen gefunden>>")
  (jump-to-defn "Zur Definition von ~a springen")
+ (define-menu-configure "Konfigurieren") ;; label of a submenu that configures the (define ...) popup menu
 
  (recent-items-sort-by-age "Nach Alter sortieren")
  (recent-items-sort-by-name "Nach Name sortieren")
@@ -994,6 +995,7 @@
  (execute-button-label "Start") 
  (save-button-label "Speichern")
  (break-button-label "Stop")
+ (break-button-kill-label "Abbrechen")
  
  ;;; search help desk popup menu
  (search-help-desk-for "Suche im Hilfezentrum nach „~a“")
@@ -1037,7 +1039,7 @@
   (teachpack-pre-installed/htdp "Vorinstallierte HtDP-Teachpacks")
   (teachpack-pre-installed/2htdp "Vorinstallierte HtDP/2e-Teachpacks")
   (teachpack-user-installed "selbst installierte Teachpacks")
-  (add-teachpack-to-list… "Teachpack zu Liste hinzufügen…")
+  (add-teachpack-to-list... "Teachpack zu Liste hinzufügen…")
   ; first and second ~a are teachpack names, third is a symbol identifing an export
   (teachpack-conflict
    "WARNUNG: Das schon installierte Teachpack ~a ist im Konflikt mit ~a (beide haben den Export ~a)")
@@ -1226,6 +1228,9 @@
  (test-coverage-ask? "Frage nach dem Löschen der Testabdeckungs-Information")
  (test-coverage-on "Durch Tests abgedeckt")
  (test-coverage-off "Durch Tests nicht abgedeckt")
+ (test-coverage-entirely-covered "Alle Ausdrücke are sind abgedeckt")
+ (test-coverage-next-time-check-box "Nächstes Mal anzeigen?")
+ (test-coverage-summary "Zusammenfassung der Abdeckungs-Ergebnisse anzeigen")
   
  ;; tracing
  (tracing-enable-tracing "Tracing einschalten")
@@ -1283,7 +1288,7 @@
  (insert-menu "E&infügen")
  
  ;; large semi colon letters
- (insert-large-letters… "Große Buchstaben einfügen…")
+ (insert-large-letters... "Große Buchstaben einfügen…")
  (large-semicolon-letters "Große Buchstaben aus Semikolons")
  (text-to-insert "Einzufügender Text")
 
@@ -1295,7 +1300,7 @@
  (module-browser-laying-out-graph-label "Graph-Layout")
  (module-browser-open-file-format "~a öffnen")
  (module-browser "Modul-Browser") ;; frame title
- (module-browser… "&Modul-Browser…") ;; menu item title
+ (module-browser... "&Modul-Browser…") ;; menu item title
  (module-browser-in-file "M&odul-Browser auf ~a") ;; menu item title; ~a is filled with a filename
  (module-browser-no-file "Modul-Browser auf dieser gespeicherten Datei") ;; menu item title for above menu item; used when there is no saved file
  (module-browser-error-expanding "Fehler beim Expandieren des Programms:\n\n~a")
@@ -1705,7 +1710,7 @@
   (install-pkg-install-installed "Momentan installiert")         ; tab label
   (install-pkg-migrate-from "Kopieren von Version")           ; tab label
   (install-pkg-settings "Einstellungen")                        ; tab label
-  (install-pkg-menu-item… "Paket installieren…")
+  (install-pkg-menu-item... "Paket installieren…")
   (install-pkg-dialog-title "Paket installieren")
   (install-pkg-source-label "Paket-Quelle")
   (install-pkg-package-name "Paket-Name")
