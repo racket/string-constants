@@ -555,6 +555,7 @@ please adhere to these guidelines:
  (show-line-numbers-in-definitions "Show All Line Numbers in Definitions")
     ;; the constant above shows up in the popup menu item in the bottom of
     ;; the drracket window; controls the line numbers on each line in the definitions; used in a checkable menu item
+ (reflow-paragraph-maximum-width "Maximum width when reflowing paragraphs")
  (maximum-char-width-guide-pref-check-box "Maximum character width guide")
  (hide-column-width-guide "Hide Column Width Guide for Files with ~a Columns")
  (show-column-width-guide "Show Column Width Guide at ~a Columns") ;; filled with a number > 2
