@@ -1250,7 +1250,14 @@ please adhere to these guidelines:
   (module-language-name "Determine language from source")
  (module-language-one-line-summary "The #lang line specifies the actual language")
   (module-language-auto-text "Automatic #lang line") ;; shows up in the details section of the module language
-   
+  ;; the next four string constants show up in the REPL in DrRacket in the "Racket Language",
+  ;; which is also the "Determine language from source" language. They are put right after the name
+  ;; of the language from the "#lang" line at the beginning of the source file
+  (module-language-repl-no-annotations "")
+  (module-language-repl-debug-annotations ", with debugging")
+  (module-language-repl-debug/profile-annotations ", with debugging and profiling")
+  (module-language-repl-test-annotations ", with test coverage")
+
   ;; for the upper portion of the language dialog
   (the-racket-language "The Racket Language")
   (choose-a-language "Choose a language")
