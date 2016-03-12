@@ -443,6 +443,7 @@
  (hide-line-numbers/menu "Zeilen&nummern ausblenden")
 
  (show-line-numbers-in-definitions "Alle Zeilennummern in Definitionen einblenden") ;; shows up in the popup menu item in the bottom of the drracket window; controls the line numbers on each line in the definitions; used in a checkable menu item
+ (reflow-paragraph-maximum-width "Maximalbreite beim Umbruch von Absätzen")
  (maximum-char-width-guide-pref-check-box "Richtschnur für maximale Zeichenbreite")
  (hide-column-width-guide "Richtschnur für Spaltenbreite für Dateien mit ~a Spalten einblenden")
  (show-column-width-guide "Richtschnur für Spaltenbreite für Dateien mit ~a Spalten ausblenden") ;; filled with a number > 2
@@ -1134,6 +1135,13 @@
  (module-language-one-line-summary "Die #lang-Zeile spezifiziert die tatsächliche Sprache.")
   
  (module-language-auto-text "Automatisch Zeile mit #lang") ;; shows up in the details section of the module language
+ ;; the next four string constants show up in the REPL in DrRacket in the "Racket Language",
+ ;; which is also the "Determine language from source" language. They are put right after the name
+ ;; of the language from the "#lang" line at the beginning of the source file
+ (module-language-repl-no-annotations "")
+ (module-language-repl-debug-annotations ", mit Debugging")
+ (module-language-repl-debug/profile-annotations ", mit Debugging und Profiling")
+ (module-language-repl-test-annotations ", mit Testabdeckung")
 
  ;; for the upper portion of the language dialog
  (the-racket-language "Die Sprache Racket")
