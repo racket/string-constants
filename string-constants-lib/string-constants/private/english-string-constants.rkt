@@ -1861,11 +1861,14 @@ please adhere to these guidelines:
   (install-pkg-file-or-dir? "Choose a file or a directory?")
   (install-pkg-force? "Ignore conflicts")
   (install-pkg-replace? "Updates can replace existing installations")
+  (install-pkg-dry-run? "Dry run (no installation changes)")
   (install-pkg-command-line "Equivalent command line invocation:")
   (install-pkg-error-installing-title "Error Installing Package")
   (install-pkg-action-label "Action to Take")
   (install-pkg-install "Install")
   (install-pkg-update "Update")
+  (install-pkg-setup "Setup") ; for button
+  (install-pkg-setup-long "Setup Current Installation") ; for menu
   (install-pkg-remove "Remove")
   (install-pkg-do-not-remove "Don't Remove")
   (install-pkg-action-inferred-to-be-update "Action inferred to be Update")
@@ -1896,6 +1899,7 @@ please adhere to these guidelines:
   (install-pkg-abort-demote "Abort Demote")
   (install-pkg-abort-promote "Abort Promote")
   (install-pkg-abort-migrate "Abort Migrate")
+  (install-pkg-abort-setup "Abort Setup")
   (install-pkg-abort-generic-action "Abort Action")
   (install-pkg-close-terminal-output "Close Output")
   (install-pkg-show-all-options "Show All Options")
