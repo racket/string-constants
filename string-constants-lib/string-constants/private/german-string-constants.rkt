@@ -428,6 +428,7 @@
  (print-to-pdf "Drucken in PDF-Datei")
 
  (command-as-meta "Command-Taste als Meta behandeln") ;; macos/macos x only
+ (any-control+alt-is-altgr "Str-Alt als AltGr behandeln") ; Windows only
  (alt-as-meta "Alt-Taste als Meta behandeln")
  (reuse-existing-frames "Existierende Fenster für neu geöffnete Dateien wiederverwenden")
  (default-fonts "Standard-Fonts")
@@ -1738,12 +1739,15 @@
   (install-pkg-file-or-dir? "Datei oder Verzeichnis auswählen")
   (install-pkg-force? "Konflikte ignorieren")
   (install-pkg-replace? "Existierende Installation überschreiben")
+  (install-pkg-dry-run? "Probelauf (keine Änderungen an der Installation)")
   (install-pkg-command-line "Äquivalenter Kommandozeilen-Aufruf:")
   (install-pkg-error-installing-title "Fehler beim Installieren von Paket")
 
   (install-pkg-action-label "Maßnahme")
   (install-pkg-install "Installieren")
   (install-pkg-update "Aktualisieren")
+  (install-pkg-setup "Konfigurieren") ; for button
+  (install-pkg-setup-long "Aktuelle Installation konfigurieren") ; for menu
   (install-pkg-remove "Entfernen")
   (install-pkg-do-not-remove "Nicht entfernen")
   (install-pkg-action-inferred-to-be-update "Maßnahme als Aktualisierung inferiert")
@@ -1774,6 +1778,8 @@
   (install-pkg-abort-demote "Zurückstufung abbrechen")
   (install-pkg-abort-promote "Beförderung abbrechen")
   (install-pkg-abort-migrate "Migration abbrechen")
+  (install-pkg-abort-setup "Konfiguration abbrechen")
+  (install-pkg-abort-setup "Abort Setup")
   (install-pkg-abort-generic-action "Aktion abbrechen")
   (install-pkg-close-terminal-output "Anzeige schließen")
   (install-pkg-show-all-options "Alle Optionen anzeigen")
