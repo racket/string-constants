@@ -128,10 +128,10 @@
  (cs-one-varref "Ein gebundenes Vorkommen")
  (cs-n-varrefs "~a gebundene Vorkommen") ;; expected to have one ~a formatter that will accept a number
 
- (cs-contract-my-obligation "Vertrag: Obliation dieses Moduls")
+ (cs-contract-my-obligation "Vertrag: Obligation dieses Moduls")
  (cs-contract-their-obligation "Vertrag: Obligation des Klientenmoduls")
  (cs-contract-both-obligation "Vertrag: Obligation sowohl dieses Moduls als auch des Klientenmoduls")
- (cs-contract-unk-obligation "Vertrag: Oblikation unbekannt")
+ (cs-contract-unk-obligation "Vertrag: Obligation unbekannt")
 
  ;; mode sub-menu in the "view" menu
  (cs-check-syntax-mode "Syntax-Check-Modus")
@@ -147,7 +147,7 @@
  (online-expansion-running "Hintergrund-Expansion läuft")
  (online-expansion-only-raw-text-files-supported "Nur reine Text-Dateien sind unterstützt")
  (online-expansion-abnormal-termination "Hintergrund-Expansion unglücklich abgebrochen")
- (online-expansion-abnormal-termination-out-of-memory "Hintergrund-Expansion unglücklich abgebrochend (kein Speicher mehr)")
+ (online-expansion-abnormal-termination-out-of-memory "Hintergrund-Expansion unglücklich abgebrochen (kein Speicher mehr)")
  (online-expansion-finished-successfully "Hintergrund-Expansion erfolgreich abgeschlossen")
 
  (jump-to-error "Zum Fehler springen")
@@ -170,7 +170,7 @@
  (online-expansion-error-margin "am Rand")
  ; the label of a preference in the (string-constant online-expansion) section
  (show-arrows-on-mouseover "Bindungen und Tail-Positionen unter Mauszeiger anzeigen")
- (show-blueboxes "Blaue Kästen  und blaue anzeigen")
+ (show-blueboxes "Pfeil und Hinweisbox zur Dokumentation anzeigen")
  ;;; info bar at botttom of drscheme frame
  (collect-button-label "GC")
  (read-only "Nur Lesen")
@@ -314,7 +314,7 @@
   (use-drscheme-font-size "DrRacket-Schriftgröße verwenden")
 
   (help-desk-this-is-just-example-text
-   "Dies ist nur ein Beispieltext für das Setzen der Schriftgröße.  Öffnen sie das Hilfezentrum (im „Hilfe“-Menü), um diesen Links zu folgen.")
+   "Dies ist nur ein Beispieltext für das Setzen der Schriftgröße.  Öffnen Sie das Hilfezentrum (im „Hilfe“-Menü), um diesen Links zu folgen.")
 
   ;; this appears in the bottom part of the frame the first time the user hits `f1' 
   ;; (assuming nothing else has loaded the documentation index first)
@@ -487,7 +487,7 @@
  (set-font "Schriftart setzen…")
  (font-smoothing-label  "Weiche Kanten bei Schrift")
  (font-smoothing-none "Nicht")
- (font-smoothing-some "Bißchen")
+ (font-smoothing-some "Bisschen")
  (font-smoothing-all "Total")
  (font-smoothing-default "System-Einstellung verwenden")
  (font-weight-label "Schriftstärke")
@@ -675,7 +675,7 @@
  (cut-info "Verschiebe die Selektion ins Clipboard, um sie später wieder einfügen zu können")
  (cut-menu-item "&Ausschneiden")
 
- (copy-info "Kopiere die Selektion ins Clipboard, um sie später wieder einfügen zu könne")
+ (copy-info "Kopiere die Selektion ins Clipboard, um sie später wieder einfügen zu können")
  (copy-menu-item "&Kopieren")
 
  (paste-info "Ersetze die aktuelle Selektion durch die zuletzt kopierte oder ausgeschnittene Selektion")
@@ -839,7 +839,7 @@
  (overwrite-file-button-label "Überschreiben")
  
  (definitions-modified 
-  "Die Definitionen wurden auf der Platte geändert; bitte speichern sie die Definitionen oder holen Sie diese von der Platte zurück.")
+  "Die Definitionen wurden auf der Platte geändert; bitte speichern Sie die Definitionen oder holen Sie diese von der Platte zurück.")
  (drscheme-internal-error "Interner Fehler in DrRacket")
  
  ;;; tools
@@ -1237,7 +1237,7 @@
  (test-coverage-ask? "Frage nach dem Löschen der Testabdeckungs-Information")
  (test-coverage-on "Durch Tests abgedeckt")
  (test-coverage-off "Durch Tests nicht abgedeckt")
- (test-coverage-entirely-covered "Alle Ausdrücke are sind abgedeckt")
+ (test-coverage-entirely-covered "Alle Ausdrücke sind abgedeckt")
  (test-coverage-next-time-check-box "Nächstes Mal anzeigen?")
  (test-coverage-summary "Zusammenfassung der Abdeckungs-Ergebnisse anzeigen")
   
@@ -1491,7 +1491,7 @@
   (profj-language-config-support-test-language "Spracherweiterung „test“ unterstützen?")
   (profj-language-config-testing-check "Check-Ausdruck zulassen?") ; check should not be translated
   (profj-language-config-classpath "Klassenpfad")
-  (profj-language-config-choose-classpath-directory "Verzeichnis für den Klassenpfad auswählren")
+  (profj-language-config-choose-classpath-directory "Verzeichnis für den Klassenpfad auswählen")
   (profj-language-config-classpath-display "Aktuellen Wert anzeigen") ; Button label to print the current classpath
 
   (profj-test-name-close-to-example "Der Name von Klasse ~a enhält etwas, das so ähnlich wie „Example“ aussieht.")
