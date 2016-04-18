@@ -878,6 +878,7 @@ please adhere to these guidelines:
   ;; menu item in the windows menu under mac os x. first ~a is filled with a number between 1 and 9; second one is the filename of the tab
   (tab-i "Tab ~a: ~a")
   (tab-i/no-name "Tab ~a")
+  (last-tab "Last Tab: ~a")
 
  (view-menu-label "&View")
  (show-overview "Show &Program Contour") 
