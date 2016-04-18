@@ -203,7 +203,7 @@ please adhere to these guidelines:
  (cs-open-file "Open ~a")
  (cs-rename-var "Rename ~a")
  (cs-rename-id "Rename Identifier")
- (cs-rename-var-to "Rename ~a to:")
+ (cs-rename-var-to "Rename “~a” to:")
  (cs-name-duplication-error "The new name you have chosen, ~s, conflicts with an already established name in this scope.")
  (cs-rename-anyway "Rename Anyway")
  (cs-status-init "Check Syntax: Initializing environment for user code")
@@ -212,8 +212,8 @@ please adhere to these guidelines:
  (cs-status-expanding-expression "Check Syntax: expanding expression")
  (cs-status-loading-docs-index "Check Syntax: loading documentation index")
  (cs-syncheck-running "Check Syntax Running")
- (cs-mouse-over-import "binding ~s imported from ~s")
- (cs-view-docs "View documentation for ~a")
+ (cs-mouse-over-import "binding “~s” imported from “~s”")
+ (cs-view-docs "View documentation for “~a”")
  (cs-view-docs-from "~a from ~a")  ;; a completed version of the line above
   ;; (cs-view-docs) is put into the first ~a and a list of modules (separated by commas) 
   ;; is put into the second ~a. Use check syntax and right-click on a documented variable (eg, 'require') to see this in use
