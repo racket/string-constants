@@ -454,6 +454,7 @@
  (print-to-ps "Отпечатване на файл във формат PostScript")
  (print-to-pdf "Отпечатване на файл във формат PDF")
  (command-as-meta "Клавишът „⌘ “ да е „Meta“") ;; macos/macos x only
+ (any-control+alt-is-altgr "Комбинацията „Control-Alt“ да е „AltGr“") ; Windows only
  (alt-as-meta "Клавишът „Alt“ да е „Meta“")
  (reuse-existing-frames "Отваряне на новите файлове в съществуващите прозорци")
  (default-fonts "Стандартни шрифтове")
@@ -469,6 +470,7 @@
  (show-line-numbers-in-definitions "Всички номера на редовете в дефинициите")
     ;; the constant above shows up in the popup menu item in the bottom of
     ;; the drracket window; controls the line numbers on each line in the definitions; used in a checkable menu item
+ (reflow-paragraph-maximum-width "Максимална широчина на абзаците при изливане на тескта наново")
  (maximum-char-width-guide-pref-check-box "Вертикална линия за максимален брой знаци на ред")
  (hide-column-width-guide "Без вертикал, ако няма редове над ~a знака")
  (show-column-width-guide "Вертикал при ~a-я знак") ;; filled with a number > 2
@@ -791,6 +793,7 @@
   ;; menu item in the windows menu under mac os x. first ~a is filled with a number between 1 and 9; second one is the filename of the tab
   (tab-i "Подпрозорец № ~a: ~a")
   (tab-i/no-name "Подпрозорец № ~a")
+  (last-tab "Последен подпрозорец № ~a")
 
  (view-menu-label "&Изглед")
  (show-overview "Показване на &обзора")
@@ -1163,7 +1166,13 @@
   (module-language-name "Определяне на езика от изходния код")
  (module-language-one-line-summary "Редът започващ с „#lang“ определя езика")
   (module-language-auto-text "Автоматичен ред с „#lang“") ;; shows up in the details section of the module language
-
+  ;; the next four string constants show up in the REPL in DrRacket in the "Racket Language",
+  ;; which is also the "Determine language from source" language. They are put right after the name
+  ;; of the language from the "#lang" line at the beginning of the source file
+  (module-language-repl-no-annotations "")
+  (module-language-repl-debug-annotations ", с трасиране")
+  (module-language-repl-debug/profile-annotations ", с трасиране и профилиране")
+  (module-language-repl-test-annotations ", с покритие на тестовете")
   ;; for the upper portion of the language dialog
   (the-racket-language "Езикът „Racket“")
   (choose-a-language "Избор на език")
@@ -1765,11 +1774,14 @@
   (install-pkg-file-or-dir? "Избор на файл или директория")
   (install-pkg-force? "Пренебрегване на конфликтите")
   (install-pkg-replace? "Обновленията могат да заменят текущите инсталации")
+  (install-pkg-dry-run? "Симулация на инсталация (без промени)")
   (install-pkg-command-line "Еквивалентна команда на командния ред:")
   (install-pkg-error-installing-title "Грешка при инсталирането на пакет")
   (install-pkg-action-label "Избор на действие")
   (install-pkg-install "Инсталиране")
   (install-pkg-update "Обновяване")
+  (install-pkg-setup "Настройки") ; for button
+  (install-pkg-setup-long "Настройки на инсталацията") ; for menu
   (install-pkg-remove "Деинсталиране")
   (install-pkg-do-not-remove "Да не се деинсталира")
   (install-pkg-action-inferred-to-be-update "Отгатнатото действие е „Обновяване“")
@@ -1800,6 +1812,7 @@
   (install-pkg-abort-demote "Преустановяване на понижаването")
   (install-pkg-abort-promote "Преустановяване на повишаването")
   (install-pkg-abort-migrate "Преустановяване на мигрирането")
+  (install-pkg-abort-setup "Преустановяване на настройките")
   (install-pkg-abort-generic-action "Преустановяване на действието")
   (install-pkg-close-terminal-output "Затваряне на изхода")
   (install-pkg-show-all-options "Показване на всички опции")
