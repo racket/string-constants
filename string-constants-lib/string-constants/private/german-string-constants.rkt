@@ -103,7 +103,7 @@
  (cs-open-file "~a öffnen")
  (cs-rename-var "~a umbenennen")
  (cs-rename-id "Bezeichner umbenennen")
- (cs-rename-var-to "~a umbenennen nach:")
+ (cs-rename-var-to "„~a“ umbenennen nach:")
  (cs-name-duplication-error "Der neugewählte Name, ~s, ist hier schon gebunden.")
  (cs-rename-anyway "Trotzdem umbenennen")
  (cs-status-init "Syntaxprüfung: Umgebung für den User-Code initialisieren")
@@ -112,9 +112,9 @@
  (cs-status-expanding-expression "Syntaxprüfung: Ausdruck expandieren")
  (cs-status-loading-docs-index "Syntaxprüfung: Dokumentations-Index laden")
  (cs-syncheck-running "Syntaprüfung läuft")
- (cs-mouse-over-import "Bindung ~s importiert aus ~s")
+ (cs-mouse-over-import "Bindung „~s“ importiert aus ~s")
 
- (cs-view-docs "Dokumentation für ~a anschauen")
+ (cs-view-docs "Dokumentation für „~a“ anschauen")
  (cs-view-docs-from "~a aus ~a")  ;; a completed version of the line above (cs-view-docs) is put into the first ~a and a list of modules (separated by commas) is put into the second ~a. Use check syntax and right-click on a documented variable (eg, 'require') to see this in use
   
  (cs-lexical-variable "lexikalische Variable")
@@ -765,6 +765,7 @@
  (move-current-tab-left "Tab nach &links bewegen")
  (tab-i "Tab ~a: ~a") ;; menu item in the windows menu under mac os x. first ~a is filled with a number between 1 and 9; second one is the filename of the tab
  (tab-i/no-name "Tab ~a")
+ (last-tab "Letzter Tab: ~a")
   
  (view-menu-label "&Anzeigen")
  (show-overview "&Programm-Umriss einblenden") 
