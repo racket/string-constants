@@ -1724,7 +1724,7 @@
   (install-pkg-dialog-title "Paket installieren")
   (install-pkg-source-label "Paket-Quelle")
   (install-pkg-package-name "Paket-Name")
-  (install-pkg-package-source-desc "Eine Paket-Quelle ist ein Paket-Name, eine Datei, ein Verzeichnis, eine URL oder ein Verweis auf Github")
+  (install-pkg-package-source-desc "Eine Paket-Quelle ist ein Paket-Name, eine Datei, ein Verzeichnis, eine URL oder ein Verweis auf GitHub")
   (install-pkg-infer "Inferieren")
   (install-pkg-use "Benutzen") ; as opposed to "Infer", label for text box
   (install-pkg-type-label "Typ Paket-Quelle")
@@ -1733,7 +1733,7 @@
   (install-pkg-dir-url "Verzeichnis woanders")
   (install-pkg-file-url "Datei woanders")
   (install-pkg-git "Git-Repositorium")
-  (install-pkg-github "Github")
+  (install-pkg-github "GitHub")
   (install-pkg-name "Name (frage Auflöser)")
   (install-pkg-inferred-as "Typ inferiert als ~a") ; ~a gets install-pkg-{file,dir,…}
   (install-pkg-link-dirs "Lokales Verzeichnis als Link")
