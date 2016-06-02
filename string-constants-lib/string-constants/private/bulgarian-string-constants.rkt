@@ -1758,7 +1758,7 @@
   (install-pkg-dialog-title "Инсталиране на пакет")
   (install-pkg-source-label "Източник на пакет")
   (install-pkg-package-name "Име на пакет")
-  (install-pkg-package-source-desc "Източникът на пакета е име, файл, директория, адрес в Интернет или връзка към Github")
+  (install-pkg-package-source-desc "Източникът на пакета е име, файл, директория, адрес в Интернет или връзка към GitHub")
   (install-pkg-infer "Отгатване")
   (install-pkg-use "Използване") ; as opposed to "Infer", label for text box
   (install-pkg-type-label "Вид източник на пакет")
@@ -1767,7 +1767,7 @@
   (install-pkg-dir-url "Изтриване на директория")
   (install-pkg-file-url "Изтриване на файл")
   (install-pkg-git "Хранилище на Git")
-  (install-pkg-github "Github")
+  (install-pkg-github "GitHub")
   (install-pkg-name "Име (проверка в системата за имена)")
   (install-pkg-inferred-as "Отгатнатият вид е „~a“") ; ~a gets install-pkg-{file,dir,...}
   (install-pkg-link-dirs "Локална директория като връзка")

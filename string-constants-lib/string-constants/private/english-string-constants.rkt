@@ -1847,7 +1847,7 @@ please adhere to these guidelines:
   (install-pkg-dialog-title "Install Package")
   (install-pkg-source-label "Package Source")
   (install-pkg-package-name "Package Name")
-  (install-pkg-package-source-desc "A package source is a package name, file, directory, URL, or Github reference")
+  (install-pkg-package-source-desc "A package source is a package name, file, directory, URL, or GitHub reference")
   (install-pkg-infer "Infer")
   (install-pkg-use "Use") ; as opposed to "Infer", label for text box
   (install-pkg-type-label "Package Source Type")
@@ -1856,7 +1856,7 @@ please adhere to these guidelines:
   (install-pkg-dir-url "Remote Directory")
   (install-pkg-file-url "Remote File")
   (install-pkg-git "Git Repository")
-  (install-pkg-github "Github")
+  (install-pkg-github "GitHub")
   (install-pkg-name "Name (consulting resolver)")
   (install-pkg-inferred-as "Type inferred to be ~a") ; ~a gets install-pkg-{file,dir,...}
   (install-pkg-link-dirs "Local directory as link")
