@@ -233,6 +233,13 @@ please adhere to these guidelines:
   (cs-contract-their-obligation "Contract: clients modules' obligation")
   (cs-contract-both-obligation "Contract: both this module and client modules' obligation")
   (cs-contract-unk-obligation "Contract: unknown obligation")
+
+  ;; require prefix functionality
+  (cs-add-prefix-for-require "Add prefix for require")
+  (cs-prefix-require-title "Prefix Require")
+  (cs-prefix-require "Choose a prefix to add to each imported variable")
+  (cs-all-binders-are-prefixed "All of the requires already appear to have a prefix; try to rename it instead")
+  (cs-the-binder-is-prefixed "The require appears to already have a prefix; try to rename it instead")
   
   ;; mode sub-menu in the "view" menu
   (cs-check-syntax-mode "Check Syntax Mode")
