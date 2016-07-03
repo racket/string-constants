@@ -219,7 +219,7 @@ please adhere to these guidelines:
   ;; is put into the second ~a. Use check syntax and right-click on a documented variable (eg, 'require') to see this in use
   
  (cs-lexical-variable "lexical variable")
- (cs-set!d-variable "set!’d variable")
+ (cs-set!d-variable "mutated variable")
  (cs-imported-variable "imported variable")
  (cs-unused-require "unused require")
  (cs-free-variable "free variable")
