@@ -133,7 +133,7 @@
   ;; is put into the second ~a. Use check syntax and right-click on a documented variable (eg, 'require') to see this in use
 
  (cs-lexical-variable "лексикална променлива")
- (cs-set!d-variable "променлива, зададена със set!")
+ (cs-set!d-variable "променлива с нова стойност")
  (cs-imported-variable "внесена променлива")
  (cs-unused-require "неизползвана директива „require“")
  (cs-free-variable "свободна променлива")
@@ -148,6 +148,13 @@
   (cs-contract-both-obligation "Договор: задължение и на модула, и на клиентските модули")
   (cs-contract-unk-obligation "Договор: непознато задължение")
 
+  ;; require prefix functionality
+  (cs-add-prefix-for-require "Добавяне на префикс за изисканите внасяния")
+  (cs-prefix-require-title "Префикс за изисканите внасяния")
+  (cs-prefix-require "Избор на префикс за внесените променливи")
+  (cs-all-binders-are-prefixed "Всички изисквания за внасяне вече имат префикс, пробвайте да го преименувате")
+  (cs-the-binder-is-prefixed "Изискването за внасяне вече има префикс, пробвайте да го преименувате")
+ 
   ;; mode sub-menu in the "view" menu
   (cs-check-syntax-mode "Режим на проверка на синтаксиса")
   (cs-mode-menu-show-my-obligations "Задължения на модула")
