@@ -1,6 +1,6 @@
 ;; Bulgarian translation of Racket string constants file
 ;; This file is distributed under the same terms as Racket
-;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015
+;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016.
 
 (module bulgarian-string-constants "string-constant-lang.rkt"
  ;;; when translating this constant, substitute name of actual language for `English'
@@ -127,6 +127,7 @@
  (cs-status-loading-docs-index "Проверка на синтаксиса: зареждане на индекса на документацията")
  (cs-syncheck-running "Изпълнява се проверка на синтаксиса")
  (cs-mouse-over-import "Присвояването „~s“ е внесено от „~s“")
+ (cs-mouse-over-import/library-only "внесено от „~s“")
  (cs-view-docs "Преглед на документацията на „~a“")
  (cs-view-docs-from "~a от „~a“")  ;; a completed version of the line above
   ;; (cs-view-docs) is put into the first ~a and a list of modules (separated by commas)
@@ -455,7 +456,7 @@
  (display-line-numbers "Показване на редовете, а не отместването в знаци")
  (show-line-and-column-numbers "Показване на &номерата на редовете и колоните") ; used for popup menu; right click on line/column box in bottom of drs window
  (show-character-offsets "Показване на отместването в знаци") ; used for popup menu; right click on line/column box in bottom of drs window
- (enable-keybindings-in-menus "Показване на клавишните комбинации в менютата")
+ (enable-keybindings-in-menus "Показване на клавишните комбинации в менютата (с приоритет над клавишните комбинации на Emacs)")
  (printing-mode "Режим на печат")
  (print-using-platform-specific-mode "Платформенозависим печат")
  (print-to-ps "Отпечатване на файл във формат PostScript")
@@ -497,6 +498,8 @@
   (style-and-color-names "&Имена на стилове и цветове")
 
   (add-spacing-between-lines " Добавяне по пиксел между редовете")
+
+  (editor-x-selection-mode "Изрично копиране преди поставяне, без автоматично копиране на избраното")
 
  ; title of the color choosing dialog
 
@@ -987,7 +990,7 @@
  (create-executable-title "Създаване на изпълним файл")
  (drracket-creates-executables-only-in-some-languages
   "Създаването на изпълним файл се поддържа в DrRacket, само когато е"
-  " избран някой от езиците за преподаване („DMdA“ или „HtDP“) в прозореца"
+  " избран някой от езиците за преподаване („HtDP“ или „DMdA“) в прозореца"
   " за избор на език, или когато сте избрали „Racket“ в същия прозорец и"
   " директивата „#lang“ в началото на програмата ви указва език.\n\nВижте"
   " дали програмата за команден ред „raco“ няма да ви свърши работа.")
@@ -1076,8 +1079,8 @@
   ; ~a is filled with the teachpack's name; the message appears in the teachpack selection dialog when a user installs a new teachpack
   (compiling-teachpack "Компилиране на учебния модул „~a“…")
   (teachpack-pre-installed "Предварително инсталирани учебни модули")
-  (teachpack-pre-installed/htdp "Предварително инсталирани учебни модули на HtDP")
-  (teachpack-pre-installed/2htdp "Предварително инсталирани учебни модули на HtDP/2e")
+  (teachpack-pre-installed/htdp "Предварително инсталирани учебни модули на „HtDP“")
+  (teachpack-pre-installed/2htdp "Предварително инсталирани учебни модули на „HtDP/2e“")
   (teachpack-user-installed "Учебни модули, инсталирани от потребителя")
   (add-teachpack-to-list... "Добавяне на учебен модул към списъка…")
   ; first and second ~a are teachpack names, third is a symbol identifing an export
@@ -1158,7 +1161,7 @@
  (advanced-one-line-summary "Междинно ниво плюс λ-изрази и промяна")
  (how-to-design-programs "Как да проектираме програми") ;; should agree with MIT Press on this one...
  (pretty-big-scheme "Доста пълно ниво")
- (pretty-big-scheme-one-line-summary "Добавени са синтаксиса и функциите от езиците в HtDP (Как да проектираме програми), mzscheme и mred/mred")
+ (pretty-big-scheme-one-line-summary "Добавени са синтаксиса и функциите от езиците в „HtDP“ (Как да проектираме програми), mzscheme и mred/mred")
  (r5rs-language-name "R5RS")
  (r5rs-one-line-summary "R5RS без добавки")
  (expander "Заместване")
@@ -1565,6 +1568,8 @@
   ;;Following two appear in Racket (Java, etc) menu, cause Tests to be Run automatically or not
   (test-engine-enable-tests "Включване на тестовете")
   (test-engine-disable-tests "Изключване на тестовете")
+  (test-engine-enable-disable-tests-only-in-teaching-languages
+   "Менюто за включване/изключване на тестовете се отнася само до езиците за обучение — „HtDP“ и „DMdA“. Вижте раздела с подробностите от прозореца за езици, с който се определят модулите, които да се изпълнят в езика Racket.")
 
   (test-engine-ran-1-test "1 тест изпълнен.")
   (test-engine-ran-1-check "1 проверка изпълнена.")
