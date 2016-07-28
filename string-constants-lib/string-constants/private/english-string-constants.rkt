@@ -1655,6 +1655,8 @@ please adhere to these guidelines:
   ;;Following two appear in Racket (Java, etc) menu, cause Tests to be Run automatically or not
   (test-engine-enable-tests "Enable Tests")
   (test-engine-disable-tests "Disable Tests")
+  (test-engine-enable-disable-tests-only-in-teaching-languages
+   "The Enable/Disable Tests menu item is used only to disable and enable the HtDP teaching languages support for testing. See the “Show Details” section of the language dialog for controlling the submodules that are run in The Racket Language.")
 
   (test-engine-ran-1-test "Ran 1 test.")
   (test-engine-ran-1-check "Ran 1 check.")
