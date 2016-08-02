@@ -542,7 +542,7 @@ please adhere to these guidelines:
  (display-line-numbers "Display line numbers in buffer; not character offsets")
  (show-line-and-column-numbers "Show Line && Column Numbers") ; used for popup menu; right click on line/column box in bottom of drs window
  (show-character-offsets "Show Character Offsets") ; used for popup menu; right click on line/column box in bottom of drs window
- (enable-keybindings-in-menus "Enable keybindings in menus")
+ (enable-keybindings-in-menus "Enable keybindings in menus (overrides Emacs keybindings)")
  (printing-mode "Printing Mode")
  (print-using-platform-specific-mode "Platform-specific printing")
  (print-to-ps "Print to PostScript File")
