@@ -430,7 +430,7 @@
  (display-line-numbers "Zeilennummern in Puffern anzeigen, keine Puffer-Indizes")
  (show-line-and-column-numbers "Zeilen- && Spaltennummern anzeigen") ; used for popup menu; right click on line/column box in bottom of drs window
  (show-character-offsets "Zeichen-Offsets anzeigen") ; used for popup menu; right click on line/column box in bottom of drs window
- (enable-keybindings-in-menus "Tastenbelegung für Menüs")
+ (enable-keybindings-in-menus "Tastenbelegung für Menüs (überschreibt Emacs-Belegungen)")
  (printing-mode "Druckmodus")
  (print-using-platform-specific-mode "Plattformspezifisches Drucken")
  (print-to-ps "Drucken in PostScript-Datei")
