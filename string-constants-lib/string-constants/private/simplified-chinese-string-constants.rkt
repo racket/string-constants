@@ -85,6 +85,7 @@
   (bug-report-field-environment "环境")
   (bug-report-field-docs-installed "已安装文档")
   (bug-report-field-collections "Collections")
+  (bug-report-field-links "链接")  ;; from 'raco link'
   (bug-report-field-human-language "自然语言")
   (bug-report-field-memory-use "内存使用")
   (bug-report-field-version "版本")
@@ -116,9 +117,12 @@
   (cs-foreground-color "前景色")
   (cs-background-color "背景色")
   (cs-tack/untack-arrow "附加/取消箭头")
+  (cs-tack-crossing-arrows "附加交叉的箭头")
   (cs-jump-to-next-bound-occurrence "跳至下一个被绑定出现")
+  (cs-jump-to-previous-bound-occurrence "跳至上一个被绑定出现")
   (cs-jump-to-binding "跳至绑定出现")
   (cs-jump-to-definition "跳至定义")
+  (cs-open-defining-file "打开定义文件")
   (cs-error-message "出错信息")
   (cs-open-file "打开~a")
   (cs-rename-var "重命名~a")
@@ -131,7 +135,9 @@
   (cs-status-eval-compile-time "检查语法：编译程序")
   (cs-status-expanding-expression "检查语法：展开表达式")
   (cs-status-loading-docs-index "检查语法：加载文档索引")
-  (cs-mouse-over-import "绑定~s由~s导入")  
+  (cs-syncheck-running "正在检查语法")
+  (cs-mouse-over-import "绑定~s由~s导入")
+  (cs-mouse-over-import/library-only "由~s导入")
   (cs-view-docs "察看~a的文档")
   (cs-view-docs-from "~a（来自~a）")  ;; a completed version of the line above
   ;; (cs-view-docs) is put into the first ~a and a list of modules (separated by commas) 
@@ -153,6 +159,12 @@
   (cs-contract-both-obligation "Contract：本module和客户module的共同义务")
   (cs-contract-unk-obligation "Contract：义务未知")
   
+  ;; require prefix functionality
+  (cs-add-prefix-for-require "为require添加前缀")
+  (cs-prefix-require-title "Require前缀")
+  (cs-prefix-require "为import得来的变量选择前缀")
+  (cs-all-binders-are-prefixed "所有require都已经有前缀了；试试改变前缀名")
+  (cs-the-binder-is-prefixed "该require已经有前缀了；试试改变前缀名")
   
   ;; mode sub-menu in the "view" menu
   (cs-check-syntax-mode "检查语法模式")
@@ -168,6 +180,7 @@
   (online-expansion-running "语法检查后台运行中")
   (online-expansion-only-raw-text-files-supported "仅支持纯文本文件")
   (online-expansion-abnormal-termination "语法检查后台异常退出")
+  (online-expansion-abnormal-termination-out-of-memory "语法检查后台异常退出(内存不足)")
   (online-expansion-finished-successfully "语法检查后台成功运行")
   
   (jump-to-error "跳至错误")
@@ -189,6 +202,7 @@
   (online-expansion-error-margin "在一侧显示")
   ; the label of a preference in the (string-constant online-expansion) section
   (show-arrows-on-mouseover "鼠标悬停时显示绑定及尾位置箭头")
+  (show-blueboxes "显示蓝盒子、箭头和半圆")
   ;;; info bar at botttom of drscheme frame
   (collect-button-label "垃圾收集")
   (read-only "只读")
@@ -197,6 +211,10 @@
   (running "运行中")
   (not-running "静止中")
   
+  (install-package-button "安装~a") ;; button label: ~a is filled with the name of a pkg
+  (update-catalog "更新目录") ;; button label; shown when there is a missing module, but no matching package
+  (updating-catalog-from "从~a更新……") ;; message label; used as a status message when updating the pkg catalog
+
   ;;; misc
   (welcome-to-something "欢迎来到~a")
   
