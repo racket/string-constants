@@ -399,8 +399,7 @@
   (install-plt-filename "文件名：")
   (install-plt-url "URL：")
   ; an error message from a primitive operation is appended to the end of this message.
-  (install-plt-error-downloading "下载的.plt文件时出错。\n\n"
-                                 "细节:\n")
+  (install-plt-error-downloading "下载的.plt文件时出错。\n\n细节:\n")
   (install-plt-error-header "检查下载的.plt文件时出错。请检查URL并重试。")
   
   ;; install plt file when opened in drscheme strings
@@ -992,8 +991,7 @@
   (create-executable-menu-item-label "创建可执行程序(&E)…")
   (create-executable-title "创建可执行程序")
   (drracket-creates-executables-only-in-some-languages
-   "在DrRacket中创建可执行程序仅支持下列语言选择：在DrRacket语言对话框中选择教学语言（DMdA或者HtDP）；"
-   "在DrRacket语言对话框中选择“Racket语言”，并且用#lang在文件开始处指定语言。\n\n请考虑使用命令行工具raco exe。")
+   "在DrRacket中创建可执行程序仅支持下列语言选择：在DrRacket语言对话框中选择教学语言（DMdA或者HtDP）；在DrRacket语言对话框中选择“Racket语言”，并且用#lang在文件开始处指定语言。\n\n请考虑使用命令行工具raco exe。")
   (must-save-before-executable "在创建可执行程序之前，你必须保存源程序")
   (save-a-mred-launcher "保存为GRacket启动程序")
   (save-a-mzscheme-launcher "保存为Racket启动程序")
@@ -1692,13 +1690,10 @@
   ; second ~a is filled with /etc/paths.d/racket (or some other path like it in the future)
   ; third ~a is filled with the path to the bin directory of the current drracket
   (adding-racket/bin-to-path-failed 
-   "尝试在命令行添加racket支持失败。~a"
-   "具体来说，无法在“~a”中创建内容“~a”。")
+   "尝试在命令行添加racket支持失败。~a具体来说，无法在“~a”中创建内容“~a”。")
   ; first and third ~a are filled with /etc/paths.d/racket (or some other path like it in the future)
   ; and the second one is filled with the path to the bin directory that was put into that file.
   (added-racket/bin-to-path
-   "现在可以在命令行使用racket和其附带的工具了。\n\n"
-   "已为所有用户配置默认PATH，添加~a指向~a。"
-   "如果需要，可以通过删除~a恢复此设置。")
+   "现在可以在命令行使用racket和其附带的工具了。\n\n已为所有用户配置默认PATH，添加~a指向~a。如果需要，可以通过删除~a恢复此设置。")
   (add-racket/bin-to-path "配置Racket命令行…") ;; menu item label
   )
