@@ -584,6 +584,9 @@ please adhere to these guidelines:
   (style-and-color-names "Style && Color Names")
   
   (add-spacing-between-lines "Add one pixel of extra space between lines")
+
+  (editor-x-selection-mode "Explicitly require a copy operation before a paste / Do not automatically copy the selection")
+
   
  ; title of the color choosing dialog
 
