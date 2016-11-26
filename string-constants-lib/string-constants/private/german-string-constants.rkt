@@ -475,6 +475,8 @@
 
  (add-spacing-between-lines "Ein Pixel Extra-Platz zwischen den Zeilen")
 
+ (editor-x-selection-mode "Einfügen nur nach explizitem Kopieren / Selektion nicht automatisch kopieren")
+
  ; title of the color choosing dialog
 
  ; should have entire alphabet
