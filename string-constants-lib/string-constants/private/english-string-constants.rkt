@@ -1271,6 +1271,10 @@ please adhere to these guidelines:
   (module-language-repl-debug/profile-annotations ", with debugging and profiling")
   (module-language-repl-test-annotations ", with test coverage")
 
+  (module-language-#lang-error-more-information "More Information")
+  (module-language-#lang-flush-cache "Reload")
+  (module-language-#lang-flush-cache-menu-item "Reload #lang Extensions")
+
   ;; for the upper portion of the language dialog
   (the-racket-language "The Racket Language")
   (choose-a-language "Choose a language")
