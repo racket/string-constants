@@ -1156,6 +1156,10 @@
  (module-language-repl-debug/profile-annotations ", mit Debugging und Profiling")
  (module-language-repl-test-annotations ", mit Testabdeckung")
 
+ (module-language-#lang-error-more-information "Mehr Information")
+ (module-language-#lang-flush-cache "Neu laden")
+ (module-language-#lang-flush-cache-menu-item "#lang-Erweiterungen neu laden")
+
  ;; for the upper portion of the language dialog
  (the-racket-language "Die Sprache Racket")
  (choose-a-language "Sprache auswählen")
