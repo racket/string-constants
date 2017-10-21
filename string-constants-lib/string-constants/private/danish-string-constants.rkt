@@ -893,9 +893,9 @@ please adhere to these guidelines:
   (input-syntax "Input-syntaks")
   (dynamic-properties "Dynamiske egenskaber")
   (output-syntax "Output-syntaks")
-  (no-debugging-or-profiling "Ingen debugning eller profilering")
+  (no-debugging-or-profiling "Ingen fejlsøgningsinformation eller profilering")
   (debugging "Debugging")
-  (debugging-and-profiling "Debugning og profilering")
+  (debugging-and-profiling "Fejlsøgningsinformation og profilering")
   (test-coverage "Syntaktisk dækning af testsuiten")
   (show-details-button-label "Vis detaljer")
   (hide-details-button-label "Skjul detaljer")
@@ -942,8 +942,8 @@ please adhere to these guidelines:
   ;; which is also the "Determine language from source" language. They are put right after the name
   ;; of the language from the "#lang" line at the beginning of the source file
   (module-language-repl-no-annotations "")
-  (module-language-repl-debug-annotations ", med debugning")
-  (module-language-repl-debug/profile-annotations ", med debugning og profilering")
+  (module-language-repl-debug-annotations ", med fejlsøgningsinformation")
+  (module-language-repl-debug/profile-annotations ", med fejlsøgningsinformation og profilering")
   (module-language-repl-test-annotations ", med testdækning")
 
   (module-language-#lang-error-more-information "Mere information")
@@ -971,8 +971,8 @@ please adhere to these guidelines:
    "Racket-dialekter bestemmes typisk ved at redigere direkte i bufferen,"
    " ikke ved at vælge disse muligheder i sprogdialogen.")
   (racket-dialect-add-new-#lang-line "Skal jeg alligevel tilføje “~a” i definitionsvinduets første linje?")
-  (racket-dialect-replace-#lang-line "Alligevel har du allerede “~a” i din fil; skal jeg erstat det med “~a”?")
-  (racket-dialect-already-same-#lang-line "Du har dog allerede “~a” i din fil; så alt er klar til at komme i gang!")
+  (racket-dialect-replace-#lang-line "Du har allerede “~a” i din fil; skal jeg erstat det med “~a”?")
+  (racket-dialect-already-same-#lang-line "Du har allerede “~a” i din fil; så alt er klar til at komme i gang!")
   
   ;; in the dialog containing the above strings, one of these is a button that appears
   (add-#lang-line "Tilføj #lang-linje")
@@ -1180,7 +1180,7 @@ please adhere to these guidelines:
   (stepper-next-application "Funktionskald")
   (stepper-jump-to-beginning "Hjem")
   
-  (debug-tool-button-name "Debug")
+  (debug-tool-button-name "Fejlsøgning")
   
   (dialog-back "Tilbage")
   
@@ -1311,7 +1311,7 @@ please adhere to these guidelines:
   ;; the first three strings are in the dialog that appears. The last one is in the preferences dialog
   (normalize "Normalisér")
   (leave-alone "Lad være")
-  (normalize-string-info "Strengen, som du indsat, indeholder ligaturer eller andre ikke-normliserede tegn. Normalisér dem?")
+  (normalize-string-info "Strengen, som du har indsat, indeholder ligaturer eller andre ikke-normliserede tegn. Normalisér dem?")
   (normalize-string-preference "Normalisér indsatte strenge")
   (ask-about-normalizing-strings "Spørg før strengnormalisering")
   
@@ -1324,12 +1324,12 @@ please adhere to these guidelines:
   ;; labels used (in a big font) in the background of the definitions and interactions windows
   (definitions-window-label "definitioner")
   (interactions-window-label "interaktioner")
-  (hide-defs/ints-label "Skjul definitioner/interaktioner mærkater") ;; popup menu
-  (show-defs/ints-label "Vis definitioner/interaktioner mærkater") ;; preferences checkbox
+  (hide-defs/ints-label "Skjul overskriften definitioner/interaktioner") ;; popup menu
+  (show-defs/ints-label "Vis overskriften definitioner/interaktioner") ;; preferences checkbox
 
   ;; menu item in the 'edit' menu; applies to editors with programs in them
   ;; (technically, editors that implement color:text<%>)
-  (spell-check-string-constants "Stavekontrol i konstante strenge")
+  (spell-check-string-constants "Stavekontrol i strengkonstanter")
   (spell-check-scribble-text "Stavekontrol i tekst (mellem {} i Scribble)")
   (spelling-dictionaries "Ordbøger til stavekontrol") ; (sub)menu whose items are the different possible dictionaries
   (default-spelling-dictionary "Standardordbog") ; first item in menu from previous line
@@ -1337,7 +1337,7 @@ please adhere to these guidelines:
   (cannot-find-ispell-or-aspell-path "Kan ikke finde aspell eller ispell")
   ; puts the path to the spell program in the ~a and then the error message
   ; is put following this string (with a blank line in between)
-  (spell-program-wrote-to-stderr-on-startup "Stavekontrolsprogrammet (~a) viste en fejlmeddelelse:")
+  (spell-program-wrote-to-stderr-on-startup "Stavekontrolprogrammet (~a) viste en fejlmeddelelse:")
   (spell-skip-to-next-misspelled-word "Spring frem til næste stavefejl") ;; menu item
   (spell-suggest-corrections "Foreslå staverettelser…") ;; menu item
   (spell-correction-suggestions "Foreslåede Staverettelser") ;; dialog title
@@ -1345,7 +1345,7 @@ please adhere to these guidelines:
   
   ;; GUI for installing a pkg package; available via File|Install Package...
   (install-pkg-install-by-source "Gør hvad jeg mener")      ; tab label
-  (install-pkg-install-from-list "Tilgængeligt i katalogen")  ; tab label
+  (install-pkg-install-from-list "Tilgængeligt i kataloget")  ; tab label
   (install-pkg-install-installed "Installeret")    ; tab label
   (install-pkg-migrate-from "Kopi fra version")           ; tab label
   (install-pkg-settings "Indstillinger")                        ; tab label
@@ -1419,9 +1419,9 @@ please adhere to these guidelines:
   
   (install-pkg-abort-set-scope "Afbryd ændring af anvendelsesområde")
 
-  (install-pkg-dependencies-fail "Fejle: afbryder installering/opdatering hvis afhængigheder mangles")
+  (install-pkg-dependencies-fail "Fejl: afbryder installering/opdatering hvis afhængigheder mangles")
   (install-pkg-dependencies-force "Tving: installér på trods af mangler eller versionsmisforhold ved afhængigheder")
-  (install-pkg-dependencies-search-ask "Spørg: spørg ved hvért manglende afhængighed (virker ikke i GUI)")
+  (install-pkg-dependencies-search-ask "Spørg: spørg ved hvér manglende afhængighed (virker ikke i GUI)")
   (install-pkg-dependencies-search-auto "Auto: installér automatisk afhængigheder som mangler eller har forkert version")
   (install-pkg-dependencies-search-auto+update "Auto + Opdater: Opdater afhængigheder når det er muligt")
 
