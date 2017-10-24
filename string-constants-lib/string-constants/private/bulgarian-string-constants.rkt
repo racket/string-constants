@@ -1,4 +1,4 @@
-;; Bulgarian translation of Racket string constants file, version: 1.16
+;; Bulgarian translation of Racket string constants file, version: 1.17
 ;; This file is distributed under the same terms as Racket
 ;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017.
 
@@ -900,7 +900,15 @@
   "грешка при зареждането на файла „info.rkt“ за „~s“")
  (tool-error-phase1 "Грешка във фаза № 1 на инструмента „~s“; ~s")
  (tool-error-phase2 "Грешка във фаза № 2 на инструмента „~s“; ~s")
-
+ ;; tool preferences panel
+ (tool-config-changes "Промените в настройките ще влязат в сила при следващото стартиране на DrRacket.")
+ (installed-tools "Инсталирани инструменти")
+ (tool-prefs-panel-tool:-label "Инструмент: ")
+ (load-tool-when-drracket-starts? "Зареждане при стартиране на DrRacket?")
+ (unnamed-tool "ненаименован инструмент „~a“")
+ (note-that-tool-loaded " (зареден)")
+ (note-that-tool-was-skipped " (прескочен)")
+ (note-that-tool-failed-to-load " (не се зареди)")
 
  ;;; define popup menu
  (end-of-buffer-define "«край на буфера»")
