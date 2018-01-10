@@ -322,7 +322,7 @@
  
  ;;; save file in particular format prompting.
  (save-as-plain-text "텍스트 파일로 저장하시겠습니까?")
- ;(save-in-drs-format "DrRacket(non-text) 형식으로 저장하시겠습니까?")
+ (save-in-drs-format "DrRacket(non-text) 형식으로 저장하시겠습니까?")
  (yes "예")
  (no "아니오")
  

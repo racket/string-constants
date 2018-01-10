@@ -274,7 +274,7 @@
  
  ;;; save file in particular format prompting.
  (save-as-plain-text "¿Salvar este archivo como texto plano?")
- ;(save-in-drs-format "¿Salvar este archivo en el formato, no texto, particular de DrRacket?")
+ (save-in-drs-format "¿Salvar este archivo en el formato, no texto, particular de DrRacket?")
  (yes "Si")
  (no "No")
  

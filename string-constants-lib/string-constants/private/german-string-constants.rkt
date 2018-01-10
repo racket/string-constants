@@ -387,7 +387,7 @@
  
  ;;; save file in particular format prompting.
  (save-as-plain-text "Diese Datei als Text speichern?")
- ;(save-in-drs-format "Diese Datei im DrRacket-Format (kein Text) speichern?")
+ (save-in-drs-format "Diese Datei im DrRacket-Format (kein Text) speichern?")
  (yes "Ja")
  (no "Nein")
  

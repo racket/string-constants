@@ -397,7 +397,7 @@ please adhere to these guidelines:
  
  ;;; save file in particular format prompting.
  (save-as-plain-text "Сохранить этот файл в обычном текcтовом формате?")
- ;(save-in-drs-format "Сохранить этот файл в специальном нетекстовом формате drscheme?")
+ (save-in-drs-format "Сохранить этот файл в специальном нетекстовом формате drscheme?")
  (yes "Да")     
  (no "Нет")
  

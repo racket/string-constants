@@ -369,7 +369,7 @@ please adhere to these guidelines:
  
  ;;; save file in particular format prompting.
  (save-as-plain-text "Gravar este ficheiro como texto?")
- ;(save-in-drs-format "Gravar este ficheiro no formato específico de DrRacket?")
+ (save-in-drs-format "Gravar este ficheiro no formato específico de DrRacket?")
  (yes "Sim")
  (no "Não")
  

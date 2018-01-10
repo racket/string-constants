@@ -379,7 +379,7 @@
   
   ;;; save file in particular format prompting.
   (save-as-plain-text "保存本文件為純文本？")
-  ;(save-in-drs-format "保存本文件為drscheme（非純文本）格式？")
+  (save-in-drs-format "保存本文件為drscheme（非純文本）格式？")
   (yes "是")
   (no "否")
   

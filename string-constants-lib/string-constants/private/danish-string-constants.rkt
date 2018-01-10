@@ -371,7 +371,7 @@ please adhere to these guidelines:
   
   ;;; save file in particular format prompting.
   (save-as-plain-text "Gem denne fil som tekt?")
-  ;(save-in-drs-format "Gem denne fil i det DrRacket-specifikke ikke-tekst format?")
+  (save-in-drs-format "Gem denne fil i det DrRacket-specifikke ikke-tekst format?")
   (yes "Ja")
   (no "Nej")
   
