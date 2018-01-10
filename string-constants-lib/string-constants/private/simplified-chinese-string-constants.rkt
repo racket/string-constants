@@ -416,7 +416,7 @@
   
   ;;; save file in particular format prompting.
   (save-as-plain-text "保存本文件为纯文本？")
-  (save-in-drs-format "保存本文件为drscheme（非纯文本）格式？")
+  ;(save-in-drs-format "保存本文件为drscheme（非纯文本）格式？")
   (yes "是")
   (no "否")
   

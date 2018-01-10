@@ -495,7 +495,7 @@ please adhere to these guidelines:
  
  ;;; save file in particular format prompting.
  (save-as-plain-text "Save this file as plain text?")
- (save-in-drs-format "Save this file in drscheme-specific non-text format?")
+ (save-in-drs-format "Convert this file in a DrRacket specific format to keep non-text elements?")
  (yes "Yes")
  (no "No")
  

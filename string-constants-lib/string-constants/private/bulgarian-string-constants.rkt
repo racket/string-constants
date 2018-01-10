@@ -409,7 +409,7 @@
 
  ;;; save file in particular format prompting.
  (save-as-plain-text "Да се запази ли файлът като обикновен текст?")
- (save-in-drs-format "Да се запази ли файлът във форма̀та на DrScheme (не е текстов)?")
+ ;(save-in-drs-format "Да се запази ли файлът във форма̀та на DrScheme (не е текстов)?")
  (yes "Да")
  (no "Не")
 

@@ -392,7 +392,7 @@ please adhere to these guidelines:
 
  ;;; save file in particular format prompting.
  (save-as-plain-text "このファイルをプレーンテキストで保存しますか？")
- (save-in-drs-format "このファイルを DrRacket 専用のバイナリ形式で保存しますか？")
+ ;(save-in-drs-format "このファイルを DrRacket 専用のバイナリ形式で保存しますか？")
  (yes "はい")
  (no "いいえ")
 
