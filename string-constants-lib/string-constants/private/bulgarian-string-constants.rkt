@@ -1,6 +1,6 @@
-;; Bulgarian translation of Racket string constants file, version: 1.17
+;; Bulgarian translation of Racket string constants file, version: 1.18
 ;; This file is distributed under the same terms as Racket
-;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017.
+;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018.
 
 (module bulgarian-string-constants "string-constant-lang.rkt"
  ;;; when translating this constant, substitute name of actual language for `English'
@@ -409,7 +409,11 @@
 
  ;;; save file in particular format prompting.
  (save-as-plain-text "Да се запази ли файлът като обикновен текст?")
+ (save-as-binary-format "Да се запази ли файлът във форма̀та на DrRacket, за да се запазят елементите, които не са чист текст?")
  (save-in-drs-format "Да се запази ли файлът във форма̀та на DrScheme (не е текстов)?")
+ (keep-format "Запазване в първоначалния формат")
+ (convert-format "Запазване във форма̀та на DrRacket")
+ (dont-save "В момента да не се запазва")
  (yes "Да")
  (no "Не")
 
