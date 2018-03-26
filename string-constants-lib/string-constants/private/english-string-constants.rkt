@@ -1112,6 +1112,7 @@ please adhere to these guidelines:
  (stand-alone-explanatory-label "Stand-alone (for this machine only, run compiled copy)")
  (distribution "Distribution")
  (distribution-explanatory-label "Distribution (to install on other machines)")
+ (embed-dlls? "Embed DLLs in the executable?") ;; appears in the GUI only under windows
  (executable-type "Type")
  (executable-base "Base")
  (filename "Filename: ")
