@@ -990,6 +990,7 @@
  (stand-alone-explanatory-label "Stand-alone (nur für diese Maschine, startet compilierte Kopie)")
  (distribution "Distribution")
  (distribution-explanatory-label "Distribution (für die Installation auf anderen Maschinen)")
+ (embed-dlls? "DLLs in Programmdatei einbetten?") ;; appears in the GUI only under windows
  (executable-type "Typ")
  (executable-base "Hauptteil")
  (filename "Dateiname: ")
