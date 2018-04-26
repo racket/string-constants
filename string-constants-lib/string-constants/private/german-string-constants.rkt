@@ -1263,7 +1263,7 @@
  (test-coverage-ask? "Frage nach dem Löschen der Testabdeckungs-Information")
  (test-coverage-on "Durch Tests abgedeckt")
  (test-coverage-off "Durch Tests nicht abgedeckt")
- (test-coverage-entirely-covered "Alle Ausdrücke are sind abgedeckt")
+ (test-coverage-entirely-covered "Alle Ausdrücke sind abgedeckt")
  (test-coverage-next-time-check-box "Nächstes Mal anzeigen?")
  (test-coverage-summary "Zusammenfassung der Abdeckungs-Ergebnisse anzeigen")
   
