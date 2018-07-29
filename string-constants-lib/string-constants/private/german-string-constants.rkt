@@ -137,7 +137,7 @@
 
  ;; require prefix functionality
  (cs-add-prefix-for-require "Präfix für require hinzufügen")
- (cs-prefix-require-title "Präfix für Require")
+ (cs-prefix-require-title "Präfix für require")
  (cs-prefix-require "Präfix wählen für alle importierten Variablen")
  (cs-all-binders-are-prefixed "Alle require-Formen scheinen schon einen Präfix zu haben; stattdessen umbenennen")
  (cs-the-binder-is-prefixed "Die require-Form scheint schon einen Präfix zu haben; stattdessen umbenennen")
