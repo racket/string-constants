@@ -111,7 +111,7 @@
  (cs-status-eval-compile-time "Syntaxprüfung: Compile-Time-Code ausführen")
  (cs-status-expanding-expression "Syntaxprüfung: Ausdruck expandieren")
  (cs-status-loading-docs-index "Syntaxprüfung: Dokumentations-Index laden")
- (cs-syncheck-running "Syntaprüfung läuft")
+ (cs-syncheck-running "Syntaxprüfung läuft")
  (cs-mouse-over-import "Bindung „~s“ importiert aus „~s“")
  (cs-mouse-over-import/library-only "importiert aus „~s“")
  
@@ -130,10 +130,10 @@
  (cs-one-varref "Ein gebundenes Vorkommen")
  (cs-n-varrefs "~a gebundene Vorkommen") ;; expected to have one ~a formatter that will accept a number
 
- (cs-contract-my-obligation "Vertrag: Obliation dieses Moduls")
+ (cs-contract-my-obligation "Vertrag: Obligation dieses Moduls")
  (cs-contract-their-obligation "Vertrag: Obligation des Klientenmoduls")
  (cs-contract-both-obligation "Vertrag: Obligation sowohl dieses Moduls als auch des Klientenmoduls")
- (cs-contract-unk-obligation "Vertrag: Oblikation unbekannt")
+ (cs-contract-unk-obligation "Vertrag: Obligation unbekannt")
 
  ;; require prefix functionality
  (cs-add-prefix-for-require "Präfix für require hinzufügen")
@@ -156,7 +156,7 @@
  (online-expansion-running "Hintergrund-Expansion läuft")
  (online-expansion-only-raw-text-files-supported "Nur reine Text-Dateien sind unterstützt")
  (online-expansion-abnormal-termination "Hintergrund-Expansion unglücklich abgebrochen")
- (online-expansion-abnormal-termination-out-of-memory "Hintergrund-Expansion unglücklich abgebrochend (kein Speicher mehr)")
+ (online-expansion-abnormal-termination-out-of-memory "Hintergrund-Expansion unglücklich abgebrochen (kein Speicher mehr)")
  (online-expansion-finished-successfully "Hintergrund-Expansion erfolgreich abgeschlossen")
 
  (jump-to-error "Zum Fehler springen")
@@ -306,7 +306,7 @@
  (plt:hd:refreshing-manuals-finished "Fertig.")
  (plt:hd:about-help-desk "Über das Hilfezentrum")
  (plt:hd:help-desk-about-string
-  "Das Hilfezentrum ist die primäre Quelle für Information über die PLT-Software,insbesondere DrRacket, MzScheme und MrEd.\n\nVersion ~a\nCopyright (c) ~a-~a PLT")
+  "Das Hilfezentrum ist die primäre Quelle für Information über die PLT-Software, insbesondere DrRacket, MzScheme und MrEd.\n\nVersion ~a\nCopyright (c) ~a-~a PLT")
  (plt:hd:help-on-help "Hilfe zur Hilfe")
  (plt:hd:help-on-help-details "Hilfe zum Hilfezentrum befindet sich auf der Homepage des Hilfezentrums unter `Help Desk'.   (Die Homepage des Hilfezentrums ist über den `Home'-Knopf zu erreichen.)")
   (reload "Aktualisieren") ;; refresh the page in a web browser
@@ -351,7 +351,7 @@
  (browser-cmdline-expl-line-1 "(Kommandozeile konstruiert durch Aneinanderhängen von Vor-Text, URL,")
  (browser-cmdline-expl-line-2 " und Nach-Text, ohne zusätzliche Leerzeichen dazwischen.")
  (install? "Installieren?")  ;; if a .plt file is found (title of dialog)
- (you-have-selected-an-installable-package "Sie haben eine installierbares Paket angewählt.")
+ (you-have-selected-an-installable-package "Sie haben ein installierbares Paket angewählt.")
  (do-you-want-to-install-it? "Wollen Sie es installieren?")
  (paren-file-size "(Die Datei hat ~a Bytes)")
  (download-and-install "Herunterladen && installieren") ;; button label
@@ -499,7 +499,7 @@
  (set-font "Schriftart setzen…")
  (font-smoothing-label  "Weiche Kanten bei Schrift")
  (font-smoothing-none "Nicht")
- (font-smoothing-some "Bißchen")
+ (font-smoothing-some "Bisschen")
  (font-smoothing-all "Total")
  (font-smoothing-default "System-Einstellung verwenden")
  (font-weight-label "Schriftstärke")
@@ -687,7 +687,7 @@
  (cut-info "Verschiebe die Selektion ins Clipboard, um sie später wieder einfügen zu können")
  (cut-menu-item "&Ausschneiden")
 
- (copy-info "Kopiere die Selektion ins Clipboard, um sie später wieder einfügen zu könne")
+ (copy-info "Kopiere die Selektion ins Clipboard, um sie später wieder einfügen zu können")
  (copy-menu-item "&Kopieren")
 
  (paste-info "Ersetze die aktuelle Selektion durch die zuletzt kopierte oder ausgeschnittene Selektion")
@@ -850,9 +850,9 @@
  (file-has-been-modified
   "Die Datei wurde verändert, seit sie das letzte Mal gespeichert wurde. Änderungen überschreiben?")
  (overwrite-file-button-label "Überschreiben")
- 
- (definitions-modified 
-  "Die Definitionen wurden auf der Platte geändert; bitte speichern sie die Definitionen oder holen Sie diese von der Platte zurück.")
+
+ (definitions-modified
+  "Die Definitionen wurden auf der Platte geändert; bitte speichern Sie die Definitionen oder holen Sie diese von der Platte zurück.")
  (drscheme-internal-error "Interner Fehler in DrRacket")
  
  ;;; tools
@@ -995,7 +995,7 @@
  (executable-base "Hauptteil")
  (filename "Dateiname: ")
  (create "Erzeugen")
- (files-for-icons-etc "Dateien für für Bildchen etc.")
+ (files-for-icons-etc "Dateien für Bildchen etc.")
  (please-specify-a-filename "Bitte einen Dateinamen angeben.")
  (~a-must-end-with-~a
   "Der Dateiname auf „.~a“\n\n  ~a\n\nist nicht zulässig. Der Dateiname muss auf „.~a“ enden.")
@@ -1353,7 +1353,7 @@
  (module-browser-name-medium "Mittel")
  (module-browser-name-long "Lang")
  (module-browser-name-very-long "Lang mit Phasen")  ;; like 'Long' but shows the phases where this file is loaded
- (module-browser-open-all "Alle hier angezeigten Datein öffnen")
+ (module-browser-open-all "Alle hier angezeigten Dateien öffnen")
 
  (happy-birthday-matthias "Happy Birthday, Matthias!")
  (happy-birthday-matthew "Happy Birthday, Matthew!")
@@ -1432,8 +1432,8 @@
  (stepper-no-later-step "Keine weiteren Schritte.")
   
  (stepper-no-selected-step "Keine Schritte im markierten Bereich. Vielleicht ist es auskommentiert?")
-  
- (stepper-no-last-step "Der letzte Schritt ist nocht nicht verfügbar.")
+
+ (stepper-no-last-step "Der letzte Schritt ist noch nicht verfügbar.")
 
  (debug-tool-button-name "Debugger")
 
@@ -1517,7 +1517,7 @@
   (profj-language-config-support-test-language "Spracherweiterung „test“ unterstützen?")
   (profj-language-config-testing-check "Check-Ausdruck zulassen?") ; check should not be translated
   (profj-language-config-classpath "Klassenpfad")
-  (profj-language-config-choose-classpath-directory "Verzeichnis für den Klassenpfad auswählren")
+  (profj-language-config-choose-classpath-directory "Verzeichnis für den Klassenpfad auswählen")
   (profj-language-config-classpath-display "Aktuellen Wert anzeigen") ; Button label to print the current classpath
 
   (profj-test-name-close-to-example "Der Name von Klasse ~a enhält etwas, das so ähnlich wie „Example“ aussieht.")
@@ -1819,11 +1819,11 @@
 
   (install-pkg-abort-set-scope "Änderung des Einzugsbereich widerrufen")
 
-  (install-pkg-dependencies-fail "Fehlschlag: Installation/Aktualisierung widerrufen, falls Abhänigkeiten fehlen")
+  (install-pkg-dependencies-fail "Fehlschlag: Installation/Aktualisierung widerrufen, falls Abhängigkeiten fehlen")
   (install-pkg-dependencies-force "Trotzdem: Installieren trotz fehlender Abhängigkeiten")
-  (install-pkg-dependencies-search-ask "Fragen: bei jeder fehlenden Abhänigkeit fragen (nicht unterstützt in GUI)")
-  (install-pkg-dependencies-search-auto "Auto: fehlende Abhänigkeiten automatisch installieren")
-  (install-pkg-dependencies-search-auto+update "Auto + Aktualisieren: Abhänigkeiten aktualisieren wann immer möglich")
+  (install-pkg-dependencies-search-ask "Fragen: bei jeder fehlenden Abhängigkeit fragen (nicht unterstützt in GUI)")
+  (install-pkg-dependencies-search-auto "Auto: fehlende Abhängigkeiten automatisch installieren")
+  (install-pkg-dependencies-search-auto+update "Auto + Aktualisieren: Abhängigkeiten aktualisieren wann immer möglich")
 
   (install-pkg-dependencies-mode "Modus Abhängigkeiten")
 
@@ -1836,7 +1836,7 @@
   (install-pkg-add-package-catalog "Paket-Katalog hinzufügen")
 
   (install-pkg-not-rentrant "Installation und Aktualisierung können nicht gleichzeitig laufen."
-                            " Brechen Sie entweder den laufenden Prozess ab oder warten, bis er fertig ist.")
+                            " Brechen Sie entweder den laufenden Prozess ab oder warten Sie, bis er fertig ist.")
 
   ;; open a file via a collection path (new "Open" menu item in DrRacket)
   (open-require-path "Require-Pfad öffnen…")
@@ -1849,13 +1849,13 @@
   ;  (bracketed by some newlines to separate it out)
   ; second ~a is filled with /etc/paths.d/racket (or some other path like it in the future)
   ; third ~a is filled with the path to the bin directory of the current drracket
-  (adding-racket/bin-to-path-failed 
-   "Versuch fehlgeschlagen, Racket-Unterstützung zur Kommandozeile hinzufügen.~aGenauer:"
+  (adding-racket/bin-to-path-failed
+   "Versuch fehlgeschlagen, Racket-Unterstützung zur Kommandozeile hinzuzufügen.~aGenauer:"
    " konnte „~a“ mit Inhalt „~a“ nicht erzeugen.")
   ; first and third ~a are filled with /etc/paths.d/racket (or some other path like it in the future)
   ; and the second one is filled with the path to the bin directory that was put into that file.
   (added-racket/bin-to-path
-   "Sie sollten nun Racket mit all seinen Programme von der"
+   "Sie sollten nun Racket mit all seinen Programmen von der"
    " Kommandozeile benutzen können.\n\nDer"
    " Standardpfad in PATH wurde für alle Benutzer konfiguriert, indem die Datei"
    " ~a hinzugefügt wurde und auf ~a zeigt. Sie können dies rückgängig machen, indem"
