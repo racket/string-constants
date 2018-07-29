@@ -1807,7 +1807,7 @@
   (install-pkg-abort-promote "Beförderung abbrechen")
   (install-pkg-abort-migrate "Migration abbrechen")
   (install-pkg-abort-setup "Konfiguration abbrechen")
-  (install-pkg-abort-setup "Abort Setup")
+  (install-pkg-abort-setup "Setup abbrechen")
   (install-pkg-abort-generic-action "Aktion abbrechen")
   (install-pkg-close-terminal-output "Anzeige schließen")
   (install-pkg-show-all-options "Alle Optionen anzeigen")
