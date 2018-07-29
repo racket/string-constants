@@ -1676,7 +1676,7 @@
 
   ;; GUI Tool
   (gui-tool-heading "GUI-Werkzeug")
-  (gui-tool-before-clicking-message "Befor Sie auf ein Tool-Icon klicken, benutzen Sie „GUI einfügen“ vom „Spezial“-Menü, um ein Wurzel-GUI-Element einzufügen, oder selektieren Sie eine schon vorher eingefügte GUI.")
+  (gui-tool-before-clicking-message "Bevor Sie auf ein Tool-Icon klicken, benutzen Sie „GUI einfügen“ vom „Spezial“-Menü, um ein Wurzel-GUI-Element einzufügen, oder selektieren Sie eine schon vorher eingefügte GUI.")
   (gui-tool-show-gui-toolbar "GUI-Toolbar einblenden")
   (gui-tool-hide-gui-toolbar "GUI-Toolbar ausblenden")
   (gui-tool-insert-gui "GUI einfügen")
