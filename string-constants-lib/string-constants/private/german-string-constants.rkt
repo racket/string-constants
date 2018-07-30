@@ -324,7 +324,7 @@
   (use-drscheme-font-size "DrRacket-Schriftgröße verwenden")
 
   (help-desk-this-is-just-example-text
-   "Dies ist nur ein Beispieltext für das Setzen der Schriftgröße.  Öffnen sie das Hilfezentrum (im „Hilfe“-Menü), um diesen Links zu folgen.")
+   "Dies ist nur ein Beispieltext für das Setzen der Schriftgröße.  Öffnen Sie das Hilfezentrum (im „Hilfe“-Menü), um diesen Links zu folgen.")
 
   ;; this appears in the bottom part of the frame the first time the user hits `f1' 
   ;; (assuming nothing else has loaded the documentation index first)
