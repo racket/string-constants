@@ -1617,7 +1617,7 @@
    "check-expect遇到如下错误，而非期望值，~F。~n   :: ~a")
   (test-engine-actual-value-differs-error
    "实际值~F不同与期望值~F。")
-  ;; need to translated only one of these next two
+  ;; need to translate only one of these next two
   ;; (test-engine-actual-value-not-within-error or
   ;;  test-engine-actual-value-not-within-error/alt-word-order)
   ;; if both are present, test-engine-actual-value-not-within-error is used

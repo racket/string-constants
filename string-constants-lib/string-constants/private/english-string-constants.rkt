@@ -1712,7 +1712,7 @@ please adhere to these guidelines:
    "check-expect encountered the following error instead of the expected value, ~F. ~n   :: ~a")
   (test-engine-actual-value-differs-error
    "Actual value ~F differs from ~F, the expected value.")
-  ;; need to translated only one of these next two
+  ;; need to translate only one of these next two
   ;; (test-engine-actual-value-not-within-error or
   ;;  test-engine-actual-value-not-within-error/alt-word-order)
   ;; if both are present, test-engine-actual-value-not-within-error is used
