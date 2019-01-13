@@ -1710,6 +1710,8 @@ please adhere to these guidelines:
   ; printed specially in DrRacket.
   (test-engine-check-encountered-error
    "check-expect encountered the following error instead of the expected value, ~F. ~n   :: ~a")
+  (test-engine-check-error-cause
+   "caused by expression")
   (test-engine-actual-value-differs-error
    "Actual value ~F differs from ~F, the expected value.")
   ;; need to translate only one of these next two
