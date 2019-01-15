@@ -1621,6 +1621,8 @@
  ; printed specially in DrRacket.
  (test-engine-check-encountered-error
    "check-expect получи грешката „~F“ вместо очакваната стойност ~n   :: ~a")
+ (test-engine-check-error-cause
+   "причинена от израз")
  (test-engine-actual-value-differs-error
    "Получената стойност „~F“ се различава от очакваната „~F“.")
  ;; need to translate only one of these next two
