@@ -1440,7 +1440,7 @@
   
  (stepper-no-selected-step "Keine Schritte im markierten Bereich. Vielleicht ist es auskommentiert?")
   
- (stepper-no-last-step "Der letzte Schritt ist nocht nicht verfügbar.")
+ (stepper-no-last-step "Der letzte Schritt ist noch nicht verfügbar.")
 
  (debug-tool-button-name "Debugger")
 
