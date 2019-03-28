@@ -916,7 +916,7 @@
  ;;; file menu
  (save-definitions-as "Definitionen speichern unter…")
  (save-definitions "Definitionen speichern")
- (print-definitions "Definition drucken…")
+ (print-definitions "Definitionen drucken…")
  (about-drscheme "Über DrRacket")
  (save-other "Speichern unter")
  (save-definitions-as-text "Definitionen als Text speichern…")
