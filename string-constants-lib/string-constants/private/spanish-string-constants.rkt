@@ -91,7 +91,7 @@
  (cs-rename-var-to "Renombrar ~a a:")
  (cs-name-duplication-error "El nuevo nombre que has seleccionado, ~s, colisiona con otro nombre en este ambiente.")
  (cs-rename-anyway "Renombrar de cualquier modo")
- (cs-status-init "Revisar sintaxis: Iniciando el ambiente para el código de usuario")
+ (cs-status-init "Revisar sintaxis: iniciando el ambiente para el código de usuario")
  (cs-status-coloring-program "Revisar sintaxis: coloreando la expresión")
  (cs-status-eval-compile-time "Revisar sintaxis: tiempo de evaluación y compilación")
  (cs-status-expanding-expression "Revisar sintaxis: expandiendo la expresión")
