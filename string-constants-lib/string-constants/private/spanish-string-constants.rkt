@@ -75,7 +75,7 @@
  (pls-fill-in-either-description-or-reproduce "Por favor completa el campo de Descripción o el de Pasos para Reproducir.")
 
  ;;; check syntax
- (check-syntax "Revisa la sintaxis")
+ (check-syntax "Revisar sintaxis")
  (cs-italic "Itálica")
  (cs-bold "Negrita")
  (cs-underline "Subrayado")
@@ -91,10 +91,10 @@
  (cs-rename-var-to "Renombrar ~a a:")
  (cs-name-duplication-error "El nuevo nombre que has seleccionado, ~s, colisiona con otro nombre en este ambiente.")
  (cs-rename-anyway "Renombrar de cualquier modo")
- (cs-status-init "Chequear sintaxis: Iniciando el ambiente para el código de usuario")
- (cs-status-coloring-program "Chequear sintaxis: coloreando la expresión")
- (cs-status-eval-compile-time "Chequear sintaxis: tiempo de evaluación y compilación")
- (cs-status-expanding-expression "Chequear sintaxis: expandiendo la expresión")
+ (cs-status-init "Revisar sintaxis: Iniciando el ambiente para el código de usuario")
+ (cs-status-coloring-program "Revisar sintaxis: coloreando la expresión")
+ (cs-status-eval-compile-time "Revisar sintaxis: tiempo de evaluación y compilación")
+ (cs-status-expanding-expression "Revisar sintaxis: expandiendo la expresión")
  (cs-mouse-over-import "Asociación ~s importada desde ~s")
  
  (cs-lexical-variable "variable léxica")
