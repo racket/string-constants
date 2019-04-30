@@ -84,6 +84,15 @@
  (malformed-email-address "Ungültige Email-Adresse")
  (pls-fill-in-either-description-or-reproduce "Bitte füllen Sie entweder das Feld „Beschreibung“ oder das Feld „Schritte, um das Problem zu reproduzieren“ aus.")
 
+ (have-an-issue? "Gibt es ein Problem? ...")
+ (use-github-or-the-mailing-list-for-issues
+  "Falls Sie einen Fehler in Racket oder DrRacket gefunden haben, öffnen Sie ein"
+  " Issue auf Github.\n\nFalls"
+  " Sie etwas sehen, dass keinen Sinn ergibt, sind aber nicht sicher, ob es ein"
+  " Fehler ist oder nicht, fragen Sie auf der Mailing-Liste.")
+ (visit-github "GitHub besuchen")
+ (visit-mailing-list "Mailing-Listen besuchen")
+ 
  ;;; check syntax
  (check-syntax "Syntaxprüfung")
  (cs-italic "Kursiv")
