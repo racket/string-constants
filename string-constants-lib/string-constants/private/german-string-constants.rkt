@@ -1755,6 +1755,8 @@
   ; puts the path to the spell program in the ~a and then the error message
   ; is put following this string (with a blank line in between)
   (spell-program-wrote-to-stderr-on-startup "Der Rechtschreibchecker (~a) hat eine Fehlermeldung ausgegeben:")
+  (spell-program-did-not-respond-after-some-seconds
+   "Der Rechtschreibchecker (~a) hast sich nach ~a Sekunden immer noch nicht gemeldet")
 
   (spell-skip-to-next-misspelled-word "Zum nächsten falsch geschriebenen Wort") ;; menu item
   (spell-suggest-corrections "Rechtschreibkorrekturen vorschlagen…") ;; menu item
