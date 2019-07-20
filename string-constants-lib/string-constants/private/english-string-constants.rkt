@@ -1434,7 +1434,11 @@ please adhere to these guidelines:
  (teachpack "Teachpack")
  (welcome-to "Welcome to")
  (version "version")
- 
+ ;; The following is shown on 2nd line of welcome message in repl.
+ ;; It is concatenated at end of: "language": LANGUAGE "; memory limit:" LIMIT
+ ;; therefore you get to decide punctuation for your language here
+ (memory-limit "; memory limit:")
+
  ;;; kill evaluation dialog
  (kill-evaluation? "Do you want to kill the evaluation?")
  (just-break "Just Break")

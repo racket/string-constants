@@ -1,4 +1,4 @@
-;; Bulgarian translation of Racket string constants file, version: 1.22
+;; Bulgarian translation of Racket string constants file, version: 1.25
 ;; This file is distributed under the same terms as Racket
 ;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019.
 
@@ -1337,6 +1337,9 @@
  (teachpack "Учебен модул")
  (welcome-to "Добре дошли в")
  (version "версия")
+ ;; The following is shown on 2nd line of welcome message in repl.
+ ;; It is concatenated at end of: "language": LANGUAGE; "memory limit:" LIMIT
+ (memory-limit ", ограничаване на паметта до:")
 
  ;;; kill evaluation dialog
  (kill-evaluation? "Принудително ли да е спирането на изчислението?")
