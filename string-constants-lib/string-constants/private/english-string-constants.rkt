@@ -986,6 +986,19 @@ please adhere to these guidelines:
  
  (definitions-modified 
   "The definitions text has been modified in the file-system; please save or revert the definitions text.")
+
+ ;; for a dialog that appears when Run is clicked and there are unsaved files
+ ; the ~a is filled with a filename (same string that appears in a tab)
+ (one-file-not-saved-do-the-save?
+  "The file “~a” is not saved; save it before Run?")
+ ; the string is suffixed with a list of filenames (which are separated by newlines)
+ (many-files-not-saved-do-the-save?
+  "Some other files are not saved; save them before Run?\n\nFiles:")
+ ; button label to go ahead with saving
+ (save-all-files "Save All Files")
+ ; check box in the dialog and also used in the preferences dialog
+ (save-after-switching-tabs "Save files whenever switching tabs or windows")
+
  (drscheme-internal-error "DrRacket Internal Error")
  
  ;;; tools
