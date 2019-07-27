@@ -868,7 +868,20 @@
  (overwrite-file-button-label "Überschreiben")
  
  (definitions-modified 
-  "Die Definitionen wurden auf der Platte geändert; bitte speichern sie die Definitionen oder holen Sie diese von der Platte zurück.")
+   "Die Definitionen wurden auf der Platte geändert; bitte speichern sie die Definitionen oder holen Sie diese von der Platte zurück.")
+ 
+ ;; for a dialog that appears when Run is clicked and there are unsaved files
+ ; the ~a is filled with a filename (same string that appears in a tab)
+ (one-file-not-saved-do-the-save?
+  "Die Datei “~a” ist nicht gespeechert; vor Start speichern??")
+ ; the string is suffixed with a list of filenames (which are separated by newlines)
+ (many-files-not-saved-do-the-save?
+  "Manche andere Dateien Dateien sind nicht gespeichert; vor Start speichern?\n\nDateien:")
+ ; button label to go ahead with saving
+ (save-all-files "Alle Dateien speichern")
+ ; check box in the dialog and also used in the preferences dialog
+ (save-after-switching-tabs "Dateien speichern immeer bei Tab- oder Fenster-Wechsel")
+ 
  (drscheme-internal-error "Interner Fehler in DrRacket")
  
  ;;; tools
@@ -1315,6 +1328,10 @@
  (teachpack "Teachpack")
  (welcome-to "Willkommen bei")
  (version "Version")
+  ;; The following is shown on 2nd line of welcome message in repl.
+ ;; It is concatenated at end of: "language": LANGUAGE "; memory limit:" LIMIT
+ ;; therefore you get to decide punctuation for your language here
+ (memory-limit "; Speicherlimit:")
  
  ;;; kill evaluation dialog
  (kill-evaluation? "Auswertung abbrechen?")
