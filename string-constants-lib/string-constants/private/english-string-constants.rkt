@@ -449,6 +449,24 @@ please adhere to these guidelines:
   ;; (assuming nothing else has loaded the documentation index first)
   ;; see also: cs-status-loading-docs-index
   (help-desk-loading-documentation-index "Help Desk: loading documentation index")
+
+  ;; the next four are all in the same dialog box (only one of the first two appears)
+  (help-desk-materialize-docs-something-changed
+   "DrRacket detected a possible problem with the documentation"
+   " index. Shall it try to repair it (this may take a few"
+   " moments)?\n\nIn more detail, the documentation directory ~a does not"
+   " exist, and thus the search in the browser is likely to fail.")
+  (help-desk-materialize-docs-first-time
+   "DrRacket detected a possible problem with the documentation"
+   " index. Shall it try to repair it (this may take a few"
+   " moments)?\n\nIn more detail, DrRacket has not materialized"
+   " the user documentation before, and thus the search in the"
+   " browser may fail.")
+  (help-desk-do-nothing "Do Nothing")
+  (help-desk-materialize-user-docs "Materialize User Docs")
+  ; this is used in a dialog to let the user know that work is being done based on
+  ; choices made from the previous dialog in the above four string constants
+  (help-desk-materializing-user-docs... "Materializing user documentation...")
   
  ;; Help desk htty proxy
  (http-proxy "HTTP Proxy")
