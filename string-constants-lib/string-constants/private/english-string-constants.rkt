@@ -92,6 +92,8 @@ please adhere to these guidelines:
  ;;; when translating this constant, substitute name of actual language for `English'
  (is-this-your-native-language "Is English Your Native Language?")
 
+ (#:define drr "DrRacket")
+
  (are-you-sure-you-want-to-switch-languages
   "This will change the language of the GUI, which requires you to restart DrRacket. Are you sure?")
 
@@ -105,8 +107,8 @@ please adhere to these guidelines:
  
  ;;; general purpose (DrRacket is hereby a word in every language, by decree of Robby :)
  (plt "PLT")
- (drscheme "DrRacket")
- (drracket "DrRacket")
+ (drscheme drr)
+ (drracket drr)
  (ok "OK")
  (cancel "Cancel")
  (abort "Abort")
