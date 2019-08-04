@@ -11,8 +11,9 @@
   (syntax-parse stx
     [(_ stuff ...)
      #'(#%plain-module-begin
-        (define the-hash (make-hash))
-        (string-constant-item the-hash stuff) ...)]))
+        (provide string-constants)
+        (define string-constants (make-hash))
+        (string-constant-item string-constants stuff) ...)]))
 
 (begin-for-syntax
   (define-syntax-class str-or-id-as-str
@@ -60,5 +61,5 @@
      (syntax-parse stx
        [x:id #`'#,(compile-time-string-str this)]))))
 
-(define (add-sc the-hash name . strs)
-  (hash-set! the-hash name (apply string-append strs)))
+(define (add-sc string-constants name . strs)
+  (hash-set! string-constants name (apply string-append strs)))
