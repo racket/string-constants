@@ -197,7 +197,7 @@
  (online-expansion-error-margin "в бялото поле")
  ; the label of a preference in the (string-constant online-expansion) section
  (show-arrows-on-mouseover "Присвояване и стрелки към крайната позиция при курсор")
- (show-blueboxes "Сини кутии и полуокръжности на стрелките към тях")
+ (show-blueboxes "Сини кутии и полуокръжности на стрелките към тях") ;; blue boxes should be ``signature'' boxes now
  ;;; info bar at botttom of drscheme frame
  (collect-button-label "Боклук")
  (read-only "Само за четене")

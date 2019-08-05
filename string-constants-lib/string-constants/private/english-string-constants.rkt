@@ -312,7 +312,7 @@ please adhere to these guidelines:
   (online-expansion-error-margin "in the margin")
   ; the label of a preference in the (string-constant online-expansion) section
   (show-arrows-on-mouseover "Show binding and tail-position arrows on mouseover")
-  (show-blueboxes "Show blue boxes and blue box arrow semi-circle")
+  (show-blueboxes "Show signature boxes and signature box arrow semi-circle in upper-right corner")
   ;;; info bar at botttom of drscheme frame
   (collect-button-label "GC")
   (read-only "Read only")
