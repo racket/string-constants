@@ -8,12 +8,18 @@
          #%top-interaction)
 
 (define-syntax (-#%module-begin stx)
+  (define-splicing-syntax-class lax-spaces
+    #:attributes ([lax-spaces? 0])
+    (pattern #:lax-spaces
+             #:with lax-spaces? #t)
+    (pattern (~seq)
+             #:with lax-spaces? #f))
   (syntax-parse stx
-    [(_ stuff ...)
+    [(_ ls:lax-spaces stuff ...)
      #'(#%plain-module-begin
         (provide string-constants)
         (define string-constants (make-hash))
-        (string-constant-item string-constants stuff) ...)]))
+        (string-constant-item ls.lax-spaces? string-constants stuff) ...)]))
 
 (begin-for-syntax
   (define-syntax-class str-or-id-as-str
@@ -27,11 +33,13 @@
 
 (define-syntax (string-constant-item stx)
   (syntax-parse stx
-    [(_ the-hash (#:define x:id s:str))
+    [(_ _ the-hash (#:define x:id s:str))
      #'(define-syntax x (compile-time-string 's))]
-    [(_ the-hash (x:id str:str-or-id-as-str))
+    [(_ _ the-hash (x:id str:str-or-id-as-str))
      #'(add-sc the-hash 'x str)]
-    [(_ the-hash (x:id this-str:str-or-id-as-str next-str:str-or-id-as-str ...))
+    [(_ #t the-hash (x:id this-str:str-or-id-as-str next-str:str-or-id-as-str ...))
+     #'(add-sc the-hash 'x this-str next-str ...)]
+    [(_ #f the-hash (x:id this-str:str-or-id-as-str next-str:str-or-id-as-str ...))
      (define expln
        (string-append
         "  multi-line string constants must be broken on spaces"
