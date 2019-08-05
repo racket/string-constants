@@ -45,21 +45,26 @@
         "  multi-line string constants must be broken on spaces"
         " and the space must start at the beginning of the"
         " (non-first) string constant"))
-     (for ([a-next-str (in-list (syntax->list #'(next-str.str ...)))])
-       (unless (regexp-match #rx"^ " (syntax-e a-next-str))
+     (define (check-string-start str-stx)
+       (unless (regexp-match #rx"^ " (syntax-e str-stx))
          (raise-syntax-error 'string-constant-lang
                              (string-append
                               "expected a string that begins with a space\n"
                               expln)
                              stx
-                             a-next-str)))
-     (when (regexp-match #rx" $" (syntax-e #'this-str.str))
-       (raise-syntax-error 'string-constant-lang
-                           (string-append
-                            "expected a string that does not end with a space\n"
-                            expln)
-                           stx
-                           #'this-str))
+                             str-stx)))
+     (define (check-string-end str-stx)
+       (when (regexp-match #rx" $" (syntax-e str-stx))
+         (raise-syntax-error 'string-constant-lang
+                             (string-append
+                              "expected a string that does not end with a space\n"
+                              expln)
+                             stx
+                             str-stx)))
+     (check-string-end #'this-str.str)
+     (for ([a-next-str (in-list (syntax->list #'(next-str.str ...)))])
+       (check-string-start a-next-str)
+       (check-string-end a-next-str))
      #'(add-sc the-hash 'x this-str next-str ...)]))
 
 (begin-for-syntax
