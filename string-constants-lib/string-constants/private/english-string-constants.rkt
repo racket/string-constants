@@ -1400,6 +1400,8 @@ please adhere to these guidelines:
   (module-language-one-line-summary "The #lang line specifies the actual language")
    ;; shows up in the details section of the module language
   (module-language-auto-text "Automatic #lang line")
+  (module-language-auto-text-most-recent "Most recently used #lang line")
+  (module-language-auto-text-always-same "Always use the same #lang line")
   ;; the next four string constants show up in the REPL in DrRacket in the "Racket Language",
   ;; which is also the "Determine language from source" language. They are put right after the name
   ;; of the language from the "#lang" line at the beginning of the source file
