@@ -2053,6 +2053,8 @@ please adhere to these guidelines:
   (install-pkg-use "Use") ; as opposed to "Infer", label for text box
   (install-pkg-type-label "Package Source Type")
   (install-pkg-file "File")
+  (install-pkg-link "Link")
+  (install-pkg-static-link "Static link")
   (install-pkg-dir "Directory")
   (install-pkg-dir-url "Remote Directory")
   (install-pkg-file-url "Remote File")
@@ -2079,6 +2081,7 @@ please adhere to these guidelines:
   (install-pkg-default "Default")
   (install-pkg-scope-label "Package Scope")
   (install-pkg-default-scope-label "Default Package Scope") ; for picking the scope to be default
+  (install-pkg-default-scope-changed "Default scope successfully changed to ~a") ; confirming message after change
   (install-pkg-installation "Specific Racket Installation")
   (install-pkg-user "Specific User and Racket Version")
   (install-pkg-set-as-default "Set as Default")
@@ -2088,6 +2091,16 @@ please adhere to these guidelines:
   (install-pkg-update-package-list "Update Package List")
   (install-pkg-stop-update "Stop Update")
   (install-pkg-filter "Filter")
+  (install-pkg-match "~a/~a match")
+  (install-pkg-package "Package")
+  (install-pkg-author "Author")
+  (install-pkg-description "Description")
+  (install-pkg-tags "Tags")
+  (install-pkg-checksum "Checksum")
+  (install-pkg-source "Source")
+  (install-pkg-catalog "Catalog")
+  (install-pkg-scope "Scope")
+  (install-pkg-name "Name")
   (install-pkg-update-catalogs? "Update database to match the configured set of catalogs?")
   (install-pkg-currently-configured-are "The currently configured catalogs are")
   (install-pkg-database-recorded-are "The database-recorded catalogs are")
@@ -2107,11 +2120,25 @@ please adhere to these guidelines:
   (install-pkg-close-terminal-output "Close Output")
   (install-pkg-show-all-options "Show All Options")
   (install-pkg-migrate-available-installations "Available Installations")
+  ;; all ~a will be substituted with the different single characters
+  ;; conveying the state, by default these are ✓*!=@
+  (install-pkg-legend "~a: installed ~a: auto-installed ~a: not default scope ~a: installed as link; ~a: installed from URL")
   (pkg-manager-menu-item "Package Manager…")
+  (install-pkg-title "Package Manager")
   ;; where ~a gets an installation name:
   (install-pkg-packages-for "Packages for ~a")
   (install-pkg-really-remove-installation
    "Are you sure you want to remove all installed packages and information for ~a?")
+  (install-pkg-installer "Package Installer")
+  (install-pkg-copy "Copy Message")
+  (install-pkg-installation "installation")
+  (install-pkg-user "user")
+  (install-pkg-any "Any") ;; any file type
+  (install-pkg-bad "bad") ;; bad (not supported) file type
+  (install-pkg-catalogs "Package Catalogs")
+  (install-pkg-updating "Updating package list…")
+  (install-pkg-updating-from "Updating from ~a…")
+  (install-pkg-details-from "Getting details for ~a from ~a…")
 
   (install-pkg-abort-set-scope "Abort Scope Change")
 

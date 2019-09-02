@@ -1,4 +1,4 @@
-;; Bulgarian translation of Racket string constants file, version: 1.28
+;; Bulgarian translation of Racket string constants file, version: 1.29
 ;; This file is distributed under the same terms as Racket
 ;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019.
 
@@ -1843,6 +1843,8 @@
  (install-pkg-use "Използване") ; as opposed to "Infer", label for text box
  (install-pkg-type-label "Вид източник на пакет")
  (install-pkg-file "Файл")
+ (install-pkg-link "Връзка")
+ (install-pkg-static-link "Статична връзка")
  (install-pkg-dir "Директория")
  (install-pkg-dir-url "Изтриване на директория")
  (install-pkg-file-url "Изтриване на файл")
@@ -1869,6 +1871,7 @@
  (install-pkg-default "Стандартно")
  (install-pkg-scope-label "Обхват на пакета")
  (install-pkg-default-scope-label "Стандартен обхват на пакет") ; for picking the scope to be default
+ (install-pkg-default-scope-changed "Стандартният обхват е сменен на ~a") ; confirming message after change
  (install-pkg-installation "Конкретна инсталация на Racket")
  (install-pkg-user "Конкретен потребител и версия на Racket")
  (install-pkg-set-as-default "Да е стандартно")
@@ -1878,6 +1881,16 @@
  (install-pkg-update-package-list "Обновяване на списъка с пакети")
  (install-pkg-stop-update "Спиране на обновяването")
  (install-pkg-filter "Филтриране")
+ (install-pkg-match "~a/~a съвпадения")
+ (install-pkg-package "Пакет")
+ (install-pkg-author "Автор")
+ (install-pkg-description "Описание")
+ (install-pkg-tags "Етикети")
+ (install-pkg-checksum "Контролна сума")
+ (install-pkg-source "Източник")
+ (install-pkg-catalog "Каталог")
+ (install-pkg-scope "Обхват")
+ (install-pkg-name "Име")
  (install-pkg-match "~a/~a съвпадения")
  (install-pkg-package "Пакет")
  (install-pkg-author "Автор")
@@ -1908,13 +1921,23 @@
  (install-pkg-show-all-options "Показване на всички опции")
  (install-pkg-migrate-available-installations "Налични инсталации")
  ;; all ~a will be substituted with the different single characters
- ;; conveying the state, by default these are ✓*!=@ 
+ ;; conveying the state, by default these are ✓*!=@
  (install-pkg-legend "~a: инсталиран; ~a: автоматично инсталиран; ~a: нестандартен обхват; ~a: като връзка; ~a: от адрес")
  (pkg-manager-menu-item "Управление на пакети…")
- (pkg-manager-dialog-title "Управление на пакети")
+ (install-pkg-title "Управление на пакети")
  ;; where ~a gets an installation name:
  (install-pkg-packages-for "Пакети за „~a“")
  (install-pkg-really-remove-installation "Сигурни ли сте, че искате да изтриете всички пакети и информация в „~a“?")
+ (install-pkg-installer "Инсталиране на пакети")
+ (install-pkg-copy "Копиране на съобщението")
+ (install-pkg-installation "инсталация")
+ (install-pkg-user "потребител")
+ (install-pkg-any "Всякакъв") ;; any file type
+ (install-pkg-bad "неправилен") ;; bad (not supported) file type
+ (install-pkg-catalogs "Каталози с пакети")
+ (install-pkg-updating "Обновяване на списъка с пакети…")
+ (install-pkg-updating-from "Обновяване от ~a…")
+ (install-pkg-details-from "Получаване на данните на ~a от ~a…")
 
  (install-pkg-abort-set-scope "Преустановяване на промяната на обхвата")
 
