@@ -3,6 +3,7 @@
 ;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019.
 
 (module bulgarian-string-constants "string-constant-lang.rkt"
+ #:lax-spaces
  ;;; when translating this constant, substitute name of actual language for `English'
  (is-this-your-native-language "Български ли е майчиният ви език?")
 
