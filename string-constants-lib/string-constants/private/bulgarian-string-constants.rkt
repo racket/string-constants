@@ -3,14 +3,13 @@
 ;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019.
 
 (module bulgarian-string-constants "string-constant-lang.rkt"
- #:lax-spaces
  ;;; when translating this constant, substitute name of actual language for `English'
  (is-this-your-native-language "Български ли е майчиният ви език?")
 
  (#:define drr "DrRacket")
 
  (are-you-sure-you-want-to-switch-languages
-  "Това сменя езика на интерфейса и ще трябва да рестартирате DrRacket.  Сигурни ли сте?")
+  "Това сменя езика на интерфейса и ще трябва да рестартирате DrRacket. Сигурни ли сте?")
 
  (interact-with-drscheme-in-language "Работа с DrRacket на български")
 
@@ -93,9 +92,9 @@
  ;; the above string constant is next to previous line in same dialog, followed by list of bug report subjects (as buttons)
  (error-sending-bug-report "Грешка при изпращане на доклада за грешка")
  (error-sending-bug-report-expln
-  "Възникна грешка при изпращането на този доклад.  "
-  "Ако сте сигурни, че нямате проблеми с връзката си към Интернет, посетете:\n\n    https://github.com/racket/racket/issues/new\n\n"
-  "и подайте доклада за грешка през GitHub.  Много съжаляваме за затруднението.\n\nСъобщението към проблема е:\n~a")
+  "Възникна грешка при изпращането на този доклад."
+  " Ако сте сигурни, че нямате проблеми с връзката си към Интернет, посетете:\n\n    https://github.com/racket/racket/issues/new\n\n и"
+  " подайте доклада за грешка през GitHub. Много съжаляваме за затруднението.\n\nСъобщението към проблема е:\n~a")
  (illegal-bug-report "Недовършен доклад за грешка")
  (pls-fill-in-field "Попълнете полето „~a“")
  (malformed-email-address "Неправилен адрес на е-поща")
@@ -224,21 +223,21 @@
 
  (goto-line "Към ред")
  (goto-line-invalid-number
-  "„~a“ не е номер на ред.  Трябва да е цяло число между 1 и ~a включително")
+  "„~a“ не е номер на ред. Трябва да е цяло число между 1 и ~a включително")
  (goto-position "Към позиция")
  (no-full-name-since-not-saved
   "Файлът няма име, защото още не е запазван.")
  (cannot-open-because-dne "„~a“ не съществува и не може да се отвори.")
 
  (needs-execute-language-changed
-   "ПРЕДУПРЕЖДЕНИЕ: Езикът е сменен.  Натиснете „Изпълнение“.")
+   "ПРЕДУПРЕЖДЕНИЕ: Езикът е сменен. Натиснете „Изпълнение“.")
  (needs-execute-teachpack-changed
-   "ПРЕДУПРЕЖДЕНИЕ: Учебният модул е сменен.  Натиснете „Изпълнение“.")
+   "ПРЕДУПРЕЖДЕНИЕ: Учебният модул е сменен. Натиснете „Изпълнение“.")
  (needs-execute-defns-edited
-   "ПРЕДУПРЕЖДЕНИЕ: Промѐни в прозореца с дефиниции.  Натиснете „Изпълнение“.")
+   "ПРЕДУПРЕЖДЕНИЕ: Промѐни в прозореца с дефиниции. Натиснете „Изпълнение“.")
 
  (editor-changed-since-srcloc-recorded
-   "Има промѐни в редактора след запазването на последното местоположение в изходния код.  Оцветената област може да не отговаря на правилното местоположение в изходния код.")
+   "Има промѐни в редактора след запазването на последното местоположение в изходния код. Оцветената област може да не отговаря на правилното местоположение в изходния код.")
 
  (file-is-not-saved "Файлът „~a“ не е запазен.")
  (save "Запазване")
@@ -331,12 +330,12 @@
   "Ръководството е изчерпателният източник на информация за програмите в „Racket“.\n\nВерсия: ~a\nАвторски права: © ~a-~a PLT")
  (plt:hd:help-on-help "Как се ползва „Помощ“-та")
  (plt:hd:help-on-help-details
-  "Можете да видите как да ползвате „Помощ“-та от връзката „Help Desk“ от началната страница за помощ в Интернет.  "
-  "(За да отворите въпросната начална страница, натиснете бутона „Начална страница“ в горната част на прозореца за помощта.)")
+  "Можете да видите как да ползвате „Помощ“-та от връзката „Help Desk“ от началната страница за помощ в Интернет."
+  " (За да отворите въпросната начална страница, натиснете бутона „Начална страница“ в горната част на прозореца за помощта.)")
  (reload "Презареждане") ;; refresh the page in a web browser
  (plt:hd:ask-about-separate-browser
-   "Искате да отворите съдържание от световната мрежа.  "
-   "Къде искате то да се визуализира — в браузъра за помощта или в отдѐлен браузър?")
+   "Искате да отворите съдържание от световната мрежа."
+   " Къде искате то да се визуализира — в браузъра за помощта или в отдѐлен браузър?")
  (plt:hd:homebrew-browser "Браузър за помощта") ;; choice for the above string (in a button)
  (plt:hd:separate-browser "Отдѐлен браузър") ;; other choice for the above string (also in a button)
  (plt:hd:external-link-in-help "Външен адрес в помощта")
@@ -352,7 +351,7 @@
  ;; in the preferences dialog in drscheme there is example text for help desk font size.
  ;; clicking the links in that text produces a dialog with this message
  (help-desk-this-is-just-example-text
-   "Това е примерен текст, за да изберете подходящ шрифт и размер.  Отворете „Ръководство“-то от менюто „Помощ“, за да отворите връзките.")
+   "Това е примерен текст, за да изберете подходящ шрифт и размер. Отворете „Ръководство“-то от менюто „Помощ“, за да отворите връзките.")
 
  ;; this appears in the bottom part of the frame the first time the user hits `f1'
  ;; (assuming nothing else has loaded the documentation index first)
@@ -361,13 +360,13 @@
 
   ;; the next four are all in the same dialog box (only one of the first two appears)
   (help-desk-materialize-docs-something-changed
-   "DrRacket установи проблем с индекса на документацията.  Да се пробва ли поправка?  "
-   "Това може да отнеме известно време?\n\nСъщинският проблем, е че директорията за "
-   "документация „~a“ не съществува и търсенето чрез браузър ще е неуспешно.")
+   "DrRacket установи проблем с индекса на документацията. Да се пробва ли поправка?"
+   " Това може да отнеме известно време?\n\nСъщинският проблем, е че директорията за"
+   " документация „~a“ не съществува и търсенето чрез браузър ще е неуспешно.")
   (help-desk-materialize-docs-first-time
-   "DrRacket установи проблем с индекса на документацията.  Да се пробва ли поправка?  "
-   "Това може да отнеме известно време?\n\nСъщинският проблем, е DrRacket не е генерирал "
-   "досега документацията и търсенето чрез браузър ще е неуспешно.")
+   "DrRacket установи проблем с индекса на документацията. Да се пробва ли поправка?"
+   " Това може да отнеме известно време?\n\nСъщинският проблем, е DrRacket не е генерирал"
+   " досега документацията и търсенето чрез браузър ще е неуспешно.")
   (help-desk-do-nothing "Нищо да не се прави")
   (help-desk-materialize-user-docs "Генериране на потребителската документация")
   ; this is used in a dialog to let the user know that work is being done based on
@@ -413,9 +412,9 @@
  (install-plt-filename "Име на файл:")
  (install-plt-url "Адрес:")
  ; an error message from a primitive operation is appended to the end of this message.
- (install-plt-error-downloading "Грешка при изтеглянето на файл „.plt“.\n\n"
-                                "Допълнителна информация:\n")
- (install-plt-error-header "Грешка при проверката на изтегления файл „.plt“.  Проверете адреса и опитайте отново.")
+ (install-plt-error-downloading "Грешка при изтеглянето на файл „.plt“.\n\nДопълнителна информация:\n")
+                                
+ (install-plt-error-header "Грешка при проверката на изтегления файл „.plt“. Проверете адреса и опитайте отново.")
 
  ;; install plt file when opened in drscheme strings
  (install-plt-file "Файлът „~a“ да се инсталира или да се редактира?")
@@ -454,13 +453,13 @@
  (dont-ask-again-until-drracket-restarted "Без нови питания (докато не стартирате DrRacket отново)")
  ; difference between the above and below is one comes with a question (steal the lock or not) and the other with just a notation saying "the file is locked"
  (dont-notify-again-until-drracket-restarted "Без нови известия (докато не стартирате DrRacket отново)")
- (prefs-file-locked "Файлът с настройките е заключен (заключващият файл „~a“ е налице).  Настройката не може да се запази.  Да се отмени ли промяната?")
+ (prefs-file-locked "Файлът с настройките е заключен (заключващият файл „~a“ е налице). Настройката не може да се запази. Да се отмени ли промяната?")
  (try-again "Нов опит") ;; button label
  (give-up-and-use-the-default "Спиране на опитите и използване на стандартната стойност") ;; button label
 
- (prefs-file-still-locked "Файлът с настройките е заключен (заключващият файл „~a“ е налице).  Настройката не може да се запази.")
+ (prefs-file-still-locked "Файлът с настройките е заключен (заключващият файл „~a“ е налице). Настройката не може да се запази.")
  (prefs-file-locked-nothing-doing
-  "Файлът с настройките е заключен (чрез файла „~s“).  Настройката не може да се запази.")
+  "Файлът с настройките е заключен (чрез файла „~s“). Настройката не може да се запази.")
  ;; the  ~s is filled with the lockfile; this string is (currently) used only on windows where lockfiles are less friendly (and there is no steal fallback)
 
  (scheme-prefs-panel-label "Racket")
@@ -568,7 +567,7 @@
  ; warning message when lockfile is around
  (waiting-for-pref-lock "Изчакване на заключващият файл за настройките…")
  (pref-lock-not-gone
-  "Заключващият файл за настройките:\n\n   ~a\n\nпредотвратява запазването им.  Ако сте сигурни, че в момента няма други процеси на Racket, можете да изтриете този файл.")
+  "Заключващият файл за настройките:\n\n   ~a\n\nпредотвратява запазването им. Ако сте сигурни, че в момента няма други процеси на Racket, можете да изтриете този файл.")
  (still-locked-exit-anyway? "Настройките не бяха запазени, да се спре ли програмата въпреки това?")
 
  ;;; indenting preferences panel
@@ -637,7 +636,7 @@
 
  ;;; reverting a file
  (are-you-sure-revert
-  "Сигурни ли сте, че искате да възстановите файла към запазеното му състояние.  Промените след това ще бъдат безвъзвратно загубени.  Това действие е необратимо.")
+  "Сигурни ли сте, че искате да възстановите файла към запазеното му състояние. Промените след това ще бъдат безвъзвратно загубени. Това действие е необратимо.")
  (are-you-sure-revert-title
   "Възстановяване?")
 
@@ -652,7 +651,7 @@
  ;;; finder dialog
  (must-specify-a-filename "Необходимо е име на файл.")
  (file-does-not-exist "Файлът „~a“ не съществува.")
- (ask-because-file-exists "Файлът „~a“ вече съществува.  Искате ли да го замените?")
+ (ask-because-file-exists "Файлът „~a“ вече съществува. Искате ли да го замените?")
  (dne-or-cycle "Търсенето на местоположението „~a“ стигна до несъществуваща директория или цикъл.") ;; fuzzy - fix english version
  (get-file "Прочитане на файл")
  (put-file "Запазване на файл")
@@ -692,7 +691,7 @@
 
  (file-menu-label "&Файл")
 
- (new-info  "Отваряне на файл")
+ (new-info "Отваряне на файл")
  (new-menu-item "&Нов")
  (new-...-menu-item "&Нов…")
 
@@ -804,8 +803,8 @@
  (user-defined-keybinding-error "Грешка при изпълнение на клавишна комбинация ~a\n\n~a")
  (user-defined-keybinding-malformed-file "Файлът „~a“ не отговаря на езика за клавишни комбинации „framework/keybinding-lang“.")
  (user-defined-keybinding-malformed-file/found-lang
-  "Файлът „~a“ е на езика „~s“, а не на "
-  "езика за клавишни комбинации „framework/keybinding-lang“.")
+  "Файлът „~a“ е на езика „~s“, а не на"
+  " езика за клавишни комбинации „framework/keybinding-lang“.")
 
  ;; menu items in the "special" menu
  (insert-text-box-item "Вмъкване на кутия с текст")
@@ -905,7 +904,7 @@
 
  ;;; file modified warning
  (file-has-been-modified
-  "Файлът е променян след последното запазване.  Да се презапише ли върху промените?")
+  "Файлът е променян след последното запазване. Да се презапише ли върху промените?")
  (overwrite-file-button-label "Презаписване")
 
  (definitions-modified
@@ -914,10 +913,10 @@
  ;; for a dialog that appears when Run is clicked and there are unsaved files
  ; the ~a is filled with a filename (same string that appears in a tab)
  (one-file-not-saved-do-the-save?
-  "Файлът „~a“ не е запазен.  Да се запази ли преди изпълнението?")
+  "Файлът „~a“ не е запазен. Да се запази ли преди изпълнението?")
  ; the string is suffixed with a list of filenames (which are separated by newlines)
  (many-files-not-saved-do-the-save?
-  "Следните файлове не са запазени.  Да се запазят ли преди изпълнението?\n\nФайлове:")
+  "Следните файлове не са запазени. Да се запазят ли преди изпълнението?\n\nФайлове:")
  ; button label to go ahead with saving
  (save-all-files "Запазване на всички файлове")
  ; check box in the dialog and also used in the preferences dialog
@@ -926,7 +925,7 @@
  (drscheme-internal-error "Вътрешна грешка на DrRacket")
 
  ;;; tools
- (invalid-tool-spec "Неправилно описание на инструмент във файла „info.rkt“ на колекцията „~a“.  Очаква се или низ, или непразен списък от низове, а не „~e“")
+ (invalid-tool-spec "Неправилно описание на инструмент във файла „info.rkt“ на колекцията „~a“. Очаква се или низ, или непразен списък от низове, а не „~e“")
  (error-invoking-tool-title "Грешка при стартирането на инструмента „~s“;~s")  ;; fuzzy
  (error-loading-tool-title "Грешка при зареждането на инструмента „~s“\n~a") ;; ~s filled with a path, ~a filled with an error message from an exn
  (tool-tool-names-same-length
@@ -988,8 +987,8 @@
  (save-interactions-as-text "Запазване на скицника като текст…")
  (print-interactions "Отпечатване на скицника…")
  (new-tab "Нов подпрозорец")
- (close-tab "Затваряне  на подпрозорец") ;; must not have any &s in it.
- (close-tab-amp "&Затваряне  на подпрозорец") ;; like close-tab, but with an ampersand on the same letter as the one in close-menu-item
+ (close-tab "Затваряне на подпрозорец") ;; must not have any &s in it.
+ (close-tab-amp "&Затваряне на подпрозорец") ;; like close-tab, but with an ampersand on the same letter as the one in close-menu-item
 
  ;;; edit menu
  (split-menu-item-label "&Разделяне")
@@ -1009,7 +1008,7 @@
  (force-quit-menu-item-help-string "Спиране на текущото изчисление чрез „custodian-shutdown-all“")
  (limit-memory-menu-item-label "Ограничаване на използваната памет…")
  (limit-memory-msg-1 "Ограничението ще влезе в сила при следващото стартиране")
- (limit-memory-msg-2 "на програмата.  Ограничението е поне 8 MB.")
+ (limit-memory-msg-2 "на програмата. Ограничението е поне 8 MB.")
  (limit-memory-unlimited "Без ограничение")
  (limit-memory-limited "Ограничаване до")
  (limit-memory-megabytes "MB")
@@ -1018,8 +1017,8 @@
  ; (the first can be the empty string)
  (limit-memory-warning-prefix " ПРЕДУПРЕЖДЕНИЕ: ")
  (limit-memory-warning
-  "опасно е да стартирате програмата без ограничаване на паметта.  Без него DrRacket "
-  "може да забие, защото не може да се защити от програми, които заделят твърде много памет.")
+  "опасно е да стартирате програмата без ограничаване на паметта. Без него DrRacket"
+  " може да забие, защото не може да се защити от програми, които заделят твърде много памет.")
 
  (clear-error-highlight-menu-item-label "Изчистване на оцветяването на грешките")
  (clear-error-highlight-item-help-string "Без оцветяване на грешките в розово")
@@ -1037,11 +1036,11 @@
  (create-executable-menu-item-label "Създаване на &изпълним файл…")
  (create-executable-title "Създаване на изпълним файл")
  (drracket-creates-executables-only-in-some-languages
-  "Създаването на изпълним файл се поддържа в DrRacket, само когато е "
-  "избран някой от езиците за преподаване („HtDP“ или „DMdA“) в прозореца "
-  "за избор на език, или когато сте избрали „Racket“ в същия прозорец и "
-  "директивата „#lang“ в началото на програмата ви указва език.\n\n"
-  "Вижте дали програмата за команден ред „raco“ няма да ви свърши работа.")
+  "Създаването на изпълним файл се поддържа в DrRacket, само когато е"
+  " избран някой от езиците за преподаване („HtDP“ или „DMdA“) в прозореца"
+  " за избор на език, или когато сте избрали „Racket“ в същия прозорец и"
+  " директивата „#lang“ в началото на програмата ви указва език.\n\nВижте"
+  " дали програмата за команден ред „raco“ няма да ви свърши работа.")
  (must-save-before-executable "Трябва да запазите програмата си, за да създадете изпълним файл.")
  (save-a-mred-launcher "Запазване като стартер на GRacket")
  (save-a-mzscheme-launcher "Запазване като стартер на Racket")
@@ -1051,7 +1050,7 @@
  (save-a-mzscheme-distribution "Запазване като дистрибуция на Racket")
  (error-creating-executable "Грешка при създаването на изпълним файл:") ;; this is suffixed with an error message ala error-display-handler
 
- (definitions-not-saved "Прозорецът с дефинициите не е запазен.  Изпълнимият файл ще е базиран на последния записан вариант.  Да се продължи ли?")
+ (definitions-not-saved "Прозорецът с дефинициите не е запазен. Изпълнимият файл ще е базиран на последния записан вариант. Да се продължи ли?")
  ;; The "-explanatory-label" variants are the labels used for the radio buttons in
  ;;  the "Create Executable..." dialog for the "(module ...)" language.
  (launcher "Стартер")
@@ -1068,11 +1067,11 @@
  (files-for-icons-etc "Файлове с икони и др.")
  (please-specify-a-filename "Изберете име за файла, който ще се създаде.")
  (~a-must-end-with-~a
-  "Името на файла от вид „~a“~a\n\n  ~a\n\nе неправилно.  То трябва да завършва с „.~a“.")
+  "Името на файла от вид „~a“~a\n\n  ~a\n\nе неправилно. То трябва да завършва с „.~a“.")
  (macosx-executables-must-end-with-app
-  "Името на файла\n\n  ~a\n\nе неправилно.  Под Mac OS то трябва да е директория, чието име завършва на „.app“.")
+  "Името на файла\n\n  ~a\n\nе неправилно. Под Mac OS то трябва да е директория, чието име завършва на „.app“.")
  (warning-directory-will-be-replaced
-  "ПРЕДУПРЕЖДЕНИЕ: директорията:\n\n  ~a\n\nще бъде заменена.  Да се продължи ли?")
+  "ПРЕДУПРЕЖДЕНИЕ: директорията:\n\n  ~a\n\nще бъде заменена. Да се продължи ли?")
 
  (distribution-progress-window-title "Етап на изготвяне на дистрибуция")
  (creating-executable-progress-status "Създаване на изпълнимия файл за дистрибуция…")
@@ -1137,14 +1136,14 @@
    "ПРЕДУПРЕЖДЕНИЕ: инсталираният вече учебен модул „~a“ е в конфликт с „~a“ (и в двата има публичен символ „~a“)")
  ;;; a button label; the two ~a are filled with teachpack names
  (remove-and-add-teachpack "Премахване на „~a“ и добавяне на „~a“")
- (teachpack-already-installed "Вече е инсталиран учебен модул „~a“.  Да бъде ли презаписан?")
+ (teachpack-already-installed "Вече е инсталиран учебен модул „~a“. Да бъде ли презаписан?")
  ; ~a is filled with a list of language names. Each name is separated by a newline and is indented two spaces (no commas, no 'and')
  (teachpacks-only-in-languages "Менюто за учебни модули е налично само за следните езици: ~a\n\nПри друг език — използвайте „require“.")
 
 
  ;;; Language dialog
  (introduction-to-language-dialog
-  "Изберете език.  Учащите в повечето въвеждащи курсове обичайно ползват стандартния език.")
+  "Изберете език. Учащите в повечето въвеждащи курсове обичайно ползват стандартния език.")
  (language-dialog-title "Избор на език")
  (case-sensitive-label "Разлика главни/малки")
  (output-style-label "Стил на изхода")
@@ -1248,7 +1247,7 @@
  ;; the next two string constants appear in the
  ;; language dialog with a list
  ;; of example languages appearing between them
- (racket-language-discussion "Директива „#lang“ за диалекта.  Напр.:\n")
+ (racket-language-discussion "Директива „#lang“ за диалекта. Напр.:\n")
  (racket-language-discussion-end "… и мн. др.")
 
  ;; the next three string constants are put into a message-box dialog
@@ -1261,7 +1260,7 @@
  (racket-dialect-in-buffer-message
    "Диалектите на „Racket“ най-често се избират чрез директно редактиране на буфера, а не чрез този диалогов прозорец.")
  (racket-dialect-add-new-#lang-line "Да се добави ли „~a“ в началото на прозореца с дефиниции?")
- (racket-dialect-replace-#lang-line "Директивата в буфера е „~a“.  Да се замени ли с „~a“?")
+ (racket-dialect-replace-#lang-line "Директивата в буфера е „~a“. Да се замени ли с „~a“?")
  (racket-dialect-already-same-#lang-line "Директивата в буфера вече е „~a“ и можете да започнете да програмирате.")
 
  ;; in the dialog containing the above strings, one of these is a button that appears
@@ -1326,11 +1325,11 @@
  (profiling-hide-profile "Скриване на профила")
  (profiling-unknown-src "«непознат»")
  (profiling-no-information-available
-  "Липсва информация от профилиране.  Проверете дали сте включили профилирането за езика си и дали сте изпълнявали програмата след това.")
- (profiling-clear? "Промяна в прозореца за дефиниции прави информацията от профилирането недействителна.  Да се продължи ли въпреки това?")
+  "Липсва информация от профилиране. Проверете дали сте включили профилирането за езика си и дали сте изпълнявали програмата след това.")
+ (profiling-clear? "Промяна в прозореца за дефиниции прави информацията от профилирането недействителна. Да се продължи ли въпреки това?")
 
  ;; test coverage
- (test-coverage-clear? "Промяна в прозореца за дефиниции прави информацията за покритото от тестовете недействителна.  Да се продължи ли въпреки това?")
+ (test-coverage-clear? "Промяна в прозореца за дефиниции прави информацията за покритото от тестовете недействителна. Да се продължи ли въпреки това?")
  (test-coverage-clear-and-do-not-ask-again "Да и без повече въпроси за тестовете")
  (test-coverage-ask? "Питане за изчистването на информацията за покритото от тестовете")
  (test-coverage-entirely-covered "Всички изрази са покрити")
@@ -1344,12 +1343,12 @@
  (tracing-enable-tracing "Включване на трасирането")
  (tracing-show-tracing-window "Показване на трасирането")
  (tracing-hide-tracing-window "Скриване на трасирането")
- (tracing-tracing-nothing-to-show "Няма резултати от трасиране.  За да се появят, ползваният език трябва да поддържа трасиране, а и самото то трябва да е включено.")
+ (tracing-tracing-nothing-to-show "Няма резултати от трасиране. За да се появят, ползваният език трябва да поддържа трасиране, а и самото то трябва да е включено.")
 
  ;;; repl stuff
  (evaluation-terminated "Прекъснато изчисление")
  (evaluation-terminated-explanation
-  "Нишката за изчисления не работи.  Чак при следващото изпълнение изчисленията ще започнат отново.")
+  "Нишката за изчисления не работи. Чак при следващото изпълнение изчисленията ще започнат отново.")
 
  ; The next three constants show up in the same dialog as the above evaluation-terminated string
  ; constants.
@@ -1457,8 +1456,8 @@
  (snips-and-arrows-popup-menu-untack-all-arrows "Откачане на всички стрелки")
  (snips-and-arrows-user-action-disallowed-title "Промените в момента са забранени")
  (snips-and-arrows-user-action-disallowed
-   "Не може да правите промѐни в прозорци с отрязъци от програмни инструменти.  "
-   "Скрийте всички отрязъци, преди да промените съдържанието на редактора.")
+   "Не може да правите промѐни в прозорци с отрязъци от програмни инструменти."
+   " Скрийте всички отрязъци, преди да промените съдържанието на редактора.")
  ;(snips-and-arrows-changing-terms-warning-title "Changing terms will be undoable")
  (snips-and-arrows-hide-all-snips-in-editor "Скриване на всички отрязъци в редактора")
 
@@ -1507,7 +1506,7 @@
  (stepper-no-earlier-step "Няма предишни стъпки.")
  (stepper-no-later-step "Няма повече стъпки.")
 
- (stepper-no-selected-step "В избраното не е стъпвано.  То закоментирано ли е?")
+ (stepper-no-selected-step "В избраното не е стъпвано. То закоментирано ли е?")
 
  (stepper-no-last-step "Все още няма крайна стъпка.")
 
@@ -1521,8 +1520,8 @@
 
  ;; warnings about closing a drscheme frame when the program
  ;; might still be doing something interesting
- (program-is-still-running "Програмата от прозореца с дефиниции все още работи.  Затваряне въпреки това")
- (program-has-open-windows "Програмата от прозореца с дефиниции все още има отворени прозорци.  Затваряне на прозореца въпреки това?")
+ (program-is-still-running "Програмата от прозореца с дефиниции все още работи. Затваряне въпреки това")
+ (program-has-open-windows "Програмата от прозореца с дефиниции все още има отворени прозорци. Затваряне на прозореца въпреки това?")
 
  ;; ml-command-line-arguments is for the command line arguments
  ;; label in the module language details in the language dialog.
@@ -1630,7 +1629,7 @@
  (test-engine-enable-tests "Включване на тестовете")
  (test-engine-disable-tests "Изключване на тестовете")
  (test-engine-enable-disable-tests-only-in-teaching-languages
-   "Менюто за включване/изключване на тестовете се отнася само до езиците за обучение — „HtDP“ и „DMdA“.  Вижте раздела с подробностите от прозореца за езици, с който се определят модулите, които да се изпълнят в езика Racket.")
+   "Менюто за включване/изключване на тестовете се отнася само до езиците за обучение — „HtDP“ и „DMdA“. Вижте раздела с подробностите от прозореца за езици, с който се определят модулите, които да се изпълнят в езика Racket.")
 
  (test-engine-ran-1-test "1 тест изпълнен.")
  (test-engine-ran-1-check "1 проверка изпълнена.")
@@ -1762,14 +1761,14 @@
  ;; Slideshow
  (slideshow-hide-picts "Показване на изображенията")
  (slideshow-show-picts "Показване на изображенията")
- (slideshow-cannot-show-picts "Изображенията не могат да се покажат.  Изпълнете програмата, за да се установят размерите.")
+ (slideshow-cannot-show-picts "Изображенията не могат да се покажат. Изпълнете програмата, за да се установят размерите.")
  (slideshow-insert-pict-box "Вмъкване на кутия за изображение")
 
  ;; GUI Tool
  (gui-tool-heading "Графичен интерфейс")
  (gui-tool-before-clicking-message
-   "Изберете „Вмъкване на графичен интерфейс“ от менюто „Специални“ или посочете съществуващ, "
-   "преди да натиснете икона от лентата с инструменти.") ;; fuzzy - menu Special unknown
+   "Изберете „Вмъкване на графичен интерфейс“ от менюто „Специални“ или посочете съществуващ,"
+   " преди да натиснете икона от лентата с инструменти.") ;; fuzzy - menu Special unknown
  (gui-tool-show-gui-toolbar "Показване на лентата с инструменти за графичен интерфейс")
  (gui-tool-hide-gui-toolbar "Скриване на лентата с инструменти за графичен интерфейс")
  (gui-tool-insert-gui "Вмъкване на графичен интерфейс")
@@ -1797,7 +1796,7 @@
  ;; the first three strings are in the dialog that appears. The last one is in the preferences dialog
  (normalize "нормализиране")
  (leave-alone "Както е въведено")
- (normalize-string-info "Поставеният низ съдържа ненормализирани лигатури или знаци.  Да се нормализират ли?")
+ (normalize-string-info "Поставеният низ съдържа ненормализирани лигатури или знаци. Да се нормализират ли?")
  (normalize-string-preference "Нормализиране на поставените низове")
  (ask-about-normalizing-strings "Питане за нормализиране на низовете")
 
@@ -1958,8 +1957,8 @@
  (install-pkg-package-catalogs "Пакетни каталози") ; label for a list box
  (install-pkg-add-package-catalog "Добавяне на пакетен каталог")
 
- (install-pkg-not-rentrant "Не може едновременно да инсталирате и да обновявате — "
-                            "или спрете действието, или го изчакайте.")
+ (install-pkg-not-rentrant "Не може едновременно да инсталирате и да обновявате —"
+                           " или спрете действието, или го изчакайте.")
 
  ;; open a file via a collection path (new "Open" menu item in DrRacket)
  (open-require-path "Отваряне на път с необходими файлове…")
@@ -1977,10 +1976,8 @@
  ; first and third ~a are filled with /etc/paths.d/racket (or some other path like it in the future)
  ; and the second one is filled with the path to the bin directory that was put into that file.
  (added-racket/bin-to-path
-   "Вече можете да използвате „racket“ и инструментите от командния ред.\n\n"
-   "Променливата на средата „PATH“ е настроена за всички потребители чрез\n"
-   "добавяне на връзката „~a“,\n"
-   "която сочи към „~a“.\n"
-   "За да отмените действието, изтрийте „~a“.")
+   "Вече можете да използвате „racket“ и инструментите от командния ред.\n\nПроменливата"
+   " на средата „PATH“ е настроена за всички потребители чрез\nдобавяне на връзката"
+   " „~a“,\nкоято сочи към „~a“.\nЗа да отмените действието, изтрийте „~a“.")
  (add-racket/bin-to-path "Настройване на командния ред за Racket…") ;; menu item label
 )
