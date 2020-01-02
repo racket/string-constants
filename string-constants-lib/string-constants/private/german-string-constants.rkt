@@ -891,7 +891,7 @@
  ;; for a dialog that appears when Run is clicked and there are unsaved files
  ; the ~a is filled with a filename (same string that appears in a tab)
  (one-file-not-saved-do-the-save?
-  "Die Datei “~a” ist nicht gespeechert; vor Start speichern??")
+  "Die Datei “~a” ist nicht gespeichert; vor Start speichern??")
  ; the string is suffixed with a list of filenames (which are separated by newlines)
  (many-files-not-saved-do-the-save?
   "Manche andere Dateien Dateien sind nicht gespeichert; vor Start speichern?\n\nDateien:")
