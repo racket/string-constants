@@ -899,7 +899,10 @@
  (save-all-files "Alle Dateien speichern")
  ; check box in the dialog and also used in the preferences dialog
  (save-after-switching-tabs "Dateien speichern immeer bei Tab- oder Fenster-Wechsel")
- 
+
+ (dont-ask-about-saving-after-switching-tabs
+  "Nicht fragen und nicht speichern, wenn Start gedrückt wurde bei nicht gespeicherten Tabs oder Fenstern")
+
  (drscheme-internal-error "Interner Fehler in DrRacket")
  
  ;;; tools
