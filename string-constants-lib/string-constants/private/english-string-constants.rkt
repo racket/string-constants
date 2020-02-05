@@ -1554,6 +1554,7 @@ please adhere to these guidelines:
   (last-stack-frame "show the last stack frame")
   (last-stack-frames "show the last ~a stack frames")
   (next-stack-frames "show the next ~a stack frames")
+  (more-stack-frames "show more stack frames")
 
   ;;; welcoming message in repl
   (language "Language")
