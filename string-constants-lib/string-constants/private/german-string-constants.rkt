@@ -1345,6 +1345,7 @@
   (last-stack-frame "letzten Stack-Frame anzeigen")
   (last-stack-frames "die letzten ~a Stack-Frames anzeigen")
   (next-stack-frames "die nächsten ~a Stack-Frames anzeigen")
+  (more-stack-frames "mehr Stack-Frames zeigen")
  
  ;;; welcoming message in repl
  (language "Sprache")
