@@ -567,6 +567,10 @@ please adhere to these guidelines:
   (dont-save "Don't Save")
   (yes "Yes")
   (no "No")
+  ;; Same as the above in contexts that allow adding mnemonic keyboard shortcuts
+  ;; '&' will underline the following character showing to allow Alt- combinations
+  (yes-mnemonic "&Yes")
+  (no-mnemonic "&No")
 
   ;; saving image (right click on an image to see the text)
   (save-image "Save image…")
