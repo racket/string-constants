@@ -142,8 +142,8 @@ please adhere to these guidelines:
   (pbd-homepage "Program by Design")
 
   ;; having an issue (replaces the bug report form, whose string constants are below)
-  (having-an-issue "Having an Issue?…")
-  (having-an-issue-dialog-content
+  (have-an-issue? "Having an Issue?…")
+  (use-github-or-the-mailing-list-for-issues
    "If you have found a bug in Racket or DrRacket, please open an issue on"
    " GitHub.\n\nIf you have found something that does not make sense, but"
    " you are not sure if it is a bug or not, try asking on the mailing list.")
