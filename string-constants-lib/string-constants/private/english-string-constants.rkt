@@ -148,7 +148,7 @@ please adhere to these guidelines:
    " GitHub.\n\nIf you have found something that does not make sense, but"
    " you are not sure if it is a bug or not, try asking on the mailing list.")
   (visit-mailing-lists "Visit Mailing Lists") ;; button in dialog
-  (Visit-github "Visit GitHub") ;; button in dialog, goes to 'open issue' page
+  (visit-github "Visit GitHub") ;; button in dialog, goes to 'open issue' page
 
   ;;; bug report form
   (cancel-bug-report? "Cancel Bug Report?")
@@ -205,14 +205,6 @@ please adhere to these guidelines:
   (malformed-email-address "Malformed email address")
   (pls-fill-in-either-description-or-reproduce
    "Please fill in either the Description field or the Steps to Reproduce field.")
-
-  (have-an-issue? "Having an issue? ...")
-  (use-github-or-the-mailing-list-for-issues
-   "If you have found a bug in Racket or DrRacket, please open an issue on GitHub.\n\nIf"
-   " you found something that does not make sense, but you are not sure if it is"
-   " a bug or not, try asking on the mailing list.")
-  (visit-github "Visit GitHub")
-  (visit-mailing-list "Visit Mailing Lists")
 
   ;;; check syntax
   (check-syntax "Check Syntax")
