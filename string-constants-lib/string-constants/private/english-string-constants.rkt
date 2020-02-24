@@ -141,6 +141,15 @@ please adhere to these guidelines:
   (plt-homepage "Racket")
   (pbd-homepage "Program by Design")
 
+  ;; having an issue (replaces the bug report form, whose string constants are below)
+  (having-an-issue "Having an Issue?…")
+  (having-an-issue-dialog-content
+   "If you have found a bug in Racket or DrRacket, please open an issue on"
+   " GitHub.\n\nIf you have found something that does not make sense, but"
+   " you are not sure if it is a bug or not, try asking on the mailing list.")
+  (visit-mailing-lists "Visit Mailing Lists") ;; button in dialog
+  (Visit-github "Visit GitHub") ;; button in dialog, goes to 'open issue' page
+
   ;;; bug report form
   (cancel-bug-report? "Cancel Bug Report?")
   (are-you-sure-cancel-bug-report?
@@ -167,7 +176,7 @@ please adhere to these guidelines:
   (bug-report-synthesized-information "Synthesized Information")  ;; dialog title
   (bug-report-show-synthesized-info "Show Synthesized Info")
   (bug-report-submit "Submit")
-  ;; button in bug report dialog, next to cancel and bug-report-submit
+    ;; button in bug report dialog, next to cancel and bug-report-submit
   (close-and-save-bug-report "Close && Save")
   ;; same as above, but used when there are saved bug reports
   (bug-report-submit-menu-item "Submit Bug Report…")
