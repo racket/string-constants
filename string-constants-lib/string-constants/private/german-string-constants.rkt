@@ -91,7 +91,7 @@
   " Sie etwas sehen, dass keinen Sinn ergibt, sind aber nicht sicher, ob es ein"
   " Fehler ist oder nicht, fragen Sie auf der Mailing-Liste.")
  (visit-github "GitHub besuchen")
- (visit-mailing-list "Mailing-Listen besuchen")
+ (visit-mailing-lists "Mailing-Listen besuchen")
  
  ;;; check syntax
  (check-syntax "Syntaxprüfung")
