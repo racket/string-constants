@@ -446,8 +446,8 @@
   (plt:hd:refreshing-manuals-finished "Terminé.")
   (plt:hd:about-help-desk "A propos de l'Aide")
   (plt:hd:help-desk-about-string
-   "L'Aide est une source complète d'information à propos des logiciels Racket.\n\n"
-   "Version ~a\nCopyright (c) ~a-~a PLT.")
+   "L'Aide est une source complète d'information à propos des logiciels"
+   " Racket.\n\nVersion ~a\nCopyright (c) ~a-~a PLT.")
   (plt:hd:help-on-help "Aide de l'Aide")
   (plt:hd:help-on-help-details
    "Pour obtenir de l'aide sur comment utiliser l'Aide, suivez le premier lien `Help Desk' à partir de la page principale de l'Aide."
@@ -484,13 +484,13 @@
   ;; the next four are all in the same dialog box (only one of the first two appears)
   (help-desk-materialize-docs-something-changed
    "DrRacket a détecté un possible problème avec l'index de la documentation."
-   " Voulez-vous essayer de réparer le problème (ceci peut prendre quelques moments) ?\n\n"
-   "De manière plus détaillée, le répertoire de documentation ~a n'existe pas,"
+   " Voulez-vous essayer de réparer le problème (ceci peut prendre quelques"
+   " moments) ?\n\nDe manière plus détaillée, le répertoire de documentation ~a n'existe pas,"
    " et la recherche dans le navigateur est donc susceptible d'échouer.")
   (help-desk-materialize-docs-first-time
    "DrRacket a détecté un possible problème avec l'index de la documentation."
-   " Voulez-vous essayer de réparer le problème (ceci peut prendre quelques moments) ?\n\n"
-   "De manière plus détaillée, DrRacket n'a pas matérialisé"
+   " Voulez-vous essayer de réparer le problème (ceci peut prendre quelques"
+   " moments) ?\n\nDe manière plus détaillée, DrRacket n'a pas matérialisé"
    " la documentation utilisateur auparavant,"
    " et la recherche dans le navigateur est donc susceptible d'échouer.")
   (help-desk-do-nothing "Ne rien faire")
@@ -2008,7 +2008,7 @@
   (normalize "Normaliser")
   (leave-alone "Ne pas changer")
   (normalize-string-info
-   "La chaîne de caractères à coller contient des ligatures ou des caractères non-normalisés. Normaliser la chaîne ?") XXX
+   "La chaîne de caractères à coller contient des ligatures ou des caractères non-normalisés. Normaliser la chaîne ?") ;; XXX
   (normalize-string-preference "Normaliser les chaînes de caractères durant le collage")
   (ask-about-normalizing-strings "Demander à propos de la normalisation des chaînes de caractères")
 
