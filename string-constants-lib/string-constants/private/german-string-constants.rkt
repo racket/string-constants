@@ -886,7 +886,7 @@
  (overwrite-file-button-label "Überschreiben")
  
  (definitions-modified 
-  "Die Definitionen wurden auf der Platte geändert; bitte speichern Sie die Definitionen oder holen Sie diese von der Platte zurück.")
+   "Die Definitionen wurden auf der Platte geändert; bitte speichern Sie die Definitionen oder holen Sie diese von der Platte zurück.")
  
  ;; for a dialog that appears when Run is clicked and there are unsaved files
  ; the ~a is filled with a filename (same string that appears in a tab)
