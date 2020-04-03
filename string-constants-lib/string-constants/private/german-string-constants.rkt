@@ -124,7 +124,7 @@
  (cs-status-eval-compile-time "Syntaxprüfung: Compile-Time-Code ausführen")
  (cs-status-expanding-expression "Syntaxprüfung: Ausdruck expandieren")
  (cs-status-loading-docs-index "Syntaxprüfung: Dokumentations-Index laden")
- (cs-syncheck-running "Syntaprüfung läuft")
+ (cs-syncheck-running "Syntaxprüfung läuft")
  (cs-mouse-over-import "Bindung „~s“ importiert aus „~s“")
  (cs-mouse-over-import/library-only "importiert aus „~s“")
  
@@ -150,7 +150,7 @@
 
  ;; require prefix functionality
  (cs-add-prefix-for-require "Präfix für require hinzufügen")
- (cs-prefix-require-title "Präfix für Require")
+ (cs-prefix-require-title "Präfix für require")
  (cs-prefix-require "Präfix wählen für alle importierten Variablen")
  (cs-all-binders-are-prefixed "Alle require-Formen scheinen schon einen Präfix zu haben; stattdessen umbenennen")
  (cs-the-binder-is-prefixed "Die require-Form scheint schon einen Präfix zu haben; stattdessen umbenennen")
@@ -319,7 +319,7 @@
  (plt:hd:refreshing-manuals-finished "Fertig.")
  (plt:hd:about-help-desk "Über das Hilfezentrum")
  (plt:hd:help-desk-about-string
-  "Das Hilfezentrum ist die primäre Quelle für Information über die PLT-Software,insbesondere DrRacket, MzScheme und MrEd.\n\nVersion ~a\nCopyright (c) ~a-~a PLT")
+  "Das Hilfezentrum ist die primäre Quelle für Information über die PLT-Software, insbesondere DrRacket, MzScheme und MrEd.\n\nVersion ~a\nCopyright (c) ~a-~a PLT")
  (plt:hd:help-on-help "Hilfe zur Hilfe")
  (plt:hd:help-on-help-details "Hilfe zum Hilfezentrum befindet sich auf der Homepage des Hilfezentrums unter `Help Desk'.   (Die Homepage des Hilfezentrums ist über den `Home'-Knopf zu erreichen.)")
   (reload "Aktualisieren") ;; refresh the page in a web browser
@@ -382,7 +382,7 @@
  (browser-cmdline-expl-line-1 "(Kommandozeile konstruiert durch Aneinanderhängen von Vor-Text, URL,")
  (browser-cmdline-expl-line-2 " und Nach-Text, ohne zusätzliche Leerzeichen dazwischen.")
  (install? "Installieren?")  ;; if a .plt file is found (title of dialog)
- (you-have-selected-an-installable-package "Sie haben eine installierbares Paket angewählt.")
+ (you-have-selected-an-installable-package "Sie haben ein installierbares Paket angewählt.")
  (do-you-want-to-install-it? "Wollen Sie es installieren?")
  (paren-file-size "(Die Datei hat ~a Bytes)")
  (download-and-install "Herunterladen && installieren") ;; button label
@@ -1048,12 +1048,12 @@
  (executable-base "Hauptteil")
  (filename "Dateiname: ")
  (create "Erzeugen")
- (files-for-icons-etc "Dateien für für Bildchen etc.")
+ (files-for-icons-etc "Dateien für Bildchen etc.")
  (please-specify-a-filename "Bitte einen Dateinamen angeben.")
  (~a-must-end-with-~a
   "Der Dateiname auf „.~a“\n\n  ~a\n\nist nicht zulässig. Der Dateiname muss auf „.~a“ enden.")
  (macosx-executables-must-end-with-app
-  "Der Dateiname auf „.~a“\n\n  ~a\n\nist nicht zulässig. Unter Mac OS muss der Dateiname auf „.app“ enden.")
+  "Der Dateiname auf „.~a“\n\n  ~a\n\nist nicht zulässig. Unter macOS muss der Dateiname auf „.app“ enden.")
  (warning-directory-will-be-replaced
   "WARNUNG: Das Verzeichnis:\n\n  ~a\n\nsoll überschrieben werden. Weitermachen?")
  
@@ -1414,7 +1414,7 @@
  (module-browser-name-medium "Mittel")
  (module-browser-name-long "Lang")
  (module-browser-name-very-long "Lang mit Phasen")  ;; like 'Long' but shows the phases where this file is loaded
- (module-browser-open-all "Alle hier angezeigten Datein öffnen")
+ (module-browser-open-all "Alle hier angezeigten Dateien öffnen")
 
  (happy-birthday-matthias "Happy Birthday, Matthias!")
  (happy-birthday-matthew "Happy Birthday, Matthew!")
@@ -1493,7 +1493,6 @@
  (stepper-no-later-step "Keine weiteren Schritte.")
   
  (stepper-no-selected-step "Keine Schritte im markierten Bereich. Vielleicht ist es auskommentiert?")
-  
  (stepper-no-last-step "Der letzte Schritt ist noch nicht verfügbar.")
 
  (debug-tool-button-name "Debugger")
@@ -1741,7 +1740,7 @@
 
   ;; GUI Tool
   (gui-tool-heading "GUI-Werkzeug")
-  (gui-tool-before-clicking-message "Befor Sie auf ein Tool-Icon klicken, benutzen Sie „GUI einfügen“ vom „Spezial“-Menü, um ein Wurzel-GUI-Element einzufügen, oder selektieren Sie eine schon vorher eingefügte GUI.")
+  (gui-tool-before-clicking-message "Bevor Sie auf ein Tool-Icon klicken, benutzen Sie „GUI einfügen“ vom „Spezial“-Menü, um ein Wurzel-GUI-Element einzufügen, oder selektieren Sie eine schon vorher eingefügte GUI.")
   (gui-tool-show-gui-toolbar "GUI-Toolbar einblenden")
   (gui-tool-hide-gui-toolbar "GUI-Toolbar ausblenden")
   (gui-tool-insert-gui "GUI einfügen")
@@ -1888,7 +1887,7 @@
   (install-pkg-abort-promote "Beförderung abbrechen")
   (install-pkg-abort-migrate "Migration abbrechen")
   (install-pkg-abort-setup "Konfiguration abbrechen")
-  (install-pkg-abort-setup "Abort Setup")
+  (install-pkg-abort-setup "Setup abbrechen")
   (install-pkg-abort-generic-action "Aktion abbrechen")
   (install-pkg-close-terminal-output "Anzeige schließen")
   (install-pkg-show-all-options "Alle Optionen anzeigen")
@@ -1915,11 +1914,11 @@
   
   (install-pkg-abort-set-scope "Änderung des Einzugsbereich widerrufen")
 
-  (install-pkg-dependencies-fail "Fehlschlag: Installation/Aktualisierung widerrufen, falls Abhänigkeiten fehlen")
+  (install-pkg-dependencies-fail "Fehlschlag: Installation/Aktualisierung widerrufen, falls Abhängigkeiten fehlen")
   (install-pkg-dependencies-force "Trotzdem: Installieren trotz fehlender Abhängigkeiten")
-  (install-pkg-dependencies-search-ask "Fragen: bei jeder fehlenden Abhänigkeit fragen (nicht unterstützt in GUI)")
-  (install-pkg-dependencies-search-auto "Auto: fehlende Abhänigkeiten automatisch installieren")
-  (install-pkg-dependencies-search-auto+update "Auto + Aktualisieren: Abhänigkeiten aktualisieren wann immer möglich")
+  (install-pkg-dependencies-search-ask "Fragen: bei jeder fehlenden Abhängigkeit fragen (nicht unterstützt in GUI)")
+  (install-pkg-dependencies-search-auto "Auto: fehlende Abhängigkeiten automatisch installieren")
+  (install-pkg-dependencies-search-auto+update "Auto + Aktualisieren: Abhängigkeiten aktualisieren wann immer möglich")
 
   (install-pkg-dependencies-mode "Modus Abhängigkeiten")
 
@@ -1932,7 +1931,7 @@
   (install-pkg-add-package-catalog "Paket-Katalog hinzufügen")
 
   (install-pkg-not-rentrant "Installation und Aktualisierung können nicht gleichzeitig laufen."
-                            " Brechen Sie entweder den laufenden Prozess ab oder warten, bis er fertig ist.")
+                            " Brechen Sie entweder den laufenden Prozess ab oder warten Sie, bis er fertig ist.")
 
   ;; open a file via a collection path (new "Open" menu item in DrRacket)
   (open-require-path "Require-Pfad öffnen…")
@@ -1945,13 +1944,13 @@
   ;  (bracketed by some newlines to separate it out)
   ; second ~a is filled with /etc/paths.d/racket (or some other path like it in the future)
   ; third ~a is filled with the path to the bin directory of the current drracket
-  (adding-racket/bin-to-path-failed 
-   "Versuch fehlgeschlagen, Racket-Unterstützung zur Kommandozeile hinzufügen.~aGenauer:"
+  (adding-racket/bin-to-path-failed
+   "Versuch fehlgeschlagen, Racket-Unterstützung zur Kommandozeile hinzuzufügen.~aGenauer:"
    " konnte „~a“ mit Inhalt „~a“ nicht erzeugen.")
   ; first and third ~a are filled with /etc/paths.d/racket (or some other path like it in the future)
   ; and the second one is filled with the path to the bin directory that was put into that file.
   (added-racket/bin-to-path
-   "Sie sollten nun Racket mit all seinen Programme von der"
+   "Sie sollten nun Racket mit all seinen Programmen von der"
    " Kommandozeile benutzen können.\n\nDer"
    " Standardpfad in PATH wurde für alle Benutzer konfiguriert, indem die Datei"
    " ~a hinzugefügt wurde und auf ~a zeigt. Sie können dies rückgängig machen, indem"
