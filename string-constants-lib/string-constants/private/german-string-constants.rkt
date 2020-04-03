@@ -143,10 +143,10 @@
  (cs-one-varref "Ein gebundenes Vorkommen")
  (cs-n-varrefs "~a gebundene Vorkommen") ;; expected to have one ~a formatter that will accept a number
 
- (cs-contract-my-obligation "Vertrag: Obliation dieses Moduls")
+ (cs-contract-my-obligation "Vertrag: Obligation dieses Moduls")
  (cs-contract-their-obligation "Vertrag: Obligation des Klientenmoduls")
  (cs-contract-both-obligation "Vertrag: Obligation sowohl dieses Moduls als auch des Klientenmoduls")
- (cs-contract-unk-obligation "Vertrag: Oblikation unbekannt")
+ (cs-contract-unk-obligation "Vertrag: Obligation unbekannt")
 
  ;; require prefix functionality
  (cs-add-prefix-for-require "Präfix für require hinzufügen")
@@ -169,7 +169,7 @@
  (online-expansion-running "Hintergrund-Expansion läuft")
  (online-expansion-only-raw-text-files-supported "Nur reine Text-Dateien sind unterstützt")
  (online-expansion-abnormal-termination "Hintergrund-Expansion unglücklich abgebrochen")
- (online-expansion-abnormal-termination-out-of-memory "Hintergrund-Expansion unglücklich abgebrochend (kein Speicher mehr)")
+ (online-expansion-abnormal-termination-out-of-memory "Hintergrund-Expansion unglücklich abgebrochen (kein Speicher mehr)")
  (online-expansion-finished-successfully "Hintergrund-Expansion erfolgreich abgeschlossen")
 
  (jump-to-error "Zum Fehler springen")
@@ -193,7 +193,7 @@
  (online-expansion-error-margin "am Rand")
  ; the label of a preference in the (string-constant online-expansion) section
  (show-arrows-on-mouseover "Bindungen und Tail-Positionen unter Mauszeiger anzeigen")
- (show-blueboxes "Blaue Kästen  und blaue anzeigen") ;; blue boxes should be ``signature'' boxes now
+ (show-blueboxes "Signatur-Kasten und -Pfeil oben rechts anzeigen")
  ;;; info bar at botttom of drscheme frame
  (collect-button-label "GC")
  (read-only "Nur Lesen")
@@ -533,7 +533,7 @@
  (set-font "Schriftart setzen…")
  (font-smoothing-label  "Weiche Kanten bei Schrift")
  (font-smoothing-none "Nicht")
- (font-smoothing-some "Bißchen")
+ (font-smoothing-some "Bisschen")
  (font-smoothing-all "Total")
  (font-smoothing-default "System-Einstellung verwenden")
  (font-weight-label "Schriftstärke")
@@ -718,17 +718,17 @@
  (redo-info "Letzte Rückgängig-Operation rückgängig machen")
  (redo-menu-item "&Nochmal")
 
- (cut-info "Verschiebe die Selektion ins Clipboard, um sie später wieder einfügen zu können")
+ (cut-info "Selektion ins Clipboard verschieben, um sie später wieder einfügen zu können")
  (cut-menu-item "&Ausschneiden")
 
- (copy-info "Kopiere die Selektion ins Clipboard, um sie später wieder einfügen zu könne")
+ (copy-info "Selektion ins Clipboard kopieren, um sie später wieder einfügen zu können")
  (copy-menu-item "&Kopieren")
 
- (paste-info "Ersetze die aktuelle Selektion durch die zuletzt kopierte oder ausgeschnittene Selektion")
+ (paste-info "Aktuelle Selektion ersetzen durch die zuletzt kopierte oder ausgeschnittene Selektion")
  (paste-menu-item "&Einfügen")
  (paste-and-indent-menu-item "Einfügen und Einrücken")
 
- (clear-info "Lösche die Selektion, ohne das Clipboard dabei zu ändern oder etwas einzufügen")
+ (clear-info "Selektion löschen, ohne das Clipboard dabei zu ändern oder etwas einzufügen")
  (clear-menu-item-windows "&Löschen")
 
  (select-all-info "Gesamtes Dokument selektieren")
@@ -886,7 +886,7 @@
  (overwrite-file-button-label "Überschreiben")
  
  (definitions-modified 
-   "Die Definitionen wurden auf der Platte geändert; bitte speichern sie die Definitionen oder holen Sie diese von der Platte zurück.")
+   "Die Definitionen wurden auf der Platte geändert; bitte speichern Sie die Definitionen oder holen Sie diese von der Platte zurück.")
  
  ;; for a dialog that appears when Run is clicked and there are unsaved files
  ; the ~a is filled with a filename (same string that appears in a tab)
@@ -1578,7 +1578,7 @@
   (profj-language-config-support-test-language "Spracherweiterung „test“ unterstützen?")
   (profj-language-config-testing-check "Check-Ausdruck zulassen?") ; check should not be translated
   (profj-language-config-classpath "Klassenpfad")
-  (profj-language-config-choose-classpath-directory "Verzeichnis für den Klassenpfad auswählren")
+  (profj-language-config-choose-classpath-directory "Verzeichnis für den Klassenpfad auswählen")
   (profj-language-config-classpath-display "Aktuellen Wert anzeigen") ; Button label to print the current classpath
 
   (profj-test-name-close-to-example "Der Name von Klasse ~a enhält etwas, das so ähnlich wie „Example“ aussieht.")
