@@ -63,6 +63,12 @@ Sets the language for the next run of DrRacket to @racket[lang], which
 must be a symbol returned from @racket[all-languages].  Does not affect the
 running DrRacket.}
 
+@defform[(call-with-current-language name thunk)]{
+
+This calls @racket[thunk], and, for the extent of that call, sets the
+current language to named by the symbol @racket[name].  This is for
+implementing tests that are insensitive to the language preference.}
+
 @; ----------------------------------------------------------------------
 
 @section{Adding String Constants}
