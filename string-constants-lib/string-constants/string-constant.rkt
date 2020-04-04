@@ -21,9 +21,11 @@
 
 (provide string-constant string-constants
          string-constant-in-current-language?
-         this-language call-with-current-language all-languages set-language-pref)
+         this-language all-languages set-language-pref)
 (provide
  (contract-out
+  [string-constant-language? (-> any/c boolean?)]
+  [call-with-current-language (-> string-constant-language? (-> any) any)]
   [string-constant? (-> any/c boolean?)]
   [dynamic-string-constant (-> string-constant? string?)]
   [dynamic-string-constants (-> string-constant? (listof string?))]
@@ -98,12 +100,14 @@
         (get-preference 'plt:human-language (lambda () (default-language))))))
 
 (define (language-sc language)
-  (or (for/or ([sc (in-list available-string-constant-sets)])
-        (and (equal? language (sc-language-name sc))
-             sc))
-      first-string-constant-set))
-  
-(define the-sc (make-parameter (language-sc language)))
+  (for/or ([sc (in-list available-string-constant-sets)])
+    (and (equal? language (sc-language-name sc))
+         sc)))
+
+(define (string-constant-language? x) (and (language-sc x) #t))
+
+(define the-sc (make-parameter (or (language-sc language)
+                                   first-string-constant-set)))
 
 (define (call-with-current-language language thunk)
   (parameterize ((the-sc (language-sc language)))
