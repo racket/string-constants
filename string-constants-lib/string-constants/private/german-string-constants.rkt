@@ -894,11 +894,11 @@
   "Die Datei “~a” ist nicht gespeichert; vor Start speichern?")
  ; the string is suffixed with a list of filenames (which are separated by newlines)
  (many-files-not-saved-do-the-save?
-  "Manche andere Dateien Dateien sind nicht gespeichert; vor Start speichern?\n\nDateien:")
+  "Manche andere Dateien sind nicht gespeichert; vor Start speichern?\n\nDateien:")
  ; button label to go ahead with saving
  (save-all-files "Alle Dateien speichern")
  ; check box in the dialog and also used in the preferences dialog
- (save-after-switching-tabs "Dateien speichern immeer bei Tab- oder Fenster-Wechsel")
+ (save-after-switching-tabs "Dateien beim Tab- oder Fenster-Wechsel speichern")
 
  (dont-ask-about-saving-after-switching-tabs
   "Nicht fragen und nicht speichern, wenn Start gedrückt wurde bei nicht gespeicherten Tabs oder Fenstern")
