@@ -1,4 +1,4 @@
-;; Bulgarian translation of Racket string constants file, version: 1.31
+;; Bulgarian translation of Racket string constants file, version: 1.33
 ;; This file is distributed under the same terms as Racket
 ;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020.
 
@@ -54,6 +54,15 @@
  (tool-web-sites "Уеб сайтове с инструменти")   ;; menu item title
  (plt-homepage "Racket")
  (pbd-homepage "Програмиране по шаблон")
+
+ ;; having an issue (replaces the bug report form, whose string constants are below)
+ (have-an-issue? "Проблем ли има?…")
+ (use-github-or-the-mailing-list-for-issues
+  "Ако сте открили проблем в Racket или DrRacket, молим да го докладвате като съзадете"
+  " билет през GitHub.\n\nАко нещо ви прави впечатление, но не сте сигурни дали е грешка"
+  " или не, попитайте през пощенския списък.")
+ (visit-mailing-lists "Към пощенските списъци") ;; button in dialog
+ (visit-github "Към GitHub") ;; button in dialog, goes to 'open issue' page
 
  ;;; bug report form
  (cancel-bug-report? "Да се отмени ли този доклад за грешка?")
@@ -944,7 +953,10 @@
  (tool-config-changes "Промените в настройките ще влязат в сила при следващото стартиране на DrRacket.")
  (installed-tools "Инсталирани инструменти")
  (tool-prefs-panel-tool:-label "Инструмент: ")
+ (tool-prefs-panel-title "Инструменти")
  (load-tool-when-drracket-starts? "Зареждане при стартиране на DrRacket?")
+ (load-tool-load "Зареждане")
+ (load-tool-skip "Пропускане")
  (unnamed-tool "ненаименован инструмент „~a“")
  (note-that-tool-loaded " (зареден)")
  (note-that-tool-was-skipped " (прескочен)")
