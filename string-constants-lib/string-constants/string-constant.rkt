@@ -4,20 +4,7 @@
                      (prefix-in english-ct: "private/english-string-constants.rkt"))
          racket/file
          racket/contract/base
-         (prefix-in english: "private/english-string-constants.rkt")
-         (prefix-in spanish: "private/spanish-string-constants.rkt")
-         (prefix-in german: "private/german-string-constants.rkt")
-         (prefix-in french: "private/french-string-constants.rkt")
-         (prefix-in dutch: "private/dutch-string-constants.rkt")
-         (prefix-in danish: "private/danish-string-constants.rkt")
-         (prefix-in portuguese: "private/portuguese-string-constants.rkt")
-         (prefix-in japanese: "private/japanese-string-constants.rkt")
-         (prefix-in traditional-chinese: "private/traditional-chinese-string-constants.rkt")
-         (prefix-in simplified-chinese: "private/simplified-chinese-string-constants.rkt")
-         (prefix-in russian: "private/russian-string-constants.rkt")
-         (prefix-in ukrainian: "private/ukrainian-string-constants.rkt")
-         (prefix-in korean: "private/korean-string-constants.rkt")
-         (prefix-in bulgarian: "private/bulgarian-string-constants.rkt"))
+         setup/getinfo)
 
 (provide string-constant string-constants
          string-constant-in-current-language?
@@ -35,26 +22,28 @@
 (define (set-language-pref language)
   (put-preferences (list 'plt:human-language) (list language)))
 
-;; table : (listof (list symbol regexp regexp))
+;; table : (listof (list symbol regexp regexp mod-path))
 ;; this table indicates what the default value of the natural language
 ;; preference is. the first regexp is used under Windows and the second
 ;; is used on other platforms. All regexps are compared to the result
 ;; of (system-language+country)
 (define table
-  '((english             #rx"^en_"        #rx"^English_")
-    (spanish             #rx"^es_"        #rx"^Espanol_")
-    (german              #rx"^de_"        #rx"^German_")
-    (french              #rx"^fr_"        #rx"French_")
-    (dutch               #rx"nl_"         #rx"^Netherlands_")
-    (danish              #rx"^da_DK"      #rx"^Danish_")
-    (portuguese          #rx"^pt_"        #rx"Portuguese_")
-    (japanese            #rx"^ja_"        #rx"^Japan_")
-    (traditional-chinese #rx"^zh_(HK|TW)" #rx"Chinese_(Hong|Taiwan)")
-    (simplified-chinese  #rx"^zh_CN"      #rx"Chinese_China")
-    (russian             #rx"^ru_"        #rx"^Russian_")
-    (ukrainian           #rx"^uk_"        #rx"^Ukrainian_")
-    (korean              #rx"^ko_"        #rx"^Korean_")
-    (bulgarian           #rx"^bg_"        #rx"^Bulgarian_")))
+  (let ([get-info-key 'string-constants-info])
+    (apply
+     append
+     (filter
+      values
+      (for/list ([dir (in-list (find-relevant-directories (list get-info-key)))])
+        (define get-info (get-info/full dir))
+        (cond
+          [get-info
+           (define info (get-info get-info-key))
+           (define valid-info-entry?
+             (listof (list/c symbol? regexp? regexp? (and/c module-path? (not/c path-string?)))))
+           (cond
+             [(valid-info-entry? info)
+              info]
+             [else #f])]))))))
 
 ;; default-language : -> symbol
 ;; uses `table' and system-language+contry to find what language to start with
@@ -72,24 +61,42 @@
 
 (define-struct sc (language-name constants [ht #:mutable]))
 
-(define available-string-constant-sets
-  (list
-   (make-sc 'english             english:string-constants             #f)
-   (make-sc 'spanish             spanish:string-constants             #f)
-   (make-sc 'french              french:string-constants              #f)
-   (make-sc 'german              german:string-constants              #f)
-   (make-sc 'dutch               dutch:string-constants               #f)
-   (make-sc 'danish              danish:string-constants              #f)
-   (make-sc 'portuguese          portuguese:string-constants          #f)
-   (make-sc 'japanese            japanese:string-constants            #f)
-   (make-sc 'traditional-chinese traditional-chinese:string-constants #f)
-   (make-sc 'simplified-chinese  simplified-chinese:string-constants  #f)
-   (make-sc 'russian             russian:string-constants             #f)
-   (make-sc 'ukrainian           ukrainian:string-constants           #f)
-   (make-sc 'korean              korean:string-constants              #f)
-   (make-sc 'bulgarian           bulgarian:string-constants           #f)))
+;; english first, then alphabetically
+(define (sc<? a b)
+  (cond
+    [(equal? (sc-language-name a) 'english) #t]
+    [(equal? (sc-language-name b) 'english) #f]
+    [else (symbol<? (sc-language-name a) (sc-language-name b))]))
 
-(define first-string-constant-set (car available-string-constant-sets))
+(define-logger string-constants)
+(define available-string-constant-sets
+  (sort
+   (filter
+    values
+    (for/list ([table-entry (in-list table)])
+      (with-handlers ([exn:fail?
+                       (λ (x)
+                         (log-string-constants-error
+                          "failed to load ~a string-constants from ~s:\n~a"
+                          (list-ref table-entry 0)
+                          (list-ref table-entry 3)
+                          (let ([sp (open-output-string)])
+                            (parameterize ([current-error-port sp])
+                              ((error-display-handler)
+                               (exn-message x)
+                               x))
+                            (get-output-string sp)))
+                         #f)])
+        (make-sc (list-ref table-entry 0)
+                 (dynamic-require (list-ref table-entry 3) 'string-constants)
+                 #f))))
+   sc<?))
+;; english is required because it is also the
+;; definition of which string constants are valid
+(unless (pair? available-string-constant-sets)
+  (error 'string-constant.rkt "could not find English string constants"))
+
+(define english-string-constant-set (car available-string-constant-sets))
 
 ;; language : symbol
 (define language
@@ -107,7 +114,7 @@
 (define (string-constant-language? x) (and (language-sc x) #t))
 
 (define the-sc (make-parameter (or (language-sc language)
-                                   first-string-constant-set)))
+                                   english-string-constant-set)))
 
 (define (call-with-current-language language thunk)
   (parameterize ((the-sc (language-sc language)))
@@ -124,7 +131,7 @@
   (show-warning-message)
   (hash-ref (sc-constants an-sc) key
             (λ ()
-              (hash-ref (sc-constants first-string-constant-set)
+              (hash-ref (sc-constants english-string-constant-set)
                         key
                         (λ ()
                           (error who
@@ -133,7 +140,7 @@
   (hash-has-key? (sc-constants (the-sc)) key))
 
 (define (string-constant? sym)
-  (and (hash-ref (sc-constants first-string-constant-set) sym #f)
+  (and (hash-ref (sc-constants english-string-constant-set) sym #f)
        #t))
               
 
@@ -176,8 +183,8 @@
                                            warning-table))])))))
       
       (for ([x (in-list (cdr available-string-constant-sets))])
-        (check-one-way x first-string-constant-set)
-        (check-one-way first-string-constant-set x))
+        (check-one-way x english-string-constant-set)
+        (check-one-way english-string-constant-set x))
       
       (define sp (open-output-string))
       (for ([bad (in-list warning-table)])

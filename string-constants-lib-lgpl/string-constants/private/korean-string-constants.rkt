@@ -7,7 +7,7 @@
 ;;                Yujeong Cho <mayflower418@gmail.com>,
 ;;                Sung Gyeong Bae <imai0917@gmail.com>
 ;;
-(module korean-string-constants "string-constant-lang.rkt"
+(module korean-string-constants string-constants/private/string-constant-lang
  (is-this-your-native-language "한글을 사용하시겠습니까?")
 
  (are-you-sure-you-want-to-switch-languages

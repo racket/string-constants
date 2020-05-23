@@ -1,4 +1,4 @@
-(module spanish-string-constants "string-constant-lang.rkt"
+(module spanish-string-constants string-constants/private/string-constant-lang
 
  ;;; when translating this constant, substitue name of actual language for `English'
  (is-this-your-native-language
