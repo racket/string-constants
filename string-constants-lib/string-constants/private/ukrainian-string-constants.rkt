@@ -88,7 +88,7 @@ please adhere to these guidelines:
 
 |#
 
-(module ukrainian-string-constants string-constants/private/string-constant-lang
+(module ukrainian-string-constants "string-constant-lang.rkt"
  ;;; when translating this constant, substitute name of actual language for `English'
  (is-this-your-native-language "Українська - це Ваша рідна мова?")
 

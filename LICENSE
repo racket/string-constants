@@ -2,7 +2,7 @@ This component of Racket is primarily distributed under the under the
 Apache 2.0 and MIT licenses. The user can choose the license under
 which they will be using the software.
 
-Additionally, several translations in the "string-constants-lib"
+Additionally, the translations in the "string-constants-lib-lgpl"
 package are distributed under the GNU Lesser General Public License,
 version 2.0 or any later version. This applies to the following files:
 

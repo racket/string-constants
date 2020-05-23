@@ -12,4 +12,6 @@
     (traditional-chinese #rx"^zh_(HK|TW)" #rx"Chinese_(Hong|Taiwan)" string-constants/private/traditional-chinese-string-constants)
     (simplified-chinese  #rx"^zh_CN"      #rx"Chinese_China"         string-constants/private/simplified-chinese-string-constants)
     (bulgarian           #rx"^bg_"        #rx"^Bulgarian_"           string-constants/private/bulgarian-string-constants)
+    (russian             #rx"^ru_"        #rx"^Russian_"             string-constants/private/russian-string-constants)
+    (ukrainian           #rx"^uk_"        #rx"^Ukrainian_"           string-constants/private/ukrainian-string-constants)
     ))

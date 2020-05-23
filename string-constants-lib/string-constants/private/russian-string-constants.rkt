@@ -88,7 +88,7 @@ please adhere to these guidelines:
 
 |#
 
-(module russian-string-constants string-constants/private/string-constant-lang
+(module russian-string-constants "string-constant-lang.rkt"
  ;;; when translating this constant, substitute name of actual language for `English'
  (is-this-your-native-language "Русский - это Ваш родной язык?")
 
