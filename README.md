@@ -1,6 +1,8 @@
 # string-constants
 
-This the source for the Racket packages: "string-constants", "string-constants-doc", "string-constants-lib".
+This the source for the Racket packages: "string-constants",
+"string-constants-doc", "string-constants-lib",
+"string-constant-lib-lgpl".
 
 ### Contributing
 
@@ -16,9 +18,13 @@ for more details.
 By making a contribution, you are agreeing that your contribution
 is licensed under the [Apache 2.0] license and the [MIT] license.
 
+This repository also contains the "string-constants-lib-lgpl" package,
+which is distributed under the [LGPL v3.0] license.
+
 [MIT]: https://github.com/racket/racket/blob/master/racket/src/LICENSE-MIT.txt
 [Apache 2.0]: https://www.apache.org/licenses/LICENSE-2.0.txt
 [pull request]: https://github.com/racket/string-constants/pulls
 [issue]: https://github.com/racket/string-constants/issues
 [development mailing list]: https://lists.racket-lang.org
 [LICENSE]: LICENSE
+[LGPL v3.0]: https://github.com/racket/racket/blob/master/racket/src/LICENSE-LGPL.txt

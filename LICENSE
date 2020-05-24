@@ -6,9 +6,9 @@ Additionally, the translations in the "string-constants-lib-lgpl"
 package are distributed under the GNU Lesser General Public License,
 version 2.0 or any later version. This applies to the following files:
 
-  string-constants-lib/string-constants/private/dutch-string-constants.rkt
-  string-constants-lib/string-constants/private/korean-string-constants.rkt
-  string-constants-lib/string-constants/private/spanish-string-constants.rkt
+  string-constants-lib-lgpl/string-constants/private/dutch-string-constants.rkt
+  string-constants-lib-lgpl/string-constants/private/korean-string-constants.rkt
+  string-constants-lib-lgpl/string-constants/private/spanish-string-constants.rkt
 
 See the files
   https://github.com/racket/racket/blob/master/racket/src/LICENSE-APACHE.txt
