@@ -851,7 +851,21 @@
  (autosave-details "Details")
  (autosave-recover "Zurückholen")
  (autosave-unknown-filename "<<unbekannt>>")
-  
+
+
+   ;;; autoloading
+  (autoload-file-changed-on-disk
+   "Die Datei auf der Platte hat sich geändert."
+   " Editor-Inhalt durch Datei auf der Platte ersetzen?")
+  (autoload-file-changed-on-disk-editor-dirty
+   "Die Datei hat sich auf der Platte geändert."
+   " Editor-Inhalt durch Datei auf der Platte ersetzen?"
+   " \n\nDabei könnten Änderungen verlorengehen.")
+  (autoload-automatically-reload "Geänderte Dateien automatisch neu laden")
+  (autoload-when-the-editor-isnt-dirty "Wenn der Editor nicht geändert wurde")
+  (autoload-never-revert "Niemals")
+  (autoload-ask-about-reverting "Jedesmal fragen")
+
   ;; these are labels in a dialog that drscheme displays
   ;; if you have leftover autosave files. to see the dialog,
   ;; start up drscheme and modify (but don't save) a file
