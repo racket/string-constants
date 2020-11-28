@@ -2027,6 +2027,7 @@ please adhere to these guidelines:
 
   (always-use-platform-specific-linefeed-convention
    "Always use the platform-specific linefeed convention")
+  (disable-caret-blinking "Disable caret blinking")
 
   ;; optimization coach
   (hide-optimization-coach "Hide Optimization Coach")
