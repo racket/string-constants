@@ -1667,35 +1667,6 @@
   (happy-birthday-matthew "Joyeux anniversaire, Matthew !")
   (happy-birthday-shriram "Joyeux anniversaire, Shriram !")
 
-  (mrflow-using-default-language-title "Langage par défaut utilisé")
-  (mrflow-using-default-language
-   "Le langage actuellement utilisé n'a pas de table de types"
-   " défini pour ses primitives. R5RS Scheme est utilisé à la place.")
-  (mrflow-button-title "Analyzer")
-  ;(mrflow-unknown-style-delta-error-title "Delta de Style de boîte inconnu")
-  ;(mrflow-unknown-style-delta-error "Delta de style de boîte inconnu : ~a")
-  (mrflow-popup-menu-show-type "Montrer le type")
-  (mrflow-popup-menu-hide-type "Cacher le type")
-  (mrflow-popup-menu-show-errors "Montrer les erreurs")
-  (mrflow-popup-menu-hide-errors "Cacher les erreurs")
-  ;(mrflow-read-exception-title "Exception lecture")
-  ;(mrflow-read-exception "Exception durant la lecture : ~a")
-  ;(mrflow-syntax-exception-title "Exception syntaxique")
-  ;(mrflow-syntax-exception "Exception syntaxique : ~a")
-  ;(mrflow-unknown-exception-title "Exception inconnue")
-  ;(mrflow-unknown-exception "Exception inconnue : ~a")
-  ;(mrflow-language-primitives-error-title "Erreur pour les primitives du langage")
-  ;(mrflow-language-primitives-error "Mauvais nom de fichier pour la table des types des primitives du langage : ~a")
-
-  (snips-and-arrows-popup-menu-tack-all-arrows "Coller toutes les flèches")
-  (snips-and-arrows-popup-menu-untack-all-arrows "Décoller toutes les flèches")
-  (snips-and-arrows-user-action-disallowed-title "Changements actuellement interdits")
-  (snips-and-arrows-user-action-disallowed
-   "Les changements sont interdits dans les éditeurs qui contiennent des boîtes inserées par un outil."
-   " Cachez toutes les boîtes avant de modifier le contenu de l'éditeur.")
-  ;(snips-and-arrows-changing-terms-warning-title "Changer les termes ne pourra être défait")
-  (snips-and-arrows-hide-all-snips-in-editor "Cacher les boîtes de cet éditeur")
-
   (xml-tool-insert-xml-box "Insérer une boîte XML")
   (xml-tool-insert-scheme-box "Insérer une boîte Racket")
   (xml-tool-insert-scheme-splice-box "Insérer une boîte Racket à raccord")

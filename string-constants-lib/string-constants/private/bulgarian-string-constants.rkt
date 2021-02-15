@@ -1565,35 +1565,6 @@
   (happy-birthday-matthew "Честит рожден ден, Ма̀тю (Фла̀т)!")
   (happy-birthday-shriram "Честит рожден ден, Шрѝрам (Кришнаму̀рти)!")
 
-  (mrflow-using-default-language-title "Стандартен език")
-  (mrflow-using-default-language
-   "Текущият език не притежава таблица с типове за примитивите,"
-   " затова се ползва тази за Scheme R5RS.")
-  (mrflow-button-title "Анализиране")
-  ;(mrflow-unknown-style-delta-error-title "Unknown Box Style Delta")
-  ;(mrflow-unknown-style-delta-error "Unknown box style delta: ~a")
-  (mrflow-popup-menu-show-type "Показване на типовете")
-  (mrflow-popup-menu-hide-type "Скриване на типовете")
-  (mrflow-popup-menu-show-errors "Показване на грешките")
-  (mrflow-popup-menu-hide-errors "Скриване на грешките")
-  ;(mrflow-read-exception-title "Read Exception")
-  ;(mrflow-read-exception "Read exception: ~a")
-  ;(mrflow-syntax-exception-title "Syntax Exception")
-  ;(mrflow-syntax-exception "Syntax exception: ~a")
-  ;(mrflow-unknown-exception-title "Unknown Exception")
-  ;(mrflow-unknown-exception "Unknown exception: ~a")
-  ;(mrflow-language-primitives-error-title "Language Primitives Error")
-  ;(mrflow-language-primitives-error "Wrong filename for language primitives types table: ~a")
-
-  (snips-and-arrows-popup-menu-tack-all-arrows "Закачане на всички стрелки")
-  (snips-and-arrows-popup-menu-untack-all-arrows "Откачане на всички стрелки")
-  (snips-and-arrows-user-action-disallowed-title "Промените в момента са забранени")
-  (snips-and-arrows-user-action-disallowed
-   "Не може да правите промѐни в прозорци с отрязъци от програмни инструменти."
-   " Скрийте всички отрязъци, преди да промените съдържанието на редактора.")
-  ;(snips-and-arrows-changing-terms-warning-title "Changing terms will be undoable")
-  (snips-and-arrows-hide-all-snips-in-editor "Скриване на всички отрязъци в редактора")
-
   (xml-tool-insert-xml-box "Вмъкване на кутия с XML")
   (xml-tool-insert-scheme-box "Вмъкване на кутия с Racket")
   (xml-tool-insert-scheme-splice-box "Вмъкване на кутия с Racket за снаждане")
