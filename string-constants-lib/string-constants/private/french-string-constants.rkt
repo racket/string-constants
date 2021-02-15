@@ -1027,6 +1027,38 @@
   (autosave-recover "Recouvrer")
   (autosave-unknown-filename "« inconnu »")
 
+  ;;; autoloading
+  ;; the ~a is replaced with a path
+  (autoload-file-changed-on-disk/with-name
+   "Le fichier :\n  ~a\na changé sur le disque. Voulez-vous"
+   " changer le contenu de l'éditeur pour correspondre au contenu du fichier sur le disque ?")
+  ;; One file per line is appended to the end of this message
+  (autoload-files-changed-on-disk/with-name
+   "Certains fichiers ont changé sur le disque. Voulez-vous"
+   " changer les contenus de l'éditeur pour correspondre aux contenus des fichiers sur le disque ?\n\nFichiers changés :")
+  ;; the ~a is replaced with a path
+  (autoload-file-changed-on-disk-editor-dirty/with-name
+   "Le fichier :\n  ~a\na changé sur le disque et a aussi été modifié dans l'éditeur."
+   " Voulez-vous changer le contenu de l'éditeur pour correspondre au contenu du fichier sur le disque ?")
+  ;; One file per line is appended to the end of this message
+  (autoload-files-changed-on-disk-editor-dirty/with-name
+   "Certains fichiers ont changé sur le disque et ont aussi été modifiés dans l'éditeur."
+   " Voulez-vous changer les contenus de l'éditeur pour correspondre aux contenus des fichiers sur"
+   " le disque ?\n\nFichiers changés :")
+  ;; One file per line is appended to the end of this message
+  (autoload-files-changed-on-disk-editor-dirty&clean/with-name
+   "Certains fichiers ont changé sur le disque et certains de ces fichiers ont aussi été modifiés dans l'éditeur."
+   " Voulez-vous changer les contenus de l'éditeur pour correspondre aux contenus des fichiers sur"
+   " le disque ?\n\nFichiers changés (un ◇ indique que la version dans l'éditeur a été modifiée) :")
+  ;; a specialized version of dont-ask-again-always-current
+  (dont-ask-again-always-current/clean-buffer
+   "Ne pas poser à nouveau de question à propos des fichiers avec des changements non-sauvegardés (toujours utiliser le choix actuel)")
+
+  (autoload-automatically-reload "Automatiquement rafraîchir du disque les fichiers modifiés sur le disque")
+  (autoload-when-the-editor-isnt-dirty "Quand le contenu de l'éditeur n'a pas été modifié")
+  (autoload-never-revert "Jamais")
+  (autoload-ask-about-reverting "Me demander à chaque fois")
+
   ;; these are labels in a dialog that drscheme displays
   ;; if you have leftover autosave files. to see the dialog,
   ;; start up drscheme and modify (but don't save) a file
@@ -2014,6 +2046,7 @@
 
   (always-use-platform-specific-linefeed-convention
    "Toujours utiliser la convention spécifique au système d'exploitation pour les fins de lignes")
+  (disable-caret-blinking "Désactiver le clignotement du curseur")
 
   ;; optimization coach
   (hide-optimization-coach "Cacher l'informateur d'optimisation") ; better than "entraîneur"...
