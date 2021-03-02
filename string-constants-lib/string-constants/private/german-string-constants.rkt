@@ -1329,7 +1329,7 @@
  
  ;; test coverage
  (test-coverage-clear? "Änderungen im Definitionsfenster machen die Information über Testabdeckung ungültig. Weitermachen?")
- (test-coverage-clear-and-do-not-ask-again "Ja, und nicht nicht wieder fragen")
+ (test-coverage-clear-and-do-not-ask-again "Ja, und nicht noch einmal fragen")
  (test-coverage-ask? "Frage nach dem Löschen der Testabdeckungs-Information")
  (test-coverage-on "Durch Tests abgedeckt")
  (test-coverage-off "Durch Tests nicht abgedeckt")
