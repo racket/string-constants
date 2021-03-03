@@ -2199,5 +2199,16 @@ please adhere to these guidelines:
    " default PATH has been configured for all users by adding the file"
    " ~a to point to ~a. You can undo this"
    " configuration by deleting ~a.")
+  (added-racket/bin-to-path/windows
+   "You should now be able to use racket and its tools at the"
+   " command-line.\n\nThe"
+   " default %PATH% has been configured via the registry entry"
+   " HKEY_CURRENT_USER\\Environment\\Path"
+   " to point to ~a.")
+  (didnt-add-racket/bin-to-path/unix
+   "DrRacket cannot update your path under unix, but if you"
+   " know how to adjust your PATH yourself,"
+   " add\n\n  ~a\n\n"
+   " to it.")
   (add-racket/bin-to-path "Configure Command Line for Racket…") ;; menu item label
   )
