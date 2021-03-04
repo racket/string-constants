@@ -2204,7 +2204,7 @@ please adhere to these guidelines:
    " command-line.\n\nThe"
    " default %PATH% has been configured via the registry entry"
    " HKEY_CURRENT_USER\\Environment\\Path"
-   " to point to ~a.")
+   " to point to ~a and ~a.")
   (didnt-add-racket/bin-to-path/unix
    "DrRacket cannot update your path under unix, but if you"
    " know how to adjust your PATH yourself,"
