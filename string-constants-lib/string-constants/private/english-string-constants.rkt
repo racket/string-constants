@@ -2199,6 +2199,11 @@ please adhere to these guidelines:
    " default PATH has been configured for all users by adding the file"
    " ~a to point to ~a. You can undo this"
    " configuration by deleting ~a.")
+  (adding-racket/bin-no-paths.d
+   "Failed to add racket to the command line because /etc/paths.d does not"
+   " exist.\n\nIt may work to run this command in the terminal window to"
+   " create the directory:\n"
+   "    sudo mkdir /etc/paths.d\nand then try again.")
   (added-racket/bin-to-path/windows
    "You should now be able to use racket and its tools at the"
    " command-line.\n\nThe"
