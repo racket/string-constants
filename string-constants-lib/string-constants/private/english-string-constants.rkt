@@ -631,6 +631,7 @@ please adhere to these guidelines:
   (command-as-meta "Treat command key as meta") ;; macos/macos x only
   (any-control+alt-is-altgr "Treat Control-Alt combination as AltGr") ; Windows only
   (alt-as-meta "Treat alt key as meta")
+  (home/end-is-go-to-beginning/end-of-document "Home and End go to the beginning or end of the document")
   (reuse-existing-frames "Reuse existing frames when opening new files")
   (default-fonts "Default Fonts")
   (basic-gray-paren-match-color "Basic gray parenthesis highlight color") ; in prefs dialog
