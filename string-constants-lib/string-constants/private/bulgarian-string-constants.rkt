@@ -1804,7 +1804,7 @@
   ; section header
   (test-engine-signature-violations "Несъответствия в сигнатурите:")
 
-  ; part of one phrase "signature <at line ...> to blame: procedure <...>
+  ; part of one phrase "signature <at line ...> to blame: function <...>
   (test-engine-signature "сигнатура")
   (test-engine-to-blame "проблемът е в: процедурата")
 

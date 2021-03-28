@@ -1674,9 +1674,9 @@
   ; section header
   (test-engine-signature-violations "Signaturverletzungen:")
 
-  ; part of one phrase "signature <at line …> to blame: procedure <at line …>
+  ; part of one phrase "signature <at line …> to blame: function <at line …>
   (test-engine-signature "Signatur")
-  (test-engine-to-blame "verantwortlich: Prozedur")
+  (test-engine-to-blame "verantwortlich: Funktion")
 
   (test-engine-no-signature-violations "Keine Signaturverletzungen.")
   (test-engine-1-signature-violation "1 Signaturverletzung.")

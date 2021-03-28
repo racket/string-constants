@@ -1907,7 +1907,7 @@
   ; section header
   (test-engine-signature-violations "Violations de signatures :")
 
-  ; part of one phrase "signature <at line ...> to blame: procedure <...>
+  ; part of one phrase "signature <at line ...> to blame: function <...>
   (test-engine-signature "Le signature")
   (test-engine-to-blame "blame la procédure")
 

@@ -1907,9 +1907,9 @@ please adhere to these guidelines:
   ; section header
   (test-engine-signature-violations "Signature violations:")
 
-  ; part of one phrase "signature <at line ...> to blame: procedure <...>
+  ; part of one phrase "signature <at line ...> to blame: function <...>
   (test-engine-signature "signature")
-  (test-engine-to-blame "to blame: procedure")
+  (test-engine-to-blame "to blame: function")
 
   (test-engine-no-signature-violations "No signature violations.")
   (test-engine-1-signature-violation "1 signature violation.")

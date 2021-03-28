@@ -1406,7 +1406,7 @@ please adhere to these guidelines:
   ; section header
   (test-engine-signature-violations "Нарушения соглашения:")
 
-  ; part of one phrase "signature <at line ...> to blame: procedure <...>
+  ; part of one phrase "signature <at line ...> to blame: function <...>
   (test-engine-signature "соглашение")
   (test-engine-to-blame "нарушено: процедура ")
 

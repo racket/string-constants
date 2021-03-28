@@ -1619,9 +1619,9 @@
   ; section header
   (test-engine-signature-violations "签名违规：")
   
-  ; part of one phrase "signature <at line ...> to blame: procedure <...>
+  ; part of one phrase "signature <at line ...> to blame: function <...>
   (test-engine-signature "签名")
-  (test-engine-to-blame "责任在于：procedure")
+  (test-engine-to-blame "责任在于：function")
   
   (test-engine-no-signature-violations "无签名违规。")
   (test-engine-1-signature-violation "1个签名违规。")
