@@ -1,4 +1,4 @@
-;; Bulgarian translation of Racket string constants file, version: 1.36
+;; Bulgarian translation of Racket string constants file, version: 1.38
 ;; This file is distributed under the same terms as Racket
 ;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 
@@ -2083,15 +2083,31 @@
   ; second ~a is filled with /etc/paths.d/racket (or some other path like it in the future)
   ; third ~a is filled with the path to the bin directory of the current drracket
   (adding-racket/bin-to-path-failed
-   "Неуспешно добавяне на поддръжката за „racket“ към командния ред.~aПо-специално —"
+   "Неуспешно добавяне на команада „racket“ към командния ред.~aПо-специално —"
    " не може да се създаде файл „~a“ със съдържание — „~a“.")
   ; first and third ~a are filled with /etc/paths.d/racket (or some other path like it in the future)
   ; and the second one is filled with the path to the bin directory that was put into that file.
   (added-racket/bin-to-path
-    "Вече можете да използвате „racket“ и инструментите от"
-    " командния ред.\n\nПроменливата"
-    " на средата „PATH“ е настроена за всички потребители чрез\nдобавяне на връзката"
-    " „~a“,\nкоято сочи към „~a“.\nЗа да отмените действието,"
-    " изтрийте „~a“.")
+   "Вече може да използвате „racket“ и инструментите от"
+   " командния ред.\n\nПроменливата"
+   " на средата „PATH“ е настроена за всички потребители чрез\nдобавяне на връзката"
+   " „~a“,\nкоято сочи към „~a“.\nЗа да отмените действието,"
+   " изтрийте „~a“.")
+  (adding-racket/bin-no-paths.d
+   "Неуспешно добавяне на командата „racket“ към командния ред, защото „/etc/paths.d“ не"
+   " съществува.\n\nПробвайте следната команда в прозорец на терминал,"
+   " за да създадете директорията:\n"
+   "    sudo mkdir /etc/paths.d\nи
+   " пробвайте отново.")
+  (added-racket/bin-to-path/windows
+   "Вече може да ползвате командата „racket“ и други инструменти от"
+   " командния ред.\n\nСтандартният"
+   " път %PATH% е настроен чрез ключа от регистъра"
+   " „HKEY_CURRENT_USER\\Environment\\Path“"
+   " да сочи към „~a“ и „~a“.")
+  (didnt-add-racket/bin-to-path/unix
+   "DrRacket не знае как да обнови пътя под Unix. Ако вие знаете как,"
+   " добавете следната директория към пътя в „PATH“:"
+   "   ~a\n\n")
   (add-racket/bin-to-path "Настройване на командния ред за Racket…") ;; menu item label
   )
