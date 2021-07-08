@@ -399,7 +399,8 @@ please adhere to these guidelines:
   (show-line-and-column-numbers "Vis linje og søjlenumre") ; used for popup menu; right click on line/column box in bottom of drs window
   (show-character-offsets "Vis tegnnummerering") ; used for popup menu; right click on line/column box in bottom of drs window
   (enable-keybindings-in-menus "Slå tastaturgenveje i menuer til")
-  (option-as-meta "Brugtion option-tasten som meta") ;; macos/macos x only  
+  (option-as-meta "Brug option-tasten som meta") ;; macos/macos x only  
+  (home/end-is-go-to-beginning/end-of-document "Home og End-taster flytter til begyndelsen eller slutningen af dokumentet")
   (reuse-existing-frames "Genbrug gamle vinduer, når nye filer åbnes")
   (default-fonts "Standardskrifttyper")
   (paren-match-color "Parentesfremhævningsfarve") ; in prefs dialog
