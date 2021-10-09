@@ -8,3 +8,6 @@
 (define pkg-authors '(robby))
 
 (define version "1.1")
+
+(define license
+  'LGPL-2.0-or-later)
