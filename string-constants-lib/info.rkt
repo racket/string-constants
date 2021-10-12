@@ -7,4 +7,4 @@
 
 (define pkg-authors '(robby))
 
-(define version "1.38")
+(define version "1.40")
