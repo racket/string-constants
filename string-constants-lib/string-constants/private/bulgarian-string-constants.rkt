@@ -1,4 +1,4 @@
-;; Bulgarian translation of Racket string constants file, version: 1.38
+;; Bulgarian translation of Racket string constants file, version: 1.40
 ;; This file is distributed under the same terms as Racket
 ;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 
@@ -723,6 +723,7 @@
   (file-dne "Файлът не съществува.")
   (empty-filename "Името на файла трябва да съдържа поне един знак.")
   (that-is-dir-name "Това е име на директория.")
+  (use-platform-specific-file-dialogs "Диалоговият прозорец за файлове да е от операционната система") ;; a preferences option
 
   ;;; raw menu names -- these must match the
   ;;; versions below, once the &s have been stripped.
@@ -2098,7 +2099,7 @@
    " съществува.\n\nПробвайте следната команда в прозорец на терминал,"
    " за да създадете директорията:\n"
    "    sudo mkdir /etc/paths.d\n"
-   " пробвайте отново.")
+   " и пробвайте отново.")
   (added-racket/bin-to-path/windows
    "Вече може да ползвате командата „racket“ и други инструменти от"
    " командния ред.\n\nСтандартният"
