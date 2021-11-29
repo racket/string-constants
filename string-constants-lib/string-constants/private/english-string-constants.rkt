@@ -303,7 +303,7 @@ please adhere to these guidelines:
   (disable-online-expansion "Disable background expansion")
   (enable-online-expansion "Enable background expansion")
   ;; the online expansion preferences pane
-  (online-expansion "Background expansion") ;; title of prefs pane
+  (online-expansion "Background Expansion") ;; title of prefs pane
   ; the different kinds of errors
   (online-expansion-show-read-errors-as "Show read-level errors")
   (online-expansion-show-variable-errors-as "Show unbound identifier errors")
