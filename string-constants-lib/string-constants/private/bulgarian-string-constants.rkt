@@ -516,8 +516,6 @@
   (fixup-open-brackets "Автоматична поправка на отварящите квадратни скоби")
   (fixup-close-parens "Автоматична поправка на затварящите кръгли скоби")
   (flash-paren-match "Премигване на съвпадащата скоба")
-  (auto-save-files "Автоматично запазване на файловете")
-  (backup-files "Резервни копия на файловете")
   (map-delete-to-backspace "Клавишът „Backspace“ да отговаря на „Delete“")
   (verify-exit "Питане при спиране на DrRacket")
   (ask-before-changing-format "Питане преди смяна на форма̀та на запазване")
@@ -929,7 +927,7 @@
   ;;; autosaving
   (error-autosaving "Грешка при автоматичното запазване на „~a“.") ;; ~a will be a filename
   (autosaving-turned-off "Автоматичното запазване е изключено\nдо първото изрично запазване на файла.")
-  (recover-autosave-files-frame-title "Възстановяване на автоматично запазен файл")
+  ;(recover-autosave-files-frame-title "Възстановяване на автоматично запазен файл")
   (autosave-details "Подробности")
   (autosave-recover "Възстановяване")
   (autosave-unknown-filename "«непознат»")
@@ -971,15 +969,15 @@
   ;; (also, do this with an unsaved file). Wait for the autosave
   ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
-  (autosave-autosave-label: "Автоматично запазен файл:")
+  ;(autosave-autosave-label: "Автоматично запазен файл:")
   (autosave-original-label: "Първоначален файл:")
-  (autosave-autosave-label "Автоматично запазен файл")
+  ;(autosave-autosave-label "Автоматично запазен файл")
   (autosave-original-label "Първоначален файл")
-  (autosave-compare-files "Сравняване на автоматично запазени файлове")
+  ;(autosave-compare-files "Сравняване на автоматично запазени файлове")
 
-  (autosave-show-autosave "Автоматично запазен файл") ;; title of a window showing the autosave file
+  ;(autosave-show-autosave "Автоматично запазен файл") ;; title of a window showing the autosave file
 
-  (autosave-explanation "DrRacket откри автоматично запазени файлове, в които може да има незапазени данни.")
+  ;(autosave-explanation "DrRacket откри автоматично запазени файлове, в които може да има незапазени данни.")
 
   (autosave-recovered! "Възстановен!") ;; status of an autosave file
   (autosave-deleted "Изтрит")          ;; status of an autosave file
@@ -991,7 +989,7 @@
   (autosave-done "Готово")
 
   ;; appears in the file dialog
-  (autosave-restore-to-where? "Избор на място за автоматично запазване на файлове.")
+  ;(autosave-restore-to-where? "Избор на място за автоматично запазване на файлове.")
 
   ;;; file modified warning
   (file-has-been-modified
