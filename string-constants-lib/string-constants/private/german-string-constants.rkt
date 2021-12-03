@@ -653,6 +653,7 @@
  (file-dne "Die Datei existiert nicht.")
  (empty-filename "Der Dateiname muss Buchstaben enthalten.")
  (that-is-dir-name "Dieser Name gehört zu einem Verzeichnis.")
+ (use-platform-specific-file-dialogs "Plattformspezifischen Datei-Auswahl-Dialoge benutzen") ;; a preferences option
  
  ;;; raw menu names -- these must match the 
  ;;; versions below, once the &s have been stripped.
