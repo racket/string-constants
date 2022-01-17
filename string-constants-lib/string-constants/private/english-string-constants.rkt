@@ -1189,7 +1189,8 @@ please adhere to these guidelines:
   (close-tab "Close Tab") ;; must not have any &s in it.
    ;; like close-tab, but with an ampersand on the same letter as the one in close-menu-item
   (close-tab-amp "&Close Tab")
-
+  (reopen-closed-tab "Reopen Closed Tab")
+  
   ;;; edit menu
   (split-menu-item-label "&Split")
   (collapse-menu-item-label "C&ollapse")
