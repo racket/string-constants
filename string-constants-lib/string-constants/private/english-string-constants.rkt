@@ -1658,6 +1658,9 @@ please adhere to these guidelines:
     ;; like 'Long' but shows the phases where this file is loaded
   (module-browser-name-very-long "Long, with phases")
   (module-browser-open-all "Open all files shown here")
+  (module-browser-main-collects "Main Collects")
+  (module-browser-unknown-pkg "Unknown Package")
+  (module-browser-visible-pkgs "Visible Packages")
 
   (happy-birthday-matthias "Happy Birthday, Matthias!")
   (happy-birthday-matthew "Happy Birthday, Matthew!")
