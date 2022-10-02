@@ -1440,6 +1440,9 @@
  (module-browser-name-long "Lang")
  (module-browser-name-very-long "Lang mit Phasen")  ;; like 'Long' but shows the phases where this file is loaded
  (module-browser-open-all "Alle hier angezeigten Dateien öffnen")
+ (module-browser-main-collects "Haupt-Collections")
+ (module-browser-unknown-pkg "Unbekanntes Paket")
+ (module-browser-visible-pkgs "Sichtbare Pakete")
 
  (happy-birthday-matthias "Happy Birthday, Matthias!")
  (happy-birthday-matthew "Happy Birthday, Matthew!")
