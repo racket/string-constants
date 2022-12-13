@@ -99,7 +99,7 @@ please adhere to these guidelines:
 
   (interact-with-drscheme-in-language "Interact with DrRacket in English")
 
-  ;; these two should probably be the same in all languages excepet English.
+  ;; these two should probably be the same in all languages except English.
   ;; they are the button labels (under macos and windows, respectively)
   ;; that go the with the string above.
   (accept-and-quit "Accept and Quit")
@@ -1675,7 +1675,7 @@ please adhere to these guidelines:
   (xml-tool-switch-to-scheme "Switch to Racket box")
   (xml-tool-switch-to-scheme-splice "Switch to Racket splice box")
   (xml-tool-eliminate-whitespace-in-empty-tags
-   "Eliminiate whitespace in empty tags")
+   "Eliminate whitespace in empty tags")
   (xml-tool-leave-whitespace-alone
    "Leave whitespace alone")
 
