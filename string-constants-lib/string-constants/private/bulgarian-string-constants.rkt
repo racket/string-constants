@@ -1,4 +1,4 @@
-;; Bulgarian translation of Racket string constants file, version: 1.42
+;; Bulgarian translation of Racket string constants file, version: 1.43
 ;; This file is distributed under the same terms as Racket
 ;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
 
@@ -1556,6 +1556,9 @@
     ;; like 'Long' but shows the phases where this file is loaded
   (module-browser-name-very-long "Дълги с фазите")
   (module-browser-open-all "Отваряне на всички показани файлове")
+  (module-browser-main-collects "Основни колекции")
+  (module-browser-unknown-pkg "Неизвестен пакет")
+  (module-browser-visible-pkgs "Видими пакети")
 
   (happy-birthday-matthias "Честит рожден ден, Матѝас (Фела̀йзен)!")
   (happy-birthday-matthew "Честит рожден ден, Ма̀тю (Фла̀т)!")
