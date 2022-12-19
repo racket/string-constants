@@ -6,9 +6,8 @@ This the source for the Racket packages: "string-constants",
 
 ### Contributing
 
-Contribute to Racket by submitting a [pull request], reporting an
-[issue], joining the [development mailing list], or visiting the
-IRC or Slack channels.
+Contribute to Racket by submitting a [pull request] or reporting an
+[issue]. See also the "Community" section of the [racket web page].
 
 ### License
 
@@ -25,6 +24,6 @@ which is distributed under the [LGPL v3.0] license.
 [Apache 2.0]: https://www.apache.org/licenses/LICENSE-2.0.txt
 [pull request]: https://github.com/racket/string-constants/pulls
 [issue]: https://github.com/racket/string-constants/issues
-[development mailing list]: https://lists.racket-lang.org
+[racket web page]: https://www.racket-lang.org/
 [LICENSE]: LICENSE
 [LGPL v3.0]: https://github.com/racket/racket/blob/master/racket/src/LICENSE-LGPL.txt
