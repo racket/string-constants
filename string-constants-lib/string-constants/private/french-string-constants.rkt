@@ -521,7 +521,7 @@
   ; ... line 2. (Anyone need more lines?)
   (browser-cmdline-expl-line-2 "et du suffixe, sans espace additionel entre eux.)")
   (install? "Installer ?")  ;; if a .plt file is found (title of dialog)
-  (you-have-selected-an-installable-package "Vous avez sélectionné un logiciel qui peut être installé.") ; package => paquetage, pas tres clair...
+  (you-have-selected-an-installable-package "Vous avez sélectionné un paquetage qui peut être installé.")
   (do-you-want-to-install-it? "Voulez-vous l'installer ?")
   (paren-file-size "(Le fichier fait ~a octets)")
   (download-and-install "Télécharger && Installer") ;; button label
@@ -530,7 +530,7 @@
   (save-downloaded-file "Sauvegarder le fichier téléchargé sous le nom")  ;; label for get-file dialog
   (downloading "Téléchargement") ;; dialog title
   (downloading-file... "Téléchargement du fichier en cours…")
-  (package-was-installed "Le logiciel à été installé.")
+  (package-was-installed "Le paquetage à été installé.")
   (download-was-saved "Le fichier téléchargé à été sauvegardé.")
 
   (install-plt-file-menu-item... "Installer un fichier .plt…")
@@ -1658,6 +1658,9 @@
     ;; like 'Long' but shows the phases where this file is loaded
   (module-browser-name-very-long "longs, avec phases")
   (module-browser-open-all "Ouvrir tous les fichiers montrés ici")
+  (module-browser-main-collects "Collections principales")
+  (module-browser-unknown-pkg "Paquetage inconnu")
+  (module-browser-visible-pkgs "Paquetages visibles")
 
   (happy-birthday-matthias "Joyeux anniversaire, Matthias !")
   (happy-birthday-matthew "Joyeux anniversaire, Matthew !")
@@ -2000,7 +2003,7 @@
   ;; the user switches to a tab where planet hasn't been used
   (planet-no-status "PLaneT")
 
-  (bug-report-field-pkg "Information système du logiciel") ; package -> paquetage, bibliothèque ?
+  (bug-report-field-pkg "Information système du paquetage")
 
   ;; string normalization. To see this, paste some text with a ligature into DrRacket
   ;; the first three strings are in the dialog that appears. The last one is in the preferences dialog
