@@ -212,37 +212,39 @@ please adhere to these guidelines:
   (cs-bold "Lihavointi")
   (cs-underline "Alleviivaus")
   (cs-smoothing-default "Oletus")
-;  (cs-smoothing-partial "Partly smoothed")
-;  (cs-smoothing-full "Smoothed")
-;  (cs-smoothing-none "Unsmoothed")
+  (cs-smoothing-partial "Osittainen tasoitus")
+  (cs-smoothing-full "Tasoitettu(Smoothed)") ;; FI&EN
+  (cs-smoothing-none "Tasoittamaton(Unsmoothed)") ;; FI&EN
   (cs-change-color "Muuta Väri")
   (cs-foreground-color "Edustan Väri")
   (cs-background-color "Taustan väri")
-;  (cs-tack/untack-arrow "Tack/Untack Arrow(s)")
-;  (cs-tack-crossing-arrows "Tack Crossing Arrows")
-;  (cs-jump-to-next-bound-occurrence "Jump to Next Bound Occurrence")
-;  (cs-jump-to-previous-bound-occurrence "Jump to Previous Bound Occurrence")
-  (cs-jump-to-binding "Jump to Binding Occurrence")
+  (cs-tack/untack-arrow "Kiinnitä/Irroita Nuoli/Nuolet")
+  (cs-tack-crossing-arrows "Kiinnitä risteävät Nuolet")
+  ;; Occurrence = tapaus
+  (cs-jump-to-next-bound-occurrence "Siirry Seuraavaan Sidontatapaukseen")
+  (cs-jump-to-previous-bound-occurrence "Siirry Edelliseen Sidontatapaukseen")
+  (cs-jump-to-binding "Siirry Sidontatapaukseen")
   (cs-jump-to-definition "Siirry Määritelmään (Toisessa Tiedostossa)")
-  (cs-open-defining-file "Open Defining File")
-  (cs-error-message "Error Message")
+  (cs-open-defining-file "Avaa Määritystiedosto")
+  (cs-error-message "Virheviesti")
   (cs-open-file "Avaa ~a")
-  (cs-rename-var "Uudelleen nimeä ~a")
+  (cs-rename-var "Uudelleennimeä ~a")
   (cs-rename-id "Nimeä Tunniste Uudelleen")
   (cs-rename-var-to "Vaihda “~a”:n nimeksi:")
- ; (cs-name-duplication-error
- ;  "Valitsemasi uusi nimi, ~s, conflicts with an already established name in this scope.")
+  ;; Scope = Skooppi
+  (cs-name-duplication-error
+   "Valitsemasi uusi nimi, ~s, on jo käytössä tässä skoopissa.")
   (cs-rename-anyway "Nimeä siitä huolimatta uudelleen")
-;  (cs-status-init "Check Syntax: Initializing environment for user code")
-;  (cs-status-coloring-program "Check Syntax: coloring expression")
-;  (cs-status-eval-compile-time "Check Syntax: eval compile time")
-;  (cs-status-expanding-expression "Check Syntax: expanding expression")
-;  (cs-status-loading-docs-index "Check Syntax: loading documentation index")
-;  (cs-syncheck-running "Check Syntax Running")
-;  (cs-mouse-over-import "binding “~s” imported from ~s")
-;  (cs-mouse-over-import/library-only "imported from ~s")
-;  (cs-view-docs "View documentation for “~a”")
-;  (cs-view-docs-from "~a from ~a")  ;; a completed version of the line above
+  (cs-status-init "Check Syntax: Alustetaan ympäristöä käyttäjän koodille")
+  (cs-status-coloring-program "Check Syntax: lausekkeen värjääminen")
+  (cs-status-eval-compile-time "Check Syntax: eval compile time")
+  (cs-status-expanding-expression "Check Syntax: lausekkeen laajentaminen")
+  (cs-status-loading-docs-index "Check Syntax: ladataan dokumentaation indeksiä")
+  (cs-syncheck-running "Check Syntax Käynnissä")
+  (cs-mouse-over-import "sidotaan “~s” tuotu (paketista?) ~s")
+  (cs-mouse-over-import/library-only "tuotu (paketista?) ~s")
+  (cs-view-docs "Selaa dokumentaatiota kohdasta “~a”")
+  (cs-view-docs-from "~a paikasta ~a")  ;; a completed version of the line above
   ;; (cs-view-docs) is put into the first ~a and a list of modules (separated by commas)
   ;; is put into the second ~a. Use check syntax and right-click on a documented variable
   ;; (eg, 'require') to see this in use
@@ -256,7 +258,7 @@ please adhere to these guidelines:
   (cs-binder-count "~a sidontatapausta")
   (cs-zero-varrefs "ei sidontoja")
   (cs-one-varref "1 sidontatapaus")
-;  ;; expected to have one ~a formatter that will accept a number
+  ;; expected to have one ~a formatter that will accept a number
   (cs-n-varrefs "~a sidontatapausta")
   ;; Finnish terminology based on https://fi.wikipedia.org/wiki/Sopimuspohjainen_ohjelmointi
   (cs-contract-my-obligation "Sopimus: tämän moduulin velvoite")
@@ -265,13 +267,13 @@ please adhere to these guidelines:
   (cs-contract-unk-obligation "Sopimus: tuntematon velvoite")
 
   ;; require prefix functionality
-  (cs-add-prefix-for-require "Add prefix for require")
-;  (cs-prefix-require-title "Prefix Require")
-;  (cs-prefix-require "Choose a prefix to add to each imported variable")
-;  (cs-all-binders-are-prefixed
-;   "All of the requires already appear to have a prefix; try to rename it instead")
-;  (cs-the-binder-is-prefixed
-;   "The require appears to already have a prefix; try to rename it instead")
+  (cs-add-prefix-for-require "Lisää etuliite requirelle")
+  (cs-prefix-require-title "Require vaatii etuliitteen")
+  (cs-prefix-require "Valitse jokaiseen tuotuun muuttujaan lisättävä etuliite")
+  (cs-all-binders-are-prefixed
+   "Kaikille require-lausekkeilla on jo etuliitteet; kokeile sen sijaan uudelleennimeämistä")
+  (cs-the-binder-is-prefixed
+   "Requirella vaikuttaa olevan jo etuliite, kokeile uudelleennimeämistä")
 
   ;; mode sub-menu in the "view" menu
   (cs-check-syntax-mode "Check Syntax Moodi")
@@ -279,31 +281,31 @@ please adhere to these guidelines:
   (cs-mode-menu-show-client-obligations "Asiakkaan Sopimuksen Velvoitteet")
   (cs-mode-menu-show-syntax "Syntaktiset Kategoriat")
 
-;  ;; the documentation blue boxes in the upper-right corner of the drracket window
-;  (sc-read-more... "read more…")
-;  (sc-f2-to-un/lock "f2 to (un)lock")
+  ;; the documentation blue boxes in the upper-right corner of the drracket window
+  (sc-read-more... "lue lisää")
+  (sc-f2-to-un/lock "f2 avaa/lukitse")
 
-;  ;; the online check syntax status messages (mouse over the bottom right of drracket's
-;  ;; window to see the messages during online expansion's various phases)
-;  (online-expansion-running "Background expansion running")
-;  (online-expansion-only-raw-text-files-supported "Only pure text files supported")
-;  (online-expansion-abnormal-termination "Background expansion terminated abnormally")
-;  (online-expansion-abnormal-termination-out-of-memory
-;   "Background expansion terminated abnormally (out of memory)")
-;  (online-expansion-finished-successfully "Background expansion finished successfully")
+  ;; the online check syntax status messages (mouse over the bottom right of drracket's
+  ;; window to see the messages during online expansion's various phases)
+  (online-expansion-running "Taustalla laajentaminen käynnissä")
+  (online-expansion-only-raw-text-files-supported "Vain tekstitiedostot ovat tuettuja")
+  (online-expansion-abnormal-termination "Taustalla laajentaminen keskeytyi epänormaalisti")
+  (online-expansion-abnormal-termination-out-of-memory
+   "Taustalla laajentaminen päättyi epänormaalisti (muisti loppu)")
+  (online-expansion-finished-successfully "Taustalla laajentaminen suoritettiin onnistuneesti")
 
   (jump-to-error "Hyppää Virheeseen")
   (copy-error-message "Kopioi Virheviesti")
-;  (online-expansion-is-disabled "Background expansion is disabled")
+  (online-expansion-is-disabled "Taustalla laajentaminen ei ole käytössä")
   ; these next two show up in the bar along the bottom of the drracket window
-;  (online-expansion-pending "Background expansion pending…")
+  (online-expansion-pending "Taustalla laajentaminen odottaa…")
   ;; note: there may still be errors in this case
-;  (online-expansion-finished "Background expansion finished")
-;  ; the next two show up in a menu when you click on the circle in the bottom right corner
-;  (disable-online-expansion "Disable background expansion")
-;  (enable-online-expansion "Enable background expansion")
-;  ;; the online expansion preferences pane
-;  (online-expansion "Background Expansion") ;; title of prefs pane
+  (online-expansion-finished "Taustalla laajentaminen on valmistunut")
+  ; the next two show up in a menu when you click on the circle in the bottom right corner
+  (disable-online-expansion "Poista taustala laajentaminen käystöstä")
+  (enable-online-expansion "Ota taustalla laajentaminen käyttöön")
+  ;; the online expansion preferences pane
+  (online-expansion "Taustalla laajentaminen") ;; title of prefs pane
 ;  ; the different kinds of errors
   (online-expansion-show-read-errors-as "Näytä luku-tason virheet")
   (online-expansion-show-variable-errors-as "Näytä sitomaton tunniste -virheet")
@@ -317,7 +319,7 @@ please adhere to these guidelines:
   ;;; info bar at botttom of drscheme frame
   (collect-button-label "GC")
   (read-only "Vain luku")
-;  (auto-extend-selection "Auto-extend")
+  (auto-extend-selection "Laajenna automaattisesti")
   (overwrite "Ylikirjoita")
   (running "käynnissä")
   (not-running "ei käynnissä")
@@ -423,14 +425,14 @@ please adhere to these guidelines:
   (plt:hd:feeling-lucky "Onnekas olo")
   (plt:hd:home "Tukipalvelu koti")
   ; next 3 are popup menu choices in help desk search frame
-;  (plt:hd:search-for-keyword "Keyword entry")
-;  (plt:hd:search-for-keyword-or-index "Keyword or index entry")
-;  (plt:hd:search-for-keyword-or-index-or-text "Keyword, index entry, or text")
-;  (plt:hd:exact-match "Exact match")
-;  (plt:hd:containing-match "Containing match")
-;  (plt:hd:regexp-match "Regexp match")
-;  (plt:hd:find-docs-for "Find docs for:")
-;  (plt:hd:search-stopped-too-many-matches "[Search aborted: too many matches]")
+  (plt:hd:search-for-keyword "Avainsanan merkintä")
+  (plt:hd:search-for-keyword-or-index "Avainsana- tai hakemistomerkintä")
+  (plt:hd:search-for-keyword-or-index-or-text "Avainsanan-, hakemistomerkintä tai teksti")
+  (plt:hd:exact-match "Kokonaiset sanat")
+  (plt:hd:containing-match "Sisältää osuman")
+  (plt:hd:regexp-match "Regexp osuma")
+  (plt:hd:find-docs-for "Etsi dokumentaatiota asiasta:")
+  (plt:hd:search-stopped-too-many-matches "[Haku keskeytetty: liian monta osumaa]")
   (plt:hd:nothing-found-for "Ei löytynyt mitään haulla ~a")
   (plt:hd:and "ja")
   (plt:hd:refresh "päivitä")
@@ -465,7 +467,7 @@ please adhere to these guidelines:
   (plt:hd:new-help-desk "Uusi Tukipalvelu")
 
   ;; in the Help Desk language dialog, title on the right.
-;  (plt:hd:manual-search-ordering "Manual Search Order")
+  (plt:hd:manual-search-ordering "Manuaalinen Hakujärjestys")
 
   ;; in the help-desk standalone font preference dialog, on a check box
   (use-drscheme-font-size "Käytä DrRacketin fonttikokoa")
@@ -623,7 +625,7 @@ please adhere to these guidelines:
   (show-line-and-column-numbers "Näytä Rivi- && Sarakenumerot")
   ; used for popup menu; right click on line/column box in bottom of drs window
   (show-character-offsets "Näytä merkkien Offsets") ; FI&EN
-;  (enable-keybindings-in-menus "Enable keybindings in menus (overrides Emacs keybindings)")
+  (enable-keybindings-in-menus "Aktivoi pikanäppäimet valikoissa (ylikirjoittaa Emacs näppäinyhdistelmät)")
   (printing-mode "Tulostus-moodi")
   (print-using-platform-specific-mode "Alusta-kohtainen tulostus")
   (print-to-ps "Tulosta PostScript-tiedostoon")
@@ -651,9 +653,9 @@ please adhere to these guidelines:
   ;; used in a checkable menu item
   (reflow-paragraph-maximum-width "Maksimileveys uudelleensovittaessa(reflowing) kappaleita") ; FI&EN
   (maximum-char-width-guide-pref-check-box "Maksimi merkin pituus opas")
-;  (hide-column-width-guide "Hide Column Width Guide for Files with ~a Columns")
-;  (show-column-width-guide "Show Column Width Guide at ~a Columns") ;; filled with a number > 2
-;  (limit-interactions-size "Limit interactions size")
+  (hide-column-width-guide "Piilota Sarakaleveysohjain Sarakemäärän ~a Omaavilta Tiedostoilta")
+  (show-column-width-guide "Näytä Sarakeleveysohjain Sarakemäärällä ~a") ;; filled with a number > 2
+  (limit-interactions-size "Rajoita interaktioiden kokoa")
   ;; this is in the color section already, so shorten the name a little
   (background-color "Tausta")
   ;; used for configuring colors, but doesn't need the word "color"
@@ -986,8 +988,8 @@ please adhere to these guidelines:
   (last-tab "Viimeinen Välilehti: ~a")
 
   (view-menu-label "&Näytä")
-;  (show-overview "Show &Program Contour")
-;  (hide-overview "Hide &Program Contour")
+  (show-overview "Näytä &Ohjelman Muoto")
+  (hide-overview "Piilota &Ohjelman Muoto")
   (show-module-browser "Näytä &Moduuli Selain")
   (hide-module-browser "Piilota &Moduuli Selain")
 
@@ -1111,7 +1113,7 @@ please adhere to these guidelines:
   (dont-ask-about-saving-after-switching-tabs
    "Don't ask and don't save files when clicking Run with unsaved tabs or windows")
   
-;  (drscheme-internal-error "DrRacketin Sisäinen Virhe")
+  (drscheme-internal-error "DrRacketin Sisäinen Virhe")
 
   ;;; tools
   (invalid-tool-spec
