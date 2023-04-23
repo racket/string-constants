@@ -168,13 +168,13 @@ please adhere to these guidelines:
   (bug-report-field-reproduce2 "Toistamista varten")
   (bug-report-field-environment "Ympäristö")
   (bug-report-field-docs-installed "Asennetut dokumentaatiot")
-;  (bug-report-field-collections "Collections")
-;  (bug-report-field-links "Links")  ;; from 'raco link'
+  (bug-report-field-collections "Kokoelmat")
+  (bug-report-field-links "Linkit")  ;; from 'raco link'
   (bug-report-field-human-language "Ihmisen kieli")
   (bug-report-field-memory-use "Muistinkäyttö")
   (bug-report-field-version "Versio")
-;  (bug-report-synthesized-information "Synthesized Information")  ;; dialog title
-;  (bug-report-show-synthesized-info "Show Synthesized Info")
+  (bug-report-synthesized-information "Syntetisoitu Tieto")  ;; dialog title
+  (bug-report-show-synthesized-info "Näytä Syntetisoitu Tieto")
   (bug-report-submit "Lähetä")
     ;; button in bug report dialog, next to cancel and bug-report-submit
   (close-and-save-bug-report "Sulje && Tallenna")
@@ -247,22 +247,22 @@ please adhere to these guidelines:
   ;; is put into the second ~a. Use check syntax and right-click on a documented variable
   ;; (eg, 'require') to see this in use
 
-;  (cs-lexical-variable "lexical variable")
-;  (cs-set!d-variable "mutated variable")
-;  (cs-imported-variable "imported variable")
-;  (cs-unused-require "unused require")
-;  (cs-free-variable "free variable")
+  (cs-lexical-variable "leksikaalinen muuttuja")
+  (cs-set!d-variable "mutatoitu muuttuja")
+  (cs-imported-variable "tuotu(imported) muuttuja")
+  (cs-unused-require "käyttämätön require")
+  (cs-free-variable "vapaa muuttuja")
 
-;  (cs-binder-count "~a binding occurrences")
-;  (cs-zero-varrefs "no bound occurrences")
-;  (cs-one-varref "1 bound occurrence")
+  (cs-binder-count "~a sidontatapausta")
+  (cs-zero-varrefs "ei sidontoja")
+  (cs-one-varref "1 sidontatapaus")
 ;  ;; expected to have one ~a formatter that will accept a number
-;  (cs-n-varrefs "~a bound occurrences")
-
-;  (cs-contract-my-obligation "Contract: this module's obligation")
-;  (cs-contract-their-obligation "Contract: clients modules' obligation")
-;  (cs-contract-both-obligation "Contract: both this module and client modules' obligation")
-;  (cs-contract-unk-obligation "Contract: unknown obligation")
+  (cs-n-varrefs "~a sidontatapausta")
+  ;; Finnish terminology based on https://fi.wikipedia.org/wiki/Sopimuspohjainen_ohjelmointi
+  (cs-contract-my-obligation "Sopimus: tämän moduulin velvoite")
+  (cs-contract-their-obligation "Sopimus: asiakkaan moduulien velvoite")
+  (cs-contract-both-obligation "Sopimus: tämän sekä asiakkaan moduulien velvoite")
+  (cs-contract-unk-obligation "Sopimus: tuntematon velvoite")
 
   ;; require prefix functionality
   (cs-add-prefix-for-require "Add prefix for require")
@@ -274,10 +274,10 @@ please adhere to these guidelines:
 ;   "The require appears to already have a prefix; try to rename it instead")
 
   ;; mode sub-menu in the "view" menu
-;  (cs-check-syntax-mode "Check Syntax Mode")
-;  (cs-mode-menu-show-my-obligations "My Contract Obligations")
-;  (cs-mode-menu-show-client-obligations "Client Contract Obligations")
-;  (cs-mode-menu-show-syntax "Syntactic Categories")
+  (cs-check-syntax-mode "Check Syntax Moodi")
+  (cs-mode-menu-show-my-obligations "Sopimukseni Velvoitteet")
+  (cs-mode-menu-show-client-obligations "Asiakkaan Sopimuksen Velvoitteet")
+  (cs-mode-menu-show-syntax "Syntaktiset Kategoriat")
 
 ;  ;; the documentation blue boxes in the upper-right corner of the drracket window
 ;  (sc-read-more... "read more…")
