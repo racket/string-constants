@@ -579,89 +579,89 @@ please adhere to these guidelines:
   ;; in the preferences error dialog; this happens when the lockfile exists (after 3 pref writes).
   (steal-the-lock-and-retry "Zwolnienie blokady i ponowna próba")
 
-  (error-reading-preferences "Error reading preferences")
+  (error-reading-preferences "Błąd odczytu preferencji")
   (error-reading-preferences-explanation
-   "The preferences file is locked and thus the ~a preference cannot be read")
+   "Plik preferencji jest zablokowany i dlatego nie można odczytać preferencji ~a")
   ;; in the above, ~a is filled with the name of the preference (a symbol)
-  (dont-ask-again-until-drracket-restarted "Don't ask again (until DrRacket is restarted)")
+  (dont-ask-again-until-drracket-restarted "Nie pytaj ponownie (dopóki DrRacket nie zostanie ponownie uruchomiony)")
   ; difference between the above and below is one comes with a question (steal the lock or not)
   ;; and the other with just a notation saying "the file is locked"
-  (dont-notify-again-until-drracket-restarted "Don't notify again (until DrRacket is restarted)")
+  (dont-notify-again-until-drracket-restarted "Nie powiadamiaj ponownie (dopóki DrRacket nie zostanie ponownie uruchomiony)")
   (prefs-file-locked
-   "The preferences file is locked (because the file ~a exists),"
-   " so your preference change could not be saved. Cancel preference change?")
-  (try-again "Try again") ;; button label
-  (give-up-and-use-the-default "Give up and use the default") ;; button label
+   "Plik preferencji jest zablokowany (ponieważ istnieje plik ~a),"
+   " więc zmiana preferencji nie mogła zostać zapisana. Anulować zmianę preferencji?")
+  (try-again "Spróbuj ponownie") ;; button label
+  (give-up-and-use-the-default "Poddaj się i użyj domyślnego") ;; button label
 
   (prefs-file-still-locked
-   "The preferences file is still locked (because the file ~a exists),"
-   " so your preference change will not be saved.")
+   "Plik preferencji jest nadal zablokowany (ponieważ plik ~a istnieje),"
+   " więc zmiana preferencji nie zostanie zapisana.")
   (prefs-file-locked-nothing-doing
-   "The preferences file is locked (via ~s) so changes to the preferences cannot be saved.")
+   "Plik preferencji jest zablokowany (przez ~s), więc zmiany preferencji nie mogą zostać zapisane.")
   ;; the  ~s is filled with the lockfile; this string is (currently) used only on
   ;; windows where lockfiles are less friendly (and there is no steal fallback)
 
   (scheme-prefs-panel-label "Racket")
-  (warnings-prefs-panel-label "Warnings")
-  (editor-prefs-panel-label "Editing")
-  (general-prefs-panel-label "General")
-  (editor-general-prefs-panel-label "General Editing")
-  (highlight-parens "Highlight between matching parens")
-  (fixup-open-brackets "Automatically adjust opening square brackets")
-  (fixup-close-parens "Automatically adjust closing parens")
-  (flash-paren-match "Flash paren match")
-  (backup-unsaved-files "Make backups for unsaved files")
-  (first-change-files "Create first-change files")
-  (map-delete-to-backspace "Map delete to backspace")
-  (verify-exit "Verify exit")
-  (ask-before-changing-format "Ask before changing save format")
-  (wrap-words-in-editor-buffers "Wrap words in editor buffers")
-  (show-status-line "Show status-line")
-  (count-columns-from-one "Count column numbers from one")
-  (display-line-numbers "Display line numbers in buffer; not character offsets")
+  (warnings-prefs-panel-label "Ostrzeżenia")
+  (editor-prefs-panel-label "Edytowanie")
+  (general-prefs-panel-label "Ogólne")
+  (editor-general-prefs-panel-label "Edycja ogólna")
+  (highlight-parens "Podświetlenie między pasującymi nawiasami")
+  (fixup-open-brackets "Automatycznie dostosuj otwierające nawiasy kwadratowe")
+  (fixup-close-parens "Automatycznie dostosuj nawiasy zamykające")
+  (flash-paren-match "Migające dopasowanie nawiasów")
+  (backup-unsaved-files "Tworzenie kopii zapasowych niezapisanych plików")
+  (first-change-files "Tworzenie plików pierwszej zmiany")
+  (map-delete-to-backspace "Zmapój delete na backspace")
+  (verify-exit "Weryfikacja wyjścia")
+  (ask-before-changing-format "Zapytaj przed zmianą formatu zapisu")
+  (wrap-words-in-editor-buffers "Zawijanie słów w buforach edytora")
+  (show-status-line "Pokaż linię statusu")
+  (count-columns-from-one "Liczenie numerów kolumn od jednego")
+  (display-line-numbers "Wyświetla numery linii w buforze, a nie przesunięcia znaków")
   ; used for popup menu; right click on line/column box in bottom of drs window
-  (show-line-and-column-numbers "Show Line && Column Numbers")
+  (show-line-and-column-numbers "Pokaż numery wierszy i kolumn")
   ; used for popup menu; right click on line/column box in bottom of drs window
-  (show-character-offsets "Show Character Offsets")
-  (enable-keybindings-in-menus "Enable keybindings in menus (overrides Emacs keybindings)")
-  (printing-mode "Printing Mode")
-  (print-using-platform-specific-mode "Platform-specific printing")
-  (print-to-ps "Print to PostScript File")
-  (print-to-pdf "Print to PDF File")
-  (command-as-meta "Treat command key as meta") ;; macos/macos x only
-  (any-control+alt-is-altgr "Treat Control-Alt combination as AltGr") ; Windows only
-  (alt-as-meta "Treat alt key as meta")
-  (reuse-existing-frames "Reuse existing frames when opening new files")
-  (default-fonts "Default Fonts")
-  (basic-gray-paren-match-color "Basic gray parenthesis highlight color") ; in prefs dialog
-  (online-coloring-active "Color syntax interactively")
-  (open-files-in-tabs "Open files in separate tabs (not separate windows)")
-  (show-interactions-on-execute "Automatically open interactions window when running a program")
+  (show-character-offsets "Pokaż przesunięcia znaków")
+  (enable-keybindings-in-menus "Włączenie powiązań klawiszy w menu (zastępuje powiązania klawiszy Emacsa)")
+  (printing-mode "Tryb drukowania")
+  (print-using-platform-specific-mode "Drukowanie specyficzne dla danej platformy")
+  (print-to-ps "Drukowanie do pliku PostScript")
+  (print-to-pdf "Drukowanie do pliku PDF")
+  (command-as-meta "Traktuj klawisz polecenia jako klawisz meta") ;; macos/macos x only
+  (any-control+alt-is-altgr "Traktuj kombinację klawiszy Control-Alt jako AltGr") ; Windows only
+  (alt-as-meta "Traktuj klawisz alt jako meta")
+  (reuse-existing-frames "Ponowne wykorzystanie istniejących ramek podczas otwierania nowych plików")
+  (default-fonts "Domyślne czcionki")
+  (basic-gray-paren-match-color "Podstawowy szary kolor podświetlenia nawiasów") ; in prefs dialog
+  (online-coloring-active "Interaktywnie koloryzuj składnię")
+  (open-files-in-tabs "Otwieranie plików w osobnych kartach (nie w osobnych oknach)")
+  (show-interactions-on-execute "Automatyczne otwieranie okna interakcji podczas uruchamiania programu")
   (switch-to-module-language-automatically
-   "Automatically switch to the module language when opening a module")
+   "Automatyczne przełączanie na język modułu podczas jego otwierania")
   ;; in preferences, below the checkbox one line above this one
-  (interactions-beside-definitions "Put the interactions window beside the definitions window")
+  (interactions-beside-definitions "Umieść okno interakcji obok okna definicji")
   (show-line-numbers "Show line numbers")
   ;; just like the above, but capitalized for appearance in a menu item
-  (show-line-numbers/menu "Show Line &Numbers")
-  (hide-line-numbers/menu "Hide Line &Numbers")
-  (show-line-numbers-in-definitions "Show All Line Numbers in Definitions")
+  (show-line-numbers/menu "Pokaż &numery linii")
+  (hide-line-numbers/menu "Ukryj &numery linii")
+  (show-line-numbers-in-definitions "Pokaż wszystkie numery linii w definicjach")
   ;; the constant above shows up in the popup menu item in the bottom of
   ;; the drracket window; controls the line numbers on each line in the definitions;
   ;; used in a checkable menu item
-  (reflow-paragraph-maximum-width "Maximum width when reflowing paragraphs")
-  (maximum-char-width-guide-pref-check-box "Maximum character width guide")
-  (hide-column-width-guide "Hide Column Width Guide for Files with ~a Columns")
-  (show-column-width-guide "Show Column Width Guide at ~a Columns") ;; filled with a number > 2
-  (limit-interactions-size "Limit interactions size")
+  (reflow-paragraph-maximum-width "Maksymalna szerokość podczas przelewania akapitów")
+  (maximum-char-width-guide-pref-check-box "Wskazówka dotycząca maksymalnej szerokości znaków")
+  (hide-column-width-guide "Przewodnik po szerokości kolumn dla plików z ~a kolumnami")
+  (show-column-width-guide "Pokaż prowadnicę szerokości kolumny przy ~a kolumnach") ;; filled with a number > 2
+  (limit-interactions-size "Ograniczenie rozmiaru interakcji")
   ;; this is in the color section already, so shorten the name a little
-  (background-color "Background")
+  (background-color "Tło")
   ;; used for configuring colors, but doesn't need the word "color"
-  (default-text-color "Default text")
-  (choose-a-background-color "Please choose a background color")
-  (revert-to-defaults "Revert All Preferences to Defaults")
+  (default-text-color "Tekst domyślny")
+  (choose-a-background-color "Należy wybrać kolor tła")
+  (revert-to-defaults "Przywróć wszystkie ustawienia domyślne")
   ;; used in the preferences dialog to undo preference changes
-  (undo-changes "Undo Changes and Close")
+  (undo-changes "Cofnij zmiany i zamknij")
 
   (color-schemes "Color Schemes") ;; the label in the preferences dialog for the color scheme panel
   (classic-color-scheme "Classic") ;; formerly called 'black on white'
