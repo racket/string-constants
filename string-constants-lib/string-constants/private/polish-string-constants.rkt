@@ -473,111 +473,111 @@ please adhere to these guidelines:
   ;; in the preferences dialog in drscheme there is example text for help desk font size.
   ;; clicking the links in that text produces a dialog with this message
   (help-desk-this-is-just-example-text
-   "This is just example text for setting the font size."
-   " Open Help Desk proper (from Help menu) to follow these links.")
+   "To jest tylko przykładowy tekst do ustawienia rozmiaru czcionki."
+   " Otwórz Help Desk (z menu Pomoc), aby skorzystać z tych linków.")
 
   ;; this appears in the bottom part of the frame the first time the user hits `f1'
   ;; (assuming nothing else has loaded the documentation index first)
   ;; see also: cs-status-loading-docs-index
-  (help-desk-loading-documentation-index "Help Desk: loading documentation index")
+  (help-desk-loading-documentation-index "Help Desk: ładowanie indeksu dokumentacji")
 
   ;; the next four are all in the same dialog box (only one of the first two appears)
   (help-desk-materialize-docs-something-changed
-   "DrRacket detected a possible problem with the documentation"
-   " index. Shall it try to repair it (this may take a few"
-   " moments)?\n\nIn more detail, the documentation directory ~a does not"
-   " exist, and thus the search in the browser is likely to fail.")
+   "DrRacket wykrył możliwy problem z indeksem dokumentacji."
+   " Czy powinien spróbować go naprawić (może to potrwać kilka"
+   " chwil)?\n\nBardziej szczegółowo: katalog dokumentacji ~a nie istnieje,"
+   " a zatem wyszukiwanie w przeglądarce prawdopodobnie nie powiedzie się.")
   (help-desk-materialize-docs-first-time
-   "DrRacket detected a possible problem with the documentation"
-   " index. Shall it try to repair it (this may take a few"
-   " moments)?\n\nIn more detail, DrRacket has not materialized"
-   " the user documentation before, and thus the search in the"
-   " browser may fail.")
-  (help-desk-do-nothing "Do Nothing")
+   "DrRacket wykrył możliwy problem z indeksem dokumentacji."
+   " Czy powinien spróbować go naprawić (może to potrwać kilka"
+   " chwil)?\n\nBardziej szczegółowo, DrRacket nie zmaterializował"
+   " dokumentacji użytkownika, a zatem wyszukiwanie w"
+   " przeglądarce może się nie powieść.")
+  (help-desk-do-nothing "Nie rób nic")
   (help-desk-materialize-user-docs "Materialize User Docs")
   ; this is used in a dialog to let the user know that work is being done based on
   ; choices made from the previous dialog in the above four string constants
-  (help-desk-materializing-user-docs... "Materializing user documentation...")
+  (help-desk-materializing-user-docs... "Materializowanie dokumentacji użytkownika...")
 
   ;; Help desk htty proxy
-  (http-proxy "HTTP Proxy")
-  (proxy-direct-connection "Direct connection")
-  (proxy-use-proxy "Use proxy:")
+  (http-proxy "Serwer proxy HTTP")
+  (proxy-direct-connection "Połączenie bezpośrednie")
+  (proxy-use-proxy "Użyj serwera proxy:")
   (proxy-host "Host")
   (proxy-port "Port")
-  (proxy-bad-host "Bad Proxy Host")
+  (proxy-bad-host "Zły host serwera proxy")
 
   ;; browser
-  (rewind-in-browser-history "Rewind")
+  (rewind-in-browser-history "Przewijanie")
   (forward-in-browser-history "Forward")
-  (home "Home")
-  (browser "Browser")
-  (external-browser-choice-title "External Browser") ; title for radio-button set
-  (browser-command-line-label "Command Line:") ; label for radio button that is followed by text boxes
-  (choose-browser "Choose a Browser")
-  (no-browser "Ask Later")
+  (home "Strona domowa")
+  (browser "Przeglądarka")
+  (external-browser-choice-title "Zewnętrzna przeglądarka") ; title for radio-button set
+  (browser-command-line-label "Linia poleceń:") ; label for radio button that is followed by text boxes
+  (choose-browser "Wybierz przeglądarkę")
+  (no-browser "Zapytaj później")
   ; explanatory text for dialog, line 1
-  (browser-cmdline-expl-line-1 "(Command line formed by concatenating pre-text, URL,")
+  (browser-cmdline-expl-line-1 "(Wiersz poleceń utworzony przez połączenie tekstu wstępnego, adresu URL")
   ; ... line 2. (Anyone need more lines?)
-  (browser-cmdline-expl-line-2 "and post-text, with no extra spaces between them.)")
-  (install? "Install?")  ;; if a .plt file is found (title of dialog)
-  (you-have-selected-an-installable-package "You have selected an installable package.")
-  (do-you-want-to-install-it? "Do you want to install it?")
-  (paren-file-size "(The file is ~a bytes)")
-  (download-and-install "Download && Install") ;; button label
-  (download "Download") ;; button label
-  (save-downloaded-file/size "Save downloaded file (~a bytes) as") ;; label for get-file dialog
-  (save-downloaded-file "Save downloaded file as")  ;; label for get-file dialog
-  (downloading "Downloading") ;; dialog title
-  (downloading-file... "Downloading file…")
-  (package-was-installed "The package was installed.")
-  (download-was-saved "The downloaded file was saved.")
+  (browser-cmdline-expl-line-2 "i post-tekst, bez dodatkowych spacji między nimi).")
+  (install? "Zainstalować?")  ;; if a .plt file is found (title of dialog)
+  (you-have-selected-an-installable-package "Wybrano pakiet do zainstalowania.")
+  (do-you-want-to-install-it? "Czy chcesz go zainstalować?")
+  (paren-file-size "(Plik ma ~a bajtów)")
+  (download-and-install "Pobierz && zainstaluj") ;; button label
+  (download "Pobierz") ;; button label
+  (save-downloaded-file/size "Zapisz pobrany plik (~a bajtów) jako") ;; label for get-file dialog
+  (save-downloaded-file "Zapisz pobrany plik jako")  ;; label for get-file dialog
+  (downloading "Pobieranie") ;; dialog title
+  (downloading-file... "Pobieranie pliku…")
+  (package-was-installed "Pakiet został zainstalowany.")
+  (download-was-saved "Pobrany plik został zapisany.")
 
-  (install-plt-file-menu-item... "Install .plt File…")
-  (install-plt-file-dialog-title "Install .plt File")
-  (install-plt-web-tab "Web")
-  (install-plt-file-tab "File")
-  (install-plt-filename "Filename:")
+  (install-plt-file-menu-item... "Zainstaluj plik .plt…")
+  (install-plt-file-dialog-title "Zainstaluj plik .plt")
+  (install-plt-web-tab "Sieć")
+  (install-plt-file-tab "Plik")
+  (install-plt-filename "Nazwa pliku:")
   (install-plt-url "URL:")
   ; an error message from a primitive operation is appended to the end of this message.
-  (install-plt-error-downloading "There was an error when downloading the"
-                                 " .plt file.\n\nDetails:\n")
+  (install-plt-error-downloading "Wystąpił błąd podczas pobierania"
+                                 " pliku .plt.\n\nDetale:\n")
   (install-plt-error-header
-   "There was an error when checking the validity of the"
-   " downloaded .plt file. Please check the url and try again.")
+   "Wystąpił błąd podczas sprawdzania ważności"
+   " pobranego pliku .plt. Sprawdź adres URL i spróbuj ponownie.")
 
   ;; install plt file when opened in drscheme strings
-  (install-plt-file "Install ~a or open for editing?")
-  (install-plt-file/yes "Install")
-  (install-plt-file/no "Edit")
+  (install-plt-file "Zainstalować ~a czy otworzyć do edycji?")
+  (install-plt-file/yes "Zainstaluj")
+  (install-plt-file/no "Edytuj")
 
-  (plt-installer-progress-window-title "Installer Progress") ;; frame title
-  (plt-installer-abort-installation "Abort Installation") ;; button label
+  (plt-installer-progress-window-title "Postęp instalatora") ;; frame title
+  (plt-installer-abort-installation "Przerwanie instalacji") ;; button label
   ;; msg that appears in the installation window when installation is aborted
-  (plt-installer-aborted "Aborted.")
+  (plt-installer-aborted "Przerwano.")
 
   ;;; about box
-  (about-drscheme-frame-title "About DrRacket")
+  (about-drscheme-frame-title "O programie DrRacket")
 
   ;;; save file in particular format prompting.
-  (save-as-plain-text "Save this file as plain text?")
-  (save-as-binary-format "Convert this file to a DrRacket specific format to keep non-text elements?")
-  (save-in-drs-format "Save this file in DrRacket-specific non-text format?")
-  (keep-format "Keep (may lose data)")
-  (convert-format "Convert (recommended)")
-  (dont-save "Don't Save")
-  (yes "Yes")
-  (no "No")
+  (save-as-plain-text "Zapisać ten plik jako zwykły tekst?")
+  (save-as-binary-format "Przekonwertować ten plik do formatu specyficznego dla DrRacket, aby zachować elementy nietekstowe?")
+  (save-in-drs-format "Zapisać ten plik w formacie nietekstowym specyficznym dla DrRacket?")
+  (keep-format "Zachowaj (występuje mozliwośc utraty danych)")
+  (convert-format "Konwertuj (zalecane)")
+  (dont-save "Nie zapisuj")
+  (yes "Tak")
+  (no "Nie")
 
   ;; saving image (right click on an image to see the text)
-  (save-image "Save image…")
+  (save-image "Zapisz obraz…")
 
   ;;; preferences
-  (preferences "Preferences")
-  (error-saving-preferences "Error saving preferences: ~a")
-  (error-saving-preferences-title "Error saving preferences")
+  (preferences "Preferencje")
+  (error-saving-preferences "Błąd zapisywania preferencji: ~a")
+  (error-saving-preferences-title "Błąd zapisywania preferencji")
   ;; in the preferences error dialog; this happens when the lockfile exists (after 3 pref writes).
-  (steal-the-lock-and-retry "Steal the lock && retry")
+  (steal-the-lock-and-retry "Zwolnienie blokady i ponowna próba")
 
   (error-reading-preferences "Error reading preferences")
   (error-reading-preferences-explanation
