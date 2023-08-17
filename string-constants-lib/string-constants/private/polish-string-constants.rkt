@@ -372,103 +372,103 @@ please adhere to these guidelines:
   (error-erasing-log-directory "Błąd kasowania zawartości katalogu dziennika.\n\n~a\n")
 
   ;; menu items connected to the logger; also in a button in the planet status line in the drs frame
-  (show-log "Show &Log")
-  (hide-log "Hide &Log")
-  (logger-scroll-on-output "Scroll on output") ; a checkbox in the logger pane
-  (log-messages "Log Messages") ;; label for the drracket logging gui panel
+  (show-log "Pokaż &Log")
+  (hide-log "Ukryj &Log")
+  (logger-scroll-on-output "Przewijanie na wyjściu") ; a checkbox in the logger pane
+  (log-messages "Komunikaty dziennika") ;; label for the drracket logging gui panel
 
   ;; modes
-  (mode-submenu-label "Modes")
-  (scheme-mode "Scheme mode")
-  (racket-mode "Racket mode")
-  (text-mode "Text mode")
+  (mode-submenu-label "Tryby")
+  (scheme-mode "Tryb Scheme")
+  (racket-mode "Tryb Racket")
+  (text-mode "Tryb tekstowy")
 
   (scheme-mode-color-symbol "Symbol")
-  (scheme-mode-color-keyword "Keyword")
-  (scheme-mode-color-comment "Comment")
-  (scheme-mode-color-string "String")
-  (scheme-mode-color-text "Text")
-  (scheme-mode-color-constant "Constant")
-  (scheme-mode-color-parenthesis "Parenthesis")
-  (scheme-mode-color-hash-colon-keyword "#:Keyword")
-  (scheme-mode-color-error "Error")
-  (scheme-mode-color-other "Other")
+  (scheme-mode-color-keyword "Słowo kluczowe")
+  (scheme-mode-color-comment "Komentarz")
+  (scheme-mode-color-string "Łańcuch znaków")
+  (scheme-mode-color-text "Tekst")
+  (scheme-mode-color-constant "Stała")
+  (scheme-mode-color-parenthesis "Nawias")
+  (scheme-mode-color-hash-colon-keyword "#:Słowo-kluczowe")
+  (scheme-mode-color-error "Błąd")
+  (scheme-mode-color-other "Inne")
   ;; the ~a is filled in with one of the above (scheme-mode-*)
-  (syntax-coloring-choose-color "Choose a color for ~a")
-  (preferences-colors "Colors") ;; used in the preferences dialog
+  (syntax-coloring-choose-color "Wybierz kolor dla ~a")
+  (preferences-colors "Kolory") ;; used in the preferences dialog
 
   ;; parenthesis color scheme string constants
   ; label for the choice% menu in the preferences dialog
-  (parenthesis-color-scheme "Parenthesis color scheme")
-  (paren-color-basic-grey "Basic grey")
-  (paren-color-shades-of-gray "Shades of grey")
-  (paren-color-shades-of-blue "Shades of blue")
-  (paren-color-spring "Spring")
-  (paren-color-fall "Fall")
-  (paren-color-winter "Winter")
+  (parenthesis-color-scheme "Schemat kolorów nawiasów")
+  (paren-color-basic-grey "Podstawowy szary")
+  (paren-color-shades-of-gray "Odcienie szarości")
+  (paren-color-shades-of-blue "Odcienie niebieskiego")
+  (paren-color-spring "Wiosna")
+  (paren-color-fall "Jesień")
+  (paren-color-winter "Zima")
 
 
   (url: "URL:")
-  (open-url... "Open URL…")
-  (open-url "Open URL")
-  (browse... "Browse…")
-  (bad-url "Bad URL")
-  (bad-url:this "Bad URL: ~a")
+  (open-url... "Otwórz URL…")
+  (open-url "Otwórz URL")
+  (browse... "Przeglądaj…")
+  (bad-url "Zły URL")
+  (bad-url:this "Zły URL: ~a")
 
   ;; Help Desk
-  (help "Help")
-  (racket-documentation "Racket Documentation")
+  (help "Pomoc")
+  (racket-documentation "Documentation Racketa")
   (help-desk "Help Desk")
-  (plt:hd:search "Search")
+  (plt:hd:search "Wyszukiwanie")
   (plt:hd:feeling-lucky "Feeling Lucky")
-  (plt:hd:home "Help Desk home")
+  (plt:hd:home "Strona główna Help Desk")
   ; next 3 are popup menu choices in help desk search frame
-  (plt:hd:search-for-keyword "Keyword entry")
-  (plt:hd:search-for-keyword-or-index "Keyword or index entry")
-  (plt:hd:search-for-keyword-or-index-or-text "Keyword, index entry, or text")
-  (plt:hd:exact-match "Exact match")
-  (plt:hd:containing-match "Containing match")
-  (plt:hd:regexp-match "Regexp match")
-  (plt:hd:find-docs-for "Find docs for:")
-  (plt:hd:search-stopped-too-many-matches "[Search aborted: too many matches]")
-  (plt:hd:nothing-found-for "Nothing found for ~a")
-  (plt:hd:and "and")
-  (plt:hd:refresh "refresh")
-  (plt:hd:refresh-all-manuals "refresh all manuals")
-  (plt:hd:manual-installed-date "(installed ~a)")
+  (plt:hd:search-for-keyword "Wpis słowa kluczowego")
+  (plt:hd:search-for-keyword-or-index "Słowo kluczowe lub wpis indeksu")
+  (plt:hd:search-for-keyword-or-index-or-text "Słowo kluczowe, wpis indeksu lub tekst")
+  (plt:hd:exact-match "Dokładne dopasowanie")
+  (plt:hd:containing-match "Zawierające dopasowanie")
+  (plt:hd:regexp-match "Dopasowanie wyrażenia regularnego")
+  (plt:hd:find-docs-for "Znajdź dokumenty dla:")
+  (plt:hd:search-stopped-too-many-matches "[Wyszukiwanie przerwane: zbyt wiele dopasowań]")
+  (plt:hd:nothing-found-for "Nic nie znaleziono dla ~a")
+  (plt:hd:and "i")
+  (plt:hd:refresh "odśwież")
+  (plt:hd:refresh-all-manuals "odśwież wszystkie instrukcje")
+  (plt:hd:manual-installed-date "(zainstalowano ~a)")
   ; Help Desk configuration
   ;; refreshing manuals
-  (plt:hd:refreshing-manuals "Re-downloading Manuals")
-  (plt:hd:refresh-downloading... "Downloading ~a…")
-  (plt:hd:refresh-deleting... "Deleting old version of ~a…")
-  (plt:hd:refresh-installing... "Installing new version of ~a…")
-  (plt:hd:refresh-clearing-indices "Clearing cached indices")
-  (plt:hd:refreshing-manuals-finished "Finished.")
-  (plt:hd:about-help-desk "About Help Desk")
+  (plt:hd:refreshing-manuals "Ponowne pobieranie instrukcji")
+  (plt:hd:refresh-downloading... "Pobieranie ~a…")
+  (plt:hd:refresh-deleting... "Usuwanaie starej wersji ~a…")
+  (plt:hd:refresh-installing... "Instalowenie nowej wersji ~a…")
+  (plt:hd:refresh-clearing-indices "Czyszczenie indeksów w pamięci podręcznej")
+  (plt:hd:refreshing-manuals-finished "Ukończono.")
+  (plt:hd:about-help-desk "O Help Desku")
   (plt:hd:help-desk-about-string
-   "Help Desk is a complete source of information about Racket"
-   " software.\n\nVersion ~a\nCopyright (c) ~a-~a PLT")
+   "Help Desk jest kompletnym źródłem informacji o Rackecie."
+   " \n\nWersja ~a\nCopyright (c) ~a-~a PLT")
   (plt:hd:help-on-help "Help on Help")
   (plt:hd:help-on-help-details
-   "For help on using Help Desk, follow the first link `Help Desk' on Help Desk's home page."
-   " (To get to the home page if you're not already there, click the `Home'"
-   " button at the top of the Help Desk window.)")
-  (reload "Reload") ;; refresh the page in a web browser
+   "Aby uzyskać pomoc dotyczącą korzystania z Help Desk, kliknij pierwszy link `Help Desk' na stronie głównej Help Desku."
+   " (Aby przejść do strony głównej, jeśli jeszcze tam nie jesteś, kliknij przycisk `Home'"
+   " w górnej części okna Help Desk.)")
+  (reload "Przeładowanie") ;; refresh the page in a web browser
   (plt:hd:ask-about-separate-browser
-   "You have selected a link to content from the world-wide web."
-   " Would you like to view it in the Help Desk browser, or would"
-   " you like to use a separate browser program to view it?")
-  (plt:hd:homebrew-browser "Help Desk Browser") ;; choice for the above string (in a button)
-  (plt:hd:separate-browser "Separate Browser") ;; other choice for the above string (also in a button)
-  (plt:hd:external-link-in-help "External URLs in Help")
-  (plt:hd:use-homebrew-browser "Use Help Desk browser for external URLs")
-  (plt:hd:new-help-desk "New Help Desk")
+   "Wybrano łącze do treści z sieci WWW."
+   " Czy chcesz wyświetlić go w przeglądarce Help Desk, czy"
+   " chcesz użyć oddzielnego programu przeglądarki, aby go wyświetlić?")
+  (plt:hd:homebrew-browser "Przeglądarka dla Help Desk") ;; choice for the above string (in a button)
+  (plt:hd:separate-browser "Oddzielna przeglądarka") ;; other choice for the above string (also in a button)
+  (plt:hd:external-link-in-help "Zewnętrzne adresy URL w Pomocy (Help)")
+  (plt:hd:use-homebrew-browser "Użyj przeglądarki Help Desk dla zewnętrznych adresów URL")
+  (plt:hd:new-help-desk "Nowy Help Desk")
 
   ;; in the Help Desk language dialog, title on the right.
-  (plt:hd:manual-search-ordering "Manual Search Order")
+  (plt:hd:manual-search-ordering "Kolejność wyszukiwania w podręcznikach")
 
   ;; in the help-desk standalone font preference dialog, on a check box
-  (use-drscheme-font-size "Use DrRacket's font size")
+  (use-drscheme-font-size "Użyj rozmiaru czcionki z DrRacket")
 
   ;; in the preferences dialog in drscheme there is example text for help desk font size.
   ;; clicking the links in that text produces a dialog with this message
