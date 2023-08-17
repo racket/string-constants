@@ -265,111 +265,111 @@ please adhere to these guidelines:
   (cs-contract-unk-obligation "Contract: unknown obligation")
 
   ;; require prefix functionality
-  (cs-add-prefix-for-require "Add prefix for require")
-  (cs-prefix-require-title "Prefix Require")
-  (cs-prefix-require "Choose a prefix to add to each imported variable")
+  (cs-add-prefix-for-require "Dodaj prefiks dla wymogu (require)")
+  (cs-prefix-require-title "Prefiks wymogu")
+  (cs-prefix-require "Wybierz prefiks, który zostanie dodany do każdej importowanej zmiennej")
   (cs-all-binders-are-prefixed
-   "All of the requires already appear to have a prefix; try to rename it instead")
+   "Wszystkie wymagania wydają się już mieć prefiks; spróbuj zamiast tego zmienić jego nazwę")
   (cs-the-binder-is-prefixed
-   "The require appears to already have a prefix; try to rename it instead")
+   "Wygląda na to, że wymaganie ma już prefiks; spróbuj zamiast tego zmienić jego nazwę")
 
   ;; mode sub-menu in the "view" menu
-  (cs-check-syntax-mode "Check Syntax Mode")
-  (cs-mode-menu-show-my-obligations "My Contract Obligations")
-  (cs-mode-menu-show-client-obligations "Client Contract Obligations")
-  (cs-mode-menu-show-syntax "Syntactic Categories")
+  (cs-check-syntax-mode "Tryb sprawdzania składni")
+  (cs-mode-menu-show-my-obligations "Moje zobowiązania kontraktu")
+  (cs-mode-menu-show-client-obligations "Klienckie zobowiązania kontraktu")
+  (cs-mode-menu-show-syntax "Kategorie składniowe")
 
   ;; the documentation blue boxes in the upper-right corner of the drracket window
-  (sc-read-more... "read more…")
-  (sc-f2-to-un/lock "f2 to (un)lock")
+  (sc-read-more... "czytaj więcej…")
+  (sc-f2-to-un/lock "f2 aby (od)blokować")
 
   ;; the online check syntax status messages (mouse over the bottom right of drracket's
   ;; window to see the messages during online expansion's various phases)
-  (online-expansion-running "Background expansion running")
-  (online-expansion-only-raw-text-files-supported "Only pure text files supported")
-  (online-expansion-abnormal-termination "Background expansion terminated abnormally")
+  (online-expansion-running "Uruchomione rozszerzenie w tle")
+  (online-expansion-only-raw-text-files-supported "Obsługiwane są tylko pliki czysto tekstowe")
+  (online-expansion-abnormal-termination "Rozszerzanie w tle zakończyło się nieprawidłowo")
   (online-expansion-abnormal-termination-out-of-memory
-   "Background expansion terminated abnormally (out of memory)")
-  (online-expansion-finished-successfully "Background expansion finished successfully")
+   "Rozszerzanie w tle zakończone nieprawidłowo (brak dostępnej pamięci)")
+  (online-expansion-finished-successfully "Rozszerzanie w tle zakończyło się pomyślnie")
 
-  (jump-to-error "Jump to Error")
-  (copy-error-message "Copy Error Message")
-  (online-expansion-is-disabled "Background expansion is disabled")
+  (jump-to-error "Skocz do błędu")
+  (copy-error-message "Skopiuj wiadomość o będzie")
+  (online-expansion-is-disabled "Rozszerzanie w tle jest wyłaczone")
   ; these next two show up in the bar along the bottom of the drracket window
-  (online-expansion-pending "Background expansion pending…")
+  (online-expansion-pending "Rozszerzanie w tle w toku…")
   ;; note: there may still be errors in this case
-  (online-expansion-finished "Background expansion finished")
+  (online-expansion-finished "Rozszerzanie w tle zakończone")
   ; the next two show up in a menu when you click on the circle in the bottom right corner
-  (disable-online-expansion "Disable background expansion")
-  (enable-online-expansion "Enable background expansion")
+  (disable-online-expansion "Wyłączanie rozszerzania w tle")
+  (enable-online-expansion "Włączenie rozszerzania w tle")
   ;; the online expansion preferences pane
-  (online-expansion "Background Expansion") ;; title of prefs pane
+  (online-expansion "Rozszerzanie w tle") ;; title of prefs pane
   ; the different kinds of errors
-  (online-expansion-show-read-errors-as "Show read-level errors")
-  (online-expansion-show-variable-errors-as "Show unbound identifier errors")
-  (online-expansion-show-other-errors-as "Show other errors")
+  (online-expansion-show-read-errors-as "Pokaż błędy na poziomie odczytu")
+  (online-expansion-show-variable-errors-as "Pokaż błędy niezwiązanego identyfikatora")
+  (online-expansion-show-other-errors-as "Pokaż inne błędy")
   ; locations the errors can be shown
-  (online-expansion-error-gold-highlight "with gold highlighting")
-  (online-expansion-error-margin "in the margin")
+  (online-expansion-error-gold-highlight "ze złotym podświetleniem")
+  (online-expansion-error-margin "na marginesie")
   ; the label of a preference in the (string-constant online-expansion) section
-  (show-arrows-on-mouseover "Show binding and tail-position arrows on mouseover")
-  (show-blueboxes "Show signature boxes and signature box arrow semi-circle in upper-right corner")
+  (show-arrows-on-mouseover "Wyświetlanie strzałek pozycji wiązania i ogona po najechaniu myszą")
+  (show-blueboxes "Pokaż pola podpisu i półkole strzałki pola podpisu w prawym górnym rogu")
   ;;; info bar at botttom of drscheme frame
   (collect-button-label "GC")
-  (read-only "Read only")
-  (auto-extend-selection "Auto-extend")
-  (overwrite "Overwrite")
-  (running "running")
-  (not-running "not running")
+  (read-only "Tylko do odczytu")
+  (auto-extend-selection "Automatyczne rozszerzanie")
+  (overwrite "Nadpisywanie")
+  (running "uruchomiony")
+  (not-running "nie uruchomiony")
 
   ;; button label: ~a is filled with the name of a pkg
-  (install-package-button "Install ~a")
+  (install-package-button "Zainstaluj ~a")
   ;; button label; shown when there is a missing module, but no matching package
-  (update-catalog "Update Catalog")
+  (update-catalog "Zaktualizuj katalog")
   ;; message label; used as a status message when updating the pkg catalog
-  (updating-catalog-from "Updating from ~a…")
+  (updating-catalog-from "Aktualizacja z ~a…")
 
   ;;; misc
-  (welcome-to-something "Welcome to ~a")
+  (welcome-to-something "Witaj w ~a")
 
   ; this appears in the drscheme about box.
-  (welcome-to-drscheme-version/language "Welcome to DrRacket, version ~a, ~a")
+  (welcome-to-drscheme-version/language "Witaj w programie DrRacket, wersji ~a, ~a")
 
   ; these appear on subsequent lines in the `Help|Welcome to DrRacket' dialog.
-  (welcome-to-drscheme "Welcome to DrRacket")
+  (welcome-to-drscheme "Witaj w programie DrRacket")
 
-  (goto-line "Goto line")
+  (goto-line "Idź do linii")
   (goto-line-invalid-number
-   "~a is not a valid line number. It must be an integer between 1 and ~a")
+   "~a nie jest prawidłowym numerem linii. Musi to być liczba całkowita pomiędzy 1 a ~a")
   (goto-position "Goto Position")
   (no-full-name-since-not-saved
    "The file does not have a full name because it has not yet been saved.")
-  (cannot-open-because-dne "Cannot open ~a because it does not exist.")
+  (cannot-open-because-dne "Nie można otworzyć ~a, ponieważ nie istnieje.")
 
   (needs-execute-language-changed
-   "WARNING: The language has changed. Click Run.")
+   "WARNING: Język został zmieniony. Kliknij przycisk Uruchom.")
   (needs-execute-teachpack-changed
-   "WARNING: The teachpacks have changed. Click Run.")
+   "WARNING: Teachpaki zostały zmienione. Kliknij przycisk Uruchom.")
   (needs-execute-defns-edited
-   "WARNING: The definitions window has changed. Click Run.")
+   "WARNING: Okno definicji uległo zmianie. Kliknij przycisk Uruchom.")
 
   (editor-changed-since-srcloc-recorded
-   "This editor has been changed since the source location was recorded,"
-   " so the highlighted region may no longer correspond to the correct source location.")
+   "Ten edytor został zmieniony od czasu zarejestrowania lokalizacji źródłowej,"
+   " więc podświetlony region może już nie odpowiadać prawidłowej lokalizacji źródłowej.")
 
-  (file-is-not-saved "The file “~a” is not saved.")
-  (save "Save")
-  (close-anyway "Close Anyway")
-  (dont-save "Don't Save")
-  (clear-anyway "Clear Anyway")
+  (file-is-not-saved "Plik “~a” nie jest zapisany.")
+  (save "Zapisz")
+  (close-anyway "Zamknij mimo to")
+  (dont-save "Nie zapisuj")
+  (clear-anyway "Wyczyść w każdym razie")
 
   ;; menu item title
-  (log-definitions-and-interactions "Log Definitions and Interactions…")
-  (stop-logging "Stop Logging")
-  (please-choose-a-log-directory "Please choose a log directory")
-  (logging-to "Logging to: ")
-  (erase-log-directory-contents "Erase contents of log directory: ~a?")
-  (error-erasing-log-directory "Error erasing log directory contents.\n\n~a\n")
+  (log-definitions-and-interactions "Definicje dziennika i interakcje…")
+  (stop-logging "Zatrzymaj rejestrowanie")
+  (please-choose-a-log-directory "Wybierz katalog dziennika")
+  (logging-to "Rejestrowanie do: ")
+  (erase-log-directory-contents "Wymaż zawartość katalogu dziennika: ~a?")
+  (error-erasing-log-directory "Błąd kasowania zawartości katalogu dziennika.\n\n~a\n")
 
   ;; menu items connected to the logger; also in a button in the planet status line in the drs frame
   (show-log "Show &Log")
