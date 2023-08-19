@@ -663,172 +663,172 @@ please adhere to these guidelines:
   ;; used in the preferences dialog to undo preference changes
   (undo-changes "Cofnij zmiany i zamknij")
 
-  (color-schemes "Color Schemes") ;; the label in the preferences dialog for the color scheme panel
-  (classic-color-scheme "Classic") ;; formerly called 'black on white'
-  (modern-color-scheme "Modern")   ;; an attempt to be more color-blind friendly
+  (color-schemes "Schematy kolorów") ;; the label in the preferences dialog for the color scheme panel
+  (classic-color-scheme "Klasyczny") ;; formerly called 'black on white'
+  (modern-color-scheme "Nowoczesny")   ;; an attempt to be more color-blind friendly
   ;; clicking the buttons changes the color schemes to some defaults that've been set up.
-  (white-on-black-color-scheme "White on Black")
+  (white-on-black-color-scheme "Biały na czarnym")
   ; drracket additions to the color scheme dialog; two buttons
-  (design-your-own-color-schemes "Design Your Own Color Schemes") ; pointer to (english-only) docs
-  (style-and-color-names "Style && Color Names")
+  (design-your-own-color-schemes "Projektuj własne schematy kolorów") ; pointer to (english-only) docs
+  (style-and-color-names "Nazwy stylów i kolorów")
 
-  (add-spacing-between-lines "Add one pixel of extra space between lines")
+  (add-spacing-between-lines "Dodaj jeden piksel dodatkowego odstępu między wierszami")
 
-  (editor-x-selection-mode "Explicitly require a copy operation before"
-                           " a paste / Do not automatically copy the selection")
+  (editor-x-selection-mode "Wyraźnie wymagaj operacji kopiowania przed"
+                           " wklejeniem / Nie kopiuj automatycznie zaznaczenia")
 
   ; should have entire alphabet
   (font-example-string "The quick brown fox jumped over the lazy dogs.")
 
-  (change-font-button-label "Change")
-  (fonts "Fonts")
-  (other... "Other…") ;; used in the font choice menu item
+  (change-font-button-label "Zmień")
+  (fonts "Czcionki")
+  (other... "Inne…") ;; used in the font choice menu item
 
   ; filled with type of font, eg modern, swiss, etc.
-  (choose-a-new-font "Please choose a new “~a” font")
+  (choose-a-new-font "Wybierz nową czcionkę “~a”")
 
-  (font-size-slider-label "Size")
-  (restart-to-see-font-changes "Restart to see font changes")
+  (font-size-slider-label "Rozmiar")
+  (restart-to-see-font-changes "Uruchom ponownie, aby zobaczyć zmiany czcionki")
 
-  (font-prefs-panel-title "Font")
-  (font-name "Font Name")
-  (font-size "Font Size")
-  (set-font "Set Font…")
-  (font-smoothing-label  "Font smoothing")
-  (font-smoothing-none "None")
-  (font-smoothing-some "Some")
-  (font-smoothing-all "All")
-  (font-smoothing-default "Use system-wide default")
-  (font-weight-label "Weight")
-  (font-weight-light "Light")
-  (font-weight-normal "Normal")
-  (font-weight-bold "Bold")
+  (font-prefs-panel-title "Czcionka")
+  (font-name "Nazwa czcionki")
+  (font-size "Rozmiar czcionki")
+  (set-font "Ustaw czcionkę…")
+  (font-smoothing-label "Wygładzanie czcionki")
+  (font-smoothing-none "Brak")
+  (font-smoothing-some "Kilka")
+  (font-smoothing-all "Wszystkie")
+  (font-smoothing-default "Użyj domyślnych ustawień systemowych")
+  (font-weight-label "Grubość czcionki")
+  (font-weight-light "Cienka")
+  (font-weight-normal "Normalna")
+  (font-weight-bold "Pogrubiona")
 
-  (select-font-name "Select Font Name")
-  (example-text "Example Text:")
-  (only-warn-once "Only warn once when definitions and interactions are not synchronized")
+  (select-font-name "Wybierz nazwę czcionki")
+  (example-text "Przykładowy tekst:")
+  (only-warn-once "Ostrzeganie tylko raz, gdy definicje i interakcje nie są zsynchronizowane.")
 
   ; font size menu items in the 'view' menu; the ~a is filled with a number (font size)
-  (increase-font-size "Increase Font Size (To ~a)")
-  (decrease-font-size "Decrease Font Size (To ~a)")
+  (increase-font-size "Zwiększ rozmiar czcionki (do ~a)")
+  (decrease-font-size "Zmniejsz rozmiar czcionki (do ~a)")
 
   ; warning message when lockfile is around
-  (waiting-for-pref-lock "Waiting for the preferences lockfile…")
+  (waiting-for-pref-lock "Oczekiwanie na plik blokady preferencji…")
   (pref-lock-not-gone
-   "The preferences lockfile:\n\n   ~a\n\nprevents the preferences from being saved."
-   " Ensure that no Racket software is running and delete this file.")
-  (still-locked-exit-anyway? "The preferences were not saved sucessfully. Exit anyway?")
+   "Plik blokady preferencji:\n\n ~a\n\nzapobiega zapisaniu preferencji."
+   " Upewnij się, że żadne oprogramowanie Racket nie jest uruchomione i usuń ten plik.")
+  (still-locked-exit-anyway? "Preferencje nie zostały pomyślnie zapisane. Wyjść mimo to?")
 
   ;;; indenting preferences panel
-  (indenting-prefs-panel-label "Indenting")
-  (indenting-prefs-extra-regexp "Extra regexp")
+  (indenting-prefs-panel-label "Wcięcie")
+  (indenting-prefs-extra-regexp "Dodatkowe wyrażenie regularne")
 
-  (square-bracket-prefs-panel-label "Square Bracket")
+  (square-bracket-prefs-panel-label "Nawias kwadratowy")
 
   ; filled with define, lambda, or begin
-  (enter-new-keyword "Enter new ~a-like keyword:")
-  (x-keyword "~a Keyword")
-  (x-like-keywords "~a-like Keywords")
+  (enter-new-keyword "Wprowadź nowe słowo kluczowe podobne do ~a:")
+  (x-keyword "Słowo kluczowe ~a")
+  (x-like-keywords "Słowo kluczowe podobne do ~a")
 
   ; used in Square bracket panel
-  (skip-subexpressions "Number of sub-expressions to skip")
+  (skip-subexpressions "Liczba podwyrażeń do pominięcia")
 
-  (expected-a-symbol "expected a symbol, found: ~a")
-  (already-used-keyword "“~a” is already a specially indented keyword")
-  (add-keyword "Add")
-  (remove-keyword "Remove")
+  (expected-a-symbol "oczekiwano symbolu, znaleziono: ~a")
+  (already-used-keyword "“~a” jest już specjalnie wciętym słowem kluczowym")
+  (add-keyword "Dodaj")
+  (remove-keyword "Usuń")
 
   ; repl color preferences
   (repl-colors "REPL")
-  (repl-out-color "Output")
-  (repl-value-color "Values")
-  (repl-error-color "Errors")
+  (repl-out-color "Wyjście")
+  (repl-value-color "Wartości")
+  (repl-error-color "Błędy")
 
   ;;; find/replace
-  (search-next "Next")
-  (search-previous "Prev")
-  (search-match "Match")  ;;; this one and the next one are singular/plural variants of each other
-  (search-matches "Matches")
-  (search-replace "Replace")
-  (search-skip "Skip")
-  (search-show-replace "Show Replace")
-  (search-hide-replace "Hide Replace")
-  (find-case-sensitive "Case sensitive")  ;; the check box in both the docked & undocked search
-  (find-anchor-based "Search using anchors")
+  (search-next "Kolejny")
+  (search-previous "Poprzedni")
+  (search-match "Dopasowanie")  ;;; this one and the next one are singular/plural variants of each other
+  (search-matches "Dopasowania")
+  (search-replace "Zmień")
+  (search-skip "Pomiń")
+  (search-show-replace "Pokaż zastąpienia")
+  (search-hide-replace "Ukryj zastąpienia")
+  (find-case-sensitive "Z uwzględnieniem wielkości liter")  ;; the check box in both the docked & undocked search
+  (find-anchor-based "Wyszukiwanie przy użyciu kotwic")
 
   ;; these string constants used to be used by searching,
   ;; but aren't anymore. They are still used by other tools, tho.
-  (hide "Hide")
-  (dock "Dock")
-  (undock "Undock")
+  (hide "Ukryj")
+  (dock "Dołącz")
+  (undock "Odłączanie")
 
   ;;; multi-file-search
-  (mfs-multi-file-search-menu-item "Search in &Files…")
-  (mfs-string-match/graphics "String match (handles files with graphics)")
-  (mfs-regexp-match/no-graphics "Regular Expression (only raw text files)")
-  (mfs-searching... "Searching…")
-  (mfs-configure-search "Configure Search") ;; dialog title
-  (mfs-files-section "Files")   ;; section in config dialog
-  (mfs-search-section "Search") ;; section in config dialog
-  (mfs-dir "Dir")
-  (mfs-recur-over-subdirectories "Recur over subdirectories")
-  (mfs-regexp-filename-filter "Regexp filename filter")
-  (mfs-search-string "Search string")
-  (mfs-drscheme-multi-file-search "Multi File Search - DrRacket") ;; error message window title
-  (mfs-not-a-dir "“~a” is not a directory")
-  (mfs-open-file "Open File")
-  (mfs-stop-search "Stop Search")
-  (mfs-case-sensitive-label "Case sensitive")
-  (mfs-no-matches-found "No matches found.")
-  (mfs-search-interrupted "Search aborted.")
+  (mfs-multi-file-search-menu-item "Wyszukaj w &Plikach…")
+  (mfs-string-match/graphics "Dopasownaie łańcucha znaków (obsługuje pliki z grafiką)")
+  (mfs-regexp-match/no-graphics "Wyrażenie regularne (tylko pliki tekstowe)")
+  (mfs-searching... "Wyszukiwanie…")
+  (mfs-configure-search "Konfiguracja wyszukiwania") ;; dialog title
+  (mfs-files-section "Pliki")   ;; section in config dialog
+  (mfs-search-section "Wyszukiwanie") ;; section in config dialog
+  (mfs-dir "Katalog")
+  (mfs-recur-over-subdirectories "Rekursja podkatalogów")
+  (mfs-regexp-filename-filter "Filtrwanie nazw plików z użyciem wyrażeń regularnych")
+  (mfs-search-string "wyszukiwanie ciąg znaków")
+  (mfs-drscheme-multi-file-search "Wyszukiwanie wielu plików - DrRacket") ;; error message window title
+  (mfs-not-a-dir "“~a” nie jest katalogiem")
+  (mfs-open-file "Otwórz plik")
+  (mfs-stop-search "Wstrzymaj wysukiwanie")
+  (mfs-case-sensitive-label "Z uwzględnieniem wielkości liter")
+  (mfs-no-matches-found "Nie znaleziono dopasowań.")
+  (mfs-search-interrupted "Wyszukiwanie przerwane.")
   ;; the ~a format specifier is filled in with the search string
-  (mfs-drscheme-multi-file-search-title "Multi File Search for “~a” - DrRacket")
+  (mfs-drscheme-multi-file-search-title "Wyszukiwanie wielu plików dla “~a” - DrRacket")
 
   ;;; reverting a file
   (are-you-sure-revert
-   "Are you sure that you want to revert this file? This change cannot be undone.")
+   "Czy na pewno chcesz przywrócić ten plik? Tej zmiany nie można cofnąć.")
   (are-you-sure-revert-title
-   "Revert?")
+   "Przywrócić?")
 
   ;;; saving a file
   ; ~a is filled with the filename
-  (error-saving "Error Saving") ;; title of error message dialog
-  (error-saving-file/name "There was an error saving ~a.")
-  (error-loading "Error Loading")
-  (error-loading-file/name "There was an error loading ~a.")
-  (unknown-filename "<< unknown >>")
+  (error-saving "Błąd zapisu") ;; title of error message dialog
+  (error-saving-file/name "Wystąpił błąd podczas zapisywania ~a.")
+  (error-loading "Błąd wczytywania")
+  (error-loading-file/name "Wystąpił błąd podczas ładowania ~a.")
+  (unknown-filename "<< nienazwany plik >>")
 
   ;;; finder dialog
-  (must-specify-a-filename "You must specify a file name")
-  (file-does-not-exist "The file “~a” does not exist.")
-  (ask-because-file-exists "The file “~a” already exists. Replace it?")
-  (dne-or-cycle "The file “~a” contains a nonexistent directory or a cycle.")
-  (get-file "Get file")
-  (put-file "Put file")
-  (full-pathname "Full pathname")
-  (show-dot-files "Show files and directories that begin with a dot.")
-  (up-directory-button-label "Up directory")
-  (add-button-label "Add") ;;; for multi-file selection
-  (add-all-button-label "Add all") ;;; for multi-file selection
-  (remove-button-label "Remove") ;;; for multi-file selection
-  (file-wrong-form "That filename does not have the right form.")
-  (select-files "Select files")
-  (select-file "Select a file")
-  (dir-dne "That directory does not exist.")
-  (file-dne "That file does not exist.")
-  (empty-filename "The filename must have some letters in it.")
-  (that-is-dir-name "That is a directory name.")
-  (use-platform-specific-file-dialogs "Use platform-specific file dialogs") ;; a preferences option
+  (must-specify-a-filename "Należy podać nazwę pliku")
+  (file-does-not-exist "Plik “~a” nie istnieje.")
+  (ask-because-file-exists "Plik “~a” już istnieje. Zastąpić go?")
+  (dne-or-cycle "Plik “~a” zawiera nieistniejący katalog lub cykl.")
+  (get-file "Pobierz plik")
+  (put-file "Umieść plik")
+  (full-pathname "Pełna nazwa ścieżki")
+  (show-dot-files "Wyświetlanie plików i katalogów rozpoczynających się kropką.")
+  (up-directory-button-label "Katalog w górę")
+  (add-button-label "Dodaj") ;;; for multi-file selection
+  (add-all-button-label "Dodaj wszystko") ;;; for multi-file selection
+  (remove-button-label "Usuń") ;;; for multi-file selection
+  (file-wrong-form "Nazwa pliku nie ma prawidłowej formy.")
+  (select-files "Wybierz pliki")
+  (select-file "Wybierz plik")
+  (dir-dne "Ten katalog nie istnieje.")
+  (file-dne "Ten plik nie istnieje.")
+  (empty-filename "Nazwa pliku musi zawierać jakieś litery.")
+  (that-is-dir-name "To jest nazwa katalogu.")
+  (use-platform-specific-file-dialogs "Korzystanie z okien dialogowych plików specyficznych dla platformy") ;; a preferences option
 
   ;;; raw menu names -- these must match the
   ;;; versions below, once the &s have been stripped.
   ;;; if they don't, DrRacket's menus will appear
   ;;; in the wrong order.
-  (file-menu "File")
-  (edit-menu "Edit")
-  (help-menu "Help")
-  (windows-menu "Windows")
-  (tabs-menu "Tabs") ;; this is the name of the "Windows" menu under linux & windows
+  (file-menu "Plik")
+  (edit-menu "Edycja")
+  (help-menu "Pomoc")
+  (windows-menu "Okna")
+  (tabs-menu "Karty") ;; this is the name of the "Windows" menu under linux & windows
 
   ;;; menus
   ;;; - in menu labels, the & indicates a alt-key based shortcut.
@@ -840,14 +840,14 @@ please adhere to these guidelines:
   ;;; more information is required from the user before completing
   ;;; the command.
 
-  (file-menu-label "&File")
+  (file-menu-label "&Plik")
 
-  (new-info  "Open a new file")
-  (new-menu-item "&New")
-  (new-...-menu-item "&New…")
+  (new-info  "Otwórz nowy plik")
+  (new-menu-item "&Nowy")
+  (new-...-menu-item "&Nowy…")
 
-  (open-info "Open a file from disk")
-  (open-menu-item "&Open…")
+  (open-info "Otwórz nowy plik z dysku")
+  (open-menu-item "&Otwórz…")
 
   (open-recent-info "A list of the recently opened files")
   (open-recent-menu-item "Open Recen&t")
