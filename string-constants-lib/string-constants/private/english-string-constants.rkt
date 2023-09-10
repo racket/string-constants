@@ -649,8 +649,7 @@ please adhere to these guidelines:
   ;; the constant above shows up in the popup menu item in the bottom of
   ;; the drracket window; controls the line numbers on each line in the definitions;
   ;; used in a checkable menu item
-  (show-indent-guides "Show indent guides")
-  ;; just like the above, but capitalized for appearance in a menu item
+  ;; Capitalized for appearance in a menu item
   (show-indent-guides/menu "Show Indent &Guides")
   (hide-indent-guides/menu "Hide Indent &Guides")
   (reflow-paragraph-maximum-width "Maximum width when reflowing paragraphs")
