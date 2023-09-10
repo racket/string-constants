@@ -488,6 +488,8 @@
  (hide-line-numbers/menu "Zeilen&nummern ausblenden")
 
  (show-line-numbers-in-definitions "Alle Zeilennummern in Definitionen einblenden") ;; shows up in the popup menu item in the bottom of the drracket window; controls the line numbers on each line in the definitions; used in a checkable menu item
+ (show-indent-guides/menu "Einrückungs-Hilfe einblenden")
+ (hide-indent-guides/menu "Einrückungs-Hilfe ausblenden")
  (reflow-paragraph-maximum-width "Maximalbreite beim Umbruch von Absätzen")
  (maximum-char-width-guide-pref-check-box "Richtschnur für maximale Zeichenbreite")
  (hide-column-width-guide "Richtschnur für Spaltenbreite für Dateien mit ~a Spalten einblenden")
