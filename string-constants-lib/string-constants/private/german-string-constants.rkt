@@ -1045,6 +1045,12 @@
  (reindent-menu-item-label "&Einrücken")
  (reindent-all-menu-item-label "&Alles einrücken")
  (semicolon-comment-out-menu-item-label "Mit &Semikolon auskommentieren")
+ ;; the ~a is filled with the characters that'll be used to comment out a line,
+ ;; inserted at the start of the line
+ (comment-out-with-line-start "&Auskommentieren mit “~a”")
+ ;; the two '~a's are filled with the characters that'll be used to comment out
+ ;; the start and end of a region
+ (comment-out-with-region "&Auskommentieren mit “~a” und “~a”")
  (box-comment-out-menu-item-label "Mit &Kommentar-Kasten auskommentieren")
  (uncomment-menu-item-label "Einkommentieren")
 
