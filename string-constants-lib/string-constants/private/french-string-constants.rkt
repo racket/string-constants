@@ -641,14 +641,17 @@
    "Automatiquement utiliser le langage « module » lors de l'ouverture d'un fichier contenant un module")
   ;; in preferences, below the checkbox one line above this one
   (interactions-beside-definitions "Mettre la fenêtre d'interaction à côté de la fenêtre de définition")
-  ;; just like the above, but capitalized for appearance in a menu item
   (show-line-numbers "Montrer les numéros de lignes")
+  ;; just like the above, but capitalized for appearance in a menu item
   (show-line-numbers/menu "Montrer les &numéros de lignes")  ;; just like the above, but capitalized for appearance in a menu item
   (hide-line-numbers/menu "Cacher les &numéros de lignes")
   (show-line-numbers-in-definitions "Numéros de ligne dans la fenêtre de définition")
   ;; the constant above shows up in the popup menu item in the bottom of
   ;; the drracket window; controls the line numbers on each line in the definitions;
   ;; used in a checkable menu item
+  ;; Capitalized for appearance in a menu item
+  (show-indent-guides/menu "Montrer les &Guides d'indentation")
+  (hide-indent-guides/menu "Cacher les &Guides d'indentation")
   (reflow-paragraph-maximum-width "Largeur maximale lors de la refusion des paragraphes")
   (maximum-char-width-guide-pref-check-box "Guide pour la largeur maximum de texte")
   (hide-column-width-guide "Cacher le guide de largeur de texte pour les fichiers avec ~a colonnes")
@@ -1229,6 +1232,12 @@
   (reindent-menu-item-label "&Réindenter")
   (reindent-all-menu-item-label "Réindenter &tout")
   (semicolon-comment-out-menu-item-label "&Commenter à l'aide de points-virgules")
+  ;; the ~a is filled with the characters that'll be used to comment out a line,
+  ;; inserted at the start of the line
+  (comment-out-with-line-start "&Commenter à l'aide de “~a”")
+  ;; the two '~a's are filled with the characters that'll be used to comment out
+  ;; the start and end of a region
+  (comment-out-with-region "&Commenter à l'aide de “~a” et de “~a”")
   (box-comment-out-menu-item-label "Commenter à l'aide d'une &boite")
   (uncomment-menu-item-label "&Décommenter")
 
