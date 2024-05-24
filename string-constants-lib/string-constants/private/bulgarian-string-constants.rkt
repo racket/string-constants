@@ -1,6 +1,6 @@
-;; Bulgarian translation of Racket string constants file, version: 1.43
+;; Bulgarian translation of Racket string constants file, version: 1.45
 ;; This file is distributed under the same terms as Racket
-;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024.
 
 (module bulgarian-string-constants "string-constant-lang.rkt"
   ;;; when translating this constant, substitute name of actual language for `English'
@@ -13,7 +13,7 @@
 
   (interact-with-drscheme-in-language "Работа с DrRacket на български")
 
-  ;; these two should probably be the same in all languages excepet English.
+  ;; these two should probably be the same in all languages except English.
   ;; they are the button labels (under macos and windows, respectively)
   ;; that go the with the string above.
   (accept-and-quit "Приемане и изход")
@@ -185,7 +185,7 @@
    "Всички изисквания за внасяне вече имат префикс, пробвайте да го преименувате")
   (cs-the-binder-is-prefixed
    "Изискването за внасяне вече има префикс, пробвайте да го преименувате")
- 
+
   ;; mode sub-menu in the "view" menu
   (cs-check-syntax-mode "Режим на проверка на синтаксиса")
   (cs-mode-menu-show-my-obligations "Задължения на модула")
@@ -555,6 +555,9 @@
   ;; the constant above shows up in the popup menu item in the bottom of
   ;; the drracket window; controls the line numbers on each line in the definitions;
   ;; used in a checkable menu item
+  ;; Capitalized for appearance in a menu item
+  (show-indent-guides/menu "Показване на &вертикалите за отстъп")
+  (hide-indent-guides/menu "Скриване на &вертикалите за отстъп")
   (reflow-paragraph-maximum-width "Максимална широчина на абзаците при изливане на тескта наново")
   (maximum-char-width-guide-pref-check-box "Вертикална линия за максимален брой знаци на ред")
   (hide-column-width-guide "Без вертикал, ако няма редове над ~a знака")
@@ -1095,7 +1098,7 @@
    ;; like close-tab, but with an ampersand on the same letter as the one in close-menu-item
   (close-tab-amp "&Затваряне на подпрозорец")
   (reopen-closed-tab "Наново отваряне на затворен подпрозорец")
-  
+
   ;;; edit menu
   (split-menu-item-label "&Разделяне")
   (collapse-menu-item-label "&Сливане")
@@ -1133,6 +1136,12 @@
   (reindent-menu-item-label "&Форматиране наново")
   (reindent-all-menu-item-label "Форматиране наново на &всичко")
   (semicolon-comment-out-menu-item-label "&Закоментиране с „;“")
+  ;; the ~a is filled with the characters that'll be used to comment out a line,
+  ;; inserted at the start of the line
+  (comment-out-with-line-start "&Закоментиране с „~a“")
+  ;; the two '~a's are filled with the characters that'll be used to comment out
+  ;; the start and end of a region
+  (comment-out-with-region "&Закоментиране с „~a“ и „~a“")
   (box-comment-out-menu-item-label "Закоментиране с &кутия")
   (uncomment-menu-item-label "Да &не е коментар")
 
