@@ -1670,6 +1670,8 @@ please adhere to these guidelines:
   (module-browser-main-collects "Main Collects")
   (module-browser-unknown-pkg "Unknown Package")
   (module-browser-visible-pkgs "Visible Packages")
+  (module-browser-visible-submodules "Visible Submodules")
+  (module-browser-top-level-module "Top-level module") ; in the "which submodules?" filter; this is used for when there are no submodules
 
   (happy-birthday-matthias "Happy Birthday, Matthias!")
   (happy-birthday-matthew "Happy Birthday, Matthew!")
