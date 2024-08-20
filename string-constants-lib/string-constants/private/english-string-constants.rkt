@@ -636,6 +636,11 @@ please adhere to these guidelines:
   (basic-gray-paren-match-color "Basic gray parenthesis highlight color") ; in prefs dialog
   (online-coloring-active "Color syntax interactively")
   (open-files-in-tabs "Open files in separate tabs (not separate windows)")
+  (restore-open-files-from-previous-session? "Restore open files from previous session?")
+  (startup-open-files "Startup Open Files")
+  (restore-open-files-from-previous-session "Restore open files from previous session")
+  (ask-me-each-time "Ask me each time")
+  (open-a-blank-window "Open a blank window")
   (show-interactions-on-execute "Automatically open interactions window when running a program")
   (switch-to-module-language-automatically
    "Automatically switch to the module language when opening a module")
