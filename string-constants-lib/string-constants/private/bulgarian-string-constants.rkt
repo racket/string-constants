@@ -1,4 +1,4 @@
-;; Bulgarian translation of Racket string constants file, version: 1.45
+;; Bulgarian translation of Racket string constants file, version: 1.47
 ;; This file is distributed under the same terms as Racket
 ;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024.
 
@@ -542,6 +542,11 @@
   (basic-gray-paren-match-color "Посивени скоби") ; in prefs dialog
   (online-coloring-active "Интерактивно оцветяване на скицника")
   (open-files-in-tabs "Отваряне на файловете в подпрозорци")
+  (restore-open-files-from-previous-session? "Да се възстановят ли отворените в предишната сесия файлове?")
+  (startup-open-files "Отваряне на файлове при стартиране")
+  (restore-open-files-from-previous-session "Възстановяване на отворените в предишната сесия файлове")
+  (ask-me-each-time "Винаги да се пита")
+  (open-a-blank-window "Отваряне на празен прозорец")
   (show-interactions-on-execute "Автоматично отваряне на прозорец-скицник при изпълнение на програма")
   (switch-to-module-language-automatically
    "Автоматично превключване към езика на модула, при отваряне на модул")
@@ -1568,6 +1573,8 @@
   (module-browser-main-collects "Основни колекции")
   (module-browser-unknown-pkg "Неизвестен пакет")
   (module-browser-visible-pkgs "Видими пакети")
+  (module-browser-visible-submodules "Видими подмодули")
+  (module-browser-top-level-module "Модул от най-горно ниво") ; in the "which submodules?" filter; this is used for when there are no submodules
 
   (happy-birthday-matthias "Честит рожден ден, Матѝас (Фела̀йзен)!")
   (happy-birthday-matthew "Честит рожден ден, Ма̀тю (Фла̀т)!")
