@@ -3,24 +3,18 @@
 @title{How To Translate DrRacket's String Constants in Your Language}
 @author[(author+email "Alexander Shopov" "ash@kambanaria.org"  #:obfuscate? #t)]
 
-This is a short hands on guide how to translate the strings used
+This is a short hands-on guide how to translate the strings used
 within DrRacket's GUI. It is targeted at people willing to translate
-the interface who may not know all ins and outs of Racket or Scheme.
+the interface who may not know all ins and outs of Racket.
 
 @; ----------------------------------------------------------------------
 
 @section{Introduction}
 
-DrRacket is a GUI: editor and runner for the many languages you can
-use via Racket — the language developer’s language. Currently
-existing translations are English Danish, French, Finnish, German,
-Portuguese, Russian, Ukrainian, Bulgarian, Chinese (traditional and
-simplified) and Japanese. Dutch, Korean and Spanish have not been
-updated in a long while and they still need relicensing which makes
-them hidden in the interface.
-
-There are many languages missing plus some of the existing
-translations need some work for updates.
+DrRacket is a is a development environment for the many languages you
+can use via Racket — the language developers' language. The interface
+is already translated in more than a dozen languages, some of which
+are more actively maintained than others.
 
 If you are interested how much time and effort you will need to
 invest– currently it is roughly a 1400 string translation, of less
@@ -32,7 +26,7 @@ Here are the steps:
 
 Clone the
 @link["https://github.com/racket/string-constants"]{@tt{https://github.com/racket/string-constants}}
-repo. This is where you will work, translate and finally submit the
+repo. This is where you will work, translate, and finally submit the
 translation via a pull request.
 
 Go to the
@@ -42,10 +36,10 @@ the file
 @link["https://github.com/racket/string-constants/blob/master/string-constants-lib/string-constants/private/english-string-constants.rkt"]{@tt{english-string-constants.rkt}}
 to @tt{yourlanguage-string-constants.rkt}.
 
-Basically English is the master file containing the originals of the
-strings.  Therefore, start with a copy of that.  Note that if you
-continue to update and maintain your translation — English will be
-the file you will sync with.
+English is the master file containing the originals of the strings.
+Therefore, start with a copy of that.  Note that if you continue to
+update and maintain your translation English will be the file you will
+sync with.
 
 Once you have copied the file you will need to declare it so DrRacket
 knows it exists and has to be included with the rest of the
@@ -81,7 +75,7 @@ Open @tt{yourlanguage-string-constants.rkt} in your favorite text
 editor. It has a fairly trivial structure: it is basically a map — a
 long list of key-value pairs. The key is the identifier of the string
 — how Racket source code is going to refer to the message. Do not
-change these. Value is the translation. As you started with the
+change these. The value is the translation. As you started with the
 English version — you have all the comments and the formatting. I
 highly recommend keeping these in place because they are very helpful
 when you need to update the translations.
@@ -104,7 +98,11 @@ In that part of the file put some basic data — like your name, which
 version of the @tt{private/english-string-constants.rkt} file you are
 syncing with. This is also the place to put out conventions for the
 translation such as specific terms, style etc. I would also recommend
-spelling out the license of it. For example in the
+spelling out the license you want to use. Note that for anything that
+is to be distributed with Racket, the maintainers will be more likely
+to accept it if you use the strategy below:
+
+In the
 @link["https://github.com/racket/string-constants/blob/master/string-constants-lib/string-constants/private/bulgarian-string-constants.rkt"]{Bulgarian
 translation} I have explicitly pointed out:
 
@@ -112,8 +110,7 @@ translation} I have explicitly pointed out:
 ;; This file is distributed under the same terms as Racket
 }
 
-to ease with relicensing. Currently translations are double licensed
-— under the
+Currently translations are double licensed — under the
 @link["https://github.com/racket/string-constants/blob/master/LICENSE"]{Apache
 2.0 license and the MIT license}.
 
@@ -126,8 +123,7 @@ to put @tt{"} in the translation you would need to quote it like
 quotation marks for your language}.
 
 A new line is represented by @tt{\n}.  @tt{~a} is substituted with
-whatever parameter is given to the string template. And that is
-basically it.
+whatever parameter is given to the string template.
 
 You can split strings — a sequence of strings gets concatenated in a single string so:
 @racketblock[(install-plt-error-downloading "There was an error when downloading the"
@@ -153,9 +149,5 @@ Once you finish the translation – create a pull request to the
 repo.  If you are interested in how the whole infrastructure of
 translation works in DrRacket – have a look at the
 @link["https://docs.racket-lang.org/string-constants/index.html"]{documentation}.
-
-As usual you can generate am HTML version via executing:
-
-@commandline{scribble string-constants-doc/string-constants/string-constants.scrbl}
 
 
