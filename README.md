@@ -9,6 +9,12 @@ This the source for the Racket packages: "string-constants",
 Contribute to Racket by submitting a [pull request] or reporting an
 [issue]. See also the "Community" section of the [racket web page].
 
+You can generate the documentation for the package and get a short
+guide on translating by running:
+
+    scribble string-constants-doc/string-constants/string-constants.html
+
+
 ### License
 
 Racket, including these packages, is free software, see [LICENSE]

@@ -145,3 +145,7 @@ The @indexed-envvar{PLTSTRINGCONSTANTSLANG} controls the language
 choice, overriding the default saved in the preferences file.
 If it is not set to one of the languages in the result of
 @racket[all-languages], it is ignored.
+
+@; ----------------------------------------------------------------------
+
+@include-section["translation-guide.scrbl"]
