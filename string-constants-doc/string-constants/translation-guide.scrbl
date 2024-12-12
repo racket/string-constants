@@ -17,8 +17,9 @@ is already translated in more than a dozen languages, some of which
 are more actively maintained than others.
 
 If you are interested how much time and effort you will need to
-invest– currently it is roughly a 1400 string translation, of less
-than 6000 words — it is an easy-peasy deal.
+invest — roughly 3 afternoons.
+
+@; TODO: add automatic statistics on the size of the translation
 
 Here are the steps:
 
@@ -113,8 +114,6 @@ translation} I have explicitly pointed out:
 Currently translations are double licensed — under the
 @link["https://github.com/racket/string-constants/blob/master/LICENSE"]{Apache
 2.0 license and the MIT license}.
-
-Now all you need is 3 afternoons to go over and translate the strings.
 
 All the translated strings are quoted by double quotes. So if you need
 to put @tt{"} in the translation you would need to quote it like
