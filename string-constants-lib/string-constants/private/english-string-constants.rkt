@@ -2231,4 +2231,57 @@ please adhere to these guidelines:
    " add\n\n  ~a\n\n"
    " to it.")
   (add-racket/bin-to-path "Configure Command Line for Racket…") ;; menu item label
+  
+  ;; quickscript messages
+  (qs-my-first-script "My First Script")
+  (qs-script-library "Script library")
+  (qs-directories "Directories")
+  (qs-add "&Add")
+  (qs-remove "&Remove")
+  (qs-scripts "Scripts")
+  (qs-disable "Disa&ble")
+  (qs-enable "Ena&ble")
+  (qs-shadow "S&hadow")
+  (qs-recompiling  "Recompiling quickscripts…")
+  (qs-recompiling-wait "Recompiling quickscripts, please wait…")
+  (qs-scripts "&Scripts")
+  (qs-manage "&Manage")
+  (qs-compilation-error "Quickscript: Error during compilation")
+  (qs-caught-exception  "Quickscript caught an exception")
+  (qs-recompiling-library "Recompiling library")
+  (qs-my-script "My amazing script")
+  (qs-script-help "The help-string of the script.")
+  (qs-compiling-scripts "Compiling scripts")
+  ;; ~a is a script file including its path
+  (qs-compiling "Compiling ~a")
+  ;; ~a is a script file including its path
+  (qs-file-not-found "File not found: ~a")
+  (qs-invalid-hook "Invalid hook name.\n Valid names:\n")
+  ;; 1st ~a is number of errors, 2nd ~a is summaries of errors
+  (qs-error-details "~a error(s) have been caught.\n~a\nSummary:\n~a\n\nDetails:\n")
+  (qs-script-name "Script name")
+  (qs-script-name-enter "Enter the name of the new script:")
+  (qs-open-script "Open a script")
+  ;; ~a is the name of a script file
+  (qs-error-run "Run: Error in script file ~s:\n" )
+  (qs-output "Output") ;; not repl-out-color where it means color of the output
+  (qs-load-script-menu "Loading Scripts menu")
+  (qs-loading-file "Loading file ")
+  ;; ~a is the name of a script file
+  (qs-script-file "Script file ~s:")
+  (qs-build-menu "Building script menu")
+  ;; ~a is number of rebuilds
+  (qs-menu-rebuild "Script menu rebuild #~a...")
+  (qs-delete-menu "Deleting menu items")
+  ;; ~a is a a script entry in menu
+  (qs-delete-menu-item "Deleting menu item ~a... ")
+  (qs-new-script "&New script…")
+  (qs-open-script "&Open script…")
+  (qs-disable-scripts "&Disable scripts…")
+  (qs-library "&Library…")
+  (qs-reload-menu "&Reload menu")
+  (qs-compile-scripts "&Compile scripts")
+  (qs-stop-scripts "&Stop persistent scripts")
+  (qs-report-issue "Report an &issue")
+  (qs-error-load "Quickscript: Errors while loading script properties")
   )
