@@ -480,6 +480,11 @@
 
  (online-coloring-active "Syntax interaktiv einfärben")
  (open-files-in-tabs "Dateien in separaten Tabs öffnen (nicht separaten Fenstern)")
+ (restore-open-files-from-previous-session? "Offene Dateien aus der vorigen Sitzung wiederherstellen?")
+ (startup-open-files "Dateien beim Start")
+ (restore-open-files-from-previous-session "Offene Dateien aus der vorigen Sitzung")
+ (ask-me-each-time "Jedes Mal nachfragen")
+ (open-a-blank-window "Leeres Fenster öffnen")
  (show-interactions-on-execute "Interaktionen beim Programmstart automatisch öffnen")
  (switch-to-module-language-automatically "Automatisch in die `module'-Sprache wechseln, wenn ein Modul geöffnet wird")
  (interactions-beside-definitions "Interaktionen neben den Definitionen anzeigen") ;; in preferences, below the checkbox one line above this one
@@ -1451,6 +1456,9 @@
  (module-browser-main-collects "Haupt-Collections")
  (module-browser-unknown-pkg "Unbekanntes Paket")
  (module-browser-visible-pkgs "Sichtbare Pakete")
+ (module-browser-visible-submodules "Sichtbare Submodule")
+ (module-browser-top-level-module "Top-Level-Module") ; in the "which submodules?" filter; this is used for when there are no submodules
+
 
  (happy-birthday-matthias "Happy Birthday, Matthias!")
  (happy-birthday-matthew "Happy Birthday, Matthew!")
