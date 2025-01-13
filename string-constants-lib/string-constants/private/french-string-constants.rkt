@@ -636,6 +636,11 @@
   (basic-gray-paren-match-color "Couleur grise simple de surlignage des parenthèses") ; in prefs dialog
   (online-coloring-active "Colorier la syntaxe interactivement")
   (open-files-in-tabs "Ouvrir les fichiers dans de nouveaux onglets (pas dans de nouvelles fenêtres)")
+  (restore-open-files-from-previous-session? "Restaurer les fichiers ouverts durant la session précédente ?")
+  (startup-open-files "Fichiers ouverts au démarrage")
+  (restore-open-files-from-previous-session "Restaurer les fichiers ouverts durant la session précédente")
+  (ask-me-each-time "Demander à chauque fois")
+  (open-a-blank-window "Ouvrir une fenêtre vide")
   (show-interactions-on-execute "Automatiquement montrer la fenêtre d'interaction lors de l'exécution d'un programme")
   (switch-to-module-language-automatically
    "Automatiquement utiliser le langage « module » lors de l'ouverture d'un fichier contenant un module")
@@ -1670,6 +1675,8 @@
   (module-browser-main-collects "Collections principales")
   (module-browser-unknown-pkg "Paquetage inconnu")
   (module-browser-visible-pkgs "Paquetages visibles")
+  (module-browser-visible-submodules "Sous-modules visibles")
+  (module-browser-top-level-module "Module principal") ; in the "which submodules?" filter; this is used for when there are no submodules
 
   (happy-birthday-matthias "Joyeux anniversaire, Matthias !")
   (happy-birthday-matthew "Joyeux anniversaire, Matthew !")
