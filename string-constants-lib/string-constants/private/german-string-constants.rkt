@@ -1113,7 +1113,8 @@
   "Servlet lassen sich nicht aus einem Programm in der Sprache „~a“ erzeugen.")
   
  ;;; buttons
- (execute-button-label "Start") 
+ (execute-button-label "Start")
+ (execute-button-configure-label "Start konfigurieren")
  (save-button-label "Speichern")
  (break-button-label "Stop")
  (break-button-kill-label "Abbrechen")
