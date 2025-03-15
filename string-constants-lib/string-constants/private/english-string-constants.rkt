@@ -1307,6 +1307,7 @@ please adhere to these guidelines:
 
   ;;; buttons
   (execute-button-label "Run")
+  (execute-button-configure-label "Configure Run")
   (save-button-label "Save")
   (break-button-label "Stop")
   (break-button-kill-label "Kill")
