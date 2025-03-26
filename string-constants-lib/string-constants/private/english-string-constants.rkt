@@ -2258,8 +2258,10 @@ please adhere to these guidelines:
   ;; ~a is a script file including its path
   (qs-file-not-found "File not found: ~a")
   (qs-invalid-hook "Invalid hook name.\n Valid names:\n")
-  ;; 1st ~a is number of errors, 2nd ~a is summaries of errors
-  (qs-error-details "~a error(s) have been caught.\n~a\nSummary:\n~a\n\nDetails:\n")
+  ;; the  three `qs-error-detail-*` string constants are put into the same message
+  (qs-error-detail-overview "~a error(s) have been caught.") ; the ~a is number of errors
+  (qs-error-detail-summary "Summary:")
+  (qs-error-detail-details "Details:")
   (qs-script-name "Script name")
   (qs-script-name-enter "Enter the name of the new script:")
   (qs-open-script "Open a script")
