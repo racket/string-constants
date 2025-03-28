@@ -1991,5 +1991,61 @@
    " fügen Sie\n\n  ~a\n\n"
    " hinzu.")
   (add-racket/bin-to-path "Kommandozeile für Racket konfigurieren…") ;; menu item label
+
+    ;; quickscript messages
+  (qs-my-first-script "Mein erstes Skript")
+  (qs-script-library "Skript-Library")
+  (qs-directories "Verzeichnisse")
+  (qs-add "&Hinzufügen")
+  (qs-remove "&Entfernen")
+  (qs-scripts "Skripte")
+  (qs-disable "&Aktivieren")
+  (qs-enable "&Deaktivieren&")
+  (qs-shadow "&Shadow")
+  (qs-recompiling  "Quickscripts recompilieren…")
+  (qs-recompiling-wait "Recompiliere Quickscripts, bitte warten…")
+  (qs-scripts "&Skripte")
+  (qs-manage "&Verwalten")
+  (qs-compilation-error "Quickscript: Fehler beim Compilieren")
+  (qs-caught-exception  "Quickscript hat Exception abgefangen")
+  (qs-recompiling-library "Library recompilieren")
+  (qs-my-script "Mein fantastisches Skript")
+  (qs-script-help "Der Hilfetext des Skripts.")
+  (qs-compiling-scripts "Compiliere Skripte")
+  ;; ~a is a script file including its path
+  (qs-compiling "Compiliere ~a")
+  ;; ~a is a script file including its path
+  (qs-file-not-found "Datei nicht gefunden: ~a")
+  (qs-invalid-hook "Unzulässiger Hook-Name.\n Zulässige Namen:\n")
+  ;; the  three `qs-error-detail-*` string constants are put into the same message
+  (qs-error-detail-overview "~a Fehler wurden abgefangen.") ; the ~a is number of errors
+  (qs-error-detail-summary "Zusammenfassung:")
+  (qs-error-detail-details "Details:")
+  (qs-script-name "Skript-Name")
+  (qs-script-name-enter "Namen für das neue Skript eingeben:")
+  (qs-open-script "Skript öffnen")
+  ;; ~a is the name of a script file
+  (qs-error-run "Run: Fehler in Skript-Datei ~s:\n" )
+  (qs-output "Ausgabve") ;; not repl-out-color where it means color of the output
+  (qs-load-script-menu "Lade Skripte-Menü")
+  (qs-loading-file "Lade Datei ")
+  ;; ~a is the name of a skript file
+  (qs-script-file "Skript-Dateei ~s:")
+  (qs-build-menu "Baue Skript-Menü")
+  ;; ~a is number of rebuilds
+  (qs-menu-rebuild "Skript-Menü-Aktualisierung #~a...")
+  (qs-delete-menu "Lösche Menüpunkte")
+  ;; ~a is a a script entry in menu
+  (qs-delete-menu-item "Lösche Menüpunkt ~a... ")
+  (qs-new-script "&Neues Skript…")
+  (qs-open-script "&Skript öffnen…")
+  (qs-disable-scripts "&Skripte deaktivieren…")
+  (qs-library "&Library…")
+  (qs-reload-menu "&Menü neu laden")
+  (qs-compile-scripts "Skripte &compilieren")
+  (qs-stop-scripts "Persistente Skripte &anhalten")
+  (qs-report-issue "Problem &miteilen")
+  (qs-error-load "Quickscript: Fehler beim Laden von Skript-Properties")
+
   )
 
