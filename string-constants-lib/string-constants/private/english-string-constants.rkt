@@ -1887,6 +1887,14 @@ please adhere to these guidelines:
 
   ; The ~F is special marker for the offending values, which may be
   ; printed specially in DrRacket.
+  (test-engine-check-range-encountered-error
+   "check-range encountered the following error instead of a value in [~F, ~F]. ~n   :: ~a")
+  (test-engine-check-member-of-encountered-error
+   "check-member-of encountered the following error instead of a value in ~L.~n   :: ~a")
+  ; obsolete version of this
+  (test-engine-check-*-encountered-error
+   "~a encountered the following error instead of the expected value, ~F. ~n   :: ~a")
+  ; deprecated:
   (test-engine-check-encountered-error
    "check-expect encountered the following error instead of the expected value, ~F. ~n   :: ~a")
   (test-engine-check-error-cause
