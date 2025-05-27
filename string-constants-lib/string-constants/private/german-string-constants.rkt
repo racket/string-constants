@@ -84,11 +84,24 @@
  (malformed-email-address "Ungültige Email-Adresse")
  (pls-fill-in-either-description-or-reproduce "Bitte füllen Sie entweder das Feld „Beschreibung“ oder das Feld „Schritte, um das Problem zu reproduzieren“ aus.")
 
+ (have-an-issue? "Gibt es ein Problem? ...")
+ (use-github-or-the-mailing-list-for-issues
+  "Falls Sie einen Fehler in Racket oder DrRacket gefunden haben, öffnen Sie ein"
+  " Issue auf Github.\n\nFalls"
+  " Sie etwas sehen, dass keinen Sinn ergibt, sind aber nicht sicher, ob es ein"
+  " Fehler ist oder nicht, fragen Sie auf der Mailing-Liste.")
+ (visit-github "GitHub besuchen")
+ (visit-mailing-lists "Mailing-Listen besuchen")
+ 
  ;;; check syntax
  (check-syntax "Syntaxprüfung")
  (cs-italic "Kursiv")
  (cs-bold "Fett")
  (cs-underline "Unterstrichen")
+ (cs-smoothing-default "Standard")
+ (cs-smoothing-partial "Teilweise geglättet")
+ (cs-smoothing-full "Geglättet")
+ (cs-smoothing-none "Ungeglättet")
  (cs-change-color "Farbe ändern")
  (cs-foreground-color "Vordergrundfarbe")
  (cs-background-color "Hintergrundfarbe")
@@ -111,9 +124,9 @@
  (cs-status-eval-compile-time "Syntaxprüfung: Compile-Time-Code ausführen")
  (cs-status-expanding-expression "Syntaxprüfung: Ausdruck expandieren")
  (cs-status-loading-docs-index "Syntaxprüfung: Dokumentations-Index laden")
- (cs-syncheck-running "Syntaprüfung läuft")
- (cs-mouse-over-import "Bindung „~s“ importiert aus „~s“")
- (cs-mouse-over-import/library-only "importiert aus „~s“")
+ (cs-syncheck-running "Syntaxprüfung läuft")
+ (cs-mouse-over-import "Bindung „~s“ importiert aus ~s")
+ (cs-mouse-over-import/library-only "importiert aus ~s")
  
 
  (cs-view-docs "Dokumentation für „~a“ anschauen")
@@ -130,14 +143,14 @@
  (cs-one-varref "Ein gebundenes Vorkommen")
  (cs-n-varrefs "~a gebundene Vorkommen") ;; expected to have one ~a formatter that will accept a number
 
- (cs-contract-my-obligation "Vertrag: Obliation dieses Moduls")
+ (cs-contract-my-obligation "Vertrag: Obligation dieses Moduls")
  (cs-contract-their-obligation "Vertrag: Obligation des Klientenmoduls")
  (cs-contract-both-obligation "Vertrag: Obligation sowohl dieses Moduls als auch des Klientenmoduls")
- (cs-contract-unk-obligation "Vertrag: Oblikation unbekannt")
+ (cs-contract-unk-obligation "Vertrag: Obligation unbekannt")
 
  ;; require prefix functionality
  (cs-add-prefix-for-require "Präfix für require hinzufügen")
- (cs-prefix-require-title "Präfix für Require")
+ (cs-prefix-require-title "Präfix für require")
  (cs-prefix-require "Präfix wählen für alle importierten Variablen")
  (cs-all-binders-are-prefixed "Alle require-Formen scheinen schon einen Präfix zu haben; stattdessen umbenennen")
  (cs-the-binder-is-prefixed "Die require-Form scheint schon einen Präfix zu haben; stattdessen umbenennen")
@@ -156,7 +169,7 @@
  (online-expansion-running "Hintergrund-Expansion läuft")
  (online-expansion-only-raw-text-files-supported "Nur reine Text-Dateien sind unterstützt")
  (online-expansion-abnormal-termination "Hintergrund-Expansion unglücklich abgebrochen")
- (online-expansion-abnormal-termination-out-of-memory "Hintergrund-Expansion unglücklich abgebrochend (kein Speicher mehr)")
+ (online-expansion-abnormal-termination-out-of-memory "Hintergrund-Expansion unglücklich abgebrochen (kein Speicher mehr)")
  (online-expansion-finished-successfully "Hintergrund-Expansion erfolgreich abgeschlossen")
 
  (jump-to-error "Zum Fehler springen")
@@ -180,7 +193,7 @@
  (online-expansion-error-margin "am Rand")
  ; the label of a preference in the (string-constant online-expansion) section
  (show-arrows-on-mouseover "Bindungen und Tail-Positionen unter Mauszeiger anzeigen")
- (show-blueboxes "Blaue Kästen  und blaue anzeigen")
+ (show-blueboxes "Signatur-Kasten und -Pfeil oben rechts anzeigen")
  ;;; info bar at botttom of drscheme frame
  (collect-button-label "GC")
  (read-only "Nur Lesen")
@@ -306,7 +319,7 @@
  (plt:hd:refreshing-manuals-finished "Fertig.")
  (plt:hd:about-help-desk "Über das Hilfezentrum")
  (plt:hd:help-desk-about-string
-  "Das Hilfezentrum ist die primäre Quelle für Information über die PLT-Software,insbesondere DrRacket, MzScheme und MrEd.\n\nVersion ~a\nCopyright (c) ~a-~a PLT")
+  "Das Hilfezentrum ist die primäre Quelle für Information über die PLT-Software, insbesondere DrRacket, MzScheme und MrEd.\n\nVersion ~a\nCopyright (c) ~a-~a PLT")
  (plt:hd:help-on-help "Hilfe zur Hilfe")
  (plt:hd:help-on-help-details "Hilfe zum Hilfezentrum befindet sich auf der Homepage des Hilfezentrums unter `Help Desk'.   (Die Homepage des Hilfezentrums ist über den `Home'-Knopf zu erreichen.)")
   (reload "Aktualisieren") ;; refresh the page in a web browser
@@ -324,12 +337,30 @@
   (use-drscheme-font-size "DrRacket-Schriftgröße verwenden")
 
   (help-desk-this-is-just-example-text
-   "Dies ist nur ein Beispieltext für das Setzen der Schriftgröße.  Öffnen sie das Hilfezentrum (im „Hilfe“-Menü), um diesen Links zu folgen.")
+   "Dies ist nur ein Beispieltext für das Setzen der Schriftgröße.  Öffnen Sie das Hilfezentrum (im „Hilfe“-Menü), um diesen Links zu folgen.")
 
   ;; this appears in the bottom part of the frame the first time the user hits `f1' 
   ;; (assuming nothing else has loaded the documentation index first)
   ;; see also: cs-status-loading-docs-index
   (help-desk-loading-documentation-index "Hilfezentrum: Dokumentations-Index wird geladen")
+
+    ;; the next four are all in the same dialog box (only one of the first two appears)
+  (help-desk-materialize-docs-something-changed
+   "DrRacket hat ein mögliches Problem mit dem Index der Dokumentation"
+   " festgestellt. Soll eine Reparatur versucht werden? (Das kann ein"
+   " bisschen dauern.)?\n\nGenauer gesagt: Das Dokumentations-Verzeichnis ~a"
+   " existiert nicht, und deshalb könnte die Suche im Browser fehlschlagen.")
+  (help-desk-materialize-docs-first-time
+   "DrRacket hat ein mögliches Problem mit dem Index der Dokumentation"
+   " festgestellt. Soll eine Reparatur versucht werden? (Das kann ein"
+   " bisschen dauern.)?\n\nGenauer gesagt: DrRacket"
+   " hat die Dokumentation bisher noch nicht materialisiert, und deshalb"
+   " könnte die Suche im Browser fehlschlagen.")
+  (help-desk-do-nothing "Nichts tun")
+  (help-desk-materialize-user-docs "Dokumentation materialisieren")
+  ; this is used in a dialog to let the user know that work is being done based on
+  ; choices made from the previous dialog in the above four string constants
+  (help-desk-materializing-user-docs... "Dokumentation wird materialisiert…")
 
  ;; Help desk htty proxy
  (http-proxy "HTTP-Proxy")
@@ -351,7 +382,7 @@
  (browser-cmdline-expl-line-1 "(Kommandozeile konstruiert durch Aneinanderhängen von Vor-Text, URL,")
  (browser-cmdline-expl-line-2 " und Nach-Text, ohne zusätzliche Leerzeichen dazwischen.")
  (install? "Installieren?")  ;; if a .plt file is found (title of dialog)
- (you-have-selected-an-installable-package "Sie haben eine installierbares Paket angewählt.")
+ (you-have-selected-an-installable-package "Sie haben ein installierbares Paket angewählt.")
  (do-you-want-to-install-it? "Wollen Sie es installieren?")
  (paren-file-size "(Die Datei hat ~a Bytes)")
  (download-and-install "Herunterladen && installieren") ;; button label
@@ -387,7 +418,10 @@
  
  ;;; save file in particular format prompting.
  (save-as-plain-text "Diese Datei als Text speichern?")
+ (save-as-binary-format "Diese Datei in ein DrRacket-spezifisches Format konvertieren, um die Nicht-Text-Elemente zu erhalten??")
  (save-in-drs-format "Diese Datei im DrRacket-Format (kein Text) speichern?")
+ (keep-format "Behalten (Datenverlust möglich)")
+ (convert-format "Konvertieren (empfohlen)")
  (yes "Ja")
  (no "Nein")
  
@@ -420,8 +454,8 @@
  (fixup-open-brackets "Öffnende eckige Klammern automatisch anpassen")
  (fixup-close-parens "Schließende Klammern automatisch anpassen")
  (flash-paren-match "Passende Klammer anblinken")
- (auto-save-files "Dateien automatisch abspeichern")
- (backup-files "Backup-Dateien")
+ (backup-unsaved-files "Backups für nicht gespeicherte Dateien anfertigen")
+ (first-change-files "Backup bei erster Änderung anfertigen")
  (map-delete-to-backspace "Entf löscht rückwärts")
  (verify-exit "Bei Verlassen nachfragen")
  (ask-before-changing-format "Vor Formatänderung beim Speichern nachfragen")
@@ -446,6 +480,11 @@
 
  (online-coloring-active "Syntax interaktiv einfärben")
  (open-files-in-tabs "Dateien in separaten Tabs öffnen (nicht separaten Fenstern)")
+ (restore-open-files-from-previous-session? "Offene Dateien aus der vorigen Sitzung wiederherstellen?")
+ (startup-open-files "Dateien beim Start")
+ (restore-open-files-from-previous-session "Offene Dateien aus der vorigen Sitzung")
+ (ask-me-each-time "Jedes Mal nachfragen")
+ (open-a-blank-window "Leeres Fenster öffnen")
  (show-interactions-on-execute "Interaktionen beim Programmstart automatisch öffnen")
  (switch-to-module-language-automatically "Automatisch in die `module'-Sprache wechseln, wenn ein Modul geöffnet wird")
  (interactions-beside-definitions "Interaktionen neben den Definitionen anzeigen") ;; in preferences, below the checkbox one line above this one
@@ -454,6 +493,8 @@
  (hide-line-numbers/menu "Zeilen&nummern ausblenden")
 
  (show-line-numbers-in-definitions "Alle Zeilennummern in Definitionen einblenden") ;; shows up in the popup menu item in the bottom of the drracket window; controls the line numbers on each line in the definitions; used in a checkable menu item
+ (show-indent-guides/menu "Einrückungs-Hilfe einblenden")
+ (hide-indent-guides/menu "Einrückungs-Hilfe ausblenden")
  (reflow-paragraph-maximum-width "Maximalbreite beim Umbruch von Absätzen")
  (maximum-char-width-guide-pref-check-box "Richtschnur für maximale Zeichenbreite")
  (hide-column-width-guide "Richtschnur für Spaltenbreite für Dateien mit ~a Spalten einblenden")
@@ -499,7 +540,7 @@
  (set-font "Schriftart setzen…")
  (font-smoothing-label  "Weiche Kanten bei Schrift")
  (font-smoothing-none "Nicht")
- (font-smoothing-some "Bißchen")
+ (font-smoothing-some "Bisschen")
  (font-smoothing-all "Total")
  (font-smoothing-default "System-Einstellung verwenden")
  (font-weight-label "Schriftstärke")
@@ -619,6 +660,7 @@
  (file-dne "Die Datei existiert nicht.")
  (empty-filename "Der Dateiname muss Buchstaben enthalten.")
  (that-is-dir-name "Dieser Name gehört zu einem Verzeichnis.")
+ (use-platform-specific-file-dialogs "Plattformspezifischen Datei-Auswahl-Dialoge benutzen") ;; a preferences option
  
  ;;; raw menu names -- these must match the 
  ;;; versions below, once the &s have been stripped.
@@ -684,17 +726,17 @@
  (redo-info "Letzte Rückgängig-Operation rückgängig machen")
  (redo-menu-item "&Nochmal")
 
- (cut-info "Verschiebe die Selektion ins Clipboard, um sie später wieder einfügen zu können")
+ (cut-info "Selektion ins Clipboard verschieben, um sie später wieder einfügen zu können")
  (cut-menu-item "&Ausschneiden")
 
- (copy-info "Kopiere die Selektion ins Clipboard, um sie später wieder einfügen zu könne")
+ (copy-info "Selektion ins Clipboard kopieren, um sie später wieder einfügen zu können")
  (copy-menu-item "&Kopieren")
 
- (paste-info "Ersetze die aktuelle Selektion durch die zuletzt kopierte oder ausgeschnittene Selektion")
+ (paste-info "Aktuelle Selektion ersetzen durch die zuletzt kopierte oder ausgeschnittene Selektion")
  (paste-menu-item "&Einfügen")
  (paste-and-indent-menu-item "Einfügen und Einrücken")
 
- (clear-info "Lösche die Selektion, ohne das Clipboard dabei zu ändern oder etwas einzufügen")
+ (clear-info "Selektion löschen, ohne das Clipboard dabei zu ändern oder etwas einzufügen")
  (clear-menu-item-windows "&Löschen")
 
  (select-all-info "Gesamtes Dokument selektieren")
@@ -813,26 +855,55 @@
  ;;; autosaving
  (error-autosaving "Fehler beim automatischen Speichern von „~a“.") ;; ~a will be a filename
  (autosaving-turned-off "Automatisches Speichern abgeschaltet\nbis die Datei wieder gespeichert wird.")
- (recover-autosave-files-frame-title "Automatisch gespeicherte Dateien zurückholen")
+ (recover-autosave-files-frame-title "Dateien zurückholen")
  (autosave-details "Details")
  (autosave-recover "Zurückholen")
  (autosave-unknown-filename "<<unbekannt>>")
-  
+
+   ;; the ~a is replaced with a path
+  (autoload-file-changed-on-disk/with-name
+   "Die Datei:\n  ~a\nwurde auf der Platte geändert. Wollen Sie"
+   " den Puffer-Inhalt überschreiben, so dass er zur Datei auf der Platte passt?")
+  ;; One file per line is appended to the end of this message
+  (autoload-files-changed-on-disk/with-name
+   "Manche Dateien wurden auf der Platte geändert. Wollen Sie deren Puffer-Inhalte"
+   " überschreiben, so dass sie zu den Dateien auf der Platte passen?\n\nGeänderte Dateien:")
+  ;; the ~a is replaced with a path
+  (autoload-file-changed-on-disk-editor-dirty/with-name
+   "Die Datei:\n  ~a\nwurde auf der Platte geändert und ist editiert worden."
+   " Wollen Sie den Puffer-Inhalt überschreiben, so dass er zur Datei auf der Platte passt?")
+  ;; One file per line is appended to the end of this message
+  (autoload-files-changed-on-disk-editor-dirty/with-name
+   "Manche Dateien wurden auf der Platte geändert und sind editiert worden. Wollen Sie deren Puffer-Inhalte"
+   " überschreiben, so dass sie zu den Dateien auf der Platte passen?\n\nGeänderte Dateien:")
+  ;; One file per line is appended to the end of this message
+  (autoload-files-changed-on-disk-editor-dirty&clean/with-name
+   "Manche Dateien wurden auf der Platte geändert und sind editiert worden. Wollen Sie deren Puffer-Inhalte"
+   " überschreiben, so dass sie zu den Dateien auf der Platte passen?\n\nGeänderte Dateien (◇ bedeutet, dass die Datei editiert wurde):")
+  ;; a specialized version of dont-ask-again-always-current
+  (dont-ask-again-always-current/clean-buffer
+   "Nicht noch einmal fragen bei Dateien ohne ungespeicherte Editierungen (immer diese Auswahl verwendenden)")
+
+  (autoload-automatically-reload "Geänderte Dateien automatisch neu laden")
+  (autoload-when-the-editor-isnt-dirty "Wenn der Editor nicht geändert wurde")
+  (autoload-never-revert "Niemals")
+  (autoload-ask-about-reverting "Jedesmal fragen")
+
   ;; these are labels in a dialog that drscheme displays
   ;; if you have leftover autosave files. to see the dialog,
   ;; start up drscheme and modify (but don't save) a file
   ;; (also, do this with an unsaved file). Wait for the autosave
   ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
-  (autosave-autosave-label: "Automatisch gespeicherte Datei:")
+  (autosave-autosave-label: "Backup-Datei:")
   (autosave-original-label: "Ursprüngliche Datei:")
-  (autosave-autosave-label "Automatisch gespeicherte Datei")
+  (autosave-autosave-label "Backup-Datei")
   (autosave-original-label "Ursprüngliche Datei")
-  (autosave-compare-files "Automatisch gespeicherte Dateien vergleichen")
+  (autosave-compare-files "Backup-Dateien vergleichen")
 
-  (autosave-show-autosave "Automatisch gespeicherte Datei") ;; title of a window showing the autosave file
+  (autosave-show-autosave "Backup-Datei") ;; title of a window showing the autosave file
 
-  (autosave-explanation "DrRacket hat automatisch gespeicherte Dateien gefunden, die nicht regulär gespeicherten Inhalt enthalten könnten.")
+  (autosave-explanation "DrRacket hat Backup-Dateien gefunden, die nicht regulär gespeicherten Inhalt enthalten könnten.")
 
   (autosave-recovered! "Zurückgeholt!") ;; status of an autosave file
   (autosave-deleted "Gelöscht")       ;; status of an autosave file
@@ -843,7 +914,7 @@
   (autosave-done "Fertig")
   
   ;; appears in the file dialog
-  (autosave-restore-to-where? "Bestimmen Sie, wo die automatisch gespeicherte Datei hin zurückgeholt werden soll")
+  (autosave-restore-to-where? "Wohin soll die Backup-Datei hin zurückgeholt werden?")
   
   
  ;;; file modified warning
@@ -852,7 +923,23 @@
  (overwrite-file-button-label "Überschreiben")
  
  (definitions-modified 
-  "Die Definitionen wurden auf der Platte geändert; bitte speichern sie die Definitionen oder holen Sie diese von der Platte zurück.")
+   "Die Definitionen wurden auf der Platte geändert; bitte speichern Sie die Definitionen oder holen Sie diese von der Platte zurück.")
+ 
+ ;; for a dialog that appears when Run is clicked and there are unsaved files
+ ; the ~a is filled with a filename (same string that appears in a tab)
+ (one-file-not-saved-do-the-save?
+  "Die Datei “~a” ist nicht gespeichert; vor Start speichern?")
+ ; the string is suffixed with a list of filenames (which are separated by newlines)
+ (many-files-not-saved-do-the-save?
+  "Manche andere Dateien sind nicht gespeichert; vor Start speichern?\n\nDateien:")
+ ; button label to go ahead with saving
+ (save-all-files "Alle Dateien speichern")
+ ; check box in the dialog and also used in the preferences dialog
+ (save-after-switching-tabs "Dateien beim Tab- oder Fenster-Wechsel speichern")
+
+ (dont-ask-about-saving-after-switching-tabs
+  "Nicht fragen und nicht speichern, wenn Start gedrückt wurde bei nicht gespeicherten Tabs oder Fenstern")
+
  (drscheme-internal-error "Interner Fehler in DrRacket")
  
  ;;; tools
@@ -873,7 +960,10 @@
  (tool-config-changes "Änderungen an der Tool-Konfiguration werden erst beim nächsten Start von DrRacket aktiv.")
  (installed-tools "Installierte Tools")
  (tool-prefs-panel-tool:-label "Tool: ")
+ (tool-prefs-panel-title "Tools")
  (load-tool-when-drracket-starts? "Tool laden wenn DrRacket startet?")
+ (load-tool-load "Tool laden")
+ (load-tool-skip "Tool überspringen")
  (unnamed-tool "Tool ohne Namen ~a")
  (note-that-tool-loaded " (geladen)")
  (note-that-tool-was-skipped " (übersprungen)")
@@ -909,7 +999,7 @@
  ;;; file menu
  (save-definitions-as "Definitionen speichern unter…")
  (save-definitions "Definitionen speichern")
- (print-definitions "Definition drucken…")
+ (print-definitions "Definitionen drucken…")
  (about-drscheme "Über DrRacket")
  (save-other "Speichern unter")
  (save-definitions-as-text "Definitionen als Text speichern…")
@@ -919,6 +1009,7 @@
  (print-interactions "Interaktionen drucken…")
  (new-tab "Neuer Tab")
  (close-tab "Tab schließen")
+ (reopen-closed-tab "Geschlossenen Tab wieder öffnen")
 
  (close-tab-amp "Tab &schließen") ;; like close-tab, but with an ampersand on the same letter as the one in close-menu-item
  
@@ -959,6 +1050,12 @@
  (reindent-menu-item-label "&Einrücken")
  (reindent-all-menu-item-label "&Alles einrücken")
  (semicolon-comment-out-menu-item-label "Mit &Semikolon auskommentieren")
+ ;; the ~a is filled with the characters that'll be used to comment out a line,
+ ;; inserted at the start of the line
+ (comment-out-with-line-start "&Auskommentieren mit “~a”")
+ ;; the two '~a's are filled with the characters that'll be used to comment out
+ ;; the start and end of a region
+ (comment-out-with-region "&Auskommentieren mit “~a” und “~a”")
  (box-comment-out-menu-item-label "Mit &Kommentar-Kasten auskommentieren")
  (uncomment-menu-item-label "Einkommentieren")
 
@@ -995,12 +1092,12 @@
  (executable-base "Hauptteil")
  (filename "Dateiname: ")
  (create "Erzeugen")
- (files-for-icons-etc "Dateien für für Bildchen etc.")
+ (files-for-icons-etc "Dateien für Bildchen etc.")
  (please-specify-a-filename "Bitte einen Dateinamen angeben.")
  (~a-must-end-with-~a
   "Der Dateiname auf „.~a“\n\n  ~a\n\nist nicht zulässig. Der Dateiname muss auf „.~a“ enden.")
  (macosx-executables-must-end-with-app
-  "Der Dateiname auf „.~a“\n\n  ~a\n\nist nicht zulässig. Unter Mac OS muss der Dateiname auf „.app“ enden.")
+  "Der Dateiname auf „.~a“\n\n  ~a\n\nist nicht zulässig. Unter macOS muss der Dateiname auf „.app“ enden.")
  (warning-directory-will-be-replaced
   "WARNUNG: Das Verzeichnis:\n\n  ~a\n\nsoll überschrieben werden. Weitermachen?")
  
@@ -1016,7 +1113,8 @@
   "Servlet lassen sich nicht aus einem Programm in der Sprache „~a“ erzeugen.")
   
  ;;; buttons
- (execute-button-label "Start") 
+ (execute-button-label "Start")
+ (execute-button-configure-label "Start konfigurieren")
  (save-button-label "Speichern")
  (break-button-label "Stop")
  (break-button-kill-label "Abbrechen")
@@ -1129,17 +1227,11 @@
  (please-select-a-language "Sprache auswählen")
  
  ;;; languages
- (beginning-student "Anfänger")
  (beginning-one-line-summary "define, cond, Strukturen, Konstanten und Primitiva")
- (beginning-student/abbrev "Anfänger mit Listen-Abkürzungen")
  (beginning/abbrev-one-line-summary "Anfänger, wobei Listen mit „list“ in der REPL ausgedruckt werden")
- (intermediate-student "Zwischenstufe")
  (intermediate-one-line-summary "Anfänger plus lexikalische Bindung")
- (intermediate-student/lambda "Zwischenstufe mit lambda")
  (intermediate/lambda-one-line-summary "Zwischenstufe plus Prozeduren höherer Ordnung")
- (advanced-student "Fortgeschritten")
  (advanced-one-line-summary "Zwischenstufe plus lambda und Mutation")
- (how-to-design-programs "How to Design Programs") ;; should agree with MIT Press on this one…
  (pretty-big-scheme "Kombo")
  (pretty-big-scheme-one-line-summary "Macht Syntax and Prozeduren der HtDP-Sprachen verfügbar")
  (r5rs-language-name "R5RS")
@@ -1158,6 +1250,9 @@
  (module-language-one-line-summary "Die #lang-Zeile spezifiziert die tatsächliche Sprache.")
   
  (module-language-auto-text "Automatisch Zeile mit #lang") ;; shows up in the details section of the module language
+ (module-language-auto-text-most-recent "Zuletzt benutzte #lang-Zeile")
+  ; to the right of this string is a text entry field whose content is the #lang line that'll be used.
+ (module-language-auto-text-always-same "Immer die gleiche #lang-Zeile benutzen:")
  ;; the next four string constants show up in the REPL in DrRacket in the "Racket Language",
  ;; which is also the "Determine language from source" language. They are put right after the name
  ;; of the language from the "#lang" line at the beginning of the source file
@@ -1259,7 +1354,7 @@
  
  ;; test coverage
  (test-coverage-clear? "Änderungen im Definitionsfenster machen die Information über Testabdeckung ungültig. Weitermachen?")
- (test-coverage-clear-and-do-not-ask-again "Ja, und nicht nicht wieder fragen")
+ (test-coverage-clear-and-do-not-ask-again "Ja, und nicht noch einmal fragen")
  (test-coverage-ask? "Frage nach dem Löschen der Testabdeckungs-Information")
  (test-coverage-on "Durch Tests abgedeckt")
  (test-coverage-off "Durch Tests nicht abgedeckt")
@@ -1292,6 +1387,7 @@
   (last-stack-frame "letzten Stack-Frame anzeigen")
   (last-stack-frames "die letzten ~a Stack-Frames anzeigen")
   (next-stack-frames "die nächsten ~a Stack-Frames anzeigen")
+  (more-stack-frames "mehr Stack-Frames zeigen")
  
  ;;; welcoming message in repl
  (language "Sprache")
@@ -1299,6 +1395,10 @@
  (teachpack "Teachpack")
  (welcome-to "Willkommen bei")
  (version "Version")
+  ;; The following is shown on 2nd line of welcome message in repl.
+ ;; It is concatenated at end of: "language": LANGUAGE "; memory limit:" LIMIT
+ ;; therefore you get to decide punctuation for your language here
+ (memory-limit "; Speicherlimit:")
  
  ;;; kill evaluation dialog
  (kill-evaluation? "Auswertung abbrechen?")
@@ -1353,37 +1453,17 @@
  (module-browser-name-medium "Mittel")
  (module-browser-name-long "Lang")
  (module-browser-name-very-long "Lang mit Phasen")  ;; like 'Long' but shows the phases where this file is loaded
- (module-browser-open-all "Alle hier angezeigten Datein öffnen")
+ (module-browser-open-all "Alle hier angezeigten Dateien öffnen")
+ (module-browser-main-collects "Haupt-Collections")
+ (module-browser-unknown-pkg "Unbekanntes Paket")
+ (module-browser-visible-pkgs "Sichtbare Pakete")
+ (module-browser-visible-submodules "Sichtbare Submodule")
+ (module-browser-top-level-module "Top-Level-Module") ; in the "which submodules?" filter; this is used for when there are no submodules
+
 
  (happy-birthday-matthias "Happy Birthday, Matthias!")
  (happy-birthday-matthew "Happy Birthday, Matthew!")
  (happy-birthday-shriram "Happy Birthday, Shriram!")
-
- (mrflow-using-default-language-title "Standard-Sprache verwendet")
- (mrflow-using-default-language "Die momentan verwendete Sprache hat keine Typ-Tabelle für ihre Primitiva.  Verwende stattdessen R5RS-Scheme.")
- (mrflow-button-title "Analyse")
- ;(mrflow-unknown-style-delta-error-title "Unknown Box Style Delta")
- ;(mrflow-unknown-style-delta-error "Unknown box style delta: ~a")
- (mrflow-popup-menu-show-type "Typ einblenden")
- (mrflow-popup-menu-hide-type "Typ ausblenden")
- (mrflow-popup-menu-show-errors "Fehler einblenden")
- (mrflow-popup-menu-hide-errors "Fehler ausblenden")
- ;(mrflow-read-exception-title "Read Exception")
- ;(mrflow-read-exception "Read exception: ~a")
- ;(mrflow-syntax-exception-title "Syntax Exception")
- ;(mrflow-syntax-exception "Syntax exception: ~a")
- ;(mrflow-unknown-exception-title "Unknown Exception")
- ;(mrflow-unknown-exception "Unknown exception: ~a")
- ;(mrflow-language-primitives-error-title "Language Primitives Error")
- ;(mrflow-language-primitives-error "Wrong filename for language primitives types table: ~a")
-  
- (snips-and-arrows-popup-menu-tack-all-arrows "Alle Pfeile befestigen")
- (snips-and-arrows-popup-menu-untack-all-arrows "Alle Pfeile lösen")
- (snips-and-arrows-user-action-disallowed-title "Änderungen durch den Benutzer momentan nicht möglich")
- (snips-and-arrows-user-action-disallowed "In Editoren, die von Tools erzeugte Snips enthalten, sind Änderungen durch den Benutzer nicht möglich. Blenden Sie alle Snips aus, bevor Sie den Inhalt des Editors ändern.")
- ;(snips-and-arrows-changing-terms-warning-title "Changing terms will be undoable")
- ;(snips-and-arrows-changing-terms-warning "Changing terms in an editor containing snips cannot be undone.  You can either cancel this action, remove the snips, and try the change again, or you can continue with the change, in which case the change will not be undoable (all others changes made before and afterward will still be undoable though).")
- (snips-and-arrows-hide-all-snips-in-editor "Alle Snips im Editor ausblenden")
 
  (xml-tool-insert-xml-box "XML-Kasten einfügen")
  (xml-tool-insert-scheme-box "Racket-Kasten einfügen")
@@ -1432,8 +1512,7 @@
  (stepper-no-later-step "Keine weiteren Schritte.")
   
  (stepper-no-selected-step "Keine Schritte im markierten Bereich. Vielleicht ist es auskommentiert?")
-  
- (stepper-no-last-step "Der letzte Schritt ist nocht nicht verfügbar.")
+ (stepper-no-last-step "Der letzte Schritt ist noch nicht verfügbar.")
 
  (debug-tool-button-name "Debugger")
 
@@ -1517,7 +1596,7 @@
   (profj-language-config-support-test-language "Spracherweiterung „test“ unterstützen?")
   (profj-language-config-testing-check "Check-Ausdruck zulassen?") ; check should not be translated
   (profj-language-config-classpath "Klassenpfad")
-  (profj-language-config-choose-classpath-directory "Verzeichnis für den Klassenpfad auswählren")
+  (profj-language-config-choose-classpath-directory "Verzeichnis für den Klassenpfad auswählen")
   (profj-language-config-classpath-display "Aktuellen Wert anzeigen") ; Button label to print the current classpath
 
   (profj-test-name-close-to-example "Der Name von Klasse ~a enhält etwas, das so ähnlich wie „Example“ aussieht.")
@@ -1584,10 +1663,14 @@
 
   (test-engine-check-encountered-error
    "check-expect bekam den folgenden Fehler statt des erwarteten Werts, ~F. ~n   :: ~a")
+  (test-engine-check-error-cause
+   "verursacht durch Ausdruck")
   (test-engine-actual-value-differs-error
    "Der tatsächliche Wert ~F ist nicht der erwartete Wert ~F.")
   (test-engine-actual-value-not-within-error
    "Der tatsächliche Wert ~F ist nicht innerhalb von ~v des erwarteten Werts ~F.")
+  (test-engine-actual-value-not-within-error/alt-order
+   "Der tatsächliche Wert ~F ist nicht nah genug am erwarteten Wert ~F; erwartet innerhalb von ~v.")
   (test-engine-encountered-error-error
    "check-error bekam den folgenden Fehler anstatt des erwarteten ~a~n   :: ~a")
   (test-engine-expected-error-error
@@ -1607,9 +1690,9 @@
   ; section header
   (test-engine-signature-violations "Signaturverletzungen:")
 
-  ; part of one phrase "signature <at line …> to blame: procedure <at line …>
+  ; part of one phrase "signature <at line …> to blame: function <at line …>
   (test-engine-signature "Signatur")
-  (test-engine-to-blame "verantwortlich: Prozedur")
+  (test-engine-to-blame "verantwortlich: Funktion")
 
   (test-engine-no-signature-violations "Keine Signaturverletzungen.")
   (test-engine-1-signature-violation "1 Signaturverletzung.")
@@ -1676,7 +1759,7 @@
 
   ;; GUI Tool
   (gui-tool-heading "GUI-Werkzeug")
-  (gui-tool-before-clicking-message "Befor Sie auf ein Tool-Icon klicken, benutzen Sie „GUI einfügen“ vom „Spezial“-Menü, um ein Wurzel-GUI-Element einzufügen, oder selektieren Sie eine schon vorher eingefügte GUI.")
+  (gui-tool-before-clicking-message "Bevor Sie auf ein Tool-Icon klicken, benutzen Sie „GUI einfügen“ vom „Spezial“-Menü, um ein Wurzel-GUI-Element einzufügen, oder selektieren Sie eine schon vorher eingefügte GUI.")
   (gui-tool-show-gui-toolbar "GUI-Toolbar einblenden")
   (gui-tool-hide-gui-toolbar "GUI-Toolbar ausblenden")
   (gui-tool-insert-gui "GUI einfügen")
@@ -1711,7 +1794,7 @@
  (ask-about-normalizing-strings "Bei Normalisierung nachfragen")
  
   (always-use-platform-specific-linefeed-convention "Immer die plattformspezifische Linefeed-Konvention verwenden")
-
+  (disable-caret-blinking "Cursor-Blinken abschalten")
 
   ;; optimization coach
   (hide-optimization-coach "Optimierungs-Coach ausblenden")
@@ -1735,6 +1818,8 @@
   ; puts the path to the spell program in the ~a and then the error message
   ; is put following this string (with a blank line in between)
   (spell-program-wrote-to-stderr-on-startup "Der Rechtschreibchecker (~a) hat eine Fehlermeldung ausgegeben:")
+  (spell-program-did-not-respond-after-some-seconds
+   "Der Rechtschreibchecker (~a) hast sich nach ~a Sekunden immer noch nicht gemeldet")
 
   (spell-skip-to-next-misspelled-word "Zum nächsten falsch geschriebenen Wort") ;; menu item
   (spell-suggest-corrections "Rechtschreibkorrekturen vorschlagen…") ;; menu item
@@ -1756,6 +1841,8 @@
   (install-pkg-use "Benutzen") ; as opposed to "Infer", label for text box
   (install-pkg-type-label "Typ Paket-Quelle")
   (install-pkg-file "Datei")
+  (install-pkg-link "Link")
+  (install-pkg-static-link "Statischer link")
   (install-pkg-dir "Verzeichnis")
   (install-pkg-dir-url "Verzeichnis woanders")
   (install-pkg-file-url "Datei woanders")
@@ -1783,6 +1870,7 @@
   (install-pkg-default "Standard")
   (install-pkg-scope-label "Paket-Einzugsbereich")
   (install-pkg-default-scope-label "Standard-Paket-Einzugsbereich") ; for picking the scope to be default
+  (install-pkg-default-scope-changed "Standard-Paket-Einzugsbereich erfolgeich auf ~a geändert") ; confirming message after change
   (install-pkg-installation "Bestimmte Racket-Installation")
   (install-pkg-user "Bestimmter Benutzer und Racket-Version")
   (install-pkg-set-as-default "Als Standard setzen")
@@ -1792,6 +1880,17 @@
   (install-pkg-update-package-list "Paket-Liste aktualisieren")
   (install-pkg-stop-update "Aktualisierung anhalten")
   (install-pkg-filter "Filter")
+  (install-pkg-match "~a/~a passen")
+  (install-pkg-package "Paket")
+  (install-pkg-author "Autor")
+  (install-pkg-description "Beschreibung")
+  (install-pkg-tags "Tags")
+  (install-pkg-checksum "Prüfsumme")
+  (install-pkg-source "Quelle")
+  (install-pkg-catalog "Katalog")
+  (install-pkg-scope "Einzugsbereich")
+  (install-pkg-name "Name")
+
   (install-pkg-update-catalogs? "Datenbank aktualisieren um mit dem konfigurierten Satz Kataloge übereinzustimmen?")
   (install-pkg-currently-configured-are "Die aktuell konfigurierten Kataloge sind")
   (install-pkg-database-recorded-are "Die Kataloge in der Datenbank sind")
@@ -1807,23 +1906,38 @@
   (install-pkg-abort-promote "Beförderung abbrechen")
   (install-pkg-abort-migrate "Migration abbrechen")
   (install-pkg-abort-setup "Konfiguration abbrechen")
-  (install-pkg-abort-setup "Abort Setup")
+  (install-pkg-abort-setup "Setup abbrechen")
   (install-pkg-abort-generic-action "Aktion abbrechen")
   (install-pkg-close-terminal-output "Anzeige schließen")
   (install-pkg-show-all-options "Alle Optionen anzeigen")
   (install-pkg-migrate-available-installations "Verfügbare Installationen")
+    ;; all ~a will be substituted with the different single characters
+  ;; conveying the state, by default these are ✓*!=@
+  (install-pkg-legend "~a: installiert ~a: auto-installiert ~a: nicht Standard-Einzugsbereich ~a: installiert als Link; ~a: installiert von URL")
   (pkg-manager-menu-item "Paket-Manager…")
+  (install-pkg-title "Paket-Manager")
   ;; where ~a gets an installation name:
   (install-pkg-packages-for "Pakete für ~a")
   (install-pkg-really-remove-installation "Sind Sie sicher, dass Sie alle installierten Pakete und Informationen für ~a löschen wollen?")
 
+  (install-pkg-installer "Paket-Installation")
+  (install-pkg-copy "Nachricht kopieren")
+  (install-pkg-installation "Installation")
+  (install-pkg-user "Benutzer")
+  (install-pkg-any "alles") ;; any file type
+  (install-pkg-bad "nicht unterstützt") ;; bad (not supported) file type
+  (install-pkg-catalogs "Paket-Katalog")
+  (install-pkg-updating "Paket-Liste wird aktualisiert…")
+  (install-pkg-updating-from "Aktualisierung von ~a…")
+  (install-pkg-details-from "Details für ~a werden von ~a geladen…")
+  
   (install-pkg-abort-set-scope "Änderung des Einzugsbereich widerrufen")
 
-  (install-pkg-dependencies-fail "Fehlschlag: Installation/Aktualisierung widerrufen, falls Abhänigkeiten fehlen")
+  (install-pkg-dependencies-fail "Fehlschlag: Installation/Aktualisierung widerrufen, falls Abhängigkeiten fehlen")
   (install-pkg-dependencies-force "Trotzdem: Installieren trotz fehlender Abhängigkeiten")
-  (install-pkg-dependencies-search-ask "Fragen: bei jeder fehlenden Abhänigkeit fragen (nicht unterstützt in GUI)")
-  (install-pkg-dependencies-search-auto "Auto: fehlende Abhänigkeiten automatisch installieren")
-  (install-pkg-dependencies-search-auto+update "Auto + Aktualisieren: Abhänigkeiten aktualisieren wann immer möglich")
+  (install-pkg-dependencies-search-ask "Fragen: bei jeder fehlenden Abhängigkeit fragen (nicht unterstützt in GUI)")
+  (install-pkg-dependencies-search-auto "Auto: fehlende Abhängigkeiten automatisch installieren")
+  (install-pkg-dependencies-search-auto+update "Auto + Aktualisieren: Abhängigkeiten aktualisieren wann immer möglich")
 
   (install-pkg-dependencies-mode "Modus Abhängigkeiten")
 
@@ -1836,7 +1950,7 @@
   (install-pkg-add-package-catalog "Paket-Katalog hinzufügen")
 
   (install-pkg-not-rentrant "Installation und Aktualisierung können nicht gleichzeitig laufen."
-                            " Brechen Sie entweder den laufenden Prozess ab oder warten, bis er fertig ist.")
+                            " Brechen Sie entweder den laufenden Prozess ab oder warten Sie, bis er fertig ist.")
 
   ;; open a file via a collection path (new "Open" menu item in DrRacket)
   (open-require-path "Require-Pfad öffnen…")
@@ -1849,18 +1963,89 @@
   ;  (bracketed by some newlines to separate it out)
   ; second ~a is filled with /etc/paths.d/racket (or some other path like it in the future)
   ; third ~a is filled with the path to the bin directory of the current drracket
-  (adding-racket/bin-to-path-failed 
-   "Versuch fehlgeschlagen, Racket-Unterstützung zur Kommandozeile hinzufügen.~aGenauer:"
+  (adding-racket/bin-to-path-failed
+   "Versuch fehlgeschlagen, Racket-Unterstützung zur Kommandozeile hinzuzufügen.~aGenauer:"
    " konnte „~a“ mit Inhalt „~a“ nicht erzeugen.")
   ; first and third ~a are filled with /etc/paths.d/racket (or some other path like it in the future)
   ; and the second one is filled with the path to the bin directory that was put into that file.
   (added-racket/bin-to-path
-   "Sie sollten nun Racket mit all seinen Programme von der"
+   "Sie sollten nun Racket mit all seinen Programmen von der"
    " Kommandozeile benutzen können.\n\nDer"
    " Standardpfad in PATH wurde für alle Benutzer konfiguriert, indem die Datei"
    " ~a hinzugefügt wurde und auf ~a zeigt. Sie können dies rückgängig machen, indem"
    " Sie ~a löschen.")
+  (adding-racket/bin-no-paths.d
+   "Es war nicht möglich, racket zum Pfad hinzuzufügen, weil /etc/paths.d nicht"
+   " existieren.\n\nEs könnte sein, dass folgender Befehl um Terminal funktioniert, um das"
+   " Verzeichnis zu erzeugen:\n"
+   "    sudo mkdir /etc/paths.d\nDann nochmal versuchen.")
+  (added-racket/bin-to-path/windows
+   "Es sollte jetzt möglich sein, racket und die anderen Tools von der"
+   " Kommandozeile aus zu benutzen.\n\nDer"
+   " Standard-%PATH% wurde konfiguriert, indem der Registry-Eintrag"
+   " HKEY_CURRENT_USER\\Environment\\Path"
+   " auf ~a und ~a zeigt.")
+  (didnt-add-racket/bin-to-path/unix
+   "DrRacket kann den Pfad unter Unix nicht verändern, aber falls Sie wissen,"
+   " wie Sie PATH selbst ändern können,"
+   " fügen Sie\n\n  ~a\n\n"
+   " hinzu.")
   (add-racket/bin-to-path "Kommandozeile für Racket konfigurieren…") ;; menu item label
+
+    ;; quickscript messages
+  (qs-my-first-script "Mein erstes Skript")
+  (qs-script-library "Skript-Library")
+  (qs-directories "Verzeichnisse")
+  (qs-add "&Hinzufügen")
+  (qs-remove "&Entfernen")
+  (qs-scripts "Skripte")
+  (qs-disable "&Aktivieren")
+  (qs-enable "&Deaktivieren&")
+  (qs-shadow "&Shadow")
+  (qs-recompiling  "Quickscripts recompilieren…")
+  (qs-recompiling-wait "Recompiliere Quickscripts, bitte warten…")
+  (qs-scripts "&Skripte")
+  (qs-manage "&Verwalten")
+  (qs-compilation-error "Quickscript: Fehler beim Compilieren")
+  (qs-caught-exception  "Quickscript hat Exception abgefangen")
+  (qs-recompiling-library "Library recompilieren")
+  (qs-my-script "Mein fantastisches Skript")
+  (qs-script-help "Der Hilfetext des Skripts.")
+  (qs-compiling-scripts "Compiliere Skripte")
+  ;; ~a is a script file including its path
+  (qs-compiling "Compiliere ~a")
+  ;; ~a is a script file including its path
+  (qs-file-not-found "Datei nicht gefunden: ~a")
+  (qs-invalid-hook "Unzulässiger Hook-Name.\n Zulässige Namen:\n")
+  ;; the  three `qs-error-detail-*` string constants are put into the same message
+  (qs-error-detail-overview "~a Fehler wurden abgefangen.") ; the ~a is number of errors
+  (qs-error-detail-summary "Zusammenfassung:")
+  (qs-error-detail-details "Details:")
+  (qs-script-name "Skript-Name")
+  (qs-script-name-enter "Namen für das neue Skript eingeben:")
+  (qs-open-script "Skript öffnen")
+  ;; ~a is the name of a script file
+  (qs-error-run "Run: Fehler in Skript-Datei ~s:\n" )
+  (qs-output "Ausgabve") ;; not repl-out-color where it means color of the output
+  (qs-load-script-menu "Lade Skripte-Menü")
+  (qs-loading-file "Lade Datei ")
+  ;; ~a is the name of a skript file
+  (qs-script-file "Skript-Dateei ~s:")
+  (qs-build-menu "Baue Skript-Menü")
+  ;; ~a is number of rebuilds
+  (qs-menu-rebuild "Skript-Menü-Aktualisierung #~a...")
+  (qs-delete-menu "Lösche Menüpunkte")
+  ;; ~a is a a script entry in menu
+  (qs-delete-menu-item "Lösche Menüpunkt ~a... ")
+  (qs-new-script "&Neues Skript…")
+  (qs-open-script "&Skript öffnen…")
+  (qs-disable-scripts "&Skripte deaktivieren…")
+  (qs-library "&Library…")
+  (qs-reload-menu "&Menü neu laden")
+  (qs-compile-scripts "Skripte &compilieren")
+  (qs-stop-scripts "Persistente Skripte &anhalten")
+  (qs-report-issue "Problem &miteilen")
+  (qs-error-load "Quickscript: Fehler beim Laden von Skript-Properties")
 
   )
 

@@ -10,3 +10,6 @@
 (define pkg-desc "String constants to support internationalization, especially in DrRacket")
 
 (define pkg-authors '(robby))
+
+(define license
+  '(Apache-2.0 OR MIT))

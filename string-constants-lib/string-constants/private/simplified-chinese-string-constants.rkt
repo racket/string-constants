@@ -203,7 +203,7 @@
   (online-expansion-error-margin "在一侧显示")
   ; the label of a preference in the (string-constant online-expansion) section
   (show-arrows-on-mouseover "鼠标悬停时显示绑定及尾位置箭头")
-  (show-blueboxes "显示蓝盒子、箭头和半圆")
+  (show-blueboxes "显示蓝盒子、箭头和半圆") ;; blue boxes should be ``signature'' boxes now
   ;;; info bar at botttom of drscheme frame
   (collect-button-label "垃圾收集")
   (read-only "只读")
@@ -458,8 +458,6 @@
   (fixup-open-brackets "自动调整开中括号")
   (fixup-close-parens "自动调整闭括号")
   (flash-paren-match "高亮显示括号匹配")
-  (auto-save-files "自动保存文件")
-  (backup-files "保存备份文件")
   (map-delete-to-backspace "将delete转换成backspace")
   (verify-exit "退出时确认")
   (ask-before-changing-format "改变保存方式时确认")
@@ -853,7 +851,7 @@
   ;;; autosaving
   (error-autosaving "自动保存\"~a\"时出错。") ;; ~a will be a filename
   (autosaving-turned-off "在文件被存盘之前，自动保存不会进行")
-  (recover-autosave-files-frame-title "恢复自动保存的文件")
+  ;(recover-autosave-files-frame-title "恢复自动保存的文件")
   (autosave-details "详细情况")
   (autosave-recover "恢复")
   (autosave-unknown-filename "《未知》")
@@ -864,15 +862,15 @@
   ;; (also, do this with an unsaved file). Wait for the autosave
   ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
-  (autosave-autosave-label: "自动保存文件：")
+  ;(autosave-autosave-label: "自动保存文件：")
   (autosave-original-label: "原始文件：")
-  (autosave-autosave-label "自动保存文件")
+  ;(autosave-autosave-label "自动保存文件")
   (autosave-original-label "原始文件")
-  (autosave-compare-files "比较自动保存文件")
+  ;(autosave-compare-files "比较自动保存文件")
   
-  (autosave-show-autosave "自动保存文件") ;; title of a window showing the autosave file
+  ;(autosave-show-autosave "自动保存文件") ;; title of a window showing the autosave file
   
-  (autosave-explanation "DrRacket发现了自动保存的文件，其中可能包含你没有保存过的程序")
+  ;(autosave-explanation "DrRacket发现了自动保存的文件，其中可能包含你没有保存过的程序")
   
   (autosave-recovered! "已恢复！") ;; status of an autosave file
   (autosave-deleted "已删除")       ;; status of an autosave file
@@ -883,7 +881,7 @@
   (autosave-done "完成")
   
   ;; appears in the file dialog
-  (autosave-restore-to-where? "请选择自动保存文件的位置")
+  ;(autosave-restore-to-where? "请选择自动保存文件的位置")
   
   
   ;;; file modified warning
@@ -1162,17 +1160,11 @@
   
   
   ;;; languages
-  (beginning-student "初级")
   (beginning-one-line-summary "define、cond、结构体、常量和基本运算")
-  (beginning-student/abbrev "初级+缩写的表")
   (beginning/abbrev-one-line-summary "在初级的基础上，用缩写形式输出表")
-  (intermediate-student "中级")
   (intermediate-one-line-summary "在初级的基础上增加词法作用域")
-  (intermediate-student/lambda "中级+lambda")
   (intermediate/lambda-one-line-summary "在中级的基础上，增加高阶函数")
-  (advanced-student "高级")
   (advanced-one-line-summary "在中级的基础上，增加lambda和赋值")
-  (how-to-design-programs "程序设计方法/How to Design Programs") ;; should agree with MIT Press on this one...
   (pretty-big-scheme "大")
   (pretty-big-scheme-one-line-summary "MzScheme/MrEd加HtDP(程序设计方法)语言")
   (r5rs-lang-name "R5RS")
@@ -1392,32 +1384,6 @@
   (happy-birthday-matthew "生日快乐，马晓！")
   (happy-birthday-shriram "生日快乐，Shriram！")
   
-  (mrflow-using-default-language-title "正在使用默认语言")
-  (mrflow-using-default-language "当前使用的语言并不包含其基本运算的类型表。请改用R5RS Scheme。")
-  (mrflow-button-title "分析")
-  ;(mrflow-unknown-style-delta-error-title "Unknown Box Style Delta")
-  ;(mrflow-unknown-style-delta-error "Unknown box style delta: ~a")
-  (mrflow-popup-menu-show-type "显示类型")
-  (mrflow-popup-menu-hide-type "隐藏类型")
-  (mrflow-popup-menu-show-errors "显示错误")
-  (mrflow-popup-menu-hide-errors "隐藏错误")
-  ;(mrflow-read-exception-title "Read Exception")
-  ;(mrflow-read-exception "Read exception: ~a")
-  ;(mrflow-syntax-exception-title "Syntax Exception")
-  ;(mrflow-syntax-exception "Syntax exception: ~a")
-  ;(mrflow-unknown-exception-title "Unknown Exception")
-  ;(mrflow-unknown-exception "Unknown exception: ~a")
-  ;(mrflow-language-primitives-error-title "Language Primitives Error")
-  ;(mrflow-language-primitives-error "Wrong filename for language primitives types table: ~a")
-  
-  (snips-and-arrows-popup-menu-tack-all-arrows "固定所有箭头")
-  (snips-and-arrows-popup-menu-untack-all-arrows "取消固定所有箭头")
-  (snips-and-arrows-user-action-disallowed-title "当前不允许用户改变")
-  (snips-and-arrows-user-action-disallowed
-   "在编辑器中包含由系统插入的段落，所以不允许用户改变。在修改之前请先隐藏所有这些段落。")
-  ;(snips-and-arrows-changing-terms-warning-title "Changing terms will be undoable")
-  (snips-and-arrows-hide-all-snips-in-editor "在编辑器中隐藏所有段落")
-  
   (xml-tool-insert-xml-box "插入XML框")
   (xml-tool-insert-scheme-box "插入Racket框")
   (xml-tool-insert-scheme-splice-box "插入Racket接合框")
@@ -1617,8 +1583,12 @@
    "check-expect遇到如下错误，而非期望值，~F。~n   :: ~a")
   (test-engine-actual-value-differs-error
    "实际值~F不同与期望值~F。")
-  (test-engine-actual-value-not-within-error
-   "实际值~F不在~v范围内、期望值~F的。")　;; NO way to express this order natively in Chinese!!!
+  ;; need to translate only one of these next two
+  ;; (test-engine-actual-value-not-within-error or
+  ;;  test-engine-actual-value-not-within-error/alt-word-order)
+  ;; if both are present, test-engine-actual-value-not-within-error is used
+  (test-engine-actual-value-not-within-error/alt-order
+   "实际值~F不在期望值~F的~v范围内。")
   (test-engine-encountered-error-error
    "check-error遇到如下error，而非期望的~a~n   :: ~a")
   (test-engine-expected-error-error
@@ -1641,9 +1611,9 @@
   ; section header
   (test-engine-signature-violations "签名违规：")
   
-  ; part of one phrase "signature <at line ...> to blame: procedure <...>
+  ; part of one phrase "signature <at line ...> to blame: function <...>
   (test-engine-signature "签名")
-  (test-engine-to-blame "责任在于：procedure")
+  (test-engine-to-blame "责任在于：function")
   
   (test-engine-no-signature-violations "无签名违规。")
   (test-engine-1-signature-violation "1个签名违规。")
@@ -1808,7 +1778,7 @@
   (install-pkg-setup-long "设置当前安装") ; for menu
   (install-pkg-remove "删除")
   (install-pkg-do-not-remove "不删除")
-  (install-pkg-action-inferred-to-be-update "行动推断为更新")
+  (install-pkg-action-inferred-to-be-update "操作推断为更新")
   (install-pkg-action-inferred-to-be-install "操作推断为安装")
   (install-pkg-default "默认的")
   (install-pkg-scope-label "Package作用域")

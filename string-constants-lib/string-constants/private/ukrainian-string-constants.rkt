@@ -421,8 +421,6 @@ please adhere to these guidelines:
  (fixup-open-brackets "Автокорекція квадратних дужок, які відкриваються")
  (fixup-close-parens "Автокорекція дужок, які закриваються")
  (flash-paren-match "Відображати відповідність дужок")
- (auto-save-files "Автозбереження файлів")
- (backup-files "Резервні копії файлів")
  (map-delete-to-backspace "Призначити Delete на Backspace")
  (verify-exit "Перевіряти завершення")
  (ask-before-changing-format "Запитувати перед зміною формату")
@@ -762,7 +760,7 @@ please adhere to these guidelines:
  ;;; autosaving
  (error-autosaving "Помилка автозбереження \"~a\".") ;; ~a will be a filename
  (autosaving-turned-off "Автозбереження відключене\nпід час запису файлу.")
- (recover-autosave-files-frame-title "Відновлення автозбережених файлів")
+ ;(recover-autosave-files-frame-title "Відновлення автозбережених файлів")
  (autosave-details "Подробиці")
  (autosave-recover "Відновлений")
  (autosave-unknown-filename "<<невідомий>>")
@@ -773,15 +771,15 @@ please adhere to these guidelines:
   ;; (also, do this with an unsaved file). Wait for the autosave
   ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
-  (autosave-autosave-label: "Автозбереження файлу:")
+  ;(autosave-autosave-label: "Автозбереження файлу:")
   (autosave-original-label: "Вихідний файл:")
-  (autosave-autosave-label "Автозбереження файлу")
+  ;(autosave-autosave-label "Автозбереження файлу")
   (autosave-original-label "Вихідний файл")
-  (autosave-compare-files "Порівняти автозбережені файли")
+  ;(autosave-compare-files "Порівняти автозбережені файли")
 
-  (autosave-show-autosave "Автозбереження файлу") ;; title of a window showing the autosave file
+  ;(autosave-show-autosave "Автозбереження файлу") ;; title of a window showing the autosave file
 
-  (autosave-explanation "DrRacket знайшов Ваші файли автозбереження, які можуть містити незбережену роботу.")
+  ;(autosave-explanation "DrRacket знайшов Ваші файли автозбереження, які можуть містити незбережену роботу.")
 
   (autosave-recovered! "Відновити!") ;; status of an autosave file
   (autosave-deleted "Видалити")       ;; status of an autosave file
@@ -792,7 +790,7 @@ please adhere to these guidelines:
   (autosave-done "Завершено")
   
   ;; appears in the file dialog
-  (autosave-restore-to-where? "Оберіть місце для запису автозбереженого файлу.")
+  ;(autosave-restore-to-where? "Оберіть місце для запису автозбереженого файлу.")
   
   
  ;;; file modified warning
@@ -1030,17 +1028,11 @@ please adhere to these guidelines:
   
   
  ;;; languages
- (beginning-student "Студент-початківець")
  (beginning-one-line-summary "define, cond, структури, константи та примітиви")
- (beginning-student/abbrev "Студент-початківець зі списковими скороченнями")
  (beginning/abbrev-one-line-summary "Студент-початківець зі списковим стилем друку в циклі \"читання-обчислення-друк\"")
- (intermediate-student "Середній студент")
  (intermediate-one-line-summary "Студент-початківець з лексичною видимістю")
- (intermediate-student/lambda "Середній студент з лямбда-виразами")
  (intermediate/lambda-one-line-summary "Середній студент з функціями вищих порядків")
- (advanced-student "Досвічений студент")
  (advanced-one-line-summary "Середній студент з лямбда-виразами й мутацією")
- (how-to-design-programs "Як проектувати програми") ;; should agree with MIT Press on this one...
  (pretty-big-scheme "Pretty Big")
  (pretty-big-scheme-one-line-summary "Додані синтаксис і функції мов з \"Як проектувати програми\" в mzscheme й mred")
  (r5rs-language-name "R5RS")
@@ -1201,32 +1193,6 @@ please adhere to these guidelines:
  (happy-birthday-matthias "З днем народження, Матіас!")
  (happy-birthday-matthew "З днем народження, Метью!")
  (happy-birthday-shriram "З днем народження, Шрірам!")
-
- (mrflow-using-default-language-title "Мова за замовчуванням")
- (mrflow-using-default-language "У мові, що використовується, не визначена таблиця типів для її примітивів. Зверніться до  стандарту Scheme.")
- (mrflow-button-title "Аналізувати")
- ;(mrflow-unknown-style-delta-error-title "Невідомий стиль блоку дельта")
- ;(mrflow-unknown-style-delta-error "Невідомий стиль блоку дельта: ~a")
- (mrflow-popup-menu-show-type "Показати тип")
- (mrflow-popup-menu-hide-type "Сховати тип")
- (mrflow-popup-menu-show-errors "Показати помилки")
- (mrflow-popup-menu-hide-errors "Сховати помилки")
- ;(mrflow-read-exception-title "Read Exception")
- ;(mrflow-read-exception "Read exception: ~a")
- ;(mrflow-syntax-exception-title "Syntax Exception")
- ;(mrflow-syntax-exception "Syntax Exception: ~a")
- ;(mrflow-unknown-exception-title "Unknown Exception")
- ;(mrflow-unknown-exception "Unknown Exception: ~a")
- ;(mrflow-language-primitives-error-title "Language Primitives Error")
- ;(mrflow-language-primitives-error "Wrong filename for language primitives types table: ~a")
-  
- (snips-and-arrows-popup-menu-tack-all-arrows "З'єднати всі стрілки")
- (snips-and-arrows-popup-menu-untack-all-arrows "Видалити всі стрілки")
- (snips-and-arrows-user-action-disallowed-title "Внесення змін користувачем наразі заборонено")
- (snips-and-arrows-user-action-disallowed "Внесення змін користувачем заборонено в редакторах, які містять елементи з панелі інструментів. Сховайте всі інструменти перед редагуванням.")
- ;(snips-and-arrows-changing-terms-warning-title "Changing terms will be undoable")
- ;(snips-and-arrows-changing-terms-warning "Changing terms in an editor containing snips cannot be undone.  You can either cancel this action, remove the snips, and try the change again, or you can continue with the change, in which case the change will not be undoable (all others changes made before and afterward will still be undoable though).")
- (snips-and-arrows-hide-all-snips-in-editor "Сховати всі інструменти, що вставлені в редактор")
 
  (xml-tool-insert-xml-box "Вставити блок XML")
  (xml-tool-insert-scheme-box "Вставити блок Racket")
@@ -1425,7 +1391,7 @@ please adhere to these guidelines:
   ; section header
   (test-engine-signature-violations "Порушення домовленості:")
 
-  ; part of one phrase "signature <at line ...> to blame: procedure <...>
+  ; part of one phrase "signature <at line ...> to blame: function <...>
   (test-engine-signature "домовленість")
   (test-engine-to-blame "порушено: процедура")
 

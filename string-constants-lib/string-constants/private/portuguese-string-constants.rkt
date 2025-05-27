@@ -389,8 +389,6 @@ please adhere to these guidelines:
  (fixup-open-brackets "Ajustar automaticamente parêntesis rectos de abertura")
  (fixup-close-parens "Ajustar automaticamente parêntesis de fecho")
  (flash-paren-match "Iluminar correcção de parêntesis")
- (auto-save-files "Auto-gravar ficheiros")
- (backup-files "Gravar ficheiros como backup")
  (map-delete-to-backspace "Mapar tecla de delete para backspace")
  (verify-exit "Verificar Saída")
  (ask-before-changing-format "Perguntar antes de modificar formato de gravação")
@@ -669,7 +667,7 @@ please adhere to these guidelines:
  ;;; autosaving
  (error-autosaving "Error autosaving \"~a\".") ;; ~a will be a filename
  (autosaving-turned-off "Autosaving is turned off\nuntil the file is saved.")
- (recover-autosave-files-frame-title "Recover Autosaved Files")
+ ;(recover-autosave-files-frame-title "Recover Autosaved Files")
  (autosave-details "Detalhes")
  (autosave-recover "Recuperar")
  (autosave-unknown-filename "<<desconhecido>>")
@@ -680,15 +678,15 @@ please adhere to these guidelines:
   ;; (also, do this with an unsaved file). Wait for the autosave
   ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
-  (autosave-autosave-label: "Ficheiro de auto-gravação:")
+  ;(autosave-autosave-label: "Ficheiro de auto-gravação:")
   (autosave-original-label: "Ficheiro original:")
-  (autosave-autosave-label "Ficheiro de auto-gravação")
+  ;(autosave-autosave-label "Ficheiro de auto-gravação")
   (autosave-original-label "Ficheiro original")
-  (autosave-compare-files "Comparar ficheiros de auto-gravação")
+  ;(autosave-compare-files "Comparar ficheiros de auto-gravação")
 
-  (autosave-show-autosave "Ficheiro de Autogravação") ;; title of a window showing the autosave file
+  ;(autosave-show-autosave "Ficheiro de Autogravação") ;; title of a window showing the autosave file
 
-  (autosave-explanation "O DrRacket encontro ficheiros de auto-gravação que poderá conter trabalho ainda não gravado.")
+  ;(autosave-explanation "O DrRacket encontro ficheiros de auto-gravação que poderá conter trabalho ainda não gravado.")
 
   (autosave-recovered! "Recuperado!") ;; status of an autosave file
   (autosave-deleted "Removido")       ;; status of an autosave file
@@ -699,7 +697,7 @@ please adhere to these guidelines:
   (autosave-done "Completo")
   
   ;; appears in the file dialog
-  (autosave-restore-to-where? "Escolha um local para gravar o ficheiro de auto-gravação.")
+  ;(autosave-restore-to-where? "Escolha um local para gravar o ficheiro de auto-gravação.")
   
   
  ;;; file modified warning
@@ -885,17 +883,11 @@ please adhere to these guidelines:
 
  
  ;;; languages
- (beginning-student "Beginning Student")
  (beginning-one-line-summary "define, cond, structs, constants, and primitives")
- (beginning-student/abbrev "Beginning Student with List Abbreviations")
  (beginning/abbrev-one-line-summary "Beginner, with list style printing in the REPL")
- (intermediate-student "Intermediate Student")
  (intermediate-one-line-summary "Beginner plus lexical scope")
- (intermediate-student/lambda "Intermediate Student with lambda")
  (intermediate/lambda-one-line-summary "Intermediate plus higher-order functions")
- (advanced-student "Advanced Student")
  (advanced-one-line-summary "Intermediate plus lambda and mutation")
- (how-to-design-programs "How to Design Programs") ;; should agree with MIT Press on this one...
  (pretty-big-scheme "Pretty Big")
  (pretty-big-scheme-one-line-summary "Adds syntax and functions from the HtDP languages")
  (r5rs-language-name "R5RS")
@@ -1013,32 +1005,6 @@ please adhere to these guidelines:
  (happy-birthday-matthias "Parabéns, Matthias!")
  (happy-birthday-matthew "Parabéns, Matthew!")
  (happy-birthday-shriram "Parabéns, Shriram!")
-
- (mrflow-using-default-language-title "Default Language Used")
- (mrflow-using-default-language "The language currently used does not have a type table defined for its primitives. Using R5RS Scheme instead.")
- (mrflow-button-title "Analyze")
- ;(mrflow-unknown-style-delta-error-title "Unknown Box Style Delta")
- ;(mrflow-unknown-style-delta-error "Unknown box style delta: ~a")
- (mrflow-popup-menu-show-type "Show Type")
- (mrflow-popup-menu-hide-type "Hide Type")
- (mrflow-popup-menu-show-errors "Show Errors")
- (mrflow-popup-menu-hide-errors "Hide Errors")
- ;(mrflow-read-exception-title "Read Exception")
- ;(mrflow-read-exception "Read exception: ~a")
- ;(mrflow-syntax-exception-title "Syntax Exception")
- ;(mrflow-syntax-exception "Syntax exception: ~a")
- ;(mrflow-unknown-exception-title "Unknown Exception")
- ;(mrflow-unknown-exception "Unknown exception: ~a")
- ;(mrflow-language-primitives-error-title "Language Primitives Error")
- ;(mrflow-language-primitives-error "Wrong filename for language primitives types table: ~a")
-  
- (snips-and-arrows-popup-menu-tack-all-arrows "Tack All Arrows")
- (snips-and-arrows-popup-menu-untack-all-arrows "Untack All Arrows")
- (snips-and-arrows-user-action-disallowed-title "User Changes Currently Disallowed")
- (snips-and-arrows-user-action-disallowed "User changes are disallowed in editors that contain tool-inserted snips.  Hide all snips before modifying the content of the editor.")
- ;(snips-and-arrows-changing-terms-warning-title "Changing terms will be undoable")
- ;(snips-and-arrows-changing-terms-warning "Changing terms in an editor containing snips cannot be undone.  You can either cancel this action, remove the snips, and try the change again, or you can continue with the change, in which case the change will not be undoable (all others changes made before and afterward will still be undoable though).")
- (snips-and-arrows-hide-all-snips-in-editor "Hide all snips in editor")
 
  (xml-tool-insert-xml-box "Inserir Caixa XML")
  (xml-tool-insert-scheme-box "Inserir Caixa Racket")

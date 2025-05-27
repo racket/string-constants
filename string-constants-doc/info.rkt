@@ -8,3 +8,6 @@
 (define update-implies '("string-constants-lib"))
 
 (define pkg-authors '(robby))
+
+(define license
+  '(Apache-2.0 OR MIT))

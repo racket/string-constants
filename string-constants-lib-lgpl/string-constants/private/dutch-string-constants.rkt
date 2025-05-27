@@ -1,4 +1,4 @@
-(module dutch-string-constants "string-constant-lang.rkt"
+(module dutch-string-constants string-constants/private/string-constant-lang
 
 ;;; -- Where are Undo, Redo, Select all, and friends from the right-click popup menu?
 

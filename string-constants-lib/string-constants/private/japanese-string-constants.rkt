@@ -416,8 +416,6 @@ please adhere to these guidelines:
  (fixup-open-brackets "左角括弧を自動調整する")
  (fixup-close-parens "右括弧を自動調整する")
  (flash-paren-match "対応する括弧をフラッシュする")
- (auto-save-files "ファイルを自動保存する")
- (backup-files "ファイルをバックアップする")
  (map-delete-to-backspace "Delete キーを Backspace キーとして処理する")
  (verify-exit "DrRacket 終了時に確認をとる")
  (ask-before-changing-format "保存形式を変更する前に確認をとる")
@@ -756,7 +754,7 @@ please adhere to these guidelines:
  ;;; autosaving
  (error-autosaving "\"~a\" を自動保存中にエラーが発生しました。") ;; ~a will be a filename
  (autosaving-turned-off "このファイルが保存されるまで、\n自動保存は無効になります。")
- (recover-autosave-files-frame-title "自動保存ファイルの復元")
+ ;(recover-autosave-files-frame-title "自動保存ファイルの復元")
  (autosave-details "詳細")
  (autosave-recover "復元")
  (autosave-unknown-filename "<<unknown>>")
@@ -767,15 +765,15 @@ please adhere to these guidelines:
   ;; (also, do this with an unsaved file). Wait for the autosave
   ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
-  (autosave-autosave-label: "自動保存ファイル:")
+  ;(autosave-autosave-label: "自動保存ファイル:")
   (autosave-original-label: "元のファイル:")
-  (autosave-autosave-label "自動保存ファイル")
+  ;(autosave-autosave-label "自動保存ファイル")
   (autosave-original-label "元のファイル")
-  (autosave-compare-files "自動保存ファイルの比較")
+  ;(autosave-compare-files "自動保存ファイルの比較")
 
-  (autosave-show-autosave "自動保存ファイル") ;; title of a window showing the autosave file
+  ;(autosave-show-autosave "自動保存ファイル") ;; title of a window showing the autosave file
 
-  (autosave-explanation "DrRacket は自動保存ファイルを検出しました。自動保存ファイルには、未保存の作業結果が含まれている可能性があります。")
+  ;(autosave-explanation "DrRacket は自動保存ファイルを検出しました。自動保存ファイルには、未保存の作業結果が含まれている可能性があります。")
 
   (autosave-recovered! "復元しました！") ;; status of an autosave file
   (autosave-deleted "削除しました")       ;; status of an autosave file
@@ -786,7 +784,7 @@ please adhere to these guidelines:
   (autosave-done "Done")
 
   ;; appears in the file dialog
-  (autosave-restore-to-where? "自動保存ファイルを保存する場所を選択してください。")
+  ;(autosave-restore-to-where? "自動保存ファイルを保存する場所を選択してください。")
 
 
  ;;; file modified warning
@@ -1019,17 +1017,11 @@ please adhere to these guidelines:
 
 
  ;;; languages
- (beginning-student "Beginning Student")
  (beginning-one-line-summary "定義, 条件式, 構造体, 定数, プリミティブ")
- (beginning-student/abbrev "Beginning Student with List Abbreviations")
  (beginning/abbrev-one-line-summary "Beginner で、REPL でリスト スタイルの表示を行う")
- (intermediate-student "Intermediate Student")
  (intermediate-one-line-summary "Beginner ＋ レキシカル スコープ")
- (intermediate-student/lambda "Intermediate Student with lambda")
  (intermediate/lambda-one-line-summary "Intermediate ＋ 高階関数")
- (advanced-student "Advanced Student")
  (advanced-one-line-summary "Intermediate ＋ lambda と mutation")
- (how-to-design-programs "How to Design Programs") ;; should agree with MIT Press on this one...
  (pretty-big-scheme "Pretty Big")
  (pretty-big-scheme-one-line-summary "syntax と HtDP 言語の関数を追加")
  (pretty-big-scheme-one-line-summary "HtDP 言語, mzscheme, mred/mred の構文と関数を追加")
@@ -1190,32 +1182,6 @@ please adhere to these guidelines:
  (happy-birthday-matthias "お誕生日おめでとう, Matthias!")
  (happy-birthday-matthew "お誕生日おめでとう, Matthew!")
  (happy-birthday-shriram "お誕生日おめでとう, Shriram!")
-
- (mrflow-using-default-language-title "既定で使用する言語")
- (mrflow-using-default-language "現在使用している言語には、そのプリミティブ用の型テーブルがありません。代替として R5RS Scheme を使います。")
- (mrflow-button-title "解析")
- ;(mrflow-unknown-style-delta-error-title "Unknown Box Style Delta")
- ;(mrflow-unknown-style-delta-error "Unknown box style delta: ~a")
- (mrflow-popup-menu-show-type "Show Type")
- (mrflow-popup-menu-hide-type "Hide Type")
- (mrflow-popup-menu-show-errors "表示エラー")
- (mrflow-popup-menu-hide-errors "非表示エラー")
- ;(mrflow-read-exception-title "Read Exception")
- ;(mrflow-read-exception "Read exception: ~a")
- ;(mrflow-syntax-exception-title "Syntax Exception")
- ;(mrflow-syntax-exception "Syntax exception: ~a")
- ;(mrflow-unknown-exception-title "Unknown Exception")
- ;(mrflow-unknown-exception "Unknown exception: ~a")
- ;(mrflow-language-primitives-error-title "Language Primitives Error")
- ;(mrflow-language-primitives-error "Wrong filename for language primitives types table: ~a")
-
- (snips-and-arrows-popup-menu-tack-all-arrows "Tack All Arrows")
- (snips-and-arrows-popup-menu-untack-all-arrows "Untack All Arrows")
- (snips-and-arrows-user-action-disallowed-title "User Changes Currently Disallowed")
- (snips-and-arrows-user-action-disallowed "User changes are disallowed in editors that contain tool-inserted snips.  Hide all snips before modifying the content of the editor.")
- ;(snips-and-arrows-changing-terms-warning-title "Changing terms will be undoable")
- ;(snips-and-arrows-changing-terms-warning "Changing terms in an editor containing snips cannot be undone.  You can either cancel this action, remove the snips, and try the change again, or you can continue with the change, in which case the change will not be undoable (all others changes made before and afterward will still be undoable though).")
- (snips-and-arrows-hide-all-snips-in-editor "Hide all snips in editor")
 
  (xml-tool-insert-xml-box "XML ボックスを挿入")
  (xml-tool-insert-scheme-box "Racket ボックスを挿入")

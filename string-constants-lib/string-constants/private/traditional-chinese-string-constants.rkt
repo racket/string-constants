@@ -415,8 +415,6 @@
   (fixup-open-brackets "自動調整開中括號")
   (fixup-close-parens "自動調整閉括號")
   (flash-paren-match "高亮顯示括號匹配")
-  (auto-save-files "自動保存文件")
-  (backup-files "保存備份文件")
   (map-delete-to-backspace "將delete轉換成backspace")
   (verify-exit "退出時確認")
   (ask-before-changing-format "改變保存方式時確認")
@@ -784,7 +782,7 @@
   ;;; autosaving
   (error-autosaving "自動保存\"~a\"時出錯。") ;; ~a will be a filename
   (autosaving-turned-off "在文件被存檔之前，自動保存不會進行")
-  (recover-autosave-files-frame-title "恢復自動保存的文件")
+  ;(recover-autosave-files-frame-title "恢復自動保存的文件")
   (autosave-details "詳細情況")
   (autosave-recover "恢復")
   (autosave-unknown-filename "《未知》")
@@ -795,15 +793,15 @@
   ;; (also, do this with an unsaved file). Wait for the autosave
   ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
-  (autosave-autosave-label: "自動保存文件：")
+  ;(autosave-autosave-label: "自動保存文件：")
   (autosave-original-label: "原始文件：")
-  (autosave-autosave-label "自動保存文件")
+  ;(autosave-autosave-label "自動保存文件")
   (autosave-original-label "原始文件")
-  (autosave-compare-files "比較自動保存文件")
+  ;(autosave-compare-files "比較自動保存文件")
   
-  (autosave-show-autosave "自動保存文件") ;; title of a window showing the autosave file
+  ;(autosave-show-autosave "自動保存文件") ;; title of a window showing the autosave file
   
-  (autosave-explanation "DrRacket發現了自動保存的文件，其中可能包含你沒有保存過的程序")
+  ;(autosave-explanation "DrRacket發現了自動保存的文件，其中可能包含你沒有保存過的程序")
   
   (autosave-recovered! "已恢復！") ;; status of an autosave file
   (autosave-deleted "已刪除")       ;; status of an autosave file
@@ -814,7 +812,7 @@
   (autosave-done "完成")
   
   ;; appears in the file dialog
-  (autosave-restore-to-where? "請選擇自動保存文件的位置")
+  ;(autosave-restore-to-where? "請選擇自動保存文件的位置")
   
   
   ;;; file modified warning
@@ -1072,17 +1070,11 @@
   
   
   ;;; languages
-  (beginning-student "初級")
   (beginning-one-line-summary "define、cond、結構體、常量和基本操作")
-  (beginning-student/abbrev "初級+縮寫的表")
   (beginning/abbrev-one-line-summary "在初級的基礎上，用縮寫形式輸出表")
-  (intermediate-student "中級")
   (intermediate-one-line-summary "在初級的基礎上增加了詞法作用域")
-  (intermediate-student/lambda "中級+lambda")
   (intermediate/lambda-one-line-summary "在中級的基礎上，增加了高階函數")
-  (advanced-student "高級")
   (advanced-one-line-summary "在中級的基礎上，增加了lambda和賦值")
-  (how-to-design-programs "程序設計方法/How to Design Programs") ;; should agree with MIT Press on this one...
   (pretty-big-scheme "大")
   (pretty-big-scheme-one-line-summary "MzScheme/MrEd加HtDP(程序設計方法)語言")
   (r5rs-lang-name "R5RS")
@@ -1287,32 +1279,6 @@
   (happy-birthday-matthew "生日快樂，馬曉！")
   (happy-birthday-shriram "生日快樂，Shriram！")
   
-  (mrflow-using-default-language-title "正在使用默認語言")
-  (mrflow-using-default-language "當前使用的語言並不包含其原素的類型。改用R5RS Scheme。")
-  (mrflow-button-title "分析")
-  ;(mrflow-unknown-style-delta-error-title "Unknown Box Style Delta")
-  ;(mrflow-unknown-style-delta-error "Unknown box style delta: ~a")
-  (mrflow-popup-menu-show-type "顯示類型")
-  (mrflow-popup-menu-hide-type "隱藏類型")
-  (mrflow-popup-menu-show-errors "顯示錯誤")
-  (mrflow-popup-menu-hide-errors "隱藏錯誤")
-  ;(mrflow-read-exception-title "Read Exception")
-  ;(mrflow-read-exception "Read exception: ~a")
-  ;(mrflow-syntax-exception-title "Syntax Exception")
-  ;(mrflow-syntax-exception "Syntax exception: ~a")
-  ;(mrflow-unknown-exception-title "Unknown Exception")
-  ;(mrflow-unknown-exception "Unknown exception: ~a")
-  ;(mrflow-language-primitives-error-title "Language Primitives Error")
-  ;(mrflow-language-primitives-error "Wrong filename for language primitives types table: ~a")
-  
-  (snips-and-arrows-popup-menu-tack-all-arrows "固定所有箭頭")
-  (snips-and-arrows-popup-menu-untack-all-arrows "取消固定所有箭頭")
-  (snips-and-arrows-user-action-disallowed-title "當前不允許用戶改變")
-  (snips-and-arrows-user-action-disallowed
-   "在編輯器中包含由系統插入的段落，所以不允許用戶改變。在修改之前請先隱藏所有這些段落。")
-  ;(snips-and-arrows-changing-terms-warning-title "Changing terms will be undoable")
-  (snips-and-arrows-hide-all-snips-in-editor "在編輯器中隱藏所有段落")
-  
   (xml-tool-insert-xml-box "插入XML框")
   (xml-tool-insert-scheme-box "插入Racket框")
   (xml-tool-insert-scheme-splice-box "插入Racket接合框")
@@ -1471,9 +1437,9 @@
   ; section header
   (test-engine-signature-violations "Signature違規：")
   
-  ; part of one phrase "signature <at line ...> to blame: procedure <...>
+  ; part of one phrase "signature <at line ...> to blame: function <...>
   (test-engine-signature "signature")
-  (test-engine-to-blame "to blame: procedure")
+  (test-engine-to-blame "to blame: function")
   
   (test-engine-no-signature-violations "無signature違規。")
   (test-engine-1-signature-violation "1個signature違規。")

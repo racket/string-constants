@@ -421,8 +421,6 @@ please adhere to these guidelines:
  (fixup-open-brackets "Автокорекция открывающихся квадратных скобок")
  (fixup-close-parens "Автокорекция закрывающихся скобок")
  (flash-paren-match "Отображать соответствие скобок")
- (auto-save-files "Автосохранение файлов")
- (backup-files "Резервные копии файлов")
  (map-delete-to-backspace "Назначить Delete на Backspace")
  (verify-exit "Проверять завершение")
  (ask-before-changing-format "Спрашивать перед изменением формата")
@@ -769,7 +767,7 @@ please adhere to these guidelines:
  ;;; autosaving
  (error-autosaving "Ошибка автосохранения \"~a\".") ;; ~a will be a filename
  (autosaving-turned-off "Автосохранение отключено\nво время записи файла.")
- (recover-autosave-files-frame-title "Восстановить автосохраненные файлы")
+ ;(recover-autosave-files-frame-title "Восстановить автосохраненные файлы")
  (autosave-details "Подробности")
  (autosave-recover "Восстановлен")
  (autosave-unknown-filename "<<неизвестный>>")
@@ -780,15 +778,15 @@ please adhere to these guidelines:
   ;; (also, do this with an unsaved file). Wait for the autosave
   ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
-  (autosave-autosave-label: "Автосохранение файла:")
+  ;(autosave-autosave-label: "Автосохранение файла:")
   (autosave-original-label: "Исходный файл:")
-  (autosave-autosave-label "Автосохранение файла")
+  ;(autosave-autosave-label "Автосохранение файла")
   (autosave-original-label "Исходный файл")
-  (autosave-compare-files "Сравнить автосохраненные файлы")
+  ;(autosave-compare-files "Сравнить автосохраненные файлы")
 
-  (autosave-show-autosave "Автосохранение файла") ;; title of a window showing the autosave file
+  ;(autosave-show-autosave "Автосохранение файла") ;; title of a window showing the autosave file
 
-  (autosave-explanation "DrRacket нашел Ваши файлы автосохранения, которые могут содержать несохраненную работу.")
+  ;(autosave-explanation "DrRacket нашел Ваши файлы автосохранения, которые могут содержать несохраненную работу.")
 
   (autosave-recovered! "Восстановить!") ;; status of an autosave file
   (autosave-deleted "Удалить")       ;; status of an autosave file
@@ -799,7 +797,7 @@ please adhere to these guidelines:
   (autosave-done "Завершено")
   
   ;; appears in the file dialog
-  (autosave-restore-to-where? "Выберите место для записи автосохраненного файла.")
+  ;(autosave-restore-to-where? "Выберите место для записи автосохраненного файла.")
   
   
  ;;; file modified warning
@@ -1037,17 +1035,11 @@ please adhere to these guidelines:
   
   
  ;;; languages
- (beginning-student "Начинающий студент")
  (beginning-one-line-summary "define, cond, структуры, константы и примитивы")
- (beginning-student/abbrev "Начинающий студент со списковыми сокращениями")
  (beginning/abbrev-one-line-summary "Начинающий студент со списковым стилем печати в цикле \"чтение-вычисление-печать\"")
- (intermediate-student "Средний студент")
  (intermediate-one-line-summary "Начинающий студент с лексической видимостью")
- (intermediate-student/lambda "Средний студент с лямбда-выражениями")
  (intermediate/lambda-one-line-summary "Средний студент с функциями высших порядков")
- (advanced-student "Продвинутый студент")
  (advanced-one-line-summary "Средний студент с лямбда-выражениями и мутацией")
- (how-to-design-programs "Как проектировать программы") ;; should agree with MIT Press on this one...
  (pretty-big-scheme "Pretty Big")
  (pretty-big-scheme-one-line-summary "Добавлены синтаксис и функции языков из \"Как проектировать программы\" в mzscheme и mred")
  (r5rs-language-name "R5RS")
@@ -1208,32 +1200,6 @@ please adhere to these guidelines:
  (happy-birthday-matthias "С днем рождения, Матиас!")
  (happy-birthday-matthew "С днем рождения, Метью!")
  (happy-birthday-shriram "С днем рождения, Шрирам!")
-
- (mrflow-using-default-language-title "Язык, используемый по умолчанию")
- (mrflow-using-default-language "В используемом языке не определена таблица типов для его примитивов. Используйте стандарт Scheme.")
- (mrflow-button-title "Анализировать")
- ;(mrflow-unknown-style-delta-error-title "Неизвестный стиль блока дельта")
- ;(mrflow-unknown-style-delta-error "Неизвестный стиль блока дельта: ~a")
- (mrflow-popup-menu-show-type "Показать тип")
- (mrflow-popup-menu-hide-type "Скрыть тип")
- (mrflow-popup-menu-show-errors "Показать ошибки")
- (mrflow-popup-menu-hide-errors "Скрыть ошибки")
- ;(mrflow-read-exception-title "Исключение при вводе")
- ;(mrflow-read-exception "Исключение при вводе: ~a")
- ;(mrflow-syntax-exception-title "Синтаксическое исключение")
- ;(mrflow-syntax-exception "Синтаксическое исключение: ~a")
- ;(mrflow-unknown-exception-title "Неизвестное исключение")
- ;(mrflow-unknown-exception "Неизвестное исключение: ~a")
- ;(mrflow-language-primitives-error-title "Ошибка в примитивах языка")
- ;(mrflow-language-primitives-error "Неправильное имя файла для таблицы типов примитивов языка: ~a")
-  
- (snips-and-arrows-popup-menu-tack-all-arrows "Соединить все стрелки")
- (snips-and-arrows-popup-menu-untack-all-arrows "Убрать все стрелки")
- (snips-and-arrows-user-action-disallowed-title "Пользовательские изменения в настоящее время запрещены")
- (snips-and-arrows-user-action-disallowed "Пользовательские изменения запрещены в редакторах, содержащих элементы из панели инструментов. Скройте все инструменты перед редактированием.")
- ;(snips-and-arrows-changing-terms-warning-title "Changing terms will be undoable")
- ;(snips-and-arrows-changing-terms-warning "Changing terms in an editor containing snips cannot be undone.  You can either cancel this action, remove the snips, and try the change again, or you can continue with the change, in which case the change will not be undoable (all others changes made before and afterward will still be undoable though).")
- (snips-and-arrows-hide-all-snips-in-editor "Скрыть все инструменты, вставленные в редактор")
 
  (xml-tool-insert-xml-box "Вставить блок XML")
  (xml-tool-insert-scheme-box "Вставить блок Racket")
@@ -1432,7 +1398,7 @@ please adhere to these guidelines:
   ; section header
   (test-engine-signature-violations "Нарушения соглашения:")
 
-  ; part of one phrase "signature <at line ...> to blame: procedure <...>
+  ; part of one phrase "signature <at line ...> to blame: function <...>
   (test-engine-signature "соглашение")
   (test-engine-to-blame "нарушено: процедура ")
 
