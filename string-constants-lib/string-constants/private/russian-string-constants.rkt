@@ -198,7 +198,7 @@ please adhere to these guidelines:
   (error-sending-bug-report-expln 
    "При отправке отчета об ошибке произошел сбой."
    " При наличии работающего подключения к Internet, посетите сайт:\n\n"
-   "    https://github.com/racket/racket/issues/new\n\nи "
+   "    https://github.com/racket/racket/issues/new\n\nи"
    " отправьте отчет об ошибке через Github. Извините за неудобства.\n\nСообщение об ошибке:\n~a")
   (illegal-bug-report "Некорректный отчет об ошибке")
   (pls-fill-in-field "Пожалуйста, заполните поле \"~a\"")
@@ -1039,7 +1039,7 @@ please adhere to these guidelines:
   ;;; autoloading
   ;; the ~a is replaced with a path
   (autoload-file-changed-on-disk/with-name
-   Файл:\n  ~a\nизменился на диске. Вы хотите"
+   "Файл:\n  ~a\nизменился на диске. Вы хотите"
    " перечитать содержимое буфера, чтобы оно соответствовало файлу на диске?")
   ;; One file per line is appended to the end of this message
   (autoload-files-changed-on-disk/with-name
@@ -2220,7 +2220,7 @@ please adhere to these guidelines:
   (added-racket/bin-to-path
    "Теперь вы можете использовать racket и его инструменты из"
    " командной строки.\n\nПуть"
-   " по умолчанию PATH был настроен для всех пользователей добавлением файла "
+   " по умолчанию PATH был настроен для всех пользователей добавлением файла"
    " ~a указывающего на ~a. Вы можете отменить эту настройку"
    " удалив ~a.")
   (adding-racket/bin-no-paths.d
@@ -2231,7 +2231,7 @@ please adhere to these guidelines:
   (added-racket/bin-to-path/windows
    "Теперь вы можете использовать racket и его инструменты из"
    " командной строки.\n\nПуть"
-   " по умолчанию %PATH% был настроен через запись реестра "
+   " по умолчанию %PATH% был настроен через запись реестра"
    " HKEY_CURRENT_USER\\Environment\\Path"
    " указывающую на ~a и ~a.")
   (didnt-add-racket/bin-to-path/unix
