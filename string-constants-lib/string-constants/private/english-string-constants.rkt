@@ -2295,4 +2295,17 @@ please adhere to these guidelines:
   (qs-stop-scripts "&Stop persistent scripts")
   (qs-report-issue "Report an &issue")
   (qs-error-load "Quickscript: Errors while loading script properties")
+
+  ;; macro stepper
+  ; used in the button label and menu item and title for some dialog boxes
+  (macro-stepper "Macro Stepper")
+
+  ; these next three are in the same dialog; first a message and then two button labels
+  (macro-stepper-warning-message
+   "Macro expansion has taken a suspiciously large number of steps.\n\nClick"
+   " Stop to stop macro expansion and see the steps taken"
+   " so far, or click Continue to let it run a bit longer.")
+  (macro-stepper-continue "Continue")
+  (macro-stepper-stop "Stop")
+
   )
