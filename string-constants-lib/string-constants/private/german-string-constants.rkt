@@ -1661,6 +1661,14 @@
   (test-engine-unknown "(unbekannt)")
   (test-engine-trace-error "Trace-Fehler")
 
+  (test-engine-check-range-encountered-error
+   "check-range ist der folgende Fehler passiert statt eines Werts in [~F, ~F]. ~n   :: ~a")
+  (test-engine-check-member-of-encountered-error
+   "check-member-of ist der folgende Fehler passiert anstatt eines Werts in ~L.~n   :: ~a")
+  ; obsolete version of this
+  (test-engine-check-*-encountered-error
+   "~a ist der folgende Fehler passiert anstatt dem erwartetetn Wert ~F. ~n   :: ~a")
+  ;; deprecated
   (test-engine-check-encountered-error
    "check-expect bekam den folgenden Fehler statt des erwarteten Werts, ~F. ~n   :: ~a")
   (test-engine-check-error-cause
@@ -2046,6 +2054,17 @@
   (qs-stop-scripts "Persistente Skripte &anhalten")
   (qs-report-issue "Problem &miteilen")
   (qs-error-load "Quickscript: Fehler beim Laden von Skript-Properties")
+  ;; macro stepper
+  ; used in the button label and menu item and title for some dialog boxes
+  (macro-stepper "Makro-Stepper")
+
+  ; these next three are in the same dialog; first a message and then two button labels
+  (macro-stepper-warning-message
+   "Makroexpansion benötigt verdächtig viele Schritte.\n\n"
+   " Stop drücken, um die Makroexpansion zu stoppen und die bisherigen"
+   "  Schritte zu sehen oder Weiter drücken, um ihn ein wenig länger laufen zu lassen.")
+  (macro-stepper-continue "Weiter")
+  (macro-stepper-stop "Stop")
 
   )
 
