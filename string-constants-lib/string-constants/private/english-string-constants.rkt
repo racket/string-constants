@@ -2108,11 +2108,13 @@ please adhere to these guidelines:
   (install-pkg-install "Install")
   (install-pkg-update "Update")
   (install-pkg-setup "Setup") ; for button
+  (install-pkg-update+setup "Update and Setup") ; for button
   (install-pkg-setup-long "Setup Current Installation") ; for menu
   (install-pkg-remove "Remove")
   (install-pkg-do-not-remove "Don't Remove")
   (install-pkg-action-inferred-to-be-update "Action inferred to be Update")
   (install-pkg-action-inferred-to-be-install "Action inferred to be Install")
+  (install-pkg-action-inferred-to-be-update+setup "Action inferred to be Update and Setup")
   (install-pkg-default "Default")
   (install-pkg-scope-label "Package Scope")
   (install-pkg-default-scope-label "Default Package Scope") ; for picking the scope to be default
@@ -2152,6 +2154,7 @@ please adhere to these guidelines:
   (install-pkg-abort-migrate "Abort Migrate")
   (install-pkg-abort-setup "Abort Setup")
   (install-pkg-abort-generic-action "Abort Action")
+  (install-pkg-continue-generic-action "Continue Action")
   (install-pkg-close-terminal-output "Close Output")
   (install-pkg-show-all-options "Show All Options")
   (install-pkg-migrate-available-installations "Available Installations")
@@ -2200,6 +2203,9 @@ please adhere to these guidelines:
 
   (install-pkg-not-rentrant "Installation and updating cannot happen simultaneously;"
                             " either abort the current one or wait for it to finish.")
+  (install-pkg-generic-action-in-progress "A package-management action is still in progress."
+                                          " Are you sure you want to close the window and abort the action,"
+                                          " which may leave your installation in an inconsistent state?")
 
   ;; open a file via a collection path (new "Open" menu item in DrRacket)
   (open-require-path "Open Require Path…")
