@@ -1870,11 +1870,13 @@
   (install-pkg-install "Installieren")
   (install-pkg-update "Aktualisieren")
   (install-pkg-setup "Konfigurieren") ; for button
+  (install-pkg-update+setup "Aktualisieren und Konfigurieren") ; for button
   (install-pkg-setup-long "Aktuelle Installation konfigurieren") ; for menu
   (install-pkg-remove "Entfernen")
   (install-pkg-do-not-remove "Nicht entfernen")
   (install-pkg-action-inferred-to-be-update "Maßnahme als Aktualisierung inferiert")
   (install-pkg-action-inferred-to-be-install "Maßnahme als Installation inferiert")
+  (install-pkg-action-inferred-to-be-update+setup "Maßnahme als Aktualisierung and Konfiguration inferiert")
   (install-pkg-default "Standard")
   (install-pkg-scope-label "Paket-Einzugsbereich")
   (install-pkg-default-scope-label "Standard-Paket-Einzugsbereich") ; for picking the scope to be default
@@ -1916,6 +1918,7 @@
   (install-pkg-abort-setup "Konfiguration abbrechen")
   (install-pkg-abort-setup "Setup abbrechen")
   (install-pkg-abort-generic-action "Aktion abbrechen")
+  (install-pkg-continue-generic-action "Aktion fortführen")
   (install-pkg-close-terminal-output "Anzeige schließen")
   (install-pkg-show-all-options "Alle Optionen anzeigen")
   (install-pkg-migrate-available-installations "Verfügbare Installationen")
@@ -1959,6 +1962,9 @@
 
   (install-pkg-not-rentrant "Installation und Aktualisierung können nicht gleichzeitig laufen."
                             " Brechen Sie entweder den laufenden Prozess ab oder warten Sie, bis er fertig ist.")
+  (install-pkg-generic-action-in-progress "Eine Paketverwaltungs-Aktion läuft noch.."
+                                          " Sind Sie sicher, dass sie das Fenster schlueßen und die Aktion abbrechen wollen,"
+                                          " was Ihre Installation in einem inkonsistenten Zustand hinterlassen könnte?")
 
   ;; open a file via a collection path (new "Open" menu item in DrRacket)
   (open-require-path "Require-Pfad öffnen…")
