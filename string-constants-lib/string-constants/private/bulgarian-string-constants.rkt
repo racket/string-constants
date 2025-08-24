@@ -1,6 +1,6 @@
-;; Bulgarian translation of Racket string constants file, version: 1.47
+;; Bulgarian translation of Racket string constants file, version: 1.52
 ;; This file is distributed under the same terms as Racket
-;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024.
+;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024р 2025.
 
 (module bulgarian-string-constants "string-constant-lang.rkt"
   ;;; when translating this constant, substitute name of actual language for `English'
@@ -58,7 +58,7 @@
   ;; having an issue (replaces the bug report form, whose string constants are below)
   (have-an-issue? "Проблем ли има?…")
   (use-github-or-the-mailing-list-for-issues
-   "Ако сте открили проблем в Racket или DrRacket, молим да го докладвате като съзадете"
+   "Ако сте открили проблем в Racket или DrRacket, молим да го докладвате като създадете"
    " билет през GitHub.\n\nАко нещо ви прави впечатление, но не сте сигурни дали е грешка"
    " или не, попитайте през пощенския списък.")
   (visit-mailing-lists "Към пощенските списъци") ;; button in dialog
@@ -563,7 +563,7 @@
   ;; Capitalized for appearance in a menu item
   (show-indent-guides/menu "Показване на &вертикалите за отстъп")
   (hide-indent-guides/menu "Скриване на &вертикалите за отстъп")
-  (reflow-paragraph-maximum-width "Максимална широчина на абзаците при изливане на тескта наново")
+  (reflow-paragraph-maximum-width "Максимална широчина на абзаците при изливане на текста наново")
   (maximum-char-width-guide-pref-check-box "Вертикална линия за максимален брой знаци на ред")
   (hide-column-width-guide "Без вертикал, ако няма редове над ~a знака")
   (show-column-width-guide "Вертикал при ~a-я знак") ;; filled with a number > 2
@@ -961,7 +961,7 @@
    " буферите да се върне към състоянието на диска?\n\nПроменени файлове:")
   ;; One file per line is appended to the end of this message
   (autoload-files-changed-on-disk-editor-dirty&clean/with-name
-   "Има файлове, които са променениъна диска, и други, променени в редактора. Искате ли съдържанието на"
+   "Има файлове, които са променени на диска, и други, променени в редактора. Искате ли съдържанието на"
    " буферите да се върне към състоянието на диска?\n\nПроменени файлове"
    " (променените в редактора буфери са означени с „◇“):")
   ;; a specialized version of dont-ask-again-always-current
@@ -1209,6 +1209,7 @@
 
   ;;; buttons
   (execute-button-label "Изпълнение")
+  (execute-button-configure-label "Настройки на изпълнение")
   (save-button-label "Запазване")
   (break-button-label "Спиране")
   (break-button-kill-label "Принудително спиране")
@@ -1783,6 +1784,14 @@
 
   ; The ~F is special marker for the offending values, which may be
   ; printed specially in DrRacket.
+  (test-engine-check-range-encountered-error
+   "„check-range“ получи следната грешка вместо стойност в [~F, ~F]. ~n   :: ~a")
+  (test-engine-check-member-of-encountered-error
+   "„check-member-of“ получи следната грешка вместо стойност в ~L.~n   :: ~a")
+  ; obsolete version of this
+  (test-engine-check-*-encountered-error
+   "„~a“ получи следната грешка вместо очакваната стойност ~F. ~n   :: ~a")
+  ; deprecated:
   (test-engine-check-encountered-error
    "check-expect получи грешката „~F“ вместо очакваната стойност ~n   :: ~a")
   (test-engine-check-error-cause
@@ -1998,6 +2007,7 @@
   (install-pkg-do-not-remove "Да не се деинсталира")
   (install-pkg-action-inferred-to-be-update "Отгатнатото действие е „Обновяване“")
   (install-pkg-action-inferred-to-be-install "Отгатнатото действие е „Инсталиране“")
+  (install-pkg-action-inferred-to-be-update+setup "Отгатнатото действие е „Обновяване и настройване“")
   (install-pkg-default "Стандартно")
   (install-pkg-scope-label "Обхват на пакета")
   (install-pkg-default-scope-label "Стандартен обхват на пакет") ; for picking the scope to be default
@@ -2037,6 +2047,7 @@
   (install-pkg-abort-migrate "Преустановяване на мигрирането")
   (install-pkg-abort-setup "Преустановяване на настройките")
   (install-pkg-abort-generic-action "Преустановяване на действието")
+  (install-pkg-continue-generic-action "Продължаване на действието")
   (install-pkg-close-terminal-output "Затваряне на изхода")
   (install-pkg-show-all-options "Показване на всички опции")
   (install-pkg-migrate-available-installations "Налични инсталации")
@@ -2085,6 +2096,9 @@
 
   (install-pkg-not-rentrant "Не може едновременно да инсталирате и да обновявате —"
                             " или спрете действието, или го изчакайте.")
+  (install-pkg-generic-action-in-progress "Все още тече операция по управление на пакетите."
+                                          " Сигурни ли сте, че искате да затворите прозореца и да прекъснете действието?"
+                                          " Това може да доведе до неправилно състояние на инсталацията!")
 
   ;; open a file via a collection path (new "Open" menu item in DrRacket)
   (open-require-path "Отваряне на път с необходими файлове…")
@@ -2098,7 +2112,7 @@
   ; second ~a is filled with /etc/paths.d/racket (or some other path like it in the future)
   ; third ~a is filled with the path to the bin directory of the current drracket
   (adding-racket/bin-to-path-failed
-   "Неуспешно добавяне на команада „racket“ към командния ред.~aПо-специално —"
+   "Неуспешно добавяне на командата „racket“ към командния ред.~aПо-специално —"
    " не може да се създаде файл „~a“ със съдържание — „~a“.")
   ; first and third ~a are filled with /etc/paths.d/racket (or some other path like it in the future)
   ; and the second one is filled with the path to the bin directory that was put into that file.
@@ -2125,4 +2139,72 @@
    " добавете следната директория към пътя в „PATH“:"
    "   ~a\n\n")
   (add-racket/bin-to-path "Настройване на командния ред за Racket…") ;; menu item label
+  
+  ;; quickscript messages
+  (qs-my-first-script "Моят първи скрипт")
+  (qs-script-library "Библиотека със скриптове")
+  (qs-directories "Директории")
+  (qs-add "&Добавяне")
+  (qs-remove "&Махане")
+  (qs-scripts "Скриптове")
+  (qs-disable "Из&ключване")
+  (qs-enable "В&ключване")
+  (qs-shadow "S&hadow")
+  (qs-recompiling  "Прекомпилиране на скриптове…")
+  (qs-recompiling-wait "Прекомпилиране на скриптове, изчакайте…")
+  (qs-scripts "&Скриптове")
+  (qs-manage "&Управление")
+  (qs-compilation-error "Скриптове: грешка при компилация")
+  (qs-caught-exception  "Скриптове: прихваната грешка")
+  (qs-recompiling-library "Прекомпилиране на библиотека")
+  (qs-my-script "Моят прекрасен скрипт")
+  (qs-script-help "Низът с помощ на скрипта.")
+  (qs-compiling-scripts "Компилиране на скриптове")
+  ;; ~a is a script file including its path
+  (qs-compiling "Компилиране на „~a“")
+  ;; ~a is a script file including its path
+  (qs-file-not-found "Файлът липсва:„~a“")
+  (qs-invalid-hook "Неправилно име на кука.\n Приемат се само:\n")
+  ;; the  three `qs-error-detail-*` string constants are put into the same message
+  (qs-error-detail-overview "прихванати са ~a грешки(а).") ; the ~a is number of errors
+  (qs-error-detail-summary "Обобщение:")
+  (qs-error-detail-details "Подробности:")
+  (qs-script-name "Име на скрипт")
+  (qs-script-name-enter "Въведете име на новия скрипт:")
+  (qs-open-script "Отваряне на скрипт")
+  ;; ~a is the name of a script file
+  (qs-error-run "Изпълнение: Грешка в скрипта „~s“:\n" )
+  (qs-output "Изход") ;; not repl-out-color where it means color of the output
+  (qs-load-script-menu "Зареждане на менюто за скриптове")
+  (qs-loading-file "Зареждане на файл ")
+  ;; ~a is the name of a script file
+  (qs-script-file "Файл със скрипт „~s“:")
+  (qs-build-menu "Изграждане на менюто със скриптове")
+  ;; ~a is number of rebuilds
+  (qs-menu-rebuild "Менюто със скриптове се изгради  #~a… път")
+  (qs-delete-menu "Deleting menu items")
+  ;; ~a is a a script entry in menu
+  (qs-delete-menu-item "Изтриване на елемент от меню „~a“…  ")
+  (qs-new-script "&Нов скрипт…")
+  (qs-open-script "&Отваряне на скрипт…")
+  (qs-disable-scripts "&Изключване на скриптове…")
+  (qs-library "&Библиотека…")
+  (qs-reload-menu "&Презареждане на меню")
+  (qs-compile-scripts "&Компилиране на скриптове")
+  (qs-stop-scripts "&Спиране на съхранените скриптове")
+  (qs-report-issue "&Докладване на проблем")
+  (qs-error-load "Скриптове: Грешки при зареждане на свойствата на скриптове")
+
+  ;; macro stepper
+  ; used in the button label and menu item and title for some dialog boxes
+  (macro-stepper "Постъпково изпълнение на макроси")
+
+  ; these next three are in the same dialog; first a message and then two button labels
+  (macro-stepper-warning-message
+   "Заместването на макрос продължи прекалено много стъпки.\n\nНатиснете"
+   " „Спиране“, за да спрете заместването на макроса и да проверите стъпките до този момент"
+   " или натиснете „Продължаване“, за да позволите още стъпки по заместване.")
+  (macro-stepper-continue "Продължаване")
+  (macro-stepper-stop "Спиране")
+
   )
