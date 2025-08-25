@@ -1,6 +1,6 @@
 ;; Bulgarian translation of Racket string constants file, version: 1.52
 ;; This file is distributed under the same terms as Racket
-;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024р 2025.
+;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025.
 
 (module bulgarian-string-constants "string-constant-lang.rkt"
   ;;; when translating this constant, substitute name of actual language for `English'
