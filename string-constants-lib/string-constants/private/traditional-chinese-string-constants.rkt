@@ -1490,10 +1490,10 @@ please adhere to these guidelines:
   (use-language-in-source "使用原始碼中宣告的語言")
 
   ;;; from the `not a language language' used initially in drscheme.
-  (must-choose-language "在你選擇一種程式語言前，DrRacket 無法處理程式。")
+  (must-choose-language "你必須選擇一種程式語言，DrRacket 才能處理程式。")
 
   ; next two appear before and after the name of a text book (which will be in italics)
-  (using-a-textbook-before "正在使用 ")
+  (using-a-textbook-before "使用 ")
   (using-a-textbook-after "？")
 
   ; next two are before and after a language
@@ -1512,7 +1512,7 @@ please adhere to these guidelines:
 
   ;;; debug language
   (unknown-debug-frame "[未知]")
-  (backtrace-window-title "回溯 - DrRacket")
+  (backtrace-window-title "回溯追蹤 - DrRacket")
   (files-interactions "~a 的互動") ;; filled with a filename
   (current-interactions "互動")
   (current-definitions "定義")
@@ -1570,8 +1570,7 @@ please adhere to these guidelines:
   ;;; repl stuff
   (evaluation-terminated "求值已終止")
   (evaluation-terminated-explanation
-   "求值執行緒已不在執行，"
-   " 直到下次執行前無法進行求值。")
+   "求值執行緒已終止，直到下次執行前無法進行求值。")
 
   ; The next three constants show up in the same dialog as the above evaluation-terminated string
   ; constants.
@@ -1609,7 +1608,7 @@ please adhere to these guidelines:
 
   ;;; version checker
   (version:update-menu-item   "檢查更新…")
-  (version:update-check       "更新檢查") ; dialog title, with the next line
+  (version:update-check       "檢查更新") ; dialog title, with the next line
   (version:connecting-server  "正在連線至 Racket 版本伺服器")
   (version:results-title      "Racket 版本檢查")
   (version:do-periodic-checks "定期檢查是否有較新的 Racket 版本")
@@ -1652,7 +1651,7 @@ please adhere to these guidelines:
   ;; used to search in the graph; the label on a text-field% object
   (module-browser-highlight "染色標示")
   (module-browser-only-in-plt-and-module-langs
-   "模組瀏覽器僅適用於以模組為基礎的程式。")
+   "模組瀏覽器僅適用於以模組（module）為基礎的程式。")
   (module-browser-name-length "名稱長度")
   (module-browser-name-short "短")
   (module-browser-name-medium "中")
@@ -1704,7 +1703,7 @@ please adhere to these guidelines:
   (stepper-jump-to-previous-application "上一個應用步驟")
   (stepper-jump-to-next-application "下一個應用步驟")
   (stepper-out-of-steps
-   "在找到你要的步驟之前就已到達求值結尾。")
+   "已到達求值結尾，未找到符合的步驟。")
   (stepper-no-such-step/title "找不到步驟")
   (stepper-no-such-step "找不到符合條件的步驟。")
   (stepper-no-such-step/earlier "找不到更早符合條件的步驟。")
@@ -1846,22 +1845,22 @@ please adhere to these guidelines:
    " 中控制在「Racket 語言」中執行的子模組。")
 
   (test-engine-ran-1-test "已執行 1 個測試。")
-  (test-engine-ran-1-check "已執行 1 次 check。")
+  (test-engine-ran-1-check "已執行 1 次檢查。")
   ;; ditto, only plural
   (test-engine-ran-n-tests "已執行 ~a 個測試。")
-  (test-engine-ran-n-checks "已執行 ~a 次 check。")
+  (test-engine-ran-n-checks "已執行 ~a 次檢查。")
   (test-engine-1-test-passed "測試通過！")
-  (test-engine-1-check-passed "check 通過！")
+  (test-engine-1-check-passed "檢查通過！")
   (test-engine-both-tests-passed "兩個測試皆通過！")
-  (test-engine-both-checks-passed "兩個 check 皆通過！")
+  (test-engine-both-checks-passed "兩個檢查皆通過！")
   (test-engine-all-tests-passed "所有測試皆通過！")
-  (test-engine-all-checks-passed "所有 check 皆通過！")
+  (test-engine-all-checks-passed "所有檢查皆通過！")
   (test-engine-all-n-tests-passed "共 ~a 個測試皆通過！")
-  (test-engine-all-n-checks-passed "共 ~a 次 check 皆通過！")
+  (test-engine-all-n-checks-passed "共 ~a 次檢查皆通過！")
   (test-engine-0-tests-passed "0 個測試通過。")
-  (test-engine-0-checks-passed "0 次 check 通過。")
+  (test-engine-0-checks-passed "0 次檢查通過。")
   (test-engine-m-of-n-tests-failed "~a / ~a 個測試失敗。")
-  (test-engine-m-of-n-checks-failed "~a / ~a 次 check 失敗。")
+  (test-engine-m-of-n-checks-failed "~a / ~a 次檢查失敗。")
   (test-engine-must-be-tested "此程式必須執行測試！")
   (test-engine-is-unchecked "此程式未檢查！")
   (test-engine-tests-disabled "測試已停用。")
@@ -1927,7 +1926,7 @@ please adhere to these guidelines:
   (test-engine-n-signature-violations "~a 個簽章違反。")
 
   ; as in got <value>, signature <at ...>
-  (test-engine-got "得到")
+  (test-engine-got "實得")
 
   (profjWizward-insert-java-class "插入 Java 類別")
   (profjWizard-insert-java-union "插入 Java 聯合")
@@ -2001,7 +2000,7 @@ please adhere to these guidelines:
   (show-planet-contract-violations "顯示 PLaneT 合約違反")
 
   ; buttons in the dialog that lists the recorded bug reports
-  (bug-track-report "送出回報單")
+  (bug-track-report "送出錯誤回報")
   (bug-track-forget "移除")
   (bug-track-forget-all "全部移除")
 
