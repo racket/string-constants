@@ -246,7 +246,7 @@ please adhere to these guidelines:
   ;; is put into the second ~a. Use check syntax and right-click on a documented variable
   ;; (eg, 'require') to see this in use
 
-  (cs-lexical-variable "語彙變數")
+  (cs-lexical-variable "詞法變數")
   (cs-set!d-variable "被改變的變數")
   (cs-imported-variable "匯入的變數")
   (cs-unused-require "未使用的 require")
@@ -1417,7 +1417,7 @@ please adhere to these guidelines:
   ;;; languages
   (beginning-one-line-summary "define、cond、結構、常數與原始運算元")
   (beginning/abbrev-one-line-summary "初學者；REPL 以清單風格列印")
-  (intermediate-one-line-summary "初學者加上語彙作用域")
+  (intermediate-one-line-summary "初學者加上詞法作用域")
   (intermediate/lambda-one-line-summary "中階加上高階函式")
   (advanced-one-line-summary "中階加上 lambda 與可變動作")
   (pretty-big-scheme "Pretty Big")
