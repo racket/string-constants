@@ -1,1548 +1,2317 @@
-;; Computer converted from Simplified-Chineses string constants by Chongkai Zhu
+#|
+
+When modifying the string constants files,
+please adhere to these guidelines:
+
+- All the entries in english-string-constants.rkt have the same format
+  (name string).  If the purpose of an entry you are adding to the
+  file is not clear from just the name and string, put a comment next
+  to the entry explaining what the string is going to be used for and
+  in what context.
+  That's especially true for strings that contain things like "~a".
+  Systematically describe what the "~a" is going to be replaced with.
+  When we have to translate strings like "deleting ~a", we translators
+  need to know what "~a" is going to be (in particular, in some
+  languages like French, we need to know whether the "~a" is going to
+  be a masculine or feminine word, or whether it's going to be
+  singular or plural, etc).
+
+- When adding a bunch of new entries, put together in a section the
+  entries that logically belong together.  Give a title to your
+  section, so we have an idea of what the strings are for.  Don't mix
+  in the same section strings that have nothing to do with each other,
+  that's only going to confuse us.  Do not start a new section if
+  there's already one that deals with the same thing.  Dumping all the
+  new entries in random order at the end of the file is not a good way
+  to have your new entries translated in a timely manner...
+
+- Before adding strings for your new pet tool, check whether you can't
+  re-use strings that already exist.  There's no need for yet another
+  "Ok" string...
+
+- If you modify an existing string in english-string-constants.rkt, go
+  through all the *-string-constants.rkt files for the other languages,
+  comment out the old version of the modified string in each of these
+  files, and put a short comment there telling us the English string
+  has changed and needs to be re-translated.  Do not erase the old
+  version, it might help us translate the new one.  Do not move it
+  either.  Just comment it out and add the short comment.  After the
+  next git update DrRacket will automatically tell us translators that
+  a new string needs to be translated, we will find your comment in
+  the file, and know what to do.
+	Some evil evil people might think that, since DrRacket automatically
+  informs us of new strings to be translated, an easier thing to do
+  when modifying an existing string would be to simply rename it at
+  the same time.  This works, except that if you do that, we
+  translators will get two warnings from DrRacket:
+		language english had but french does not:
+		(new-name "New String")
+		language french had but english does not:
+		(old-name "Old String")
+  then we translators will be left to wonder whether the two things
+  are related or not, and whether we can safely base our translation
+  of "New String" on the translation of "Old String" (since the two
+  strings are likely to be close in meaning).  Worse, we might not
+  even realize the two strings are related and translate "New String"
+  from scratch, just to realize later that it's only a variation of
+  "Old String".  I can tell you that nothing pisses off a translator
+  more than having to translate pretty much the same string twice
+  just because *you* were too lazy to inform us that it was just a
+  slight modification to an existing string rather than an entirely
+  new one.  Conclusion: do not change the name of a string unless you
+  have some really good reason to do so.
+
+- Please think hard before choosing a string and make sure it means
+  what you want it to mean.  That way you won't have to change it
+  later, and we won't have to retranslate it.
+
+- Please think hard before choosing the name for a string.  Use
+  meaningful names.  "error" or "ok" are not meaningful names.  Prefix
+  all related names with a common prefix (the name of your tool or
+  module).  String names are not the right place to save on typing.
+
+- If, for some reason, you really have to change the name of a string
+  (like, because the original name you gave it really sucked...),
+  change the name of the string in *ALL* the *-string-constants.rkt
+  files.  That's a modification you can do without the help of a
+  translator, so do it yourself.  It's not the job of the translators
+  to clean up your naming mess for you.  Besides, you are the one who
+  knows what you changed, so leaving the translators having to guess
+  what you did is Not Nice(tm).
+
+- If, for some reason, you need to remove a string (i.e. you changed
+  your code and don't need the string anymore), remove the string in
+  *ALL* the *-string-constants.rkt files.  Again, you don't need the
+  help of a translator to do that.  If you're not sure whether you
+  might need the string in the future or not, just comment it out in
+  *ALL* the files.
+
+|#
+
 (module traditional-chinese-string-constants "string-constant-lang.rkt"
+  ;;; when translating this constant, substitute name of actual language for `English'
   (is-this-your-native-language "中文是你的母語嗎？")
-  
+
+  (#:define drr "DrRacket")
+
   (are-you-sure-you-want-to-switch-languages
-   "為了改變界面語言，現在需要重新啟動DrRacket。你確定嗎？")
-  
-  (interact-with-drscheme-in-language "使用繁體中文作DrRacket界面語言")
-  
-  ;; these two should probably be the same in all languages excepet English.
+   "這會更改圖形介面的語言，並需要重新啟動 DrRacket。確定要進行嗎？")
+
+  (interact-with-drscheme-in-language "在 DrRacket 中使用繁體中文介面")
+
+  ;; these two should probably be the same in all languages except English.
   ;; they are the button labels (under macos and windows, respectively)
   ;; that go the with the string above.
   (accept-and-quit "接受並退出")
-  (accept-and-exit "接受並退出")
-  
+  (accept-and-exit "接受並離開")
+
   ;;; general purpose (DrRacket is hereby a word in every language, by decree of Robby :)
   (plt "PLT")
-  (drscheme "DrRacket")
-  (drracket "DrRacket")
-  
+  (drscheme drr)
+  (drracket drr)
   (ok "確定")
   (cancel "取消")
   (abort "中止")
   (untitled "未命名")
-  (untitled-n "未命名~a")
+  (untitled-n "未命名 ~a")
   (warning "警告")
   (error "錯誤")
-  (close "關閉") ;; as in, close an open window. must match close-menu-item
+  (close "關閉") ;; as in, close an open window or tab. must match close-menu-item
   ;; in the sense that, when the &s have been stripped from
   ;; close-menu-item, it must be the same string as this.
   (close-window "關閉視窗")
   (stop "停止")
   (&stop "停止(&S)") ;; for use in button and menu item labels, with short cut.
-  (are-you-sure-delete? "確定要刪除~a嗎？") ;; ~a is a filename or directory name
-  (are-you-sure-replace? "確定要替換~a嗎？") ;; ~a is a filename or directory name
+  (are-you-sure-delete? "確定要刪除「~a」嗎？") ;; ~a is a filename or directory name
+  (are-you-sure-replace? "確定要取代「~a」嗎？") ;; ~a is a filename or directory name
   (ignore "忽略")
   (revert "還原")
-  
+
   ;; label for a generic check box, often supported on dialogs
   ;; that ask a binary choice of the user. If checked, the
   ;; dialog isn't going to be shown again.
   ;; One version for always using the current choice:
-  (dont-ask-again-always-current "不再詢問（總是使用當前設置）")
+  (dont-ask-again-always-current "不再詢問（一律使用目前選擇）")
   ;; One generic version (ie, on the Quit DrRacket dialog)
-  (dont-ask-again "不再詢問")
-  
+  (dont-ask-again                "不再詢問")
+
   ;;; important urls
   (web-materials "相關網站") ;; menu item title
   (tool-web-sites "工具網站")   ;; menu item title
   (plt-homepage "Racket")
   (pbd-homepage "Program by Design")
-  
+
+  ;; having an issue (replaces the bug report form, whose string constants are below)
+  (have-an-issue? "遇到問題嗎？…")
+  (use-github-or-the-mailing-list-for-issues
+   "如果你發現了 Racket 或 DrRacket 的錯誤，"
+   " 請到 GitHub 建立 issue。\n\n如果你遇到不合理的行為，"
+   " 但你不確定是否為錯誤，請到郵件論壇詢問。")
+  (visit-mailing-lists "前往郵件論壇") ;; button in dialog
+  (visit-github "前往 GitHub") ;; button in dialog, goes to 'open issue' page
+
   ;;; bug report form
-  (cancel-bug-report? "取消程序錯誤報告？")
+  (cancel-bug-report? "取消回報錯誤？")
   (are-you-sure-cancel-bug-report?
-   "你確定要取消報告程序錯誤嗎？")
+   "確定要取消送出這份錯誤回報嗎？")
   (do-you-want-to-discard-or-save-this-bug-report
-   "是保存還是丟棄這份程序錯誤報告?")
-  (discard "丟棄") ;; a button label for a dialog box with the above question
-  (bug-report-form "程序錯誤報告表")
-  (bug-report-field-name "姓名")
+   "要放棄還是儲存這份錯誤回報？")
+  (discard "放棄") ;; a button label for a dialog box with the above question
+  (bug-report-form "錯誤回報表")
+  (bug-report-field-name "你的姓名")
   (bug-report-field-email "電子郵件")
-  (bug-report-field-summary "標題")
-  (bug-report-field-severity "嚴重度")
+  (bug-report-field-summary "摘要")
+  (bug-report-field-severity "嚴重程度")
   (bug-report-field-class "類別")
-  (bug-report-field-description "詳細描述")
-  (bug-report-field-reproduce1 "再現程序錯")
-  (bug-report-field-reproduce2 "誤的步驟")
+  (bug-report-field-description "描述")
+  (bug-report-field-reproduce1 "重現")
+  (bug-report-field-reproduce2 "步驟")
   (bug-report-field-environment "環境")
-  (bug-report-field-docs-installed "已安裝文檔")
-  (bug-report-field-collections "Collections")
-  (bug-report-field-human-language "自然語言")
-  (bug-report-field-memory-use "內存使用")
+  (bug-report-field-docs-installed "已安裝文件")
+  (bug-report-field-collections "collection")
+  (bug-report-field-links "連結")  ;; from 'raco link'
+  (bug-report-field-human-language "人類語言")
+  (bug-report-field-memory-use "記憶體使用量")
   (bug-report-field-version "版本")
-  (bug-report-synthesized-information "綜合信息")  ;; dialog title
-  (bug-report-show-synthesized-info "顯示綜合信息")
-  (bug-report-submit "提交")
-  (close-and-save-bug-report "保存並關閉(&&)") ;; button in bug report dialog, next to cancel and bug-report-submit
-  (bug-report-submit-menu-item "提交程序錯誤報告…");; same as above, but used when there are saved bug reports
-  (saved-bug-reports-menu-item "保存程序錯誤報告") ;; in Help Menu, submenu title
-  (disacard-all-saved-bug-reports "丟棄全部程序錯誤報告") ;; menu item: only shows up when there is more than one saved bug report
-  (no-saved-bug-reports "不存在程序錯誤報告") ;; an info message that shows up as a disabled menu item when no saved bug reports are around
-  (new-bug-report "新程序錯誤報告") ;; button label the user sees when there are saved bug reports, but the user asks to save another one.
-  (close-and-save "保存並關閉") ;; button on the bottom of the bug report form
-  (saved-unsubmitted-bug-reports "未提交的程序錯誤報告") 
-  ;; the above string constant is next to previous line in same dialog, followed by list of bug report subjects (as buttons)
-  (error-sending-bug-report "程序錯誤報告傳輸出錯")
-  (error-sending-bug-report-expln "在傳輸程序錯誤報告的過程中出現了錯誤。如果你能夠正常瀏覽網路，請訪問：\n\n    http://bugs.racket-lang.org/\n\n使用网页上的表单提交程序错误报告。对于由此产生的不便，我们表示抱歉。\n\n传输错误详情：\n~a")
-  (illegal-bug-report "非法的程序錯誤報告")
-  (pls-fill-in-field "請填寫\"~a\"欄目")
-  (malformed-email-address "電子郵件地址合格不正確")
-  (pls-fill-in-either-description-or-reproduce "在「詳細描述」和「再現程序錯誤的步驟」兩欄中，請至少填寫一項。")
-  
+  (bug-report-synthesized-information "彙整資訊")  ;; dialog title
+  (bug-report-show-synthesized-info "顯示彙整資訊")
+  (bug-report-submit "送出")
+    ;; button in bug report dialog, next to cancel and bug-report-submit
+  (close-and-save-bug-report "關閉並儲存")
+  ;; same as above, but used when there are saved bug reports
+  (bug-report-submit-menu-item "送出錯誤回報…")
+  ;; in Help Menu, submenu title
+  (saved-bug-reports-menu-item "已儲存的錯誤回報")
+  ;; menu item: only shows up when there is more than one saved bug report
+  (disacard-all-saved-bug-reports "放棄所有已儲存的錯誤回報")
+  ;; an info message that shows up as a disabled menu item when no saved bug reports are around
+  (no-saved-bug-reports "沒有已儲存的錯誤回報")
+  ;; button label the user sees when there are saved bug reports,
+  ;; but the user asks to save another one.
+  (new-bug-report "新增錯誤回報")
+  ;; button on the bottom of the bug report form
+  (close-and-save "關閉並儲存")
+  (saved-unsubmitted-bug-reports "已儲存但未送出的錯誤回報：")
+  ;; the above string constant is next to previous line in same dialog, followed by
+  ;; list of bug report subjects (as buttons)
+  (error-sending-bug-report "錯誤回報傳送失敗")
+  (error-sending-bug-report-expln
+   "傳送這份錯誤回報時發生錯誤。"
+   " 如果你的網路連線正常，請造訪：\n\n"
+   "    https://github.com/racket/racket/issues/new\n\n"
+   " 並透過 GitHub 回報。造成不便，敬請見諒。\n\n錯誤訊息如下：\n~a")
+  (illegal-bug-report "不合法的錯誤回報")
+  (pls-fill-in-field "請填寫「~a」欄位")
+  (malformed-email-address "電子郵件地址格式錯誤")
+  (pls-fill-in-either-description-or-reproduce
+   "請填寫「描述」欄位或「重現步驟」欄位其一。")
+
   ;;; check syntax
-  (check-syntax "檢查語法")
+  (check-syntax "語法檢查")
   (cs-italic "斜體")
-  (cs-bold "黑體")
-  (cs-underline "下劃線")
-  (cs-change-color "改變顏色")
+  (cs-bold "粗體")
+  (cs-underline "底線")
+  (cs-smoothing-default "預設")
+  (cs-smoothing-partial "部分平滑")
+  (cs-smoothing-full "平滑")
+  (cs-smoothing-none "不平滑")
+  (cs-change-color "變更顏色")
   (cs-foreground-color "前景色")
   (cs-background-color "背景色")
-  (cs-tack/untack-arrow "附加/取消箭頭")
-  (cs-jump-to-next-bound-occurrence "跳至下一個被綁定出現")
-  (cs-jump-to-binding "跳至綁定出現")
-  (cs-jump-to-definition "跳至定義")
-  (cs-error-message "出錯信息")
-  (cs-open-file "打開~a")
-  (cs-rename-var "重命名~a")
-  (cs-rename-id "重命名標識符")
-  (cs-rename-var-to "將~a重命名為：")
-  (cs-name-duplication-error "你所選擇的新名稱~s與當前轄域內現有標識符相同。")
-  (cs-rename-anyway "強制重命名")
-  (cs-status-init "檢查語法：為用戶代碼初始化環境")
-  (cs-status-coloring-program "檢查語法：為程序著色")
-  (cs-status-eval-compile-time "檢查語法：編譯程序")
-  (cs-status-expanding-expression "檢查語法：展開表達式")
-  (cs-status-loading-docs-index "檢查語法：載入文檔索引")
-  (cs-mouse-over-import "綁定~s由~s導入")  
-  (cs-view-docs "察看~a的文檔")
-  (cs-view-docs-from "~a（來自~a）")  ;; a completed version of the line above
-  ;; (cs-view-docs) is put into the first ~a and a list of modules (separated by commas) 
-  ;; is put into the second ~a. Use check syntax and right-click on a documented variable (eg, 'require') to see this in use
-  
+  (cs-tack/untack-arrow "釘選/取消釘選箭頭")
+  (cs-tack-crossing-arrows "釘選交叉箭頭")
+  (cs-jump-to-next-bound-occurrence "跳到下一個繫結位置")
+  (cs-jump-to-previous-bound-occurrence "跳到上一個繫結位置")
+  (cs-jump-to-binding "跳到繫結位置")
+  (cs-jump-to-definition "跳到定義（於其他檔案）")
+  (cs-open-defining-file "開啟定義所在檔案")
+  (cs-error-message "錯誤訊息")
+  (cs-open-file "開啟 ~a")
+  (cs-rename-var "重新命名 ~a")
+  (cs-rename-id "重新命名識別字")
+  (cs-rename-var-to "將「~a」重新命名為：")
+  (cs-name-duplication-error
+   "你選擇的新名稱 ~s 與此作用域中既有名稱衝突。")
+  (cs-rename-anyway "仍要重新命名")
+  (cs-status-init "語法檢查：初始化使用者程式環境")
+  (cs-status-coloring-program "語法檢查：染色標示程式")
+  (cs-status-eval-compile-time "語法檢查：求值編譯期")
+  (cs-status-expanding-expression "語法檢查：展開運算式")
+  (cs-status-loading-docs-index "語法檢查：載入文件索引")
+  (cs-syncheck-running "語法檢查執行中")
+  (cs-mouse-over-import "繫結「~s」自 ~s 匯入")
+  (cs-mouse-over-import/library-only "自 ~s 匯入")
+  (cs-view-docs "檢視「~a」的文件")
+  (cs-view-docs-from "~a 來自 ~a")  ;; a completed version of the line above
+  ;; (cs-view-docs) is put into the first ~a and a list of modules (separated by commas)
+  ;; is put into the second ~a. Use check syntax and right-click on a documented variable
+  ;; (eg, 'require') to see this in use
+
   (cs-lexical-variable "詞法變數")
-  (cs-set!d-variable "set!過的變數")
-  (cs-imported-variable "導入的變數")
-  (cs-unused-require "無用的require")
+  (cs-set!d-variable "被改變的變數")
+  (cs-imported-variable "匯入的變數")
+  (cs-unused-require "未使用的 require")
   (cs-free-variable "自由變數")
-  
-  (cs-binder-count "~a次綁定出現")
-  (cs-zero-varrefs "沒有綁定出現")
-  (cs-one-varref "1次被綁定出現")
-  (cs-n-varrefs "~a次被綁定出現") ;; expected to have one ~a formatter that will accept a number
-  
-  (cs-contract-my-obligation "Contract：本module的義務")
-  (cs-contract-their-obligation "Contract：客戶module的義務")
-  (cs-contract-both-obligation "Contract：本module和客戶module的共同義務")
-  (cs-contract-unk-obligation "Contract：義務未知")
-  
-  
+
+  (cs-binder-count "~a 個繫結位置")
+  (cs-zero-varrefs "沒有繫結位置")
+  (cs-one-varref "1 個繫結位置")
+  ;; expected to have one ~a formatter that will accept a number
+  (cs-n-varrefs "~a 個繫結位置")
+
+  (cs-contract-my-obligation "契約：此module的責任")
+  (cs-contract-their-obligation "契約：使用端module的責任")
+  (cs-contract-both-obligation "契約：此module與使用端module的共同責任")
+  (cs-contract-unk-obligation "契約：未知責任")
+
+  ;; require prefix functionality
+  (cs-add-prefix-for-require "為 require 加上前綴")
+  (cs-prefix-require-title "require 前綴")
+  (cs-prefix-require "選擇要加入至每個匯入變數的前綴")
+  (cs-all-binders-are-prefixed
+   "所有 require 看起來都已有前綴；請嘗試使用重新命名代替")
+  (cs-the-binder-is-prefixed
+   "此 require 看起來已具有前綴；請嘗試使用重新命名代替")
+
   ;; mode sub-menu in the "view" menu
-  (cs-check-syntax-mode "檢查語法模式")
-  (cs-mode-menu-show-my-obligations "我的Contract義務")
-  (cs-mode-menu-show-client-obligations "客戶的Contract義務")
+  (cs-check-syntax-mode "語法檢查模式")
+  (cs-mode-menu-show-my-obligations "我的契約責任")
+  (cs-mode-menu-show-client-obligations "使用端的契約責任")
   (cs-mode-menu-show-syntax "語法範疇")
-  
+
   ;; the documentation blue boxes in the upper-right corner of the drracket window
   (sc-read-more... "閱讀更多…")
-  (sc-f2-to-un/lock "f2（解除）鎖定")
-  
-  ;; the online check syntax status messages (mouse over the bottom right of drracket's window to see the messages during online expansion's various phases)
-  (online-expansion-running "語法檢查後台運行中")
-  (online-expansion-only-raw-text-files-supported "僅支持純文本文件")
-  (online-expansion-abnormal-termination "語法檢查後台異常退出")
-  (online-expansion-finished-successfully "語法檢查後台成功運行")
-  
+  (sc-f2-to-un/lock "按 F2 鎖定/解除鎖定")
+
+  ;; the online check syntax status messages (mouse over the bottom right of drracket's
+  ;; window to see the messages during online expansion's various phases)
+  (online-expansion-running "背景語法檢查執行中")
+  (online-expansion-only-raw-text-files-supported "僅支援純文字檔")
+  (online-expansion-abnormal-termination "背景語法檢查異常終止")
+  (online-expansion-abnormal-termination-out-of-memory
+   "背景語法檢查異常終止（記憶體不足）")
+  (online-expansion-finished-successfully "背景語法檢查完成")
+
   (jump-to-error "跳至錯誤")
-  (online-expansion-is-disabled "語法檢查後台運行被禁用")
+  (copy-error-message "複製錯誤訊息")
+  (online-expansion-is-disabled "已停用背景語法檢查")
   ; these next two show up in the bar along the bottom of the drracket window
-  (online-expansion-pending "語法檢查後台運行……")
-  (online-expansion-finished "後台語法檢查完成") ;; note: there may still be errors in this case
+  (online-expansion-pending "背景語法檢查待處理…")
+  ;; note: there may still be errors in this case
+  (online-expansion-finished "背景語法檢查完成")
   ; the next two show up in a menu when you click on the circle in the bottom right corner
-  (disable-online-expansion "禁用後台語法檢查")
-  (enable-online-expansion "啟用後台語法檢查")
+  (disable-online-expansion "停用背景語法檢查")
+  (enable-online-expansion "啟用背景語法檢查")
   ;; the online expansion preferences pane
-  (online-expansion "後台語法檢查") ;; title of prefs pane
+  (online-expansion "背景語法檢查") ;; title of prefs pane
   ; the different kinds of errors
-  (online-expansion-show-read-errors-as "顯示read錯誤")
-  (online-expansion-show-variable-errors-as "顯示未綁定變數")
+  (online-expansion-show-read-errors-as "顯示 read-level 錯誤")
+  (online-expansion-show-variable-errors-as "顯示未繫結識別字錯誤")
   (online-expansion-show-other-errors-as "顯示其他錯誤")
   ; locations the errors can be shown
-  (online-expansion-error-gold-highlight "使用高亮突出")
-  (online-expansion-error-margin "在一側顯示")
+  (online-expansion-error-gold-highlight "以金色染色標示")
+  (online-expansion-error-margin "於邊界顯示")
   ; the label of a preference in the (string-constant online-expansion) section
-  (show-arrows-on-mouseover "滑鼠懸停時顯示綁定及尾位置箭頭")
+  (show-arrows-on-mouseover "滑鼠懸停顯示繫結與尾端位置箭頭")
+  (show-blueboxes "顯示簽名方塊並在其右上顯示箭頭半圓")
   ;;; info bar at botttom of drscheme frame
-  (collect-button-label "垃圾收集")
-  (read-only "只讀")
-  (auto-extend-selection "自動延長")
-  (overwrite "覆蓋")
-  (running "運行中")
-  (not-running "靜止中")
-  
+  (collect-button-label "GC")
+  (read-only "唯讀")
+  (auto-extend-selection "自動延伸選取")
+  (overwrite "覆寫")
+  (running "執行中")
+  (not-running "未執行")
+
+  ;; button label: ~a is filled with the name of a pkg
+  (install-package-button "安裝 ~a")
+  ;; button label; shown when there is a missing module, but no matching package
+  (update-catalog "更新目錄")
+  ;; message label; used as a status message when updating the pkg catalog
+  (updating-catalog-from "正從 ~a 更新…")
+
   ;;; misc
-  (welcome-to-something "歡迎來到~a")
-  
+  (welcome-to-something "歡迎使用 ~a")
+
   ; this appears in the drscheme about box.
-  (welcome-to-drscheme-version/language "歡迎使用DrRacket，版本~a，~a")
-  
+  (welcome-to-drscheme-version/language "歡迎使用 DrRacket，版本 ~a，~a")
+
   ; these appear on subsequent lines in the `Help|Welcome to DrRacket' dialog.
-  (welcome-to-drscheme "歡迎使用DrRacket")
-  
-  (goto-line "跳至行號")
+  (welcome-to-drscheme "歡迎使用 DrRacket")
+
+  (goto-line "前往行號")
   (goto-line-invalid-number
-   "~a不是合法的行號。必須提供一個在1和~a之間的數字")
-  (goto-position "跳至位置")
+   "~a 不是有效的行號。必須是 1 到 ~a 之間的整數")
+  (goto-position "前往位置")
   (no-full-name-since-not-saved
-   "當前文件還沒有被命名，因為從來沒有對它進行保存。")
-  (cannot-open-because-dne "無法打開~a，文件不存在。")
-  
+   "檔案沒有完整名稱，因為它尚未儲存。")
+  (cannot-open-because-dne "無法開啟 ~a，因為它不存在。")
+
   (needs-execute-language-changed
-   "警告：語言改變了。請單擊「運行」。")
+   "警告：語言已變更。請按執行。")
   (needs-execute-teachpack-changed
-   "警告：教學包改變了。請單擊「運行」。")
+   "警告：教材包已變更。請按執行。")
   (needs-execute-defns-edited
-   "警告：定義視窗改變了。請單擊「運行」。")
-  
+   "警告：定義視窗已變更。請按執行。")
+
   (editor-changed-since-srcloc-recorded
-   "編輯器在記錄原始位置之後被改動過，故高亮區域不一定準確反映源碼")
-  
-  (file-is-not-saved "文件\"~a\"還沒有保存過")
-  (save "保存")
-  (close-anyway "強制關閉")
-  (dont-save "不保存")
-  (clear-anyway "強制清空")
-  
+   "自從記錄來源位置後，此編輯器內容已有變更，"
+   " 因此目前染色標示的區域可能已不再對應正確的來源位置。")
+
+  (file-is-not-saved "檔案「~a」尚未儲存。")
+  (save "儲存")
+  (close-anyway "仍要關閉")
+  (dont-save "不要儲存")
+  (clear-anyway "仍要清除")
+
   ;; menu item title
-  (log-definitions-and-interactions "記錄定義和交互的日誌…")
-  (stop-logging "不再記錄日誌")
-  (please-choose-a-log-directory "請選擇日誌目錄")
-  (logging-to "記錄日誌到：")
-  (erase-log-directory-contents "刪除日誌目錄~a中的內容？")
-  (error-erasing-log-directory "刪除日誌出錯。\n\n~a\n")
-  
-  ;; menu items connected to the logger -- also in a button in the planet status line in the drs frame
-  (show-log "顯示日誌(&L)")
-  (hide-log "隱藏日誌(&L)")
-  (logger-scroll-on-output "跟隨輸出") ; a checkbox in the logger pane
-  (log-messages "日誌信息") ;; label for the drracket logging gui panel
-  
-  
+  (log-definitions-and-interactions "記錄定義與互動…")
+  (stop-logging "停止記錄")
+  (please-choose-a-log-directory "請選擇記錄目錄")
+  (logging-to "記錄位置：")
+  (erase-log-directory-contents "要清除記錄目錄內容嗎：~a？")
+  (error-erasing-log-directory "清除記錄目錄內容時發生錯誤。\n\n~a\n")
+
+  ;; menu items connected to the logger; also in a button in the planet status line in the drs frame
+  (show-log "顯示記錄(&L)")
+  (hide-log "隱藏記錄(&L)")
+  (logger-scroll-on-output "輸出時自動捲動") ; a checkbox in the logger pane
+  (log-messages "記錄訊息") ;; label for the drracket logging gui panel
+
   ;; modes
   (mode-submenu-label "模式")
-  (scheme-mode "Scheme模式")
-  (racket-mode "Racket模式")
-  (text-mode "文本模式")
-  
+  (scheme-mode "Scheme 模式")
+  (racket-mode "Racket 模式")
+  (text-mode "文字模式")
+
   (scheme-mode-color-symbol "符號")
-  (scheme-mode-color-keyword "關鍵詞")
-  (scheme-mode-color-comment "注釋")
-  (scheme-mode-color-string "字元串")
-  (scheme-mode-color-constant "常量")
+  (scheme-mode-color-keyword "關鍵字")
+  (scheme-mode-color-comment "註解")
+  (scheme-mode-color-string "字串")
+  (scheme-mode-color-text "文字")
+  (scheme-mode-color-constant "常數")
   (scheme-mode-color-parenthesis "括號")
-  (scheme-mode-color-hash-colon-keyword "#:關鍵詞")
+  (scheme-mode-color-hash-colon-keyword "#:關鍵字")
   (scheme-mode-color-error "錯誤")
   (scheme-mode-color-other "其他")
   ;; the ~a is filled in with one of the above (scheme-mode-*)
-  (syntax-coloring-choose-color "為~a選擇顏色")
+  (syntax-coloring-choose-color "選擇 ~a 的顏色")
   (preferences-colors "顏色") ;; used in the preferences dialog
-  
+
   ;; parenthesis color scheme string constants
-  (parenthesis-color-scheme "括號色彩調配") ;; label for the choice% menu in the preferences dialog
-  (paren-color-basic-grey "單一灰色")
-  (paren-color-shades-of-gray "漸變灰色")
-  (paren-color-shades-of-blue "漸變藍色")
+  ; label for the choice% menu in the preferences dialog
+  (parenthesis-color-scheme "括號配色方案")
+  (paren-color-basic-grey "基本灰")
+  (paren-color-shades-of-gray "灰色漸層")
+  (paren-color-shades-of-blue "藍色漸層")
   (paren-color-spring "春")
   (paren-color-fall "秋")
   (paren-color-winter "冬")
-  
-  
+
+
   (url: "URL：")
-  (open-url... "打開URL…")
-  (open-url "打開URL")
+  (open-url... "開啟 URL…")
+  (open-url "開啟 URL")
   (browse... "瀏覽…")
-  (bad-url "錯誤的URL")
-  (bad-url:this "錯誤的URL：~a")
-  
+  (bad-url "不正確的 URL")
+  (bad-url:this "不正確的 URL：~a")
+
   ;; Help Desk
-  (help "幫助")
-  (racket-documentation "Racket文檔")
-  (x-documentation "~a文檔") ;; ~a is filled with a language family name, eg Racket, Rhombus, or HtDP
-  (help-desk "幫助台")
-  (plt:hd:search "搜索")
-  (plt:hd:feeling-lucky "手氣不錯")
-  (plt:hd:home "幫助台首頁") 
+  (help "說明")
+  (racket-documentation "Racket 說明文件")
+  (x-documentation "~a 說明文件")
+  (help-desk "說明中心")
+  (plt:hd:search "搜尋")
+  (plt:hd:feeling-lucky "好手氣")
+  (plt:hd:home "說明中心首頁")
   ; next 3 are popup menu choices in help desk search frame
-  (plt:hd:search-for-keyword "關鍵詞")
-  (plt:hd:search-for-keyword-or-index "關鍵詞或索引")
-  (plt:hd:search-for-keyword-or-index-or-text "關鍵詞、索引或普通文本")
-  (plt:hd:exact-match "精確匹配")
-  (plt:hd:containing-match "包含")
-  (plt:hd:regexp-match "正則表達式匹配")
-  (plt:hd:find-docs-for "搜索文檔：")
-  (plt:hd:search-stopped-too-many-matches "[搜索中斷：過多匹配結果]")
-  (plt:hd:nothing-found-for "找不到任何關於~a的信息")
-  (plt:hd:and "並且")
-  (plt:hd:refresh "更新")
-  (plt:hd:refresh-all-manuals "更新所有手冊")
-  (plt:hd:manual-installed-date "（~a已安裝）")
+  (plt:hd:search-for-keyword "關鍵字輸入")
+  (plt:hd:search-for-keyword-or-index "關鍵字或索引輸入")
+  (plt:hd:search-for-keyword-or-index-or-text "關鍵字、索引或全文")
+  (plt:hd:exact-match "完全符合")
+  (plt:hd:containing-match "包含匹配")
+  (plt:hd:regexp-match "正規表示式匹配")
+  (plt:hd:find-docs-for "尋找說明：")
+  (plt:hd:search-stopped-too-many-matches "[搜尋中止：結果過多]")
+  (plt:hd:nothing-found-for "找不到：~a")
+  (plt:hd:and "與")
+  (plt:hd:refresh "重新整理")
+  (plt:hd:refresh-all-manuals "重新整理所有手冊")
+  (plt:hd:manual-installed-date "（已安裝 ~a）")
   ; Help Desk configuration
   ;; refreshing manuals
   (plt:hd:refreshing-manuals "重新下載手冊")
-  (plt:hd:refresh-downloading... "下載~a…")
-  (plt:hd:refresh-deleting... "刪除舊版本的~a…")
-  (plt:hd:refresh-installing... "安裝新版本的~a…")
-  (plt:hd:refresh-clearing-indices "清除緩存中的索引")
+  (plt:hd:refresh-downloading... "正在下載 ~a…")
+  (plt:hd:refresh-deleting... "正在刪除 ~a 的舊版本…")
+  (plt:hd:refresh-installing... "正在安裝 ~a 的新版本…")
+  (plt:hd:refresh-clearing-indices "清除快取索引")
   (plt:hd:refreshing-manuals-finished "完成。")
-  (plt:hd:about-help-desk "關於幫助台")
+  (plt:hd:about-help-desk "關於說明中心")
   (plt:hd:help-desk-about-string
-   "幫助台是Racket軟體的完整信息來源。\n\n版本~a\n版權所有（c）~a—~a PLT")
-  (plt:hd:help-on-help "關於幫助的幫助")
+   "說明中心有 Racket 軟體的完整資訊。\n\n"
+   " 版本 ~a\n著作權 (c) ~a-~a PLT")
+  (plt:hd:help-on-help "說明的說明")
   (plt:hd:help-on-help-details
-   "關於使用幫助台的幫助，請參見幫助台首頁中的第一個連結『幫助台』。（要進入幫助台的首頁，請單擊幫助台視窗上方的『首頁』按鈕。）")
-  (reload "刷新") ;; refresh the page in a web browser
+   "若要瞭解如何使用說明中心，請在說明中心的首頁點選第一個連結 `Help Desk' 。"
+   " （若你尚未在首頁，請按一下 `Home'"
+   " 按鈕，該按鈕位於說明中心視窗上方。）")
+  (reload "重新載入") ;; refresh the page in a web browser
   (plt:hd:ask-about-separate-browser
-   "你選擇了一個指向全球資訊網的連結。請問您是要在幫助台中打開該頁面，還是想使用瀏覽器程序瀏覽網頁？")
-  (plt:hd:homebrew-browser "幫助台瀏覽器") ;; choice for the above string (in a button)
-  (plt:hd:separate-browser "網路瀏覽器") ;; other choice for the above string (also in a button)
-  (plt:hd:external-link-in-help "在幫助台中顯示外部URL")
-  (plt:hd:use-homebrew-browser "對於外部URL，使用幫助台瀏覽")
-  (plt:hd:new-help-desk "新幫助台")
-  
+   "你已點選一個指向全球資訊網內容的連結。"
+   " 你想在說明中心的瀏覽器中檢視它，還是"
+   " 你想使用其他瀏覽器程式來檢視它？")
+  (plt:hd:homebrew-browser "說明中心瀏覽器") ;; choice for the above string (in a button)
+  (plt:hd:separate-browser "外部瀏覽器") ;; other choice for the above string (also in a button)
+  (plt:hd:external-link-in-help "說明中的外部連結")
+  (plt:hd:use-homebrew-browser "外部連結使用說明中心瀏覽器")
+  (plt:hd:new-help-desk "新的說明中心")
+
   ;; in the Help Desk language dialog, title on the right.
-  (plt:hd:manual-search-ordering "搜索手冊的順序")
-  
+  (plt:hd:manual-search-ordering "手冊搜尋順序")
+
   ;; in the help-desk standalone font preference dialog, on a check box
-  (use-drscheme-font-size "使用和DrRacket相同的字體大小")
-  
+  (use-drscheme-font-size "使用 DrRacket 的字型大小")
+
   ;; in the preferences dialog in drscheme there is example text for help desk font size.
   ;; clicking the links in that text produces a dialog with this message
   (help-desk-this-is-just-example-text
-   "這裡顯示的只是示例字體大小的文字。要察看這些連結，請通過幫助菜單打開真正的幫助台。")
-  
-  ;; this appears in the bottom part of the frame the first time the user hits `f1' 
+   "這只是用於設定字型大小的範例文字。"
+   " 若要開啟這些連結，請從說明選單開啟說明中心。")
+
+  ;; this appears in the bottom part of the frame the first time the user hits `f1'
   ;; (assuming nothing else has loaded the documentation index first)
   ;; see also: cs-status-loading-docs-index
-  (help-desk-loading-documentation-index "幫助台：正在讀入文檔索引")
-  
+  (help-desk-loading-documentation-index "說明中心：正在載入文件索引")
+
+  ;; the next four are all in the same dialog box (only one of the first two appears)
+  (help-desk-materialize-docs-something-changed
+   "DrRacket 偵測到說明文件的索引可能有問題。"
+   " 是否要嘗試修復（可能需要一點"
+   " 時間）？\n\n更詳細地說，說明文件目錄 ~a 不存在，"
+   " 因此在瀏覽器中的搜尋很可能會失敗。")
+  (help-desk-materialize-docs-first-time
+   "DrRacket 偵測到說明文件索引可能有問題。"
+   " 是否要嘗試修復（可能需要一點"
+   " 時間）？\n\n更詳細地說，DrRacket 之前尚未產生"
+   " 使用者說明文件，因此"
+   " 在瀏覽器中的搜尋可能會失敗。")
+  (help-desk-do-nothing "不進行任何動作")
+  (help-desk-materialize-user-docs "具現化使用者文件")
+  ; this is used in a dialog to let the user know that work is being done based on
+  ; choices made from the previous dialog in the above four string constants
+  (help-desk-materializing-user-docs... "正在具現化使用者文件…")
+
   ;; Help desk htty proxy
-  (http-proxy "HTTP代理")
-  (proxy-direct-connection "直接連接")
-  (proxy-use-proxy "使用代理伺服器：")
-  (proxy-host "地址")
-  (proxy-port "埠")
-  (proxy-bad-host "無效代理伺服器")
-  
+  (http-proxy "HTTP 代理")
+  (proxy-direct-connection "直接連線")
+  (proxy-use-proxy "使用代理：")
+  (proxy-host "主機")
+  (proxy-port "連接埠")
+  (proxy-bad-host "不良的代理主機")
+
   ;; browser
-  (rewind-in-browser-history "後退")
+  (rewind-in-browser-history "倒轉")
   (forward-in-browser-history "前進")
-  (home "主頁")
+  (home "首頁")
   (browser "瀏覽器")
   (external-browser-choice-title "外部瀏覽器") ; title for radio-button set
-  (browser-command-line-label "命令行：") ; label for radio button that is followed by text boxes
+  (browser-command-line-label "命令列：") ; label for radio button that is followed by text boxes
   (choose-browser "選擇瀏覽器")
-  (no-browser "以後再詢問")
-  (browser-cmdline-expl-line-1 "（命令行由前綴文字，URL和後綴文字") ; explanatory text for dialog, line 1
-  (browser-cmdline-expl-line-2 "連接而成，中間不含任何空格）") ; ... line 2. (Anyone need more lines?)
+  (no-browser "稍後再問")
+  ; explanatory text for dialog, line 1
+  (browser-cmdline-expl-line-1 "（命令列由前置文字、URL、")
+  ; ... line 2. (Anyone need more lines?)
+  (browser-cmdline-expl-line-2 "與後置文字串接而成，其間不會加入任何額外空白。）")
   (install? "安裝？")  ;; if a .plt file is found (title of dialog)
-  (you-have-selected-an-installable-package "你選擇了一個可以安裝的軟體包。")
-  (do-you-want-to-install-it? "是否安裝？")
-  (paren-file-size "（該文件的長度是~a位元組）")
-  (download-and-install "下載並安裝(&&)") ;; button label
+  (you-have-selected-an-installable-package "你選擇了一個可安裝的package。")
+  (do-you-want-to-install-it? "要安裝它嗎？")
+  (paren-file-size "（檔案大小 ~a 位元組）")
+  (download-and-install "下載並安裝") ;; button label
   (download "下載") ;; button label
-  (save-downloaded-file/size "下載文件(~a位元組)並保存為") ;; label for get-file dialog
-  (save-downloaded-file "下載文件並保存為")  ;; label for get-file dialog
+  (save-downloaded-file/size "將已下載檔案（~a 位元組）另存為") ;; label for get-file dialog
+  (save-downloaded-file "將已下載檔案另存為")  ;; label for get-file dialog
   (downloading "下載中") ;; dialog title
-  (downloading-file... "下載文件中……")
-  (package-was-installed "安裝已完成。")
-  (download-was-saved "文件已保存。")
-  
-  (install-plt-file-menu-item... "安裝.plt文件…")
-  (install-plt-file-dialog-title "安裝.plt文件")
+  (downloading-file... "正在下載檔案…")
+  (package-was-installed "package已安裝。")
+  (download-was-saved "已儲存下載的檔案。")
+
+  (install-plt-file-menu-item... "安裝 .plt 檔案…")
+  (install-plt-file-dialog-title "安裝 .plt 檔案")
   (install-plt-web-tab "網路")
-  (install-plt-file-tab "文件")
-  (install-plt-filename "文件名：")
+  (install-plt-file-tab "檔案")
+  (install-plt-filename "檔名：")
   (install-plt-url "URL：")
-  (install-plt-error-header "檢查下載的.plt文件時出錯。請檢查URL並重試。")
-  
+  ; an error message from a primitive operation is appended to the end of this message.
+  (install-plt-error-downloading "下載 .plt 檔案時"
+                                 " 發生錯誤。\n\n詳情：\n")
+  (install-plt-error-header
+   "檢查已下載的 .plt 檔案有效性時發生錯誤。"
+   " 請確認 URL 後再試一次。")
+
   ;; install plt file when opened in drscheme strings
-  (install-plt-file "安裝~a，還是打開以供編輯？")
+  (install-plt-file "要安裝 ~a 還是開啟以編輯？")
   (install-plt-file/yes "安裝")
   (install-plt-file/no "編輯")
-  
+
   (plt-installer-progress-window-title "安裝進度") ;; frame title
-  (plt-installer-abort-installation "取消安裝") ;; button label
-  (plt-installer-aborted "安裝中止。") ;; msg that appears in the installation window when installation is aborted
-  
+  (plt-installer-abort-installation "中止安裝") ;; button label
+  ;; msg that appears in the installation window when installation is aborted
+  (plt-installer-aborted "已中止。")
+
   ;;; about box
-  (about-drscheme-frame-title "關於DrRacket")
-  
+  (about-drscheme-frame-title "關於 DrRacket")
+
   ;;; save file in particular format prompting.
-  (save-as-plain-text "保存本文件為純文本？")
-  (save-in-drs-format "保存本文件為drscheme（非純文本）格式？")
+  (save-as-plain-text "將此檔案儲存為純文字？")
+  (save-as-binary-format "將此檔案轉換為 DrRacket 特定格式以保留非文字元素？")
+  (save-in-drs-format "將此檔案儲存為 DrRacket 特定的非文字格式？")
+  (keep-format "保留（可能遺失資料）")
+  (convert-format "轉換（建議）")
+  (dont-save "不儲存")
   (yes "是")
   (no "否")
-  
+
   ;; saving image (right click on an image to see the text)
-  (save-image "保存圖片…")
-  
+  (save-image "儲存圖片…")
+
   ;;; preferences
-  (preferences "首選項")
-  (error-saving-preferences "保存首選項時出錯：~a")
-  (error-saving-preferences-title "保存首選項時出錯")
-  (steal-the-lock-and-retry "取消鎖定並重試(&&)") ;; in the preferences error dialog; this happens when the lockfile exists (after 3 pref writes).
-  
-  (error-reading-preferences "讀取首選項時出錯")
-  (error-reading-preferences-explanation "首選項文件被鎖定，故~a選項無法讀取")
+  (preferences "偏好設定")
+  (error-saving-preferences "儲存偏好設定時發生錯誤：~a")
+  (error-saving-preferences-title "儲存偏好設定錯誤")
+  ;; in the preferences error dialog; this happens when the lockfile exists (after 3 pref writes).
+  (steal-the-lock-and-retry "奪取鎖定並重試")
+
+  (error-reading-preferences "讀取偏好設定時發生錯誤")
+  (error-reading-preferences-explanation
+   "偏好設定檔案已被鎖定，因此無法讀取 ~a 偏好。")
   ;; in the above, ~a is filled with the name of the preference (a symbol)
-  (dont-ask-again-until-drracket-restarted "不再詢問（直到DrRacket關閉）")
-  ; difference between the above and below is one comes with a question (steal the lock or not) and the other with just a notation saying "the file is locked"
-  (dont-notify-again-until-drracket-restarted "不再通知（直到DrRacket關閉）") 
-  (prefs-file-locked "存儲首選項的文件被鎖定了（由於文件~a的存在），所以這些改動無法被保存。放棄修改？")
+  (dont-ask-again-until-drracket-restarted "不再詢問（直到重新啟動 DrRacket）")
+  ; difference between the above and below is one comes with a question (steal the lock or not)
+  ;; and the other with just a notation saying "the file is locked"
+  (dont-notify-again-until-drracket-restarted "不再通知（直到重新啟動 DrRacket）")
+  (prefs-file-locked
+   "偏好設定檔案已被鎖定（因為檔案 ~a 存在），"
+   " 因此無法儲存你的偏好變更。要取消變更嗎？")
   (try-again "重試") ;; button label
-  (give-up-and-use-the-default "放棄並使用默認值") ;; button label
-  
-  (prefs-file-still-locked "存儲首選項的文件仍然被鎖定（由於文件~a的存在）, 所以這些改動將不會被保存。")
+  (give-up-and-use-the-default "放棄並使用預設值") ;; button label
+
+  (prefs-file-still-locked
+   "偏好設定檔案仍然被鎖定（因為檔案 ~a 存在），"
+   " 因此你的偏好變更將不會被儲存。")
   (prefs-file-locked-nothing-doing
-   "首選項文件友~s鎖定，故修改不會被保存。")
-  ;; the  ~s is filled with the lockfile; this string is (currently) used only on windows where lockfiles are less friendly (and there is no steal fallback)
-  
+   "偏好設定檔案已被（~s）鎖定，因此無法儲存偏好變更。")
+  ;; the  ~s is filled with the lockfile; this string is (currently) used only on
+  ;; windows where lockfiles are less friendly (and there is no steal fallback)
+
   (scheme-prefs-panel-label "Racket")
   (warnings-prefs-panel-label "警告")
   (editor-prefs-panel-label "編輯")
-  (general-prefs-panel-label "常規")
-  (highlight-parens "加亮顯示匹配的括號")
-  (fixup-open-brackets "自動調整開中括號")
-  (fixup-close-parens "自動調整閉括號")
-  (flash-paren-match "高亮顯示括號匹配")
-  (map-delete-to-backspace "將delete轉換成backspace")
-  (verify-exit "退出時確認")
-  (ask-before-changing-format "改變保存方式時確認")
-  (wrap-words-in-editor-buffers "在編輯器中自動換行")
-  (show-status-line "顯示狀態欄")
-  (count-columns-from-one "從一開始計算行號")
-  (display-line-numbers "在編輯器中顯示行號")
-  (show-line-and-column-numbers "顯示行號和列號(&&)") ; used for popup menu; right click on line/column box in bottom of drs window
-  (show-character-offsets "顯示字元在文件中的位置") ; used for popup menu; right click on line/column box in bottom of drs window
-  (enable-keybindings-in-menus "允許使用菜單中的快捷鍵")
+  (general-prefs-panel-label "一般")
+  (editor-general-prefs-panel-label "一般編輯")
+  (highlight-parens "將相應的括號染色標示")
+  (fixup-open-brackets "自動調整左邊的方括號")
+  (fixup-close-parens "自動調整右邊的圓括號")
+  (flash-paren-match "閃爍顯示相應的括號")
+  (backup-unsaved-files "為未儲存的檔案建立備份")
+  (first-change-files "建立首次變更檔")
+  (map-delete-to-backspace "將 Delete 對應為 Backspace")
+  (verify-exit "離開前確認")
+  (ask-before-changing-format "變更儲存格式前先詢問")
+  (wrap-words-in-editor-buffers "在編輯器緩衝區自動換行")
+  (show-status-line "顯示狀態列")
+  (count-columns-from-one "欄位編號自 1 起算")
+  (display-line-numbers "在緩衝區顯示行號；非字元偏移量")
+  ; used for popup menu; right click on line/column box in bottom of drs window
+  (show-line-and-column-numbers "顯示行號與欄號")
+  ; used for popup menu; right click on line/column box in bottom of drs window
+  (show-character-offsets "顯示字元偏移量")
+  (enable-keybindings-in-menus "在選單啟用快捷鍵（會覆寫 Emacs 快捷鍵）")
   (printing-mode "列印模式")
-  (print-using-platform-specific-mode "平台特定的列印")
-  (print-to-ps "列印至PostScript文件")
-  (print-to-pdf "列印至PDF文件")
-  (command-as-meta "將command鍵當作meta") ;; macos/macos x only
-  (reuse-existing-frames "在打開新文件時，使用現有的視窗")
-  (default-fonts "默認字體")
-  (paren-match-color "高亮顯示括號所使用的顏色") ; in prefs dialog
-  (online-coloring-active "實時根據語法用顏色標記程序")
-  (open-files-in-tabs "在不同的標籤下打開多個文件（不使用多個視窗）")
-  (show-interactions-on-execute "在運行程序時自動打開交互視窗")
-  (switch-to-module-language-automatically "打開module文件時自動切換至module語言")
-  (interactions-beside-definitions "將定義視窗和交互視窗左右放置") ;; in preferences, below the checkbox one line above this one
+  (print-using-platform-specific-mode "使用平台特定列印")
+  (print-to-ps "列印為 PostScript 檔")
+  (print-to-pdf "列印為 PDF 檔")
+  (command-as-meta "將 Command 視為 Meta") ;; macos/macos x only
+  (any-control+alt-is-altgr "將 Control+Alt 視為 AltGr") ; Windows only
+  (alt-as-meta "將 Alt 視為 Meta")
+  (reuse-existing-frames "開啟新檔案時重用現有視窗")
+  (default-fonts "預設字型")
+  (basic-gray-paren-match-color "基本灰色括號染色標示顏色") ; in prefs dialog
+  (online-coloring-active "互動式語法染色")
+  (open-files-in-tabs "以分頁開啟檔案（非個別視窗）")
+  (restore-open-files-from-previous-session? "還原上次工作階段的已開啟檔案？")
+  (startup-open-files "啟動時開啟的檔案")
+  (restore-open-files-from-previous-session "還原上次工作階段的已開啟檔案")
+  (ask-me-each-time "每次詢問")
+  (open-a-blank-window "開啟空白視窗")
+  (show-interactions-on-execute "執行程式時自動開啟互動視窗")
+  (switch-to-module-language-automatically
+   "開啟module時自動切換至module語言")
+  ;; in preferences, below the checkbox one line above this one
+  (interactions-beside-definitions "將互動視窗放在定義視窗旁")
   (show-line-numbers "顯示行號")
-  (show-line-numbers/menu "顯示行號(&N)")  ;; just like the above, but capitalized for appearance in a menu item
+  ;; just like the above, but capitalized for appearance in a menu item
+  (show-line-numbers/menu "顯示行號(&N)")
   (hide-line-numbers/menu "隱藏行號(&N)")
-  (show-line-numbers-in-definitions "在定義視窗中顯示全部行號")
+  (show-line-numbers-in-definitions "在定義中顯示所有行號")
   ;; the constant above shows up in the popup menu item in the bottom of
-  ;; the drracket window; controls the line numbers on each line in the definitions; used in a checkable menu item
-  (limit-interactions-size "限制交互視窗的大小")
-  (background-color "背景顏色")
-  (default-text-color "默認顏色") ;; used for configuring colors, but doesn't need the word "color"
+  ;; the drracket window; controls the line numbers on each line in the definitions;
+  ;; used in a checkable menu item
+  ;; Capitalized for appearance in a menu item
+  (show-indent-guides/menu "顯示縮排導引線(&G)")
+  (hide-indent-guides/menu "隱藏縮排導引線(&G)")
+  (reflow-paragraph-maximum-width "重整段落時的最大寬度")
+  (maximum-char-width-guide-pref-check-box "最大字元寬度導引")
+  (hide-column-width-guide "對具有 ~a 欄的檔案隱藏欄寬導引")
+  (show-column-width-guide "在 ~a 欄顯示欄寬導引") ;; filled with a number > 2
+  (limit-interactions-size "限制互動區大小")
+  ;; this is in the color section already, so shorten the name a little
+  (background-color "背景")
+  ;; used for configuring colors, but doesn't need the word "color"
+  (default-text-color "預設文字")
   (choose-a-background-color "請選擇背景顏色")
-  (revert-to-defaults "恢復默認")
-  (undo-changes "不做修改並退出") ;; used in the preferences dialog to undo preference changes
-  
-  (black-on-white-color-scheme "白底黑字") ;; these two appear in the color preferences dialog on butttons
-  (white-on-black-color-scheme "黑底白字") ;; clicking the buttons changes the color schemes to some defaults that've been set up.
-  
-  (add-spacing-between-lines "在行間額外填充一個像素")
-  
-  ; title of the color choosing dialog
-  
-  ; should have entire alphabet
-  (font-example-string "繁體中文 by 朱崇愷")
-  
-  (change-font-button-label "更改")
-  (fonts "字體")
+  (revert-to-defaults "將所有偏好設定還原為預設值")
+  ;; used in the preferences dialog to undo preference changes
+  (undo-changes "還原變更並關閉")
+
+  (color-schemes "配色方案") ;; the label in the preferences dialog for the color scheme panel
+  (classic-color-scheme "經典") ;; formerly called 'black on white'
+  (modern-color-scheme "現代")   ;; an attempt to be more color-blind friendly
+  ;; clicking the buttons changes the color schemes to some defaults that've been set up.
+  (white-on-black-color-scheme "白字黑底")
+  ; drracket additions to the color scheme dialog; two buttons
+  (design-your-own-color-schemes "設計你自己的配色方案") ; pointer to (english-only) docs
+  (style-and-color-names "樣式與色彩名稱")
+
+  (add-spacing-between-lines "在行與行之間額外加入 1 像素間距")
+
+  (editor-x-selection-mode "貼上前需明確執行複製"
+                           " ／不要自動複製選取內容")
+
+  ; should have entire alphabet. 英文字型測試句子不應該翻譯，繁體中文版也加入白居易的詩句，包含永字八法。
+  (font-example-string "The quick brown fox jumped over the lazy dogs. 永豐西角荒園裏，盡日無人屬阿誰。")
+
+  (change-font-button-label "變更")
+  (fonts "字型")
   (other... "其他…") ;; used in the font choice menu item
-  
+
   ; filled with type of font, eg modern, swiss, etc.
-  (choose-a-new-font "請選擇新的「~a」字體")
-  
-  (font-size-slider-label "字型大小")
-  (restart-to-see-font-changes "重新啟動，使修改生效")
-  
-  (font-prefs-panel-title "字體")
-  (font-name "字體名稱")
-  (font-size "字體大小")
-  (set-font "設置字體…")
-  (font-smoothing-label  "字體平滑度")
+  (choose-a-new-font "請選擇新的「~a」字型")
+
+  (font-size-slider-label "大小")
+  (restart-to-see-font-changes "重新啟動後可看到字型變更")
+
+  (font-prefs-panel-title "字型")
+  (font-name "字型名稱")
+  (font-size "字型大小")
+  (set-font "設定字型…")
+  (font-smoothing-label  "字型平滑化")
   (font-smoothing-none "無")
   (font-smoothing-some "部分")
   (font-smoothing-all "全部")
-  (font-smoothing-default "使用系統默認值")
-  (select-font-name "選擇字體")
-  (example-text "示例文本：")
-  (only-warn-once "當定義視窗和交互視窗不同步時，僅警告一次")
-  
+  (font-smoothing-default "使用系統預設值")
+  (font-weight-label "字重")
+  (font-weight-light "細體")
+  (font-weight-normal "一般")
+  (font-weight-bold "粗體")
+
+  (select-font-name "選擇字型名稱")
+  (example-text "範例文字：")
+  (only-warn-once "當定義與互動不同步時只警告一次")
+
+  ; font size menu items in the 'view' menu; the ~a is filled with a number (font size)
+  (increase-font-size "增大字型大小（至 ~a）")
+  (decrease-font-size "減小字型大小（至 ~a）")
+
   ; warning message when lockfile is around
-  (waiting-for-pref-lock "等待首選項設置文件解鎖……")
+  (waiting-for-pref-lock "正在等待偏好設定的檔案鎖…")
   (pref-lock-not-gone
-   "首選項設置文件被\n\n~a\n\n鎖定。請確定沒有其他Racket軟體正在運行中，然後刪除該鎖定文件。")
-  (still-locked-exit-anyway? "首選項無法保存。仍然退出？")
-  
+   "偏好設定的檔案鎖：\n\n   ~a\n\n使偏好設定無法儲存。"
+   " 請確定沒有其他的 Racket 軟體正在執行及刪除此檔案。")
+  (still-locked-exit-anyway? "偏好設定未成功儲存。仍要離開嗎？")
+
   ;;; indenting preferences panel
-  (indenting-prefs-panel-label "縮進")
-  (indenting-prefs-extra-regexp "額外的正則表達式")
-  
-  (square-bracket-prefs-panel-label "中括號")
-  
+  (indenting-prefs-panel-label "縮排")
+  (indenting-prefs-extra-regexp "額外的正規表示式")
+
+  (square-bracket-prefs-panel-label "方括號")
+
   ; filled with define, lambda, or begin
-  (enter-new-keyword "請輸入一個類似於~a的關鍵詞：")
-  (x-keyword "~a關鍵詞")
-  (x-like-keywords "~a類型的關鍵詞")
-  
+  (enter-new-keyword "輸入新的類似 ~a 的關鍵字：")
+  (x-keyword "~a 關鍵字")
+  (x-like-keywords "類似 ~a 的關鍵字")
+
   ; used in Square bracket panel
-  (skip-subexpressions "出現在中括號前的表達式數量")
-  
-  (expected-a-symbol "需要symbol，實得：~a")
-  (already-used-keyword "「~a」已經是縮進關鍵詞了")
-  (add-keyword "添加")
-  (remove-keyword "刪除")
-  
+  (skip-subexpressions "要略過的子運算式數量")
+
+  (expected-a-symbol "需要符號，卻得到：~a")
+  (already-used-keyword "「~a」已是特殊縮排關鍵字")
+  (add-keyword "新增")
+  (remove-keyword "移除")
+
   ; repl color preferences
   (repl-colors "REPL")
   (repl-out-color "輸出")
   (repl-value-color "值")
   (repl-error-color "錯誤")
-  
+
   ;;; find/replace
   (search-next "下一個")
   (search-previous "上一個")
-  (search-match "匹配")  ;;; this one and the next one are singular/plural variants of each other
-  (search-matches "匹配")
-  (search-replace "替換")
-  (search-skip "跳過")
-  (search-show-replace "顯示替換")
-  (search-hide-replace "隱藏替換")
-  (find-case-sensitive "大小寫敏感")  ;; the check box in both the docked & undocked search
-  (find-anchor-based "用錨進行搜索")
-  
+  (search-match "個符合")  ;;; this one and the next one are singular/plural variants of each other
+  (search-matches "個符合")
+  (search-replace "取代")
+  (search-skip "略過")
+  (search-show-replace "顯示取代功能")
+  (search-hide-replace "隱藏取代功能")
+  (find-case-sensitive "區分大小寫")  ;; the check box in both the docked & undocked search
+  (find-anchor-based "使用錨點搜尋")
+
   ;; these string constants used to be used by searching,
   ;; but aren't anymore. They are still used by other tools, tho.
   (hide "隱藏")
-  (dock "停靠")
-  (undock "取消停靠")
-  
+  (dock "停駐")
+  (undock "取消停駐")
+
   ;;; multi-file-search
-  (mfs-multi-file-search-menu-item "在文件中查找(&F)…")
-  (mfs-string-match/graphics "字元串匹配（可用與包含圖像的文件）")
-  (mfs-regexp-match/no-graphics "正則表達式匹配（只適用於純文本文件）")
-  (mfs-searching... "查找…")
-  (mfs-configure-search "查找設置") ;; dialog title
-  (mfs-files-section "文件")   ;; section in config dialog
-  (mfs-search-section "查找") ;; section in config dialog
+  (mfs-multi-file-search-menu-item "在檔案中搜尋(&F)…")
+  (mfs-string-match/graphics "字串比對（可處理含圖形的檔案）")
+  (mfs-regexp-match/no-graphics "正規表示式（僅限純文字檔）")
+  (mfs-searching... "正在搜尋…")
+  (mfs-configure-search "設置搜尋") ;; dialog title
+  (mfs-files-section "檔案")   ;; section in config dialog
+  (mfs-search-section "搜尋") ;; section in config dialog
   (mfs-dir "目錄")
-  (mfs-recur-over-subdirectories "包含子目錄")
-  (mfs-regexp-filename-filter "文件名篩選（正則表達式）")
-  (mfs-search-string "查找字元串")
-  (mfs-drscheme-multi-file-search "多文件查找——DrRacket") ;; results window and error message title
+  (mfs-recur-over-subdirectories "遞迴處理子目錄")
+  (mfs-regexp-filename-filter "檔名正規表示式過濾器")
+  (mfs-search-string "搜尋字串")
+  (mfs-drscheme-multi-file-search "跨檔案搜尋 - DrRacket") ;; error message window title
   (mfs-not-a-dir "「~a」不是目錄")
-  (mfs-open-file "打開文件")
-  (mfs-stop-search "停止查找")
-  (mfs-case-sensitive-label "大小寫敏感")
-  (mfs-no-matches-found "沒有找到匹配結果。")
-  (mfs-search-interrupted "查找中止。")
-  (mfs-drscheme-multi-file-search-title "多文件查找「~a」——DrRacket") ;; the ~a format specifier is filled in with the search string
-  
+  (mfs-open-file "開啟檔案")
+  (mfs-stop-search "停止搜尋")
+  (mfs-case-sensitive-label "區分大小寫")
+  (mfs-no-matches-found "找不到相符項。")
+  (mfs-search-interrupted "搜尋已中止。")
+  ;; the ~a format specifier is filled in with the search string
+  (mfs-drscheme-multi-file-search-title "針對「~a」的跨檔案搜尋 - DrRacket")
+
   ;;; reverting a file
   (are-you-sure-revert
-   "你確定要復原該文件嗎？這一操作無法撤銷。")
+   "確定要還原此檔案嗎？此變更無法復原。")
   (are-you-sure-revert-title
-   "復原？")
-  
+   "還原？")
+
   ;;; saving a file
   ; ~a is filled with the filename
-  (error-saving "保存出錯") ;; title of error message dialog
-  (error-saving-file/name "在保存文件~a時出現錯誤。")
-  (error-loading "讀取出錯")
-  (error-loading-file/name "在讀取~a時出現錯誤.")
-  (unknown-filename "《未知》")
-  
+  (error-saving "儲存錯誤") ;; title of error message dialog
+  (error-saving-file/name "儲存 ~a 時發生錯誤。")
+  (error-loading "載入錯誤")
+  (error-loading-file/name "載入 ~a 時發生錯誤。")
+  (unknown-filename "<<未知>>")
+
   ;;; finder dialog
-  (must-specify-a-filename "你必須指定文件名")
-  (file-does-not-exist "文件「~a」不存在。")
-  (ask-because-file-exists "文件「~a」已存在。是否替換？")
-  (dne-or-cycle "文件「~a」中包含不存在的目錄或循環")
-  (get-file "獲取文件")
-  (put-file "放置文件")
-  (full-pathname "完整路徑")
-  (show-dot-files "由點號開始顯示文件名和目錄名。")
-  (up-directory-button-label "上層目錄")
-  (add-button-label "添加") ;;; for multi-file selection
-  (add-all-button-label "全部添加") ;;; for multi-file selection
+  (must-specify-a-filename "你必須指定一個檔名")
+  (file-does-not-exist "檔案「~a」不存在。")
+  (ask-because-file-exists "檔案「~a」已存在。要取代嗎？")
+  (dne-or-cycle "檔案「~a」包含不存在的目錄或循環。")
+  (get-file "取得檔案")
+  (put-file "儲存檔案")
+  (full-pathname "完整路徑名稱")
+  (show-dot-files "顯示以句點開頭的檔案與目錄。")
+  (up-directory-button-label "上一層目錄")
+  (add-button-label "新增") ;;; for multi-file selection
+  (add-all-button-label "全部新增") ;;; for multi-file selection
   (remove-button-label "移除") ;;; for multi-file selection
-  (file-wrong-form "該文件名格式不正確")
-  (select-files "選擇文件")
-  (select-file "選擇文件")
+  (file-wrong-form "該檔名的格式不正確。")
+  (select-files "選擇檔案")
+  (select-file "選擇檔案")
   (dir-dne "該目錄不存在。")
-  (file-dne "該文件不存在。")
-  (empty-filename "文件名中必須包含文字。")
-  (that-is-dir-name "這是一個目錄名。")
-  
-  ;;; raw menu names -- these must match the 
+  (file-dne "該檔案不存在。")
+  (empty-filename "檔名不可為空。")
+  (that-is-dir-name "那是目錄名稱。")
+  (use-platform-specific-file-dialogs "使用平台特定的檔案對話框") ;; a preferences option
+
+  ;;; raw menu names -- these must match the
   ;;; versions below, once the &s have been stripped.
   ;;; if they don't, DrRacket's menus will appear
   ;;; in the wrong order.
-  (file-menu "文件")
+  (file-menu "檔案")
   (edit-menu "編輯")
-  (help-menu "幫助")
+  (help-menu "說明")
   (windows-menu "視窗")
-  (tabs-menu "標籤") ;; this is the name of the "Windows" menu under linux & windows
-  
+  (tabs-menu "分頁") ;; this is the name of the "Windows" menu under linux & windows
+
   ;;; menus
   ;;; - in menu labels, the & indicates a alt-key based shortcut.
-  ;;; - sometimes, things are stuck in the middle of 
+  ;;; - sometimes, things are stuck in the middle of
   ;;; menu item labels. For instance, in the case of
-  ;;; the "Save As" menu, you might see: "Save Definitions As". 
+  ;;; the "Save As" menu, you might see: "Save Definitions As".
   ;;; be careful of spacing, follow the English, if possible.
   ;;; - the ellipses in the `after' strings indicates that
   ;;; more information is required from the user before completing
   ;;; the command.
-  
-  (file-menu-label "文件(&F)")
-  
-  (new-info  "打開新文件")
-  (new-menu-item "新建(&N)")
-  (new-...-menu-item "新建(&N)…")
-  
-  (open-info "打開現有文件")
-  (open-menu-item "打開(&O)…")
-  
-  (open-recent-info "最近使用過文件的列表")
-  (open-recent-menu-item "最近使用過(&T)")
-  
-  (revert-info "將當前文件恢復為磁碟上的副本")
-  (revert-menu-item "恢復(&R)")
-  
-  (save-info "保存當前文件")
-  (save-menu-item "保存(&S)")
-  
-  (save-as-info "輸入新的文件名,保存當前文件")
-  (save-as-menu-item "另存為(&A)…")
-  
-  (print-info "列印當前文件")
+
+  (file-menu-label "檔案(&F)")
+
+  (new-info  "開啟新檔案")
+  (new-menu-item "新增(&N)")
+  (new-...-menu-item "新增(&N)…")
+
+  (open-info "從磁碟開啟檔案")
+  (open-menu-item "開啟(&O)…")
+
+  (open-recent-info "最近開啟的檔案清單")
+  (open-recent-menu-item "開啟最近使用(&T)")
+
+  (revert-info "將此檔案還原為磁碟上的版本")
+  (revert-menu-item "還原(&R)")
+
+  (save-info "將此檔案儲存到磁碟")
+  (save-menu-item "儲存(&S)")
+
+  (save-as-info "輸入檔名並將此檔案儲存到磁碟")
+  (save-as-menu-item "另存新檔(&A)…")
+
+  (print-info "將此檔案送至印表機")
   (print-menu-item "列印(&P)…")
-  
+
   (page-setup-info "設置列印參數")
-  (page-setup-menu-item "頁面設置…")
-  
-  (close-info "關閉當前文件")
+  (page-setup-menu-item "頁面設定…")
+
+  (close-info "關閉此檔案")
   (close-menu-item "關閉(&C)")
   (close-window-menu-item "關閉視窗(&C)")
-  
+
   (quit-info "關閉所有視窗")
-  (quit-menu-item-windows "退出(&X)")
-  (quit-menu-item-others "退出(&Q)")
-  
+  (quit-menu-item-windows "離開(&X)")
+  (quit-menu-item-others "結束(&Q)")
+
   (edit-menu-label "編輯(&E)")
-  
-  (undo-info "撤銷最近的操作")
-  (undo-menu-item "撤銷(&U)")
-  
-  (redo-info "取消最近的撤銷操作")
-  (redo-menu-item "重複(&R)")
-  
-  (cut-info "將當前選中的對象移入剪貼版")
-  (cut-menu-item "剪切(&T)")
-  
-  (copy-info "將當前選中的對象複製到剪貼版")
+
+  (undo-info "復原最近一次的動作")
+  (undo-menu-item "復原(&U)")
+
+  (redo-info "重做最近一次的復原")
+  (redo-menu-item "重做(&R)")
+
+  (cut-info "將選取項目移至剪貼簿以供稍後貼上")
+  (cut-menu-item "剪下(&T)")
+
+  (copy-info "將選取項目複製到剪貼簿以供稍後貼上")
   (copy-menu-item "複製(&C)")
-  
-  (paste-info "將剪貼版中個內容複製到當前位置")
-  (paste-menu-item "粘貼(&P)")
-  
-  (clear-info "刪除當前選中的對象")
+
+  (paste-info "貼上最近複製或剪下的項目，取代所選內容")
+  (paste-menu-item "貼上(&P)")
+  (paste-and-indent-menu-item "貼上並縮排")
+
+  (clear-info "刪除所選項目，不影響剪貼簿或貼上")
   (clear-menu-item-windows "刪除(&D)")
-  
-  (select-all-info "選中整個文件")
+
+  (select-all-info "選取整份文件")
   (select-all-menu-item "全選(&L)")
-  
-  (find-menu-item "查找") ;; menu item
-  (find-from-selection-menu-item "查找當前選中")
-  (find-info "在主視窗和查找欄之間切換游標位置")
-  
-  (find-again-info "跳至該文本的下一個出現")
-  (find-again-menu-item "查找下一個")
-  
-  (find-again-backwards-info "跳至該文本的前一個出現")
-  (find-again-backwards-menu-item "查找上一個")
-  
-  (show-replace-menu-item "顯示替換")
-  (hide-replace-menu-item "隱藏替換")
-  (show/hide-replace-info "切換替換面板的可見性")
-  
-  (replace-menu-item "替換")
-  (replace-info "替換當前圈出的查找結果")
-  
-  (replace-all-info "替換查找字元串的所有出現")
-  (replace-all-menu-item "全部替換")
-  
-  (find-case-sensitive-info "切換大小寫敏感或不敏感查找")
-  (find-case-sensitive-menu-item "大小寫敏感")
-  
-  (complete-word "自動完成") ; the complete word menu item in the edit menu
-  (no-completions "……無自動完成結果") ; shows up in the completions menu when there are no completions (in italics)
-  
-  (overwrite-mode "覆蓋模式")
-  (enable-overwrite-mode-keybindings "啟用覆蓋模式的快捷鍵")
-  
-  (enable-automatic-parens "自動關括號") ; should "and square brackets and quotes" appear here?
-  
-  (preferences-info "設置首選項")
-  (preferences-menu-item "首選項…")
-  
-  (keybindings-info "顯示當前快捷鍵")
+
+  (find-menu-item "尋找") ;; menu item
+  (find-from-selection-menu-item "從選取範圍尋找(&E)")
+  (find-info "切換搜尋視窗與被搜尋視窗之間的鍵盤焦點")
+
+  (find-next-info "移至尋找視窗中該字串的下一個出現處")
+  (find-next-menu-item "尋找下一個")
+
+  (find-previous-info "移至尋找視窗中該字串的上一個出現處")
+  (find-previous-menu-item "尋找上一個")
+
+  (show-replace-menu-item "顯示取代")
+  (hide-replace-menu-item "隱藏取代")
+  (show/hide-replace-info "切換取代面板的可見狀態")
+
+  (replace-menu-item "取代")
+  (replace-info "取代深色圓中的搜尋結果")
+
+  (replace-all-info "取代該搜尋字串的所有出現處")
+  (replace-all-menu-item "全部取代")
+
+  (find-case-sensitive-info "切換大小寫敏感/不敏感搜尋")
+  (find-case-sensitive-menu-item "大小寫相符搜尋")
+
+  (complete-word "補完單字") ; the complete word menu item in the edit menu
+  ; shows up in the completions menu when there are no completions (in italics)
+  (no-completions "… 無可用補完")
+
+  (overwrite-mode "改寫模式")
+  (enable-overwrite-mode-keybindings "啟用改寫模式快捷鍵")
+
+  (enable-automatic-parens "啟用自動插入括號、方括號與引號")
+
+  (preferences-info "設置你的偏好設定")
+  (preferences-menu-item "偏好設定…")
+
+  (keybindings-info "顯示目前啟用的快捷鍵")
   (keybindings-menu-item "快捷鍵")
-  (keybindings-show-active "顯示當前的快捷鍵")
+  (keybindings-show-active "顯示啟用中的快捷鍵")
   (keybindings-frame-title "快捷鍵")
-  (keybindings-sort-by-name "按名稱排序")
-  (keybindings-sort-by-key "按鍵名排序")
-  (keybindings-add-user-defined-keybindings "添加自定義快捷鍵…")
-  (keybindings-add-user-defined-keybindings/planet "從PLaneT添加自定義快捷鍵…")
-  (keybindings-menu-remove "移除~a")
-  (keybindings-choose-user-defined-file "請選擇一個包含快捷鍵的文件")
-  (keybindings-planet-malformed-spec "錯誤的PLaneT名稱：~a") ; the string will be what the user typed in
-  (keybindings-type-planet-spec "請輸入PLaneT包名稱（無需輸入『require』）")
-  
+  (keybindings-sort-by-name "依名稱排序")
+  (keybindings-sort-by-key "依按鍵排序")
+  (keybindings-add-user-defined-keybindings "加入使用者自訂快捷鍵…")
+  (keybindings-add-user-defined-keybindings/planet "從 PLaneT 加入使用者自訂快捷鍵…")
+  (keybindings-menu-remove "移除 ~a")
+  (keybindings-choose-user-defined-file "請選擇包含快捷鍵的檔案。")
+  ; the string will be what the user typed in
+  (keybindings-planet-malformed-spec "PLaneT 規格格式不正確：~a")
+  (keybindings-type-planet-spec "請輸入 PLaneT 的 require 規格（不含 `require'）")
+
   ; first ~a will be a string naming the file or planet package where the keybindings come from;
   ; second ~a will be an error message
-  (keybindings-error-installing-file "安裝快捷鍵~a時出錯：\n\n~a")
-  
-  (user-defined-keybinding-error "快捷鍵~a出錯\n\n~a")
-  (user-defined-keybinding-malformed-file "文件~a並不是一個使用framework/keybinding-lang語言編寫的module.")
+  (keybindings-error-installing-file "安裝快捷鍵 ~a 時發生錯誤：\n\n~a")
+
+  (user-defined-keybinding-error "執行快捷鍵 ~a 時發生錯誤\n\n~a")
+  (user-defined-keybinding-malformed-file
+   "檔案 ~a 不包含以 framework/keybinding-lang 語言撰寫的module。")
   (user-defined-keybinding-malformed-file/found-lang
-   "文件~a並不是一個使用framework/keybinding-lang語言編寫的module，而是由~s語言編寫")
-  
+   "檔案 ~a 不包含以 framework/keybinding-lang 語言撰寫的module。"
+   " 發現的語言為 ~s。")
+
   ;; menu items in the "special" menu
-  (insert-text-box-item "插入文本框")
+  (insert-text-box-item "插入文字方塊")
   (insert-image-item "插入圖片…")
-  (insert-comment-box-menu-item-label "插入注釋框")
-  (insert-lambda "插入λ")
-  
+  (insert-comment-box-menu-item-label "插入註解方塊")
+  (insert-lambda "插入 λ")
+
   (wrap-text-item "自動換行")
-  
+
+  ;; windows menu
   (windows-menu-label "視窗(&W)")
-  (tabs-menu-label "標籤(&T)") ;; this is the name of the menu under linux & windows
+  (tabs-menu-label "分頁(&T)") ;; this is the name of the menu under linux & windows
   (minimize "最小化") ;; minimize and zoom are only used under mac os x
   (zoom "縮放")
-  (bring-frame-to-front "前端顯示")       ;;; title of dialog
-  (bring-frame-to-front... "前端顯示…") ;;; corresponding title of menu item
+  (bring-frame-to-front "將視窗置於最前")       ;;; title of dialog
+  (bring-frame-to-front... "將視窗置於最前…") ;;; corresponding title of menu item
   (most-recent-window "最近的視窗")
-  (next-tab "下一個標籤")
-  (prev-tab "前一個標籤")
-  ;; menu item in the windows menu under mac os x. first ~a is filled with a number between 1 and 9; second one is the filename of the tab
-  (tab-i "標籤~a：~a")
-  (tab-i/no-name "標籤~a")
-  
-  (view-menu-label "視圖(&V)")
-  (show-overview "顯示程序輪廓(&P)") 
-  (hide-overview "隱藏程序輪廓(&P)")
-  (show-module-browser "顯示&Module瀏覽器")
-  (hide-module-browser "隱藏&Module瀏覽器")
-  
-  (help-menu-label "幫助(&H)")
-  (about-info "本軟體的詳細信息以及致謝名單")
+  (next-tab "下一個分頁")
+  (prev-tab "上一個分頁")
+  (move-current-tab-right "分頁向右移(&R)")
+  (move-current-tab-left "分頁向左移(&L)")
+  ;; menu item in the windows menu under mac os x. first ~a is filled
+  ;; with anumber between 1 and 9; second one is the filename of the tab
+  (tab-i "分頁 ~a：~a")
+  (tab-i/no-name "分頁 ~a")
+  (last-tab "最後分頁：~a")
+
+  (view-menu-label "檢視(&V)")
+  (show-overview "顯示程式輪廓(&P)")
+  (hide-overview "隱藏程式輪廓(&P)")
+  (show-module-browser "顯示module瀏覽器(&M)")
+  (hide-module-browser "隱藏module瀏覽器(&M)")
+
+  (help-menu-label "說明(&H)")
+  (about-info "本應用程式的鳴謝與詳細資訊")
   (about-menu-item "關於…")
-  
+
   ;; open here's new menu item
   (create-new-window-or-clear-current
-   "您是想打開一個新視窗，還是清空當前視窗？")
-  (clear-current "清空當前")
+   "您想要建立新視窗，或清除此視窗？")
+  (clear-current "清除此視窗")
   (new-window "新視窗")
-  
+
   ;; popup menu when right-clicking in the gap between
   ;; the definitions and interactions window
-  (change-to-vertical-alignment "左右分割")
-  (change-to-horizontal-alignment "上下分割")
-  
-  ;;; exiting and quitting ``are you sure dialog
+  (change-to-vertical-alignment "改為垂直排列")
+  (change-to-horizontal-alignment "改為水平排列")
+
+  ;;; exiting and quitting ``are you sure'' dialog
   ;;; exit is used on windows, quit on macos, in English. Other
   ;;; languages probably use the same word on both platforms.
-  (exit "退出")
-  (quit "退出")
-  (are-you-sure-exit "你確定要退出嗎?")
-  (are-you-sure-quit "你確定要退出嗎?")
+  (exit "離開")
+  (quit "結束")
+  (are-you-sure-exit "確定要離開嗎？")
+  (are-you-sure-quit "確定要結束嗎？")
   ; these next two are only used in the quit/exit dialog
   ; on the button whose semantics is "dismiss this dialog".
   ; they are there to provide more flexibility for translations
   ; in English, they are just cancel.
-  (dont-exit "取消") 
+  (dont-exit "取消")
   (dont-quit "取消")
-  
+
   ;;; autosaving
-  (error-autosaving "自動保存\"~a\"時出錯。") ;; ~a will be a filename
-  (autosaving-turned-off "在文件被存檔之前，自動保存不會進行")
-  ;(recover-autosave-files-frame-title "恢復自動保存的文件")
-  (autosave-details "詳細情況")
-  (autosave-recover "恢復")
-  (autosave-unknown-filename "《未知》")
-  
+  (error-autosaving "自動儲存「~a」時發生錯誤。") ;; ~a will be a filename
+  (autosaving-turned-off "直到儲存檔案之前\n將不進行自動儲存。")
+  (recover-autosave-files-frame-title "復原檔案")
+  (autosave-details "詳細資料")
+  (autosave-recover "復原")
+  (autosave-unknown-filename "<<未知>>")
+
+  ;;; autoloading
+  ;; the ~a is replaced with a path
+  (autoload-file-changed-on-disk/with-name
+   "檔案：\n  ~a\n已在硬碟上變更。"
+   " 您是否想要將緩衝區內容還原為與硬碟上的檔案一致？")
+  ;; One file per line is appended to the end of this message
+  (autoload-files-changed-on-disk/with-name
+   "有些檔案已在硬碟上變更。是否要將它們的"
+   " 緩衝區內容還原為與硬碟上的檔案一致？\n\n已變更的檔案：")
+  ;; the ~a is replaced with a path
+  (autoload-file-changed-on-disk-editor-dirty/with-name
+   "檔案：\n  ~a\n已在硬碟上變更，且在編輯器中也有修改。"
+   " 是否要將緩衝區內容還原成跟硬碟上的檔案一致？")
+  ;; One file per line is appended to the end of this message
+  (autoload-files-changed-on-disk-editor-dirty/with-name
+   "有些檔案已在硬碟上變更，且在編輯器中也有修改。"
+   " 是否要將它們的緩衝區內容還原為與硬碟上的檔案一致？\n\n"
+   " 已變更的檔案：")
+  ;; One file per line is appended to the end of this message
+  (autoload-files-changed-on-disk-editor-dirty&clean/with-name
+   "有些檔案已在硬碟上變更，其中部分也在編輯器中被修改。"
+   " 是否要將它們的緩衝區內容還原為與硬碟上的檔案一致？\n\n"
+   " 已變更的檔案（◇ 表示編輯器中的版本已修改）：")
+  ;; a specialized version of dont-ask-again-always-current
+  (dont-ask-again-always-current/clean-buffer
+   "對於沒有未儲存編修的檔案不再詢問（一律使用目前選擇）")
+
+  (autoload-automatically-reload "自動重新載入已變更的檔案")
+  (autoload-when-the-editor-isnt-dirty "當編輯器未被修改時")
+  (autoload-never-revert "永不")
+  (autoload-ask-about-reverting "每次詢問")
+
   ;; these are labels in a dialog that drscheme displays
   ;; if you have leftover autosave files. to see the dialog,
   ;; start up drscheme and modify (but don't save) a file
   ;; (also, do this with an unsaved file). Wait for the autosave
   ;; files to appear (typically 5 minutes). Kill DrRacket
   ;; and restart it. You'll see the dialog
-  ;(autosave-autosave-label: "自動保存文件：")
-  (autosave-original-label: "原始文件：")
-  ;(autosave-autosave-label "自動保存文件")
-  (autosave-original-label "原始文件")
-  ;(autosave-compare-files "比較自動保存文件")
-  
-  ;(autosave-show-autosave "自動保存文件") ;; title of a window showing the autosave file
-  
-  ;(autosave-explanation "DrRacket發現了自動保存的文件，其中可能包含你沒有保存過的程序")
-  
-  (autosave-recovered! "已恢復！") ;; status of an autosave file
+  (autosave-autosave-label: "備份檔案：")
+  (autosave-original-label: "原始檔案：")
+  (autosave-autosave-label "備份檔案")
+  (autosave-original-label "原始檔案")
+  (autosave-compare-files "比較備份檔案")
+
+  (autosave-show-autosave "備份檔案") ;; title of a window showing the autosave file
+
+  (autosave-explanation "DrRacket 發現備份檔案，可能包含你未儲存的工作。")
+
+  (autosave-recovered! "已復原！") ;; status of an autosave file
   (autosave-deleted "已刪除")       ;; status of an autosave file
-  
-  (autosave-error-deleting "刪除~a出錯\n\n~a") ;; first is a filename, second is an error message from mz.
+
+  ;; first is a filename, second is an error message from racket.
+  (autosave-error-deleting "刪除 ~a 時發生錯誤\n\n~a")
   (autosave-delete-button "刪除")
   (autosave-delete-title "刪除")  ;; title of a dialog asking for deletion confirmation
   (autosave-done "完成")
-  
+
   ;; appears in the file dialog
-  ;(autosave-restore-to-where? "請選擇自動保存文件的位置")
-  
-  
+  (autosave-restore-to-where? "選擇儲存後援備份檔案的位置。")
+
   ;;; file modified warning
   (file-has-been-modified
-   "文件在上次保存之後又改動過。覆蓋這些更改？")
-  (overwrite-file-button-label "覆蓋")
+   "該檔案自上次儲存後已被修改。要覆寫這些修改嗎？")
+  (overwrite-file-button-label "覆寫")
+
+  (definitions-modified
+    "定義文字已在檔案系統中被修改；"
+    " 請儲存或還原定義文字。")
+
+  ;; for a dialog that appears when Run is clicked and there are unsaved files
+  ; the ~a is filled with a filename (same string that appears in a tab)
+  (one-file-not-saved-do-the-save?
+   "檔案「~a」尚未儲存；在執行前先儲存嗎？")
+  ; the string is suffixed with a list of filenames (which are separated by newlines)
+  (many-files-not-saved-do-the-save?
+   "其他一些檔案尚未儲存；在執行前先儲存它們嗎？\n\n檔案：")
+  ; button label to go ahead with saving
+  (save-all-files "全部儲存檔案")
+  ; check box in the dialog and also used in the preferences dialog
+  (save-after-switching-tabs "切換分頁或視窗時自動儲存檔案")
+  (dont-ask-about-saving-after-switching-tabs
+   "當按下執行時若有未儲存分頁或視窗，不要詢問也不要儲存")
   
-  (definitions-modified 
-    "當前磁碟文件已被修改；請保存或恢復文件。")
-  (drscheme-internal-error "DrRacket內部錯誤")
-  
+  (drscheme-internal-error "DrRacket 內部錯誤")
+
   ;;; tools
-  (invalid-tool-spec "Collection ~a中info.rkt的tool定義不正確。需要一個字元串或者一個非空表，實得：~e")
-  (error-invoking-tool-title "調用tool ~s出錯；~s")
-  (error-loading-tool-title "載入tool ~s出錯\n~a") ;; ~s filled with a path, ~a filled with an error message from an exn
-  
+  (invalid-tool-spec
+   "collection ~a 的 info.rkt 檔案中的 tool specification 無效。"
+   " 預期為字串或非空的字串清單，收到：~e")
+  (error-invoking-tool-title "呼叫工具 ~s 時發生錯誤；~s")
+  ;; ~s filled with a path, ~a filled with an error message from an exn
+  (error-loading-tool-title "載入工具 ~s 時發生錯誤\n~a")
   (tool-tool-names-same-length
-   "在~s的info.rkt文件中，『tool-names』和『tools』應該是等長的表，實得~e和~e")
+   "預期 `tool-names' 與 `tools' 為相同長度的清單，"
+   " 在 ~s 的 info.rkt 中卻得到 ~e 與 ~e")
   (tool-tool-icons-same-length
-   "在~s的info.rkt文件中，『tool-icons』和「tools』應該是等長的表，實得~e和~e")
+   "預期 `tool-icons' 與 `tools' 為相同長度的清單，"
+   " 在 ~s 的 info.rkt 中卻得到 ~e 與 ~e")
   (tool-tool-urls-same-length
-   "在~s的info.rkt文件中，『tool-urls』和「tools』應該是等長的表，實得~e和~e")
+   "預期 `tool-urls' 與 `tools' 為相同長度的清單，"
+   " 在 ~s 的 info.rkt 中卻得到 ~e 與 ~e")
   (error-getting-info-tool
-   "載入~s的info.rkt出錯")
-  (tool-error-phase1 "tool ~s第一階段出錯；~s")
-  (tool-error-phase2 "tool ~s第二階段出錯；~s")
-  
-  
+   "載入 ~s 的 info.rkt 檔案時發生錯誤")
+  (tool-error-phase1 "工具 ~s 的第 1 階段錯誤；~s")
+  (tool-error-phase2 "工具 ~s 的第 2 階段錯誤；~s")
+  ;; tool preferences panel
+  (tool-config-changes
+   "所變更的工具設定將於下次啟動 DrRacket 時生效。")
+  (installed-tools "已安裝的工具")
+  (tool-prefs-panel-tool:-label "工具： ")
+  (tool-prefs-panel-title "工具")
+  (load-tool-when-drracket-starts? "在 DrRacket 啟動時載入此工具？")
+  (load-tool-load "載入此工具")
+  (load-tool-skip "略過此工具")
+  (unnamed-tool "未命名工具 ~a")
+  (note-that-tool-loaded "（已載入）")
+  (note-that-tool-was-skipped "（已略過）")
+  (note-that-tool-failed-to-load "（載入失敗）")
+
   ;;; define popup menu
-  (end-of-buffer-define "<<緩衝區結束>>")
-  (sort-by-name "按名稱排序")
-  (sort-by-position "按文件中的位置排序")
-  (no-definitions-found "<<沒有定義>>")
-  (jump-to-defn "跳至~a的定義")
-  
-  (recent-items-sort-by-age "按時間排序")
-  (recent-items-sort-by-name "按名稱排序")
-  
+  (end-of-buffer-define "<<緩衝區結尾>>")
+  (sort-by-name "依名稱排序")
+  (sort-by-position "依檔案位置排序")
+  (no-definitions-found "<<找不到定義>>")
+  (jump-to-defn "跳至 ~a 的定義")
+  (define-menu-configure "設置") ;; label of a submenu to configure the (define ...) popup menu
+
+  (recent-items-sort-by-age "依時間排序")
+  (recent-items-sort-by-name "依名稱排序")
+
   ;;; view menu
   (hide-definitions-menu-item-label "隱藏定義(&D)")
   (show-definitions-menu-item-label "顯示定義(&D)")
   (definitions-menu-item-help-string "顯示/隱藏定義視窗")
-  (show-interactions-menu-item-label "顯示交互(&I)")
-  (hide-interactions-menu-item-label "隱藏交互(&I)")
-  (use-horizontal-layout "左右分割")
-  (use-vertical-layout "上下分割")
-  (interactions-menu-item-help-string "顯示/隱藏交互視窗")
-  (toolbar "工具欄")
-  (toolbar-on-top "頂置工具欄")
-  (toolbar-on-top-no-label "頂置工具欄並使用小圖標")
-  (toolbar-on-left "左置工具欄")
-  (toolbar-on-right "右置工具欄")
-  (toolbar-hidden "隱藏工具欄")
-  
+  (show-interactions-menu-item-label "顯示互動(&I)")
+  (hide-interactions-menu-item-label "隱藏互動(&I)")
+  (use-horizontal-layout "使用水平版面配置")
+  (use-vertical-layout "使用垂直版面配置")
+  (interactions-menu-item-help-string "顯示/隱藏互動視窗")
+  (toolbar "工具列")
+  (toolbar-on-top "工具列置頂")
+  (toolbar-on-top-no-label "工具列置頂（小按鈕）")
+  (toolbar-on-left "工具列置左")
+  (toolbar-on-right "工具列置右")
+  (toolbar-hidden "隱藏工具列")
+
   ;;; file menu
-  (save-definitions-as "將定義另存為(&A)")
-  (save-definitions "保存定義")
+  (save-definitions-as "儲存定義 另存新檔(&A)…")
+  (save-definitions "儲存定義")
   (print-definitions "列印定義…")
-  (about-drscheme "關於DrRacket")
-  (save-other "保存其他")
-  (save-definitions-as-text "將定義保存為文本…")
-  (save-interactions "保存交互")
-  (save-interactions-as "將交互另存為…")
-  (save-interactions-as-text "將交互保存為文本…")
-  (print-interactions "列印交互…")
-  (new-tab "新建標籤")
-  (close-tab "關閉標籤") ;; must not have any &s in it.
-  (close-tab-amp "關閉標籤(&C)") ;; like close-tab, but with an ampersand on the same letter as the one in close-menu-item
+  (about-drscheme "關於 DrRacket")
+  (save-other "儲存其他")
+  (save-definitions-as-text "將定義儲存為純文字…")
+  (save-interactions "儲存互動")
+  (save-interactions-as "將互動另存新檔…")
+  (save-interactions-as-text "將互動儲存為純文字…")
+  (print-interactions "列印互動…")
+  (new-tab "新分頁")
+  (close-tab "關閉分頁") ;; must not have any &s in it.
+   ;; like close-tab, but with an ampersand on the same letter as the one in close-menu-item
+  (close-tab-amp "關閉分頁(&C)")
+  (reopen-closed-tab "重新開啟已關閉分頁")
   
-  ;;; edit-menu
-  (split-menu-item-label "分屏(&S)")
-  (collapse-menu-item-label "合併(&O)")
-  (find-longest-line "尋找最長一行")
-  
+  ;;; edit menu
+  (split-menu-item-label "分割(&S)")
+  (collapse-menu-item-label "摺疊(&O)")
+  (find-longest-line "尋找最長列")
+
   ;;; language menu
   (language-menu-name "語言(&L)")
-  
+
   ;;; scheme-menu
   (scheme-menu-name "Ra&cket")
-  (execute-menu-item-label "運行")
-  (execute-menu-item-help-string "重新運行定義視窗中的程序")
-  (ask-quit-menu-item-label "要求程序終止")
-  (ask-quit-menu-item-help-string "使用break-thread中止當前計算得主執行緒")
-  (force-quit-menu-item-label "強制終止")
-  (force-quit-menu-item-help-string "使用custodian-shutdown-all退出當前計算")
-  (limit-memory-menu-item-label "限制內存使用…")
-  (limit-memory-msg-1 "內存限制會在下一次運行時生效，")
-  (limit-memory-msg-2 "內存限制最低值為八兆位元組。")   (limit-memory-unlimited "無限制")
-  (limit-memory-limited "限制")
-  (limit-memory-megabytes "兆位元組(MB)")
+  (execute-menu-item-label "執行")
+  (execute-menu-item-help-string "在定義視窗重新啟動程式")
+  (ask-quit-menu-item-label "要求程式結束")
+  (ask-quit-menu-item-help-string
+   "使用 break-thread 停止目前求值的主要執行緒")
+  (force-quit-menu-item-label "強制程式結束")
+  (force-quit-menu-item-help-string "使用 custodian-shutdown-all 中止目前的求值")
+  (limit-memory-menu-item-label "限制記憶體…")
+  (limit-memory-msg-1 "此限制將於下次執行程式時生效，")
+  (limit-memory-msg-2 "且至少需為 8 MB。")
+  (limit-memory-unlimited "不限制")
+  (limit-memory-limited "有限制")
+  (limit-memory-megabytes "MB")
   ; the next two constants are used together in the limit memory dialog; they are inserted
   ; one after another. The first one is shown in a bold font and the second is not.
   ; (the first can be the empty string)
   (limit-memory-warning-prefix "警告：")
-  (limit-memory-warning 
-   "不限制內存有潛在的危險。DrRacket將無法保護自己，當運行的程序分配過多內存時，DrRacket會崩潰.")
-  
-  (clear-error-highlight-menu-item-label "清除錯誤高亮顯示")
-  (clear-error-highlight-item-help-string "清除錯誤區域的粉紅色高亮顯示")
-  (jump-to-next-error-highlight-menu-item-label "跳至下一個高亮錯誤")
-  (jump-to-prev-error-highlight-menu-item-label "跳至前一個高亮錯誤")
-  (reindent-menu-item-label "調整縮進(&R)")
-  (reindent-all-menu-item-label "全文調整縮進(&A)")
-  (semicolon-comment-out-menu-item-label "用分號注釋(&C)")
-  (box-comment-out-menu-item-label "用注釋框注釋(&C)")
-  (uncomment-menu-item-label "取消注釋(&U)")
-  
-  (convert-to-semicolon-comment "轉化為分號注釋")
-  
+  (limit-memory-warning
+   "設定成不限制記憶體並不安全。使用此設定時，"
+   " DrRacket 無法防止程式過度配置記憶體，可能導致 DrRacket 當機。")
+
+  (clear-error-highlight-menu-item-label "清除錯誤染色標示")
+  (clear-error-highlight-item-help-string "移除粉紅色的錯誤染色標示")
+  (jump-to-next-error-highlight-menu-item-label "跳至下一個錯誤染色標示")
+  (jump-to-prev-error-highlight-menu-item-label "跳至上一個錯誤染色標示")
+  (reindent-menu-item-label "重新縮排(&R)")
+  (reindent-all-menu-item-label "重新縮排全部(&A)")
+  (semicolon-comment-out-menu-item-label "以分號註解(&C)")
+  ;; the ~a is filled with the characters that'll be used to comment out a line,
+  ;; inserted at the start of the line
+  (comment-out-with-line-start "以「~a」註解(&C)")
+  ;; the two '~a's are filled with the characters that'll be used to comment out
+  ;; the start and end of a region
+  (comment-out-with-region "以「~a」與「~a」註解區塊(&C)")
+  (box-comment-out-menu-item-label "以方框註解(&B)")
+  (uncomment-menu-item-label "取消註解(&U)")
+
+  (convert-to-semicolon-comment "轉換為分號註解")
+
   ;;; executables
-  (create-executable-menu-item-label "創建可執行程序(&E)…")
-  (create-executable-title "創建可執行程序")
+  (create-executable-menu-item-label "建立可執行檔(&E)…")
+  (create-executable-title "建立可執行檔")
   (drracket-creates-executables-only-in-some-languages
-   "在DrRacket中創建可執行程序僅支持下列語言選擇：在DrRacket語言對話框中選擇教學語言（DMdA或者HtDP）；在DrRacket語言對話框中選擇「Racket語言」，並且用#lang在文件開始處指定語言。\n\n請考慮使用命令行工具raco exe。")
-  (must-save-before-executable "在創建可執行程序之前，你必須保存源程序")
-  (save-a-mred-launcher "保存為GRacket啟動程序")
-  (save-a-mzscheme-launcher "保存為Racket啟動程序")
-  (save-a-mred-stand-alone-executable "保存為GRacket獨立可執行程序")
-  (save-a-mzscheme-stand-alone-executable "保存為Racket獨立可執行程序")
-  (save-a-mred-distribution "保存為GRacket可發布程序")
-  (save-a-mzscheme-distribution "保存為Racket可發布程序")
-  (error-creating-executable "創建可執行程序出錯：") ;; this is suffixed with an error message ala error-display-handler
-  
-  (definitions-not-saved "當前定義視窗中的程序並沒有被保存過。將使用最近保存過的版本來生成可執行程序。是否繼續？")
+   "欲在 DrRacket 中建立可執行檔，"
+   " 需在 DrRacket 的語言對話框中"
+   " 選擇任一教學語言（DMdA、HtDP），或 “The Racket Language”，"
+   " 且程式有 #lang 行來指定語言。"
+   " 如此才能建立可執行檔。\n\n建議"
+   " 改用 raco exe 命令列工具。")
+  (must-save-before-executable "建立可執行檔之前必須先儲存程式。")
+  (save-a-mred-launcher "儲存 GRacket 啟動器")
+  (save-a-mzscheme-launcher "儲存 Racket 啟動器")
+  (save-a-mred-stand-alone-executable "儲存 GRacket 獨立可執行檔")
+  (save-a-mzscheme-stand-alone-executable "儲存 Racket 獨立可執行檔")
+  (save-a-mred-distribution "儲存 GRacket 發行軟體")
+  (save-a-mzscheme-distribution "儲存 Racket 發行軟體")
+  ;; this is suffixed with an error message ala error-display-handler
+  (error-creating-executable "建立可執行檔發生錯誤：")
+
+  (definitions-not-saved
+    "定義視窗尚未儲存。"
+    " 可執行檔將使用定義視窗最新一次儲存的版本。是否繼續？")
   ;; The "-explanatory-label" variants are the labels used for the radio buttons in
   ;;  the "Create Executable..." dialog for the "(module ...)" language.
-  (launcher "啟動程序")
-  (launcher-explanatory-label "啟動程序（僅在本機運行，運行原始碼）")
-  (stand-alone "獨立程序")
-  (stand-alone-explanatory-label "獨立程序（僅在本機運行，運行編譯代碼）")
-  (distribution "可發布程序")
-  (distribution-explanatory-label "可發布程序（可以在其它計算機上安裝並運行）")
+  (launcher "啟動器")
+  (launcher-explanatory-label "啟動器（僅限此機器，從原始碼執行）")
+  (stand-alone "獨立執行檔")
+  (stand-alone-explanatory-label "獨立執行檔（僅限此機器，執行已編譯副本）")
+  (distribution "發行軟體")
+  (distribution-explanatory-label "發行軟體（供安裝於其他機器）")
+  (embed-dlls? "是否將 DLL 內嵌至可執行檔？") ;; appears in the GUI only under windows
   (executable-type "類型")
-  (executable-base "基於")
-  (filename "文件名：")
-  (create "創建")
-  (please-specify-a-filename "請指定文件名。")
+  (executable-base "基底")
+  (filename "檔名： ")
+  (create "建立")
+  (files-for-icons-etc "圖示等檔案")
+  (please-specify-a-filename "請指定要建立的檔名。")
   (~a-must-end-with-~a
-   "~a文件名\n\n  ~a\n\n不合法。文件名必須以\".~a\"結尾。")
+   "~a 檔名\n\n  ~a\n\n不合法。檔名必須以「.~a」結尾。")
   (macosx-executables-must-end-with-app
-   "~a文件名\n\n  ~a\n\n不合法。在Mac OS中，文件名必須以.app結尾。")
+   "檔名\n\n  ~a\n\n不合法。於 Mac OS 下，可執行檔"
+   " 必須是一個目錄，其名稱以 .app 結尾。")
   (warning-directory-will-be-replaced
-   "警告：目錄：\n\n  ~a\n\n將會被重置。繼續操作？")
-  
-  (distribution-progress-window-title "創建進程")
-  (creating-executable-progress-status "創建可執行程序……")
-  (assembling-distribution-files-progress-status "彙編……")
-  (packing-distribution-progress-status "打包……")
-  
-  (create-servlet "創建Servlet……")
-  
+   "警告：目錄：\n\n  ~a\n\n將被取代。要繼續嗎？")
+
+  (distribution-progress-window-title "發行進度")
+  (creating-executable-progress-status "正在建立用於發行的可執行檔…")
+  (assembling-distribution-files-progress-status "正在組裝發行軟體所需檔案…")
+  (packing-distribution-progress-status "正在封裝發行軟體…")
+
+  (create-servlet "建立 Servlet…")
+
   ; the ~a is a language such as "module" or "algol60"
   (create-servlet-unsupported-language
-   "無法為~a語言程序創建Servlet。")
-  
+   "建立 Servlet 不支援 ~a 語言。")
+
   ;;; buttons
-  (execute-button-label "運行") 
-  (save-button-label "保存")
+  (execute-button-label "執行")
+  (execute-button-configure-label "設置執行")
+  (save-button-label "儲存")
   (break-button-label "停止")
-  
+  (break-button-kill-label "強制中止")
+
   ;;; search help desk popup menu
-  (search-help-desk-for "在幫助台中搜索「~a」")
-  (exact-lucky-search-help-desk-for "在幫助台中搜索最符合「~a」的一個頁面")
-  
+  (search-help-desk-for "在說明中心搜尋「~a」")
+  (exact-lucky-search-help-desk-for "在說明中心進行精確幸運搜尋「~a」")
+
   ;; collapse and expand popup menu items
-  (collapse-sexp "摺疊S表達式")
-  (expand-sexp "擴展S表達式")
-  
+  (collapse-sexp "摺疊 S-表達式")
+  (expand-sexp "展開 S-表達式")
+
   ;;; fraction dialog
   (enter-fraction "輸入分數")
   (whole-part "整數部分")
   (numerator "分子")
   (denominator "分母")
-  (insert-number/bad-whole-part "整數部分必須輸入一個整數")
-  (insert-number/bad-numerator "分子必須是非負整數")
-  (insert-number/bad-denominator "分母必須是正整數")
+  (insert-number/bad-whole-part "整數部分必須是整數")
+  (insert-number/bad-numerator
+   "分子必須是非負整數")
+  (insert-number/bad-denominator
+   "分母必須是正整數")
   (insert-fraction-menu-item-label "插入分數…")
-  
+
   ;; number snip popup menu
-  (show-decimal-expansion "用十進制表示")
-  (show-mixed-fraction-view "用帶分數表示")
-  (show-improper-fraction-view "用假分數表示")
-  (show-more-decimal-places "顯示更多小數位")
-  
+  (show-decimal-expansion "檢視小數展開")
+  (show-mixed-fraction-view "以帶分數檢視")
+  (show-improper-fraction-view "以假分數檢視")
+  (show-more-decimal-places "顯示更多小數位數")
+
   ;;; Teachpack messages
-  (select-a-teachpack "選擇教學包")
-  (clear-teachpack "卸載教學包~a")
-  (teachpack-error-label "DrRacket——教學包出錯")
-  (teachpack-didnt-load "無法裝載教學包~a。")
-  (add-teachpack-menu-item-label "載入教學包……")
-  (clear-all-teachpacks-menu-item-label "卸載全部教學包")
-  (drscheme-teachpack-message-title "DrRacket教學包")
-  (already-added-teachpack "教學包~a已裝載")
-  
-  ; ~a is filled with the teachpack's name; the message appears in the teachpack selection dialog when a user installs a new teachpack
-  (compiling-teachpack "編譯教學包~a……")
-  (teachpack-pre-installed "自帶的教學包")
-  (teachpack-pre-installed/htdp "自帶的HtDP教學包")
-  (teachpack-pre-installed/2htdp "自帶的HtDP/2e教學包")
-  (teachpack-user-installed "用戶安裝的教學包")
-  (add-teachpack-to-list... "添加教學包…")
-  (teachpack-already-installed "已經存在一個名為'~a'的教學包。是否覆蓋？")
-  ; ~a is filled with a list of language names. Each name is separated by a newline and is indented two spaces (no commas, no 'and')
-  (teachpacks-only-in-languages "教學包菜單僅在下列語言中有效：~a\n\n在其他語言中，使用「require」。")
-  
+  (select-a-teachpack "選擇教材包")
+  (clear-teachpack "清除 ~a 教材包")
+  (teachpack-error-label "DrRacket - 教材包錯誤")
+  (teachpack-didnt-load "教材包檔案 ~a 未正確載入。")
+  (add-teachpack-menu-item-label "加入教材包…")
+  (clear-all-teachpacks-menu-item-label "清除所有教材包")
+  (drscheme-teachpack-message-title "DrRacket 教材包")
+  (already-added-teachpack "已加入 ~a 教材包")
+
+  ; ~a is filled with the teachpack's name; the message appears in the
+  ; teachpack selection dialog when a user installs a new teachpack
+  (compiling-teachpack "正在編譯 ~a 教材包…")
+  (teachpack-pre-installed "預先安裝的教材包")
+  (teachpack-pre-installed/htdp "預先安裝的 HtDP 教材包")
+  (teachpack-pre-installed/2htdp "預先安裝的 HtDP/2e 教材包")
+  (teachpack-user-installed "使用者安裝的教材包")
+  (add-teachpack-to-list... "加入教材包至清單…")
+  ; first and second ~a are teachpack names, third is a symbol identifing an export
+  (teachpack-conflict
+   "警告：已安裝的教材包 ~a 與 ~a 發生衝突（匯出 ~a 同時存在於兩者）")
+  ;; a button label; the two ~a are filled with teachpack names
+  (remove-and-add-teachpack "移除 ~a 並加入 ~a")
+  (teachpack-already-installed
+   "名稱為「~a」的教材包已安裝。要覆寫嗎？")
+  ; ~a is filled with a list of language names. Each name is separated
+  ; by a newline and is indented two spaces (no commas, no 'and')
+  (teachpacks-only-in-languages
+   "教材包選單僅在以下語言可用：~a\n\n"
+   " 在其他語言中，請改用 'require'。")
+
+
   ;;; Language dialog
   (introduction-to-language-dialog
-   "請選擇語言。大部分入門級的學生都可以使用默認語言。")
-  (language-dialog-title "語言選擇")
-  (case-sensitive-label "大小寫敏感")
-  (output-style-label "輸出格式")
-  (constructor-printing-style "構造器")
+   "請選擇一種語言。大多數入門課程的學生應使用預設語言。")
+  (language-dialog-title "選擇語言")
+  (case-sensitive-label "區分大小寫")
+  (output-style-label "輸出樣式")
+  (constructor-printing-style "Constructor")
   (quasiquote-printing-style "Quasiquote")
   (write-printing-style "write")
   (print-printing-style "print")
-  (sharing-printing-label "顯示內存共享")
-  (use-pretty-printer-label "print多個對象時自動換行")
+  (true-false-empty-style-label "常數樣式")
+  (true-false-empty-style-read "#true #false '()") ; 這是程式碼不要翻譯
+  (true-false-empty-style-ids "true false empty") ; 這是程式碼不要翻譯
+  (sharing-printing-label "在值中顯示共享")
+  (use-pretty-printer-label "在輸出值中插入換行")
   (input-syntax "輸入語法")
   (dynamic-properties "動態屬性")
   (output-syntax "輸出語法")
-  (teachpacks "教學包") ;; label in the language dialog for the teaching languages
-  (teachpacks-none "《無》") ;; shows up under the previous string, when there are no teachpacks
-  (no-debugging-or-profiling "不調試，也不性能分析")
-  (debugging "調試")
-  (debugging-and-profiling "調試，並性能分析")
-  (test-coverage "語法測試套件覆蓋")
-  (show-details-button-label "顯示詳情")
-  (hide-details-button-label "隱藏詳情")
+  (teachpacks "教材包") ;; label in the language dialog for the teaching languages
+  (teachpacks-none "<<無>>") ;; shows up under the previous string, when there are no teachpacks
+  (no-debugging-or-profiling "不除錯也不效能分析")
+  (debugging "除錯")
+  (debugging-and-profiling "除錯與效能分析")
+  (test-coverage "語法測試套裝涵蓋率")
+  (show-details-button-label "顯示詳細資訊")
+  (hide-details-button-label "隱藏詳細資訊")
   (choose-language-menu-item-label "選擇語言…")
-  (revert-to-language-defaults "恢復默認語言設置")
-  (fraction-style "分數格式")
-  (use-mixed-fractions "帶分數")
-  (use-repeating-decimals "循環小數")
-  (decimal-notation-for-rationals "使用十進制表示有理數")
-  (enforce-primitives-group-box-label "初始綁定")
-  (enforce-primitives-check-box-label "不允許改變初始綁定")
-  (automatically-compile "填充「compiled」目錄（載入更快）")
-  (preserve-stacktrace-information "保留堆疊跟蹤信息（禁用某些優化）")
-  (expression-level-stacktrace "表達式級堆疊跟蹤")
-  (function-level-stacktrace "函數級堆疊跟蹤")
-  (submodules-to-run "運行子module")
-  (add-submodule "添加子module選項…") ;; menu item
-  (add-submodule-title "添加子module") ;; title of dialog opened by above menu item
-  
-  ; used in the bottom left of the drscheme frame as the label
-  ; above the programming language's name
+  (revert-to-language-defaults "還原語言預設值")
+  (fraction-style "分數樣式")
+  (use-mixed-fractions "使用帶分數")
+  (use-repeating-decimals "使用循環小數")
+  (decimal-notation-for-rationals "對有理數使用小數表示")
+  (enforce-primitives-group-box-label "初始繫結")
+  (enforce-primitives-check-box-label "不允許重新定義初始繫結")
+  (automatically-compile "填入 “compiled” 目錄（以加快載入）")
+  (preserve-stacktrace-information "保留堆疊追蹤（停用部分最佳化）")
+  (enforce-module-constants-checkbox-label "強制常數定義（啟用部分內嵌）")
+  (expression-level-stacktrace "運算式層級堆疊追蹤")
+  (function-level-stacktrace "函式層級堆疊追蹤")
+  (submodules-to-run "要執行的子module")
+  (add-submodule "新增子module選項…") ;; menu item
+  (add-submodule-title "新增子module") ;; title of dialog opened by above menu item
+
+
+  ; used in the bottom left of the drscheme frame
   ; used the popup menu from the just above; greyed out and only
   ; visible when some languages are in the history
   (recent-languages "最近使用的語言：")
   ; shows up in bottom-left programming language menu popup, when no langs are recorded
-  (no-recently-chosen-languages "沒有最近使用過的語言")
-  
+  (no-recently-chosen-languages "沒有最近選擇的語言")
+
   ;; startup wizard screen language selection section
-  (please-select-a-language "請選擇語言")
-  
-  
+  (please-select-a-language "請選擇一種語言")
+
+
   ;;; languages
-  (beginning-one-line-summary "define、cond、結構體、常量和基本操作")
-  (beginning/abbrev-one-line-summary "在初級的基礎上，用縮寫形式輸出表")
-  (intermediate-one-line-summary "在初級的基礎上增加了詞法作用域")
-  (intermediate/lambda-one-line-summary "在中級的基礎上，增加了高階函數")
-  (advanced-one-line-summary "在中級的基礎上，增加了lambda和賦值")
-  (pretty-big-scheme "大")
-  (pretty-big-scheme-one-line-summary "MzScheme/MrEd加HtDP(程序設計方法)語言")
-  (r5rs-lang-name "R5RS")
-  (r5rs-one-line-summary "Scheme語言標準第5修改稿")
-  (expander "Expander")
-  (expander-one-line-summary "展開表達式，而不是求值")
-  (legacy-languages "過去的語言")
-  (teaching-languages "教學語言")
-  (experimental-languages "實驗語言")
-  (initial-language-category "初始語言")
-  (no-language-chosen "還沒有選擇語言")
+  (beginning-one-line-summary "define、cond、結構、常數與原始運算元")
+  (beginning/abbrev-one-line-summary "初階；REPL 以清單風格列印")
+  (intermediate-one-line-summary "初階加上詞法作用域")
+  (intermediate/lambda-one-line-summary "中階加上高階函式")
+  (advanced-one-line-summary "中階加上 lambda 與可變動作")
+  (pretty-big-scheme "Pretty Big")
+  (pretty-big-scheme-one-line-summary
+   "加入 HtDP 語言、mzscheme 與 mred/mred 的語法與函式")
+  (r5rs-language-name "R5RS")
+  (r5rs-one-line-summary "R5RS，無額外擴充")
+  (expander "展開器")
+  (expander-one-line-summary "將運算式展開而非求值")
+  (legacy-languages "舊版語言")
+  (teaching-languages "教材語言")
+  (experimental-languages "實驗性語言")
+  (initial-language-category "起始語言")
+  (no-language-chosen "未選擇語言")
   (other-languages "其他語言")
-  
-  (module-language-name "由原始碼來確定語言")
-  (module-language-one-line-summary "由#lang行來確定實際使用的語言")
-  (module-language-auto-text "自動加入#lang行") ;; shows up in the details section of the module language
-  
+
+  (module-language-name "依來源決定語言")
+  (module-language-one-line-summary "由 #lang 行指定實際語言")
+   ;; shows up in the details section of the module language
+  (module-language-auto-text "自動 #lang 行")
+  (module-language-auto-text-most-recent "最近使用的 #lang 行")
+  ; to the right of this string is a text entry field whose content is the #lang line that'll be used.
+  (module-language-auto-text-always-same "一律使用相同的 #lang 行：")
+  ;; the next four string constants show up in the REPL in DrRacket in the "Racket Language",
+  ;; which is also the "Determine language from source" language. They are put right after the name
+  ;; of the language from the "#lang" line at the beginning of the source file
+  (module-language-repl-no-annotations "")
+  (module-language-repl-debug-annotations ", 含除錯")
+  (module-language-repl-debug/profile-annotations ", 含除錯與效能分析")
+  (module-language-repl-test-annotations ", 含測試涵蓋率")
+
+  (module-language-#lang-error-more-information "更多資訊")
+  (module-language-#lang-flush-cache "重新載入")
+  (module-language-#lang-flush-cache-menu-item "重新載入 #lang 擴充")
+
   ;; for the upper portion of the language dialog
-  (the-racket-language "Racket語言")
+  (the-racket-language "The Racket Language")
   (choose-a-language "選擇語言")
-  
+
   ;; the next two string constants appear in the
   ;; language dialog with a list
   ;; of example languages appearing between them
-  (racket-language-discussion "你的程序將從#lang開始，從而指定想用的方言。例如：\n")
-  (racket-language-discussion-end "\n……諸如此類")
-  
+  (racket-language-discussion
+   "請在程式開頭以 #lang 指定所需的方言。例如：\n\n")
+  (racket-language-discussion-end "\n… 以及更多")
+
   ;; the next three string constants are put into a message-box dialog
   ;; that appears when the user clicks on the example #lang languages
   ;; in the language dialog. The first one always appears and then either
   ;; the second or the third appears. The second one has the clicked
-  ;; on #lang line placed into the ~a, and third one has the 
+  ;; on #lang line placed into the ~a, and third one has the
   ;; current #lang line in the first ~a and the clicked on in the second one.
   ;; The two comments are separated by a blank line.
-  (racket-dialect-in-buffer-message 
-   "Racket的方言一般而言由原始碼指定，而不是語言對話框這裡的選項指定。")
-  (racket-dialect-add-new-#lang-line "這就是說，需要在定義視窗開頭添加「~a」嗎？")
-  (racket-dialect-replace-#lang-line "這就是說，在你的文件里現在有「~a」；需要將其替換成「~a」嗎？")
-  (racket-dialect-already-same-#lang-line "不過你的文件中已經包含「~a」；你可以開始編寫程序了！")
-  
+  (racket-dialect-in-buffer-message
+   "Racket 方言通常直接在緩衝區中指定，"
+   " 而不是透過語言對話框選擇這些項目。")
+  (racket-dialect-add-new-#lang-line
+   "即便如此，要我將「~a」加入到定義視窗的開頭嗎？")
+  (racket-dialect-replace-#lang-line
+   "即便如此，我看到你的檔案中已有「~a」；要將它取代為「~a」嗎？")
+  (racket-dialect-already-same-#lang-line
+   "看起來你的檔案中已經有「~a」了；"
+   " 你可以開始撰寫程式！")
+
   ;; in the dialog containing the above strings, one of these is a button that appears
-  (add-#lang-line "添加#lang行")
-  (replace-#lang-line "替換#lang行")
-  
+  (add-#lang-line "新增 #lang 行")
+  (replace-#lang-line "取代 #lang 行")
+
   ;; for the 'new drracket user' dialog
-  (use-language-in-source "使用代碼中指定的語言")
-  
+  (use-language-in-source "使用原始碼中宣告的語言")
+
   ;;; from the `not a language language' used initially in drscheme.
-  (must-choose-language "在繼續操作之前，你必須為DrRacket選擇一種程式語言。")
-  
+  (must-choose-language "你必須選擇一種程式語言，DrRacket 才能處理程式。")
+
   ; next two appear before and after the name of a text book (which will be in italics)
-  (using-a-textbook-before "使用")
+  (using-a-textbook-before "使用 ")
   (using-a-textbook-after "？")
-  
+
   ; next two are before and after a language
-  (start-with-before "由")
-  (start-with-after "開始？")
-  
-  (seasoned-plt-schemer? "PLT Scheme高手?")
-  (racketeer? "你是Racketeer嗎？")
-  (looking-for-standard-scheme? "想要標準的Scheme?")
-  
+  (start-with-before "從 ")
+  (start-with-after "")
+
+  (seasoned-plt-schemer? "資深 PLT Schemer？")
+  (racketeer? "你是 Racketeer 嗎？")
+  (looking-for-standard-scheme? "在找標準 Scheme 嗎？")
+
   ; the three string constants are concatenated together and the middle
   ; one is hyperlinked to the dialog that suggests various languages
-  (get-guidance-before "請使用「語言」菜單中的「選擇語言」對話框，或者")
-  (get-guidance-during "由DrRacket幫助你選擇")
+  (get-guidance-before "請從「語言」選單選擇「選擇語言…」，或 ")
+  (get-guidance-during "取得指引")
   (get-guidance-after "。")
-  
+
   ;;; debug language
   (unknown-debug-frame "[未知]")
-  (backtrace-window-title "向後跟蹤—DrRacket")
-  (files-interactions "~a的交互") ;; filled with a filename
-  (current-interactions "交互")
+  (backtrace-window-title "回溯追蹤 - DrRacket")
+  (files-interactions "~a 的互動") ;; filled with a filename
+  (current-interactions "互動")
   (current-definitions "定義")
-  (mzscheme-w/debug "文本（MzScheme，包含R5RS）")
-  (mzscheme-one-line-summary "PLT的Scheme實現")
-  (mred-w/debug "圖形（MrEd，包含MzScheme）")
-  (mred-one-line-summary "在MzScheme的基礎上增加GUI支持")
-  
+  (mzscheme-w/debug "文字介面（MzScheme，含 R5RS）")
+  (mzscheme-one-line-summary "PLT 的 Scheme 實作")
+  (mred-w/debug "圖形介面（MrEd，含 MzScheme）")
+  (mred-one-line-summary "為 MzScheme 加入 GUI 支援")
+
   ;; profiling
   (profiling-low-color "低")
   (profiling-high-color "高")
-  (profiling-choose-low-color "請選擇代表低的顏色")
-  (profiling-choose-high-color "請選擇代表高的顏色")
-  (profiling "性能分析")
-  (profiling-example-text "(define (馬) (馬))")
-  (profiling-color-config "性能分析色譜")
-  (profiling-scale "性能分析的色彩比例")
+  (profiling-choose-low-color "請選擇低色值")
+  (profiling-choose-high-color "請選擇高色值")
+  (profiling "效能分析")
+  (profiling-example-text "(define (whee) (whee))")
+  (profiling-color-config "效能分析色彩範圍")
+  (profiling-scale "效能分析色彩尺度")
   (profiling-sqrt "平方根")
   (profiling-linear "線性")
   (profiling-square "平方")
-  (profiling-number "調用次數")
-  (profiling-time "累積時間")
-  (profiling-update "更新性能分析")
-  (profiling-col-percent-time "%次")
-  (profiling-col-function "函數")
+  (profiling-number "呼叫次數")
+  (profiling-time "累計時間")
+  (profiling-update "更新分析結果")
+  (profiling-col-percent-time "% 時間")
+  (profiling-col-function "函式")
   (profiling-col-time-in-msec "毫秒")
-  (profiling-col-calls "調用")
-  (profiling-show-profile "顯示性能分析")
-  (profiling-hide-profile "隱藏性能分析")
-  (profiling-unknown-src "《未知》")
-  (profiling-no-information-available "沒有可用的性能分析信息。請確定在語言設置中啟用了性能分析，並且運行了當前程序。")
-  (profiling-clear? "改變定義視窗的內容將導致性能分析信息失效。是否繼續？")
-  
+  (profiling-col-calls "呼叫次數")
+  (profiling-show-profile "顯示分析")
+  (profiling-hide-profile "隱藏分析")
+  (profiling-unknown-src "<<未知>>")
+  (profiling-no-information-available
+   "沒有可用的效能分析資訊。"
+   " 請確認語言已啟用效能分析，且你已執行程式。")
+  (profiling-clear?
+   "變更定義視窗會使效能分析資訊失效。要繼續嗎？")
+
   ;; test coverage
-  (test-coverage-clear? "改變定義視窗將導致測試覆蓋信息失效。是否繼續？")
-  (test-coverage-clear-and-do-not-ask-again "是，並且不再詢問")
-  (test-coverage-ask? "詢問清除測試覆蓋")
-  
-  (test-coverage-on "覆蓋的測試")
-  (test-coverage-off "未覆蓋的測試")
-  
+  (test-coverage-clear?
+   "變更定義視窗會使測試涵蓋率資訊失效。要繼續嗎？")
+  (test-coverage-clear-and-do-not-ask-again "是，且不要再詢問")
+  (test-coverage-ask? "詢問是否清除測試涵蓋率")
+  (test-coverage-entirely-covered "所有運算式皆被涵蓋")
+  (test-coverage-next-time-check-box "下次顯示？")
+  (test-coverage-summary "顯示測試涵蓋率摘要")
+
+  (test-coverage-on "已涵蓋的測試")
+  (test-coverage-off "未涵蓋的測試")
+
   ;; tracing
-  (tracing-enable-tracing "啟用跟蹤")
-  (tracing-show-tracing-window "顯示跟蹤")
-  (tracing-hide-tracing-window "隱藏跟蹤")
-  (tracing-tracing-nothing-to-show "暫時沒有可用的跟蹤結果。(請檢查你所使用的語言是否支持跟蹤以及是否啟用了跟蹤。)")
-  
+  (tracing-enable-tracing "啟用追蹤")
+  (tracing-show-tracing-window "顯示追蹤")
+  (tracing-hide-tracing-window "隱藏追蹤")
+  (tracing-tracing-nothing-to-show
+   "目前沒有可用的追蹤結果。（請確認你的語言支援追蹤，"
+   " 且追蹤已啟用。）")
+
   ;;; repl stuff
-  (evaluation-terminated "計算已終止")
+  (evaluation-terminated "求值已終止")
   (evaluation-terminated-explanation
-   "計算執行緒已停止，在下一次執行之前不會進行計算。")
-  
+   "求值執行緒已終止，"
+   " 直到下次執行前無法進行求值。")
+
   ; The next three constants show up in the same dialog as the above evaluation-terminated string
   ; constants.
   ; The first two show up only when the user calls 'exit' (possibly with a status code).
   ; The third shows up when the program runs out of memory.
-  (exited-successfully "成功退出。")
-  (exited-with-error-code "退出，錯誤代碼~a。") ;; ~a is filled in with a number between 1 and 255
-  (program-ran-out-of-memory "內存耗盡。")
-  
-  (show-evaluation-terminated-dialog "顯示『計算終止』對話框")
-  (evaluation-terminated-ask "下次再顯示該對話框")
-  
-  (last-stack-frame "顯示最新的棧幀")
-  (last-stack-frames "顯示前~a個棧幀")
-  (next-stack-frames "顯示後~a個棧幀")
-  
+  (exited-successfully "已成功結束。")
+  ;; ~a is filled in with a number between 1 and 255
+  (exited-with-error-code "以錯誤碼 ~a 結束。")
+  (program-ran-out-of-memory "程式的記憶體已耗盡。")
+
+  (show-evaluation-terminated-dialog "顯示「求值已終止」對話框")
+  (evaluation-terminated-ask "下次顯示此對話框")
+
+  (last-stack-frame "顯示最後一個堆疊幀")
+  (last-stack-frames "顯示最後 ~a 個堆疊幀")
+  (next-stack-frames "顯示接下來的 ~a 個堆疊幀")
+  (more-stack-frames "顯示更多堆疊幀")
+
   ;;; welcoming message in repl
   (language "語言")
-  (custom "自定義")
-  (teachpack "教學包")
+  (custom "自訂")
+  (teachpack "教材包")
   (welcome-to "歡迎使用")
   (version "版本")
-  
+  ;; The following is shown on 2nd line of welcome message in repl.
+  ;; It is concatenated at end of: "language": LANGUAGE "; memory limit:" LIMIT
+  ;; therefore you get to decide punctuation for your language here
+  (memory-limit "；記憶體限制：")
+
   ;;; kill evaluation dialog
-  (kill-evaluation? "是否要終止計算？")
-  (just-break "中斷")
-  (kill "終止")
-  (kill? "終止？")
-  
+  (kill-evaluation? "要強制終止求值嗎？")
+  (just-break "僅中斷")
+  (kill "強制終止")
+  (kill? "要強制終止？")
+
   ;;; version checker
   (version:update-menu-item   "檢查更新…")
   (version:update-check       "檢查更新") ; dialog title, with the next line
-  (version:connecting-server  "連接Racket版本伺服器")
-  (version:results-title      "Racket版本檢查")
-  (version:do-periodic-checks "定期檢查Racket版本更新")
-  (version:take-me-there      "下載") ; ...to the download website
+  (version:connecting-server  "正在連線至 Racket 版本伺服器")
+  (version:results-title      "Racket 版本檢查")
+  (version:do-periodic-checks "定期檢查是否有較新的 Racket 版本")
+  (version:take-me-there      "前往下載頁面") ; ...to the download website
   ;; the next one can appear alone, or followed by a comma and the one after that
-  (version:plt-up-to-date     "您現在使用的已經是最新版本的Racket")
-  (version:but-newer-alpha    "但是還有一個更新的alpha版本")
+  (version:plt-up-to-date     "你的 Racket 版本已是最新")
+  (version:but-newer-alpha    "但注意有較新的 alpha 釋出")
   ;; This is used in this context: "Racket vNNN <<<*>>> http://download..."
-  (version:now-available-at   "可以從這裡獲取：")
-  
+  (version:now-available-at   "現已可於以下位置取得：")
+
   ;; insert menu
   (insert-menu "插入(&I)")
-  
+
   ;; large semi colon letters
-  (insert-large-letters... "插入大字…")
-  (large-semicolon-letters "帶分號的大字")
+  (insert-large-letters... "插入大型字母…")
+  (large-semicolon-letters "大型分號字母")
   (text-to-insert "要插入的文字")
-  
-  (module-browser-filename-format "文件全名：~a（共~a行）")
-  (module-browser-root-filename "根文件名：~a")
-  (module-browser-font-size-gauge-label "字體大小")
-  (module-browser-progress-label "Module概覽進程")
-  (module-browser-adding-file "添加文件：~a…")
-  (module-browser-laying-out-graph-label "正在布局")
-  (module-browser-open-file-format "打開~a")
-  (module-browser "Module瀏覽器") ;; frame title
-  (module-browser... "&Module瀏覽器…") ;; menu item title
-  (module-browser-in-file "M&odule瀏覽~a") ;; menu item title; ~a is filled with a filename
-  (module-browser-no-file "Module瀏覽存檔文件") ;; menu item title for above menu item; used when there is no saved file
-  (module-browser-error-expanding "展開程序時出錯：\n\n~a")
-  (module-browser-show-lib-paths "顯示通過(lib ..)載入的文件的路徑")
-  (module-browser-progress "Module瀏覽器：~a") ;; prefix in the status line
-  (module-browser-compiling-defns "Module瀏覽器：正在編譯定義")
-  (module-browser-show-lib-paths/short "跟隨lib調用") ;; check box label in show module browser pane in drscheme window.
-  (module-browser-show-planet-paths/short "跟隨planet調用") ;; check box label in show module browser pane in drscheme window.
-  (module-browser-refresh "刷新") ;; button label in show module browser pane in drscheme window.
-  (module-browser-highlight "高亮顯示") ;; used to search in the graph; the label on a text-field% object
+
+  (module-browser-filename-format "完整檔名：~a（~a 行）")
+  (module-browser-root-filename "根檔名：~a")
+  (module-browser-font-size-gauge-label "字型大小")
+  (module-browser-progress-label "module瀏覽器進度")
+  (module-browser-adding-file "新增檔案：~a…")
+  (module-browser-laying-out-graph-label "佈局圖形")
+  (module-browser-open-file-format "開啟 ~a")
+  (module-browser "module瀏覽器") ;; frame title
+  (module-browser... "module瀏覽器(&M)…") ;; menu item title
+  (module-browser-in-file "在 ~a 的module瀏覽器(&O)") ;; menu item title; ~a is filled with a filename
+  ;; menu item title for above menu item; used when there is no saved file
+  (module-browser-no-file "此已儲存檔案的module瀏覽器")
+  (module-browser-error-expanding "展開程式時發生錯誤：\n\n~a")
+  (module-browser-show-lib-paths "顯示由 (lib ..) 路徑載入的檔案")
+  (module-browser-progress "module瀏覽器：~a") ;; prefix in the status line
+  (module-browser-compiling-defns "module瀏覽器：正在編譯定義")
+  ;; check box label in show module browser pane in drscheme window.
+  (module-browser-show-lib-paths/short "追蹤 lib 的 require")
+  ;; check box label in show module browser pane in drscheme window.
+  (module-browser-show-planet-paths/short "追蹤 PLaneT 的 require")
+  (module-browser-refresh "重新整理") ;; button label in show module browser pane in drscheme window.
+  ;; used to search in the graph; the label on a text-field% object
+  (module-browser-highlight "染色標示")
   (module-browser-only-in-plt-and-module-langs
-   "Module瀏覽器只能對基於module的程序中使用。")
+   "module瀏覽器僅適用於以module（module）為基礎的程式。")
   (module-browser-name-length "名稱長度")
   (module-browser-name-short "短")
   (module-browser-name-medium "中")
   (module-browser-name-long "長")
-  (module-browser-name-very-long "長，包含階段")  ;; like 'Long' but shows the phases where this file is loaded
-  (module-browser-open-all "打開所有這些文件")
-  
-  (happy-birthday-matthias "生日快樂，Matthias！")
-  (happy-birthday-matthew "生日快樂，馬曉！")
-  (happy-birthday-shriram "生日快樂，Shriram！")
-  
-  (xml-tool-insert-xml-box "插入XML框")
-  (xml-tool-insert-scheme-box "插入Racket框")
-  (xml-tool-insert-scheme-splice-box "插入Racket接合框")
-  (xml-tool-xml-box "XML框")
-  (xml-tool-scheme-box "Racket框")
-  (xml-tool-scheme-splice-box "Racket接合框")
-  (xml-tool-switch-to-scheme "轉化為Racket框")
-  (xml-tool-switch-to-scheme-splice "轉化為Racket接合框")
+    ;; like 'Long' but shows the phases where this file is loaded
+  (module-browser-name-very-long "長（含階段）")
+  (module-browser-open-all "開啟此處顯示的所有檔案")
+  (module-browser-main-collects "主要collection")
+  (module-browser-unknown-pkg "未知package")
+  (module-browser-visible-pkgs "可見package")
+  (module-browser-visible-submodules "可見子module")
+  (module-browser-top-level-module "最上層module") ; in the "which submodules?" filter; this is used for when there are no submodules
+
+  (happy-birthday-matthias "Matthias 生日快樂！")
+  (happy-birthday-matthew "Matthew 生日快樂！")
+  (happy-birthday-shriram "Shriram 生日快樂！")
+
+  (xml-tool-insert-xml-box "插入 XML 方塊")
+  (xml-tool-insert-scheme-box "插入 Racket 方塊")
+  (xml-tool-insert-scheme-splice-box "插入 Racket splice 方塊")
+  (xml-tool-xml-box "XML 方塊")
+  (xml-tool-scheme-box "Racket 方塊")
+  (xml-tool-scheme-splice-box "Racket splice 方塊")
+  (xml-tool-switch-to-scheme "切換為 Racket 方塊")
+  (xml-tool-switch-to-scheme-splice "切換為 Racket splice 方塊")
   (xml-tool-eliminate-whitespace-in-empty-tags
-   "消除空白標籤中的空白")
+   "移除空標籤內的空白")
   (xml-tool-leave-whitespace-alone
-   "保留空白")
-  
-  (show-recent-items-window-menu-item "在單獨視窗中顯示最近使用過的文件")
-  (show-recent-items-window-label "最近使用過的文件")
-  (number-of-open-recent-items "最近使用的數量")
-  (switch-anyway "強制切換文件")
-  
-  (stepper-program-has-changed "注意：程序已改變。")
-  (stepper-program-window-closed "注意：程序視窗已關閉。")
-  
-  (stepper-name "單步執行器")
-  (stepper-language-level-message "單步執行不支持語言「~a」。")
-  (stepper-button-label "單步執行")
-  
-  (stepper-previous "上一步")
-  (stepper-next "下一步")
+   "保留空白不變")
+
+  (show-recent-items-window-menu-item "在另外一個視窗顯示最近開啟的檔案")
+  (show-recent-items-window-label "最近開啟的檔案")
+  (number-of-open-recent-items "最近項目的數量")
+  (switch-anyway "仍要切換檔案")
+
+  (stepper-program-has-changed "※警告：程式已變更。")
+  (stepper-program-window-closed "※警告：程式視窗已關閉。")
+
+  (stepper-name "步進器")
+  (stepper-language-level-message "步進器無法用於語言「~a」。")
+  (stepper-button-label "步進")
+
+  (stepper-previous "步進")
+  (stepper-next "步進")
   (stepper-jump "跳至…")
-  (stepper-jump-to-beginning "最前")
-  (stepper-jump-to-end "最後")
-  (stepper-jump-to-selected "當前選中的開始")
-  (stepper-jump-to-previous-application "前一個調用步驟")
-  (stepper-jump-to-next-application "下一個調用步驟")
-  (stepper-out-of-steps "已到達計算終結，未找到目標步驟。")
-  (stepper-no-such-step/title "未找到步驟")
-  (stepper-no-such-step "找不到符合該標準的步驟。")
-  (stepper-no-such-step/earlier "前向找不到符合該標準的步驟。")
-  
-  (stepper-no-earlier-application-step "前向無調用步驟。")
-  (stepper-no-later-application-step "無調用步驟。")
-  
-  (stepper-no-earlier-step "前向無步驟。")
-  (stepper-no-later-step "無步驟。")
-  
-  (stepper-no-selected-step "選中區域中沒有步驟。可能這些是注釋？")
-  
-  (stepper-no-last-step "最後步驟暫未生成。")
-  
-  
-  (debug-tool-button-name "調試")
-  
-  (dialog-back "後退")
-  
+  (stepper-jump-to-beginning "到開頭")
+  (stepper-jump-to-end "到結尾")
+  (stepper-jump-to-selected "所選區段的開頭")
+  (stepper-jump-to-previous-application "上一個應用步驟")
+  (stepper-jump-to-next-application "下一個應用步驟")
+  (stepper-out-of-steps
+   "已到達求值結尾，未找到符合的步驟。")
+  (stepper-no-such-step/title "找不到步驟")
+  (stepper-no-such-step "找不到符合條件的步驟。")
+  (stepper-no-such-step/earlier "找不到更早符合條件的步驟。")
+
+  (stepper-no-earlier-application-step "沒有更早的應用步驟。")
+  (stepper-no-later-application-step "沒有更多應用步驟。")
+  (stepper-complete "所有定義都已成功求值。")
+
+  (stepper-no-earlier-step "沒有更早的步驟。")
+  (stepper-no-later-step "沒有更多步驟。")
+
+  (stepper-no-selected-step "在標示區域內沒有任何步驟。也許已被註解掉了？")
+
+  (stepper-no-last-step "尚無可用的最後一步。")
+
+  (debug-tool-button-name "除錯")
+
+  (dialog-back "返回")
+
   ;; warnings about closing a drscheme frame when the program
   ;; might still be doing something interesting
-  (program-is-still-running "定義視窗中的程序還在運行中。強制退出？")
-  (program-has-open-windows "定義視窗中的程序打開了其他視窗。強行關閉這些視窗？")
-  
+  (program-is-still-running "定義視窗中的程式仍在執行。仍要關閉嗎？")
+  (program-has-open-windows
+   "定義視窗中的程式有開啟的視窗。仍要關閉此視窗嗎？")
+
   ;; ml-command-line-arguments is for the command line arguments
   ;; label in the module language details in the language dialog.
-  (ml-command-line-arguments "命令行參數是字元串的數組，以紅色顯示")
-  
+  (ml-command-line-arguments "於 read syntax 終將命令列參數視作字串向量")
+
   ;; ml-cp names are all for the module language collection path
   ;; configuration. See the details portion of the language dialog
   ;; for the module language (at the bottom).
-  (ml-cp-default-collection-path "<<默認collection路徑>>")
-  
-  ;; in std get-directory 
+  (ml-cp-default-collection-path "<<預設collection路徑>>")
+
+  ;; in std get-directory
   (ml-cp-choose-a-collection-path "請選擇collection路徑")
-  
+
   ;; err msg when adding default twice
   (ml-cp-default-already-present
-   "默認collection路徑已存在")
-  
+   "已存在預設的collection路徑")
+
   ;; title of this section of the dialog (possibly the word
   ;; `Collection' should not be translated)
-  (ml-cp-collection-paths "Collection路徑")
-  
+  (ml-cp-collection-paths "collection路徑")
+
   ;; button labels
-  (ml-cp-add "添加")
-  (ml-cp-add-default "加為默認")
-  (ml-cp-remove "清除")
+  ;;  The package manager uses these, too
+  (ml-cp-add "新增")
+  (ml-cp-add-default "新增預設")
+  (ml-cp-remove "移除")
   (ml-cp-raise "上移")
   (ml-cp-lower "下移")
-  
-  (ml-always-show-#lang-line "在Module語言中，始終顯示#langhang")
-  
-  ;; Strings for Profj removed as ProfessorJ is no longer actively developed as part of DrScheme
-  
-  
+
+  (ml-always-show-#lang-line "在module語言中一律顯示 #lang 行")
+
+  ;; Profj
+  (profj-java "Java")
+  (profj-java-mode "Java 模式")
+  (profj-java-coverage "Java 覆蓋率") ;; shows up in the preferences dialog under 'Color'
+
+  (profj-beginner-lang "初學者")
+  (profj-beginner-lang-one-line-summary "類 Java 的初學者教材語言")
+  (profj-full-lang "完整")
+  (profj-full-lang-one-line-summary "類似 Java 1.0（部分 1.1）")
+  (profj-advanced-lang "進階")
+  (profj-advanced-lang-one-line-summary "類 Java 的進階教材語言")
+  (profj-intermediate-lang "中階")
+  (profj-intermediate-lang-one-line-summary "類 Java 的中階教材語言")
+  (profj-intermediate-access-lang "中階＋權限")
+  (profj-intermediate-access-lang-one-line-summary
+   "類 Java 的中階教材語言，含存取修飾詞")
+  (profj-dynamic-lang "Java＋動態型別")
+  (profj-dynamic-lang-one-summary "具動態型別能力的 Java")
+
+  (profj-java-mode-color-heading "編輯色彩") ; Heading for preference to choose editing colors
+  (profj-java-mode-color-keyword "關鍵字")
+  (profj-java-mode-color-string "字串")
+  (profj-java-mode-color-literal "常值")
+  (profj-java-mode-color-comment "註解")
+  (profj-java-mode-color-error "錯誤")
+  (profj-java-mode-color-identifier "識別字")
+  (profj-java-mode-color-prim-type "基本型別") ; Example text for built-in Java types
+  (profj-java-mode-color-default "預設")
+
+  (profj-coverage-color-heading "覆蓋率色彩") ; Heading for preference to choose coverage colors
+  (profj-coverage-color-covered "已覆蓋的運算式")
+
+  ; Heading for preferences controlling printing
+  (profj-language-config-display-preferences "顯示偏好")
+  (profj-language-config-display-style "顯示樣式")
+  (profj-language-config-display-field "類別＋欄位")
+  (profj-language-config-class "類別")
+  (profj-language-config-display-array "是否列印陣列的所有內容？")
+  ; Heading for preferences controlling test behavior
+  (profj-language-config-testing-preferences "測試偏好")
+  ; Run should be the word found on the Run button
+  ;(profj-language-config-testing-enable "Display testing results on Run?")
+  (profj-language-config-testing-coverage "是否收集測試的覆蓋率資訊？")
+  (profj-language-config-support-test-language "支援測試語言擴充？")
+  (profj-language-config-testing-check "允許 check 運算式？") ; check should not be translated
+  (profj-language-config-classpath "類別路徑")
+  (profj-language-config-choose-classpath-directory "選擇要加入類別路徑的目錄")
+  ; Button label to print the current classpath
+  (profj-language-config-classpath-display "顯示目前設定")
+
+  (profj-test-name-close-to-example "類別 ~a 的名稱包含接近 Example 的字詞。")
+  (profj-test-name-example-miscapitalized "類別 ~a 的名稱包含大小寫錯誤的 example。")
+
+  ;; Close testing window and do not run test cases any more
+  ;(profj-test-results-close-and-disable "Close and Disable Testing")
+  ;; Hide docked testing window and do not run test cases any more
+  ;(profj-test-results-hide-and-disable "Hide and Disable Testing")
+  ;Renamed below
+  ;(profj-test-results-window-title "Test Results")
+
+  (profj-unsupported "不支援")
+  (profj-executables-unsupported "抱歉，目前不支援 Java 可執行檔")
+
+  (profj-convert-to-text-comment "轉換為純文字註解")
+  (profj-convert-to-comment "轉換為註解")
+
+  (profj-executing-main "正在執行 main")
+
+  (profj-insert-java-comment-box "插入 Java 註解方塊")
+  (profj-insert-java-interactions-box "插入 Java 互動方塊")
+
   ;;The Test engine tool
   ;;
   (test-engine-window-title "測試結果")
   ;;Following two appear in View menu, attach and free test report window from DrRacket frame
-  (test-engine-dock-report "停靠測試報告")
-  (test-engine-undock-report "取消停靠測試報告")
+  (test-engine-dock-report "停駐測試報告")
+  (test-engine-undock-report "解除停駐測試報告")
   ;;Following two appear in Racket (Java, etc) menu, cause Tests to be Run automatically or not
   (test-engine-enable-tests "啟用測試")
   (test-engine-disable-tests "停用測試")
-  
-  (test-engine-ran-1-test "運行了1個test。")
-  (test-engine-ran-1-check "運行了1個check。")
+  (test-engine-enable-disable-tests-only-in-teaching-languages
+   "「啟用/停用測試」選單項目僅用於停用或啟用 HtDP"
+   " 與 DMdA 教學語言的測試支援。請在語言對話框的「顯示詳細資料」區段"
+   " 中控制在「Racket 語言」中執行的子module。")
+
+  (test-engine-ran-1-test "已執行 1 個測試。")
+  (test-engine-ran-1-check "已執行 1 次檢查。")
   ;; ditto, only plural
-  (test-engine-ran-n-tests "運行了~a個test。")
-  (test-engine-ran-n-checks "運行了~a個check。")
-  (test-engine-1-test-passed "Test通過！")
-  (test-engine-1-check-passed "Check通過！")
-  (test-engine-both-tests-passed "全部test通過！")
-  (test-engine-both-checks-passed "全部check通過！")
-  (test-engine-all-tests-passed "全部test通過！")
-  (test-engine-all-checks-passed "全部check通過！")
-  (test-engine-all-n-tests-passed "所有~a個test通過！")
-  (test-engine-all-n-checks-passed "所有~a個check通過！")
-  (test-engine-0-tests-passed "0個test通過。")
-  (test-engine-0-checks-passed "0個check通過。")
-  (test-engine-m-of-n-tests-failed "~a個test失敗（共~a個test）。")
-  (test-engine-m-of-n-checks-failed "~a個check失敗（共~a個check）。")
-  (test-engine-must-be-tested "程序必須要測試！")
-  (test-engine-is-unchecked "程序還沒有check！")
-  (test-engine-tests-disabled "測試未啟用。")
-  (test-engine-should-be-tested "程序需要測試。")
-  (test-engine-at-line-column "於行~a，列~a")
-  (test-engine-in-at-line-column "於文件~a，行~a，列~a")
+  (test-engine-ran-n-tests "已執行 ~a 個測試。")
+  (test-engine-ran-n-checks "已執行 ~a 次檢查。")
+  (test-engine-1-test-passed "測試通過！")
+  (test-engine-1-check-passed "檢查通過！")
+  (test-engine-both-tests-passed "兩個測試皆通過！")
+  (test-engine-both-checks-passed "兩個檢查皆通過！")
+  (test-engine-all-tests-passed "所有測試皆通過！")
+  (test-engine-all-checks-passed "所有檢查皆通過！")
+  (test-engine-all-n-tests-passed "共 ~a 個測試皆通過！")
+  (test-engine-all-n-checks-passed "共 ~a 次檢查皆通過！")
+  (test-engine-0-tests-passed "0 個測試通過。")
+  (test-engine-0-checks-passed "0 次檢查通過。")
+  (test-engine-m-of-n-tests-failed "~a / ~a 個測試失敗。")
+  (test-engine-m-of-n-checks-failed "~a / ~a 次檢查失敗。")
+  (test-engine-must-be-tested "此程式必須執行測試！")
+  (test-engine-is-unchecked "此程式未檢查！")
+  (test-engine-tests-disabled "測試已停用。")
+  (test-engine-should-be-tested "此程式應該執行測試。")
+  (test-engine-at-line-column "於第 ~a 行，第 ~a 欄")
+  (test-engine-in-at-line-column "在 ~a，第 ~a 行，第 ~a 欄")
   ; as in "column (unknown)"
   (test-engine-unknown "（未知）")
-  (test-engine-trace-error "跟蹤錯誤")
-  
+  (test-engine-trace-error "追蹤錯誤")
+
   ; The ~F is special marker for the offending values, which may be
   ; printed specially in DrRacket.
-  ;; no way to translate these as the order of expected value and actual value (also range) should be ordered differently in Chinese
+  (test-engine-check-range-encountered-error
+   "check-range 遇到下列錯誤，未能得到位於 [~F, ~F] 的值。~n   :: ~a")
+  (test-engine-check-member-of-encountered-error
+   "check-member-of 遇到下列錯誤，未能得到 ~L 內的值。~n   :: ~a")
+  ; obsolete version of this
+  (test-engine-check-*-encountered-error
+   "~a 遇到下列錯誤，未能得到預期的值 ~F。~n   :: ~a")
+  ; deprecated:
   (test-engine-check-encountered-error
-   "check-expect encountered the following error instead of the expected value, ~F. ~n   :: ~a")
+   "check-expect 遇到下列錯誤，未能得到預期的值 ~F。~n   :: ~a")
+  (test-engine-check-error-cause
+   "由此運算式造成")
   (test-engine-actual-value-differs-error
-   "Actual value ~F differs from ~F, the expected value.")
+   "實際值 ~F 與預期值 ~F 不同。")
+  ;; need to translate only one of these next two
+  ;; (test-engine-actual-value-not-within-error or
+  ;;  test-engine-actual-value-not-within-error/alt-word-order)
+  ;; if both are present, test-engine-actual-value-not-within-error is used
   (test-engine-actual-value-not-within-error
-   "Actual value ~F is not within ~v of expected value ~F.")
+   "實際值 ~F 與預期值 ~F 的差距未在 ~v 以內。")
+  (test-engine-actual-value-not-within-error/alt-order
+   "實際值 ~F 與預期值 ~F 的距離不夠近；預期應在 ~v 以內。")
   (test-engine-encountered-error-error
-   "check-error encountered the following error instead of the expected ~a~n   :: ~a")
+   "check-error 遇到下列錯誤，未能得到預期的 ~a~n   :: ~a")
   (test-engine-expected-error-error
-   "check-error expected the following error, but instead received the value ~F.~n ~a")
+   "check-error 預期出現下列錯誤，但卻收到值 ~F。~n ~a")
   (test-engine-expected-an-error-error
-   "check-error expected an error, but instead received the value ~F.")
+   "check-error 預期出現錯誤，但卻收到值 ~F。")
   ;; members are appended to the message
-  (test-engine-not-mem-error "Actual value ~F differs from all given members in ")
-  (test-engine-not-range-error "Actual value ~F is not between ~F and ~F, inclusive.")
-  
+  (test-engine-not-mem-error "實際值 ~F 與以下所有給定成員皆不同：")
+  (test-engine-not-range-error "實際值 ~F 不在 ~F 與 ~F 之間（包含端點）。")
+
   ;; followed by list of variable bindings
-  (test-engine-property-fail-error "Property falsifiable with")
-  (test-engine-property-error-error "check-property遇到如下錯誤~n:: ~a")
-  
-  (signature-enable-checks "啟用Signature Checks")
-  (signature-disable-checks "停用Signature Checks")
-  
+  (test-engine-property-fail-error "Property 可由此證偽：")
+  (test-engine-property-error-error "check-property 遇到下列錯誤~n:: ~a")
+
+  (signature-enable-checks "啟用簽章檢查")
+  (signature-disable-checks "停用簽章檢查")
+
   ; section header
-  (test-engine-check-failures "Check失敗：")
+  (test-engine-check-failures "檢查失敗：")
   ; section header
-  (test-engine-signature-violations "Signature違規：")
-  
+  (test-engine-signature-violations "簽章違反：")
+
   ; part of one phrase "signature <at line ...> to blame: function <...>
-  (test-engine-signature "signature")
-  (test-engine-to-blame "to blame: function")
-  
-  (test-engine-no-signature-violations "無signature違規。")
-  (test-engine-1-signature-violation "1個signature違規。")
-  (test-engine-n-signature-violations "~a個signature違規。")
-  
+  (test-engine-signature "簽章")
+  (test-engine-to-blame "歸咎於：函式")
+
+  (test-engine-no-signature-violations "無簽章違反。")
+  (test-engine-1-signature-violation "1 個簽章違反。")
+  (test-engine-n-signature-violations "~a 個簽章違反。")
+
   ; as in got <value>, signature <at ...>
   (test-engine-got "實得")
-  
+
+  (profjWizward-insert-java-class "插入 Java 類別")
+  (profjWizard-insert-java-union "插入 Java 聯合")
+
   ;; The Test Suite Tool
   ;; Errors
-  (test-case-empty-error "空白test")
-  (test-case-too-many-expressions-error "一個test中包含過多表達式。")
+  (test-case-empty-error "空白測試案例")
+  (test-case-too-many-expressions-error "測試案例中的運算式過多。")
   ;; DrRacket window menu items
-  (test-case-insert "插入Test Case")
-  (test-case-disable-all "禁用所有Test Cases")
-  (test-case-enable-all "允許所有Test Cases")
-  
+  (test-case-insert "插入測試案例")
+  (test-case-disable-all "停用所有測試案例")
+  (test-case-enable-all "啟用所有測試案例")
+
   ;; NOTE: The following string constants are labels of the test-case fields. The width
   ;;       of the field is determined by the length of the longest of the following three words.
   ;;       if the words are too long the test case will take up too much horizontal room and
   ;;       not look very good.
   ;; This string is the label of the expression that is being tested in a test case.
-  (test-case-to-test "Test")
+  (test-case-to-test "測試")
   ;; This string is the label of the expression that is the expected value of the to-test expression.
-  (test-case-expected "應該為")
+  (test-case-expected "應為")
   ;; This string is the label of the actual result of the to test expression.
-  (test-case-actual "實際值")
-  (test-case-predicate "預測值")
-  (test-case-should-raise "應該Raise")
+  (test-case-actual "實際")
+  (test-case-predicate "述詞")
+  (test-case-should-raise "應拋出")
   ;; The label of a field of the test-case that describes the expected error message of a test case
-  (test-case-error-message "錯誤信息")
-  
-  (test-case-menu-title "Test Case")
-  (test-case-switch-to-error-box "切換為Error Test框")
-  (test-case-switch-to-nonerror-box "切換為Nonerror Test框")
-  (test-case-collapse "摺疊Test Case")
+  (test-case-error-message "錯誤訊息")
+
+  (test-case-menu-title "測試案例")
+  (test-case-switch-to-error-box "切換為錯誤測試方塊")
+  (test-case-switch-to-nonerror-box "切換為非錯誤測試方塊")
+  (test-case-collapse "摺疊測試案例")
   (test-case-show-actual "顯示實際值")
-  (test-case-enable "啟用Test Case")
-  (test-case-show-predicate "顯示預測值")
-  (test-case-show-error-message "顯示錯誤信息")
-  (test-case-convert-to-text "轉化為文本")
-  
+  (test-case-enable "啟用測試案例")
+  (test-case-show-predicate "顯示述詞")
+  (test-case-show-error-message "顯示錯誤訊息")
+  (test-case-convert-to-text "轉換為文字")
+
+  ;; Profj Boxes
+  (profjBoxes-empty-error "空白互動")
+  (profjBoxes-too-many-expressions-error "方塊中的運算式過多")
+  (profjBoxes-interactions-label "互動")
+  (profjBoxes-bad-java-id-error "不合法的 Java 識別字")
+  (profjBoxes-examples-label "範例")
+  (profjBoxes-add-new-example-button "新增範例")
+  (profjBoxes-type "型別")
+  ;; The Java identifier of an example of data
+  (profjBoxes-name "名稱")
+  (profjBoxes-value "值")
+  (profjBoxes-insert-java-examples "插入 Java 範例")
+  (profjBoxes-insert-java-interactions "插入 Java 互動")
+
   ;; Slideshow
-  (slideshow-hide-picts "顯示嵌套的框")
-  (slideshow-show-picts "顯示圖片")
-  (slideshow-cannot-show-picts "無法顯示圖片；請先運行程序建立大小")
-  (slideshow-insert-pict-box "插入圖片框")
-  
+  (slideshow-hide-picts "顯示巢狀方塊")
+  (slideshow-show-picts "顯示圖像")
+  (slideshow-cannot-show-picts "無法顯示圖像；請先執行程式以快取尺寸")
+  (slideshow-insert-pict-box "插入圖像方塊")
+
   ;; GUI Tool
-  (gui-tool-heading "GUI工具")
-  (gui-tool-before-clicking-message "在點擊工具圖標之前，請先使用「特殊符號」菜單中的「插入GUI」命令插入一個GUI根對象，或先選中另一個GUI。")
-  (gui-tool-show-gui-toolbar "顯示GUI工具欄")
-  (gui-tool-hide-gui-toolbar "隱藏GUI工具欄")
-  (gui-tool-insert-gui "插入GUI")
-  
+  (gui-tool-heading "GUI 工具")
+  (gui-tool-before-clicking-message
+   "在按下工具圖示前，請從「特殊」選單使用「插入 GUI」"
+   " 以插入根 GUI 項目，或選取已插入的 GUI。")
+  (gui-tool-show-gui-toolbar "顯示 GUI 工具列")
+  (gui-tool-hide-gui-toolbar "隱藏 GUI 工具列")
+  (gui-tool-insert-gui "插入 GUI")
+
   ;; contract violation tracking
-  
+
   ; tooltip for new planet icon in drscheme window (must have a planet violation logged to see it)
-  (show-planet-contract-violations "顯示PLaneT中的contract違背")
-  
+  (show-planet-contract-violations "顯示 PLaneT 合約違反")
+
   ; buttons in the dialog that lists the recorded bug reports
-  (bug-track-report "發送報告")
-  (bug-track-forget "取消")
-  (bug-track-forget-all "取消全部")
-  
-  ;; planet status messages in the bottom of the drscheme window; the ~a is filled with the name of the package
-  (planet-downloading "PLaneT：正在下載~a……")
-  (planet-installing "PLaneT：正在安裝~a……")
-  (planet-finished "PLaneT：~a已完成。")
-  (planet-docs-building "PLaneT：構建文檔（由~a觸發）……")
-  (planet-no-status "PLaneT") ;; this can happen when there is status shown in a different and then the user switches to a tab where planet hasn't been used
-  
-  (bug-report-field-pkg "Package系統信息")
-  
+  (bug-track-report "送出錯誤回報")
+  (bug-track-forget "廢棄")
+  (bug-track-forget-all "全部廢棄")
+
+  ;; planet status messages in the bottom of the drscheme window;
+  ;; the ~a is filled with the name of the package
+  (planet-downloading "PLaneT：正在下載 ~a…")
+  (planet-installing "PLaneT：正在安裝 ~a…")
+  (planet-finished "PLaneT：已完成 ~a。")
+  (planet-docs-building "PLaneT：正在建立文件（由 ~a 觸發）…")
+  ;; this can happen when there is status shown in a different and then
+  ;; the user switches to a tab where planet hasn't been used
+  (planet-no-status "PLaneT")
+
+  (bug-report-field-pkg "package系統資訊")
+
   ;; string normalization. To see this, paste some text with a ligature into DrRacket
   ;; the first three strings are in the dialog that appears. The last one is in the preferences dialog
-  (normalize "標準化")
-  (leave-alone "保留原樣")
-  (normalize-string-info "粘帖來的文字包含未經標準化的連字。標準化？")
-  (normalize-string-preference "標準化粘帖字元串")
-  (ask-about-normalizing-strings "詢問是否標準化字元")
-  
-  (always-use-platform-specific-linefeed-convention "使用系統相關的換行符約定")
-  
+  (normalize "正規化")
+  (leave-alone "保持不變")
+  (normalize-string-info
+   "你貼上的字串包含連字或其他非正規化字元。要正規化它們嗎？")
+  (normalize-string-preference "貼上字串時正規化")
+  (ask-about-normalizing-strings "詢問是否正規化字串")
+
+  (always-use-platform-specific-linefeed-convention
+   "一律使用平台特定的換行符號慣例")
+  (disable-caret-blinking "停用游標閃爍")
+
   ;; optimization coach
-  (hide-optimization-coach "隱藏優化教練")
-  (show-optimization-coach "顯示優化教練")
-  
+  (hide-optimization-coach "隱藏最佳化教練")
+  (show-optimization-coach "顯示最佳化教練")
+
   ;; labels used (in a big font) in the background of the definitions and interactions windows
   (definitions-window-label "定義")
-  (interactions-window-label "交互")
-  (hide-defs/ints-label "隱藏定義/交互標籤") ;; popup menu
-  (show-defs/ints-label "顯示定義/交互標籤") ;; preferences checkbox
-  
+  (interactions-window-label "互動")
+  (hide-defs/ints-label "隱藏「定義/互動」標籤") ;; popup menu
+  (show-defs/ints-label "顯示「定義/互動」標籤") ;; preferences checkbox
+
   ;; menu item in the 'edit' menu; applies to editors with programs in them
   ;; (technically, editors that implement color:text<%>)
-  (spell-check-string-constants "對字元串常量進行拼寫檢查")
-  (spelling-dictionaries "拼寫檢查字典") ; (sub)menu whose items are the different possible dictionaries
-  (default-spelling-dictionary "默認字典") ; first item in menu from previous line
-  (misspelled-text-color "拼寫錯誤文本的顏色") ;; in the preferences dialog  
-  (cannot-find-ispell-or-aspell-path "找不到aspell或ispell程式文件")
+  (spell-check-string-constants "字串常數拼字檢查")
+  (spell-check-scribble-text "檢查文字拼字（Scribble 中大括號 {} 之間）")
+  ; (sub)menu whose items are the different possible dictionaries
+  (spelling-dictionaries "拼字字典")
+  (default-spelling-dictionary "預設字典") ; first item in menu from previous line
+  (misspelled-text-color "拼字檢查色彩") ;; in the preferences dialog
+  (cannot-find-ispell-or-aspell-path "找不到 aspell 或 ispell 的二進制檔案")
   ; puts the path to the spell program in the ~a and then the error message
   ; is put following this string (with a blank line in between)
-  (spell-program-wrote-to-stderr-on-startup "拼寫程序（~a）給出錯誤信息：")
+  (spell-program-wrote-to-stderr-on-startup "拼字程式（~a）輸出了一則錯誤訊息：")
+  (spell-program-did-not-respond-after-some-seconds
+   "拼字程式（~a）在 ~a 秒後仍未回應")
+  (spell-skip-to-next-misspelled-word "跳至下一個拼錯的字") ;; menu item
+  (spell-suggest-corrections "建議拼字修正…") ;; menu item
+  (spell-correction-suggestions "拼字修正建議") ;; dialog title
+  (spell-choose-replacement-word "選擇取代字詞") ;; label in dialog
+
+  ;; GUI for installing a pkg package; available via File|Install Package...
+  (install-pkg-install-by-source "照我意思")         ; tab label
+  (install-pkg-install-from-list "可自目錄取得") ; tab label
+  (install-pkg-install-installed "目前已安裝")    ; tab label
+  (install-pkg-migrate-from "從版本複製")           ; tab label
+  (install-pkg-settings "設定")                        ; tab label
+  (install-pkg-menu-item... "安裝package…")
+  (install-pkg-dialog-title "安裝package")
+  (install-pkg-source-label "Package來源")
+  (install-pkg-package-name "Package名稱")
+  (install-pkg-package-source-desc
+   "package來源可以是package名稱、檔案、目錄、URL 或 GitHub 參照")
+  (install-pkg-infer "推斷")
+  (install-pkg-use "使用") ; as opposed to "Infer", label for text box
+  (install-pkg-type-label "Package來源類型")
+  (install-pkg-file "檔案")
+  (install-pkg-link "連結")
+  (install-pkg-static-link "靜態連結")
+  (install-pkg-dir "目錄")
+  (install-pkg-dir-url "遠端目錄")
+  (install-pkg-file-url "遠端檔案")
+  (install-pkg-git "Git 儲存庫")
+  (install-pkg-github "GitHub")
+  (install-pkg-name "名稱（由解析器判定）")
+  (install-pkg-inferred-as "推斷類型為 ~a") ; ~a gets install-pkg-{file,dir,...}
+  (install-pkg-link-dirs "以連結方式使用本機目錄")
+  (install-pkg-file-or-dir? "選擇檔案或目錄？")
+  (install-pkg-force? "忽略衝突")
+  (install-pkg-replace? "更新可取代現有安裝")
+  (install-pkg-dry-run? "試跑（不做安裝變更）")
+  (install-pkg-command-line "等效命令列：")
+  (install-pkg-error-installing-title "安裝package時發生錯誤")
+  (install-pkg-action-label "要執行的動作")
+  (install-pkg-install "安裝")
+  (install-pkg-update "更新")
+  (install-pkg-setup "設定") ; for button
+  (install-pkg-update+setup "更新並設定") ; for button
+  (install-pkg-setup-long "設定目前安裝") ; for menu
+  (install-pkg-remove "移除")
+  (install-pkg-do-not-remove "不要移除")
+  (install-pkg-action-inferred-to-be-update "推斷動作為更新")
+  (install-pkg-action-inferred-to-be-install "推斷動作為安裝")
+  (install-pkg-action-inferred-to-be-update+setup "推斷動作為更新並設定")
+  (install-pkg-default "預設")
+  (install-pkg-scope-label "Package範圍")
+  (install-pkg-default-scope-label "預設package範圍") ; for picking the scope to be default
+  (install-pkg-default-scope-changed "已成功將預設範圍變更為 ~a") ; confirming message after change
+  (install-pkg-installation "特定 Racket 安裝")
+  (install-pkg-user "特定使用者與 Racket 版本")
+  (install-pkg-set-as-default "設為預設")
+  (install-pkg-scope-is "Package範圍為 ~a") ; ~a gets install-pkg-{installation,user,shared}
+  (install-pkg-select-package-directory "選擇package目錄")
+  (install-pkg-select-package-file "選擇package檔案")
+  (install-pkg-update-package-list "更新package清單")
+  (install-pkg-stop-update "停止更新")
+  (install-pkg-filter "過濾")
+  (install-pkg-match "~a/~a 個相符")
+  (install-pkg-package "Package")
+  (install-pkg-author "作者")
+  (install-pkg-description "描述")
+  (install-pkg-tags "標籤")
+  (install-pkg-checksum "校驗")
+  (install-pkg-source "來源")
+  (install-pkg-catalog "目錄")
+  (install-pkg-scope "範圍")
+  (install-pkg-name "名稱")
+  (install-pkg-update-catalogs? "將資料庫更新為與已設置目錄一致？")
+  (install-pkg-currently-configured-are "目前設置的目錄為")
+  (install-pkg-database-recorded-are "資料庫記錄的目錄為")
+  (install-pkg-update-catalogs "更新")
+  (install-pkg-do-not-update-catalogs "不要更新")
+  (install-pkg-really-remove? "確定要移除下列選取的package嗎？")
+  (install-pkg-promote "自自動安裝 promote")
+  (install-pkg-demote "demote 到自動安裝")
+  (install-pkg-abort-install "中止 install")
+  (install-pkg-abort-update "中止 update")
+  (install-pkg-abort-remove "中止 remove")
+  (install-pkg-abort-demote "中止 demote")
+  (install-pkg-abort-promote "中止 promote")
+  (install-pkg-abort-migrate "中止 migrate")
+  (install-pkg-abort-setup "中止 setup")
+  (install-pkg-abort-generic-action "中止動作")
+  (install-pkg-continue-generic-action "繼續動作")
+  (install-pkg-close-terminal-output "關閉輸出")
+  (install-pkg-show-all-options "顯示所有選項")
+  (install-pkg-migrate-available-installations "可用安裝")
+  ;; all ~a will be substituted with the different single characters
+  ;; conveying the state, by default these are ✓*!=@
+  (install-pkg-legend "~a：已安裝 ~a：自動安裝 ~a：非預設範圍 ~a：以連結方式安裝；~a：自 URL 安裝")
+  (pkg-manager-menu-item "Package管理員…")
+  (install-pkg-title "Package管理員")
+  ;; where ~a gets an installation name:
+  (install-pkg-packages-for "適用於 ~a 的Package")
+  (install-pkg-really-remove-installation
+   "確定要移除 ~a 的所有已安裝package與資訊嗎？")
+  (install-pkg-installer "Package安裝器")
+  (install-pkg-copy "複製訊息")
+  (install-pkg-installation "安裝")
+  (install-pkg-user "使用者")
+  (install-pkg-any "任何") ;; any file type
+  (install-pkg-bad "不支援") ;; bad (not supported) file type
+  (install-pkg-catalogs "package目錄")
+  (install-pkg-updating "正在更新package目錄…")
+  (install-pkg-updating-from "正在從 ~a 更新…")
+  (install-pkg-details-from "正在從 ~a 取得 ~a 的詳細資訊…")
+
+  (install-pkg-abort-set-scope "中止範圍變更")
+
+  (install-pkg-dependencies-fail "失敗：若相依未滿足則取消安裝/更新")
+  (install-pkg-dependencies-force
+   "強制Force：即使缺少或版本不符亦安裝")
+  (install-pkg-dependencies-search-ask
+   "詢問Ask：每個缺少的相依都提示（GUI 不支援）")
+  (install-pkg-dependencies-search-auto
+   "自動Auto：自動安裝缺少或版本不符的相依")
+  (install-pkg-dependencies-search-auto+update
+   "自動Auto＋更新Update：盡可能更新相依")
+
+  (install-pkg-dependencies-mode "相依性模式")
+
+  (install-pkg-dependencies-search-ask-not-supported-in-gui
+   "GUI 安裝器不支援相依的「詢問」模式。")
+  ;; "~a" is pre-":" part of `install-pkg-dependencies-fail'
+  ;; or `install-pkg-dependencies-search-auto':
+  (install-pkg-deps-is "預設相依性模式為 ~a")
+
+  (install-pkg-package-catalogs "Package目錄") ; label for a list box
+  (install-pkg-add-package-catalog "新增package目錄")
+
+  (install-pkg-not-rentrant "安裝與更新不能同時進行；"
+                            " 請中止目前作業或等待完成。")
+  (install-pkg-generic-action-in-progress "仍有package管理作業在進行中。"
+                                          " 確定要關閉視窗並中止此作業嗎？"
+                                          " 這可能使你的安裝處於不一致狀態。")
+
+  ;; open a file via a collection path (new "Open" menu item in DrRacket)
+  (open-require-path "開啟 require 路徑…")
+  (enter-subcollection "輸入子collection") ; button in new dialog
+  (path-to-racket-binary "執行檔路徑")
+  (use-a-different-racket "使用其他 Racket")
+
+  ;; adding racket/bin to the path; only under mac os x
+  ; first ~a is filled with either the empty string or an error message from elsewhere
+  ;  (bracketed by some newlines to separate it out)
+  ; second ~a is filled with /etc/paths.d/racket (or some other path like it in the future)
+  ; third ~a is filled with the path to the bin directory of the current drracket
+  (adding-racket/bin-to-path-failed
+   "嘗試將 racket 支援加入命令列失敗。~a詳細如下："
+   " 無法於「~a」建立內容「~a」。")
+  ; first and third ~a are filled with /etc/paths.d/racket (or some other path like it in the future)
+  ; and the second one is filled with the path to the bin directory that was put into that file.
+  (added-racket/bin-to-path
+   "你現在應該已能在"
+   " 命令列使用 racket 與其工具。\n\n"
+   " 已為所有使用者設置預設的 PATH ，方式是新增檔案"
+   " ~a 來指向 ~a。你可以透過刪除"
+   " ~a 來還原此設定。")
+  (adding-racket/bin-no-paths.d
+   "未能將 racket 加入命令列，因為 /etc/paths.d 不存在。"
+   " \n\n你可以嘗試在終端機視窗執行下列指令以"
+   " 建立該目錄：\n"
+   "    sudo mkdir /etc/paths.d\n然後再試一次。")
+  (added-racket/bin-to-path/windows
+   "你現在應該已能在"
+   " 命令列使用 racket 與其工具。\n\n"
+   " 預設的 %PATH% 已透過登錄機碼"
+   " HKEY_CURRENT_USER\\Environment\\Path"
+   " 設定為指向 ~a 與 ~a。")
+  (didnt-add-racket/bin-to-path/unix
+   "DrRacket 無法在 Unix 環境下更新你的 PATH，但如果你"
+   " 知道如何自行調整 PATH，"
+   " 加入\n\n  ~a\n\n"
+   " 到其中。")
+  (add-racket/bin-to-path "設置 Racket 的命令列…") ;; menu item label
+  
+  ;; quickscript messages
+  (qs-my-first-script "我的第一個腳本")
+  (qs-script-library "腳本程式庫")
+  (qs-directories "目錄")
+  (qs-add "新增(&A)")
+  (qs-remove "移除(&R)")
+  (qs-scripts "腳本")
+  (qs-disable "停用(&B)")
+  (qs-enable "啟用(&B)")
+  (qs-shadow "遮蔽(&H)")
+  (qs-recompiling  "重新編譯快速腳本…")
+  (qs-recompiling-wait "正在重新編譯快速腳本，請稍候…")
+  (qs-scripts "腳本(&S)")
+  (qs-manage "管理(&M)")
+  (qs-compilation-error "Quickscript：編譯期間發生錯誤")
+  (qs-caught-exception  "Quickscript 捕捉到例外")
+  (qs-recompiling-library "重新編譯程式庫")
+  (qs-my-script "我的超棒腳本")
+  (qs-script-help "此腳本的說明字串。")
+  (qs-compiling-scripts "正在編譯腳本")
+  ;; ~a is a script file including its path
+  (qs-compiling "正在編譯 ~a")
+  ;; ~a is a script file including its path
+  (qs-file-not-found "找不到檔案：~a")
+  (qs-invalid-hook "無效的 hook 名稱。\n可用名稱：\n")
+  ;; the  three `qs-error-detail-*` string constants are put into the same message
+  (qs-error-detail-overview "已捕捉到 ~a 個錯誤。") ; the ~a is number of errors
+  (qs-error-detail-summary "摘要：")
+  (qs-error-detail-details "詳細資訊：")
+  (qs-script-name "腳本名稱")
+  (qs-script-name-enter "輸入新腳本的名稱：")
+  (qs-open-script "開啟腳本")
+  ;; ~a is the name of a script file
+  (qs-error-run "執行：腳本檔 ~s 發生錯誤：\n" )
+  (qs-output "輸出") ;; not repl-out-color where it means color of the output
+  (qs-load-script-menu "正在載入「腳本」選單")
+  (qs-loading-file "正在載入檔案 ")
+  ;; ~a is the name of a script file
+  (qs-script-file "腳本檔 ~s：")
+  (qs-build-menu "正在建立腳本選單")
+  ;; ~a is number of rebuilds
+  (qs-menu-rebuild "腳本選單重新建置 #~a…")
+  (qs-delete-menu "正在刪除選單項目")
+  ;; ~a is a a script entry in menu
+  (qs-delete-menu-item "正在刪除選單項目 ~a… ")
+  (qs-new-script "新增腳本(&N)…")
+  (qs-open-script "開啟腳本(&O)…")
+  (qs-disable-scripts "停用腳本(&D)…")
+  (qs-library "程式庫(&L)…")
+  (qs-reload-menu "重新載入選單(&R)")
+  (qs-compile-scripts "編譯腳本(&C)")
+  (qs-stop-scripts "停止常駐腳本(&S)")
+  (qs-report-issue "回報問題(&I)")
+  (qs-error-load "Quickscript：載入腳本屬性時發生錯誤")
+
+  ;; macro stepper
+  ; used in the button label and menu item and title for some dialog boxes
+  (macro-stepper "巨集步進器")
+
+  ; these next three are in the same dialog; first a message and then two button labels
+  (macro-stepper-warning-message
+   "巨集展開已進行了可疑地大量步驟。\n\n按一下「停止」以停止巨集展開並查看目前為止的步驟，"
+   " 或按一下「繼續」讓它再執行久一點。")
+  (macro-stepper-continue "繼續")
+  (macro-stepper-stop "停止")
+
   )
