@@ -284,25 +284,25 @@ please adhere to these guidelines:
 
   ;; the online check syntax status messages (mouse over the bottom right of drracket's
   ;; window to see the messages during online expansion's various phases)
-  (online-expansion-running "背景展開執行中")
+  (online-expansion-running "背景語法檢查執行中")
   (online-expansion-only-raw-text-files-supported "僅支援純文字檔")
-  (online-expansion-abnormal-termination "背景展開異常終止")
+  (online-expansion-abnormal-termination "背景語法檢查異常終止")
   (online-expansion-abnormal-termination-out-of-memory
-   "背景展開異常終止（記憶體不足）")
-  (online-expansion-finished-successfully "背景展開完成")
+   "背景語法檢查異常終止（記憶體不足）")
+  (online-expansion-finished-successfully "背景語法檢查完成")
 
   (jump-to-error "跳至錯誤")
   (copy-error-message "複製錯誤訊息")
-  (online-expansion-is-disabled "已停用背景展開")
+  (online-expansion-is-disabled "已停用背景語法檢查")
   ; these next two show up in the bar along the bottom of the drracket window
-  (online-expansion-pending "背景展開待處理…")
+  (online-expansion-pending "背景語法檢查待處理…")
   ;; note: there may still be errors in this case
-  (online-expansion-finished "背景展開完成")
+  (online-expansion-finished "背景語法檢查完成")
   ; the next two show up in a menu when you click on the circle in the bottom right corner
-  (disable-online-expansion "停用背景展開")
-  (enable-online-expansion "啟用背景展開")
+  (disable-online-expansion "停用背景語法檢查")
+  (enable-online-expansion "啟用背景語法檢查")
   ;; the online expansion preferences pane
-  (online-expansion "背景展開") ;; title of prefs pane
+  (online-expansion "背景語法檢查") ;; title of prefs pane
   ; the different kinds of errors
   (online-expansion-show-read-errors-as "顯示讀取層級錯誤")
   (online-expansion-show-variable-errors-as "顯示未繫結識別字錯誤")
