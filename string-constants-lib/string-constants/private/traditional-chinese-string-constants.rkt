@@ -169,7 +169,7 @@ please adhere to these guidelines:
   (bug-report-field-docs-installed "已安裝文件")
   (bug-report-field-collections "collection")
   (bug-report-field-links "連結")  ;; from 'raco link'
-  (bug-report-field-human-language "介面語言")
+  (bug-report-field-human-language "人類語言")
   (bug-report-field-memory-use "記憶體使用量")
   (bug-report-field-version "版本")
   (bug-report-synthesized-information "彙整資訊")  ;; dialog title
@@ -264,7 +264,7 @@ please adhere to these guidelines:
 
   ;; require prefix functionality
   (cs-add-prefix-for-require "為 require 加上前綴")
-  (cs-prefix-require-title "前綴化 require")
+  (cs-prefix-require-title "require 前綴")
   (cs-prefix-require "選擇要加入至每個匯入變數的前綴")
   (cs-all-binders-are-prefixed
    "所有 require 看起來都已有前綴；請嘗試使用重新命名代替")
@@ -275,7 +275,7 @@ please adhere to these guidelines:
   (cs-check-syntax-mode "語法檢查模式")
   (cs-mode-menu-show-my-obligations "我的契約責任")
   (cs-mode-menu-show-client-obligations "使用端的契約責任")
-  (cs-mode-menu-show-syntax "語法類別")
+  (cs-mode-menu-show-syntax "語法範疇")
 
   ;; the documentation blue boxes in the upper-right corner of the drracket window
   (sc-read-more... "閱讀更多…")
@@ -303,7 +303,7 @@ please adhere to these guidelines:
   ;; the online expansion preferences pane
   (online-expansion "背景語法檢查") ;; title of prefs pane
   ; the different kinds of errors
-  (online-expansion-show-read-errors-as "顯示讀取層級錯誤")
+  (online-expansion-show-read-errors-as "顯示 read-level 錯誤")
   (online-expansion-show-variable-errors-as "顯示未繫結識別字錯誤")
   (online-expansion-show-other-errors-as "顯示其他錯誤")
   ; locations the errors can be shown
@@ -311,7 +311,7 @@ please adhere to these guidelines:
   (online-expansion-error-margin "於邊界顯示")
   ; the label of a preference in the (string-constant online-expansion) section
   (show-arrows-on-mouseover "滑鼠懸停顯示繫結與尾端位置箭頭")
-  (show-blueboxes "在右上角顯示簽名方塊及其半圓箭頭")
+  (show-blueboxes "顯示簽名方塊並在其右上顯示箭頭半圓")
   ;;; info bar at botttom of drscheme frame
   (collect-button-label "GC")
   (read-only "唯讀")
@@ -341,7 +341,7 @@ please adhere to these guidelines:
    "~a 不是有效的行號。必須是 1 到 ~a 之間的整數")
   (goto-position "前往位置")
   (no-full-name-since-not-saved
-   "檔案尚未儲存，因此沒有完整名稱。")
+   "檔案沒有完整名稱，因為它尚未儲存。")
   (cannot-open-because-dne "無法開啟 ~a，因為它不存在。")
 
   (needs-execute-language-changed
@@ -433,7 +433,7 @@ please adhere to these guidelines:
   (plt:hd:and "與")
   (plt:hd:refresh "重新整理")
   (plt:hd:refresh-all-manuals "重新整理所有手冊")
-  (plt:hd:manual-installed-date "（安裝於 ~a）")
+  (plt:hd:manual-installed-date "（已安裝 ~a）")
   ; Help Desk configuration
   ;; refreshing manuals
   (plt:hd:refreshing-manuals "重新下載手冊")
@@ -568,7 +568,7 @@ please adhere to these guidelines:
   (error-saving-preferences "儲存偏好設定時發生錯誤：~a")
   (error-saving-preferences-title "儲存偏好設定錯誤")
   ;; in the preferences error dialog; this happens when the lockfile exists (after 3 pref writes).
-  (steal-the-lock-and-retry "取得鎖定並重試")
+  (steal-the-lock-and-retry "奪取鎖定並重試")
 
   (error-reading-preferences "讀取偏好設定時發生錯誤")
   (error-reading-preferences-explanation
@@ -713,10 +713,10 @@ please adhere to these guidelines:
   (decrease-font-size "減小字型大小（至 ~a）")
 
   ; warning message when lockfile is around
-  (waiting-for-pref-lock "正在等待偏好設定鎖定檔…")
+  (waiting-for-pref-lock "正在等待偏好設定的檔案鎖…")
   (pref-lock-not-gone
-   "偏好設定鎖定檔：\n\n   ~a\n\n使偏好設定無法儲存。"
-   " 請確定沒有 Racket 軟體正在執行並刪除此檔案。")
+   "偏好設定的檔案鎖：\n\n   ~a\n\n使偏好設定無法儲存。"
+   " 請確定沒有其他的 Racket 軟體正在執行及刪除此檔案。")
   (still-locked-exit-anyway? "偏好設定未成功儲存。仍要離開嗎？")
 
   ;;; indenting preferences panel
@@ -796,7 +796,7 @@ please adhere to these guidelines:
   (error-saving-file/name "儲存 ~a 時發生錯誤。")
   (error-loading "載入錯誤")
   (error-loading-file/name "載入 ~a 時發生錯誤。")
-  (unknown-filename "<< 未知 >>")
+  (unknown-filename "<<未知>>")
 
   ;;; finder dialog
   (must-specify-a-filename "你必須指定一個檔名")
@@ -1147,10 +1147,10 @@ please adhere to these guidelines:
   (note-that-tool-failed-to-load "（載入失敗）")
 
   ;;; define popup menu
-  (end-of-buffer-define "<< 緩衝區結尾 >>")
+  (end-of-buffer-define "<<緩衝區結尾>>")
   (sort-by-name "依名稱排序")
   (sort-by-position "依檔案位置排序")
-  (no-definitions-found "<< 找不到定義 >>")
+  (no-definitions-found "<<找不到定義>>")
   (jump-to-defn "跳至 ~a 的定義")
   (define-menu-configure "設定") ;; label of a submenu to configure the (define ...) popup menu
 
@@ -1375,7 +1375,7 @@ please adhere to these guidelines:
   (dynamic-properties "動態屬性")
   (output-syntax "輸出語法")
   (teachpacks "教材包") ;; label in the language dialog for the teaching languages
-  (teachpacks-none "<< 無 >>") ;; shows up under the previous string, when there are no teachpacks
+  (teachpacks-none "<<無>>") ;; shows up under the previous string, when there are no teachpacks
   (no-debugging-or-profiling "不除錯也不效能分析")
   (debugging "除錯")
   (debugging-and-profiling "除錯與效能分析")
@@ -1539,7 +1539,7 @@ please adhere to these guidelines:
   (profiling-col-calls "呼叫次數")
   (profiling-show-profile "顯示分析")
   (profiling-hide-profile "隱藏分析")
-  (profiling-unknown-src "<< 未知 >>")
+  (profiling-unknown-src "<<未知>>")
   (profiling-no-information-available
    "沒有可用的效能分析資訊。請確認語言已啟用效能分析，且你已執行程式。")
   (profiling-clear?
@@ -1772,7 +1772,7 @@ please adhere to these guidelines:
   (profj-intermediate-access-lang "中階＋權限")
   (profj-intermediate-access-lang-one-line-summary
    "類 Java 的中階教材語言，含存取修飾詞")
-  (profj-dynamic-lang "Java＋動態")
+  (profj-dynamic-lang "Java＋動態型別")
   (profj-dynamic-lang-one-summary "具動態型別能力的 Java")
 
   (profj-java-mode-color-heading "編輯色彩") ; Heading for preference to choose editing colors
@@ -1903,7 +1903,7 @@ please adhere to these guidelines:
   (test-engine-not-range-error "實際值 ~F 不在 ~F 與 ~F 之間（包含端點）。")
 
   ;; followed by list of variable bindings
-  (test-engine-property-fail-error "可由以下反例反駁之性質")
+  (test-engine-property-fail-error "Property 可由此證偽：")
   (test-engine-property-error-error "check-property 遇到下列錯誤~n:: ~a")
 
   (signature-enable-checks "啟用簽章檢查")
@@ -2127,15 +2127,15 @@ please adhere to these guidelines:
   (install-pkg-update-catalogs "更新")
   (install-pkg-do-not-update-catalogs "不要更新")
   (install-pkg-really-remove? "確定要移除下列選取的package嗎？")
-  (install-pkg-promote "自自動安裝升級")
-  (install-pkg-demote "降級為自動安裝")
-  (install-pkg-abort-install "中止安裝")
-  (install-pkg-abort-update "中止更新")
-  (install-pkg-abort-remove "中止移除")
-  (install-pkg-abort-demote "中止降級")
-  (install-pkg-abort-promote "中止升級")
-  (install-pkg-abort-migrate "中止移轉")
-  (install-pkg-abort-setup "中止設定")
+  (install-pkg-promote "自自動安裝 promote")
+  (install-pkg-demote "demote 到自動安裝")
+  (install-pkg-abort-install "中止 install")
+  (install-pkg-abort-update "中止 update")
+  (install-pkg-abort-remove "中止 remove")
+  (install-pkg-abort-demote "中止 demote")
+  (install-pkg-abort-promote "中止 promote")
+  (install-pkg-abort-migrate "中止 migrate")
+  (install-pkg-abort-setup "中止 setup")
   (install-pkg-abort-generic-action "中止動作")
   (install-pkg-continue-generic-action "繼續動作")
   (install-pkg-close-terminal-output "關閉輸出")
@@ -2157,7 +2157,7 @@ please adhere to these guidelines:
   (install-pkg-any "任何") ;; any file type
   (install-pkg-bad "不支援") ;; bad (not supported) file type
   (install-pkg-catalogs "package目錄")
-  (install-pkg-updating "正在更新package清單…")
+  (install-pkg-updating "正在更新package目錄…")
   (install-pkg-updating-from "正在從 ~a 更新…")
   (install-pkg-details-from "正在從 ~a 取得 ~a 的詳細資訊…")
 
@@ -2165,13 +2165,13 @@ please adhere to these guidelines:
 
   (install-pkg-dependencies-fail "失敗：若相依未滿足則取消安裝/更新")
   (install-pkg-dependencies-force
-   "強制：即使缺少或版本不符亦安裝")
+   "強制Force：即使缺少或版本不符亦安裝")
   (install-pkg-dependencies-search-ask
-   "詢問：每個缺少的相依都提示（GUI 不支援）")
+   "詢問Ask：每個缺少的相依都提示（GUI 不支援）")
   (install-pkg-dependencies-search-auto
-   "自動：自動安裝缺少或版本不符的相依")
+   "自動Auto：自動安裝缺少或版本不符的相依")
   (install-pkg-dependencies-search-auto+update
-   "自動＋更新：盡可能更新相依")
+   "自動Auto＋更新Update：盡可能更新相依")
 
   (install-pkg-dependencies-mode "相依性模式")
 
@@ -2184,15 +2184,14 @@ please adhere to these guidelines:
   (install-pkg-package-catalogs "Package目錄") ; label for a list box
   (install-pkg-add-package-catalog "新增package目錄")
 
-  (install-pkg-not-rentrant "安裝與更新不能同時進行；"
-                            " 請中止目前作業或等待完成。")
+  (install-pkg-not-rentrant "安裝與更新不能同時進行；請中止目前作業或等待完成。")
   (install-pkg-generic-action-in-progress "仍有package管理作業在進行中。"
                                           " 確定要關閉視窗並中止此作業嗎？"
                                           " 這可能使你的安裝處於不一致狀態。")
 
   ;; open a file via a collection path (new "Open" menu item in DrRacket)
   (open-require-path "開啟 require 路徑…")
-  (enter-subcollection "輸入子集合") ; button in new dialog
+  (enter-subcollection "輸入子collection") ; button in new dialog
   (path-to-racket-binary "執行檔路徑")
   (use-a-different-racket "使用其他 Racket")
 
@@ -2202,8 +2201,7 @@ please adhere to these guidelines:
   ; second ~a is filled with /etc/paths.d/racket (or some other path like it in the future)
   ; third ~a is filled with the path to the bin directory of the current drracket
   (adding-racket/bin-to-path-failed
-   "嘗試將 racket 支援加入命令列失敗。~a詳細如下："
-   " 無法建立「~a」，內容為「~a」。")
+   "嘗試將 racket 支援加入命令列失敗。~a詳細如下：無法於「~a」建立內容「~a」。")
   ; first and third ~a are filled with /etc/paths.d/racket (or some other path like it in the future)
   ; and the second one is filled with the path to the bin directory that was put into that file.
   (added-racket/bin-to-path
