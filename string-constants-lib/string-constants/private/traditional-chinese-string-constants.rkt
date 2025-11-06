@@ -90,20 +90,20 @@ please adhere to these guidelines:
 
 (module traditional-chinese-string-constants "string-constant-lang.rkt"
   ;;; when translating this constant, substitute name of actual language for `English'
-  (is-this-your-native-language "你的母語是繁體中文嗎？")
+  (is-this-your-native-language "中文是你的母語嗎？")
 
   (#:define drr "DrRacket")
 
   (are-you-sure-you-want-to-switch-languages
    "這會更改圖形介面的語言，並需要重新啟動 DrRacket。確定要進行嗎？")
 
-  (interact-with-drscheme-in-language "以繁體中文與 DrRacket 互動")
+  (interact-with-drscheme-in-language "在 DrRacket 中使用繁體中文介面")
 
   ;; these two should probably be the same in all languages except English.
   ;; they are the button labels (under macos and windows, respectively)
   ;; that go the with the string above.
-  (accept-and-quit "接受並結束")
-  (accept-and-exit "接受並結束")
+  (accept-and-quit "接受並退出")
+  (accept-and-exit "接受並離開")
 
   ;;; general purpose (DrRacket is hereby a word in every language, by decree of Robby :)
   (plt "PLT")
@@ -145,7 +145,7 @@ please adhere to these guidelines:
   (have-an-issue? "遇到問題嗎？…")
   (use-github-or-the-mailing-list-for-issues
    "如果你發現了 Racket 或 DrRacket 的錯誤，請到 GitHub 建立 issue。\n\n"
-   "如果你遇到不合理的行為，但不確定是否為錯誤，請到郵件論壇詢問。")
+   " 如果你遇到不合理的行為，但不確定是否為錯誤，請到郵件論壇詢問。")
   (visit-mailing-lists "前往郵件論壇") ;; button in dialog
   (visit-github "前往 GitHub") ;; button in dialog, goes to 'open issue' page
 
@@ -167,7 +167,7 @@ please adhere to these guidelines:
   (bug-report-field-reproduce2 "步驟")
   (bug-report-field-environment "環境")
   (bug-report-field-docs-installed "已安裝文件")
-  (bug-report-field-collections "程式集")
+  (bug-report-field-collections "collection")
   (bug-report-field-links "連結")  ;; from 'raco link'
   (bug-report-field-human-language "介面語言")
   (bug-report-field-memory-use "記憶體使用量")
@@ -195,10 +195,9 @@ please adhere to these guidelines:
   ;; list of bug report subjects (as buttons)
   (error-sending-bug-report "錯誤回報傳送失敗")
   (error-sending-bug-report-expln
-   "傳送這份錯誤回報時發生錯誤。"
-   " 如果你的網路連線正常，請造訪：\n\n"
+   "傳送這份錯誤回報時發生錯誤。如果你的網路連線正常，請造訪：\n\n"
    "    https://github.com/racket/racket/issues/new\n\n"
-   "並透過 GitHub 回報。造成不便，敬請見諒。\n\n錯誤訊息如下：\n~a")
+   " 並透過 GitHub 回報。造成不便，敬請見諒。\n\n錯誤訊息如下：\n~a")
   (illegal-bug-report "不合法的錯誤回報")
   (pls-fill-in-field "請填寫「~a」欄位")
   (malformed-email-address "電子郵件地址格式錯誤")
@@ -258,9 +257,9 @@ please adhere to these guidelines:
   ;; expected to have one ~a formatter that will accept a number
   (cs-n-varrefs "~a 個繫結位置")
 
-  (cs-contract-my-obligation "契約：此模組的責任")
-  (cs-contract-their-obligation "契約：使用端模組的責任")
-  (cs-contract-both-obligation "契約：此模組與使用端模組的共同責任")
+  (cs-contract-my-obligation "契約：此module的責任")
+  (cs-contract-their-obligation "契約：使用端module的責任")
+  (cs-contract-both-obligation "契約：此module與使用端module的共同責任")
   (cs-contract-unk-obligation "契約：未知責任")
 
   ;; require prefix functionality
@@ -446,7 +445,7 @@ please adhere to these guidelines:
   (plt:hd:about-help-desk "關於說明中心")
   (plt:hd:help-desk-about-string
    "說明中心是 Racket 軟體的完整資訊來源。\n\n"
-   "版本 ~a\n著作權 (c) ~a-~a PLT")
+   " 版本 ~a\n著作權 (c) ~a-~a PLT")
   (plt:hd:help-on-help "說明的說明")
   (plt:hd:help-on-help-details
    "若要取得使用說明中心的協助，請在說明中心首頁點選第一個連結「說明中心」。"
@@ -515,7 +514,7 @@ please adhere to these guidelines:
   ; ... line 2. (Anyone need more lines?)
   (browser-cmdline-expl-line-2 "與後置文字串接而成，其間不會加入任何額外空白。）")
   (install? "安裝？")  ;; if a .plt file is found (title of dialog)
-  (you-have-selected-an-installable-package "你選擇了一個可安裝的套件。")
+  (you-have-selected-an-installable-package "你選擇了一個可安裝的package。")
   (do-you-want-to-install-it? "要安裝它嗎？")
   (paren-file-size "（檔案大小 ~a 位元組）")
   (download-and-install "下載並安裝") ;; button label
@@ -524,7 +523,7 @@ please adhere to these guidelines:
   (save-downloaded-file "將已下載檔案另存為")  ;; label for get-file dialog
   (downloading "下載中") ;; dialog title
   (downloading-file... "正在下載檔案…")
-  (package-was-installed "套件已安裝。")
+  (package-was-installed "package已安裝。")
   (download-was-saved "已儲存下載的檔案。")
 
   (install-plt-file-menu-item... "安裝 .plt 檔案…")
@@ -635,7 +634,7 @@ please adhere to these guidelines:
   (open-a-blank-window "開啟空白視窗")
   (show-interactions-on-execute "執行程式時自動開啟互動視窗")
   (switch-to-module-language-automatically
-   "開啟模組時自動切換至模組語言")
+   "開啟module時自動切換至module語言")
   ;; in preferences, below the checkbox one line above this one
   (interactions-beside-definitions "將互動視窗放在定義視窗旁")
   (show-line-numbers "顯示行號")
@@ -675,7 +674,7 @@ please adhere to these guidelines:
   (add-spacing-between-lines "在行與行之間額外加入 1 像素間距")
 
   (editor-x-selection-mode "貼上前需明確執行複製"
-                           "／不要自動複製選取內容")
+                           " ／不要自動複製選取內容")
 
   ; should have entire alphabet
   ; 英文字型測試句子不應該翻譯，繁體中文版也加入白居易的詩句，包含永字八法。
@@ -955,9 +954,9 @@ please adhere to these guidelines:
 
   (user-defined-keybinding-error "執行快捷鍵 ~a 時發生錯誤\n\n~a")
   (user-defined-keybinding-malformed-file
-   "檔案 ~a 不包含以 framework/keybinding-lang 撰寫的模組。")
+   "檔案 ~a 不包含以 framework/keybinding-lang 撰寫的module。")
   (user-defined-keybinding-malformed-file/found-lang
-   "檔案 ~a 不包含以 framework/keybinding-lang 撰寫的模組。"
+   "檔案 ~a 不包含以 framework/keybinding-lang 撰寫的module。"
    " 發現的語言為 ~s。")
 
   ;; menu items in the "special" menu
@@ -989,8 +988,8 @@ please adhere to these guidelines:
   (view-menu-label "檢視(&V)")
   (show-overview "顯示程式輪廓(&P)")
   (hide-overview "隱藏程式輪廓(&P)")
-  (show-module-browser "顯示模組瀏覽器(&M)")
-  (hide-module-browser "隱藏模組瀏覽器(&M)")
+  (show-module-browser "顯示module瀏覽器(&M)")
+  (hide-module-browser "隱藏module瀏覽器(&M)")
 
   (help-menu-label "說明(&H)")
   (about-info "本應用程式的鳴謝與詳細資訊")
@@ -1032,8 +1031,7 @@ please adhere to these guidelines:
   ;;; autoloading
   ;; the ~a is replaced with a path
   (autoload-file-changed-on-disk/with-name
-   "檔案：\n  ~a\n已在磁碟上變更。是否要"
-   " 將緩衝區內容還原為與磁碟上的檔案一致？")
+   "檔案：\n  ~a\n已在磁碟上變更。是否要將緩衝區內容還原為與磁碟上的檔案一致？")
   ;; One file per line is appended to the end of this message
   (autoload-files-changed-on-disk/with-name
    "有些檔案已在磁碟上變更。是否要將它們的"
@@ -1045,13 +1043,13 @@ please adhere to these guidelines:
   ;; One file per line is appended to the end of this message
   (autoload-files-changed-on-disk-editor-dirty/with-name
    "有些檔案已在磁碟上變更，且在編輯器中也有修改。"
-   " 是否要將它們的緩衝區內容還原為與磁碟上的檔案一致？"
-   "\n\n已變更的檔案：")
+   " 是否要將它們的緩衝區內容還原為與磁碟上的檔案一致？\n\n"
+   " 已變更的檔案：")
   ;; One file per line is appended to the end of this message
   (autoload-files-changed-on-disk-editor-dirty&clean/with-name
    "有些檔案已在磁碟上變更，其中部分也在編輯器中被修改。"
-   " 是否要將它們的緩衝區內容還原為與磁碟上的檔案一致？"
-   "\n\n已變更的檔案（◇ 表示編輯器中的版本已修改）：")
+   " 是否要將它們的緩衝區內容還原為與磁碟上的檔案一致？\n\n"
+   " 已變更的檔案（◇ 表示編輯器中的版本已修改）：")
   ;; a specialized version of dont-ask-again-always-current
   (dont-ask-again-always-current/clean-buffer
    "對於沒有未儲存編修的檔案不再詢問（一律使用目前選擇）")
@@ -1220,7 +1218,7 @@ please adhere to these guidelines:
   ; (the first can be the empty string)
   (limit-memory-warning-prefix "警告：")
   (limit-memory-warning
-   "不限制記憶體的設定並不安全。使用此設定時，"
+   "設定成不限制記憶體並不安全。使用此設定時，"
    " DrRacket 無法防止程式過度配置記憶體，可能導致 DrRacket 當機。")
 
   (clear-error-highlight-menu-item-label "清除錯誤染色標示")
@@ -1245,17 +1243,16 @@ please adhere to these guidelines:
   (create-executable-menu-item-label "建立可執行檔(&E)…")
   (create-executable-title "建立可執行檔")
   (drracket-creates-executables-only-in-some-languages
-   "在 DrRacket 建立可執行檔僅支援以下情況："
-   " 於語言對話框選擇教材語言（DMdA 或 HtDP），或"
-   " 於語言對話框選擇「The Racket Language」且你的程式開頭的 #lang 行"
-   " 指定了語言。\n\n可考慮改用命令列工具 raco exe。")
+   "在 DrRacket 建立可執行檔僅支援以下情況：於語言對話框選擇教材語言（DMdA 或 HtDP），"
+   " 或於語言對話框選擇「The Racket Language」且你的程式開頭的 #lang 行指定了語言。\n\n"
+   " 可考慮改用命令列工具 raco exe。")
   (must-save-before-executable "建立可執行檔之前必須先儲存程式。")
   (save-a-mred-launcher "儲存 GRacket 啟動器")
   (save-a-mzscheme-launcher "儲存 Racket 啟動器")
   (save-a-mred-stand-alone-executable "儲存 GRacket 獨立可執行檔")
   (save-a-mzscheme-stand-alone-executable "儲存 Racket 獨立可執行檔")
-  (save-a-mred-distribution "儲存 GRacket 發行套件")
-  (save-a-mzscheme-distribution "儲存 Racket 發行套件")
+  (save-a-mred-distribution "儲存 GRacket 發行軟體")
+  (save-a-mzscheme-distribution "儲存 Racket 發行軟體")
   ;; this is suffixed with an error message ala error-display-handler
   (error-creating-executable "建立可執行檔發生錯誤：")
 
@@ -1265,10 +1262,10 @@ please adhere to these guidelines:
   ;;  the "Create Executable..." dialog for the "(module ...)" language.
   (launcher "啟動器")
   (launcher-explanatory-label "啟動器（僅限此機器，從原始碼執行）")
-  (stand-alone "獨立")
-  (stand-alone-explanatory-label "獨立（僅限此機器，執行已編譯副本）")
-  (distribution "發行")
-  (distribution-explanatory-label "發行（供安裝於其他機器）")
+  (stand-alone "獨立執行檔")
+  (stand-alone-explanatory-label "獨立執行檔（僅限此機器，執行已編譯副本）")
+  (distribution "發行軟體")
+  (distribution-explanatory-label "發行軟體（供安裝於其他機器）")
   (embed-dlls? "是否將 DLL 內嵌至可執行檔？") ;; appears in the GUI only under windows
   (executable-type "類型")
   (executable-base "基底")
@@ -1279,15 +1276,15 @@ please adhere to these guidelines:
   (~a-must-end-with-~a
    "~a 檔名\n\n  ~a\n\n不合法。檔名必須以「.~a」結尾。")
   (macosx-executables-must-end-with-app
-   "The filename\n\n  ~a\n\nis illegal. Under Mac OS, an executable"
-   " must be a directory whose name ends with .app.")
+   "檔名\n\n  ~a\n\n不合法。於 Mac OS 下，可執行檔"
+   " 必須是一個目錄，其名稱以 .app 結尾。")
   (warning-directory-will-be-replaced
    "警告：目錄：\n\n  ~a\n\n將被取代。要繼續嗎？")
 
   (distribution-progress-window-title "發行進度")
   (creating-executable-progress-status "正在建立用於發行的可執行檔…")
-  (assembling-distribution-files-progress-status "正在組裝發行所需檔案…")
-  (packing-distribution-progress-status "正在封裝發行套件…")
+  (assembling-distribution-files-progress-status "正在組裝發行軟體所需檔案…")
+  (packing-distribution-progress-status "正在封裝發行軟體…")
 
   (create-servlet "建立 Servlet…")
 
@@ -1382,7 +1379,7 @@ please adhere to these guidelines:
   (no-debugging-or-profiling "不除錯也不效能分析")
   (debugging "除錯")
   (debugging-and-profiling "除錯與效能分析")
-  (test-coverage "語法測試套件涵蓋率")
+  (test-coverage "語法測試套裝涵蓋率")
   (show-details-button-label "顯示詳細資訊")
   (hide-details-button-label "隱藏詳細資訊")
   (choose-language-menu-item-label "選擇語言…")
@@ -1398,9 +1395,9 @@ please adhere to these guidelines:
   (enforce-module-constants-checkbox-label "強制常數定義（啟用部分內嵌）")
   (expression-level-stacktrace "運算式層級堆疊追蹤")
   (function-level-stacktrace "函式層級堆疊追蹤")
-  (submodules-to-run "要執行的子模組")
-  (add-submodule "新增子模組選項…") ;; menu item
-  (add-submodule-title "新增子模組") ;; title of dialog opened by above menu item
+  (submodules-to-run "要執行的子module")
+  (add-submodule "新增子module選項…") ;; menu item
+  (add-submodule-title "新增子module") ;; title of dialog opened by above menu item
 
 
   ; used in the bottom left of the drscheme frame
@@ -1630,19 +1627,19 @@ please adhere to these guidelines:
   (module-browser-filename-format "完整檔名：~a（~a 行）")
   (module-browser-root-filename "根檔名：~a")
   (module-browser-font-size-gauge-label "字型大小")
-  (module-browser-progress-label "模組瀏覽器進度")
+  (module-browser-progress-label "module瀏覽器進度")
   (module-browser-adding-file "新增檔案：~a…")
   (module-browser-laying-out-graph-label "佈局圖形")
   (module-browser-open-file-format "開啟 ~a")
-  (module-browser "模組瀏覽器") ;; frame title
-  (module-browser... "模組瀏覽器(&M)…") ;; menu item title
-  (module-browser-in-file "在 ~a 的模組瀏覽器(&O)") ;; menu item title; ~a is filled with a filename
+  (module-browser "module瀏覽器") ;; frame title
+  (module-browser... "module瀏覽器(&M)…") ;; menu item title
+  (module-browser-in-file "在 ~a 的module瀏覽器(&O)") ;; menu item title; ~a is filled with a filename
   ;; menu item title for above menu item; used when there is no saved file
-  (module-browser-no-file "此已儲存檔案的模組瀏覽器")
+  (module-browser-no-file "此已儲存檔案的module瀏覽器")
   (module-browser-error-expanding "展開程式時發生錯誤：\n\n~a")
   (module-browser-show-lib-paths "顯示由 (lib ..) 路徑載入的檔案")
-  (module-browser-progress "模組瀏覽器：~a") ;; prefix in the status line
-  (module-browser-compiling-defns "模組瀏覽器：正在編譯定義")
+  (module-browser-progress "module瀏覽器：~a") ;; prefix in the status line
+  (module-browser-compiling-defns "module瀏覽器：正在編譯定義")
   ;; check box label in show module browser pane in drscheme window.
   (module-browser-show-lib-paths/short "追蹤 lib 的 require")
   ;; check box label in show module browser pane in drscheme window.
@@ -1651,7 +1648,7 @@ please adhere to these guidelines:
   ;; used to search in the graph; the label on a text-field% object
   (module-browser-highlight "染色標示")
   (module-browser-only-in-plt-and-module-langs
-   "模組瀏覽器僅適用於以模組（module）為基礎的程式。")
+   "module瀏覽器僅適用於以module（module）為基礎的程式。")
   (module-browser-name-length "名稱長度")
   (module-browser-name-short "短")
   (module-browser-name-medium "中")
@@ -1659,11 +1656,11 @@ please adhere to these guidelines:
     ;; like 'Long' but shows the phases where this file is loaded
   (module-browser-name-very-long "長（含階段）")
   (module-browser-open-all "開啟此處顯示的所有檔案")
-  (module-browser-main-collects "主要程式集")
-  (module-browser-unknown-pkg "未知套件")
-  (module-browser-visible-pkgs "可見套件")
-  (module-browser-visible-submodules "可見子模組")
-  (module-browser-top-level-module "最上層模組") ; in the "which submodules?" filter; this is used for when there are no submodules
+  (module-browser-main-collects "主要collection")
+  (module-browser-unknown-pkg "未知package")
+  (module-browser-visible-pkgs "可見package")
+  (module-browser-visible-submodules "可見子module")
+  (module-browser-top-level-module "最上層module") ; in the "which submodules?" filter; this is used for when there are no submodules
 
   (happy-birthday-matthias "Matthias 生日快樂！")
   (happy-birthday-matthew "Matthew 生日快樂！")
@@ -1736,18 +1733,18 @@ please adhere to these guidelines:
   ;; ml-cp names are all for the module language collection path
   ;; configuration. See the details portion of the language dialog
   ;; for the module language (at the bottom).
-  (ml-cp-default-collection-path "<<預設程式集路徑>>")
+  (ml-cp-default-collection-path "<<預設collection路徑>>")
 
   ;; in std get-directory
-  (ml-cp-choose-a-collection-path "請選擇程式集路徑")
+  (ml-cp-choose-a-collection-path "請選擇collection路徑")
 
   ;; err msg when adding default twice
   (ml-cp-default-already-present
-   "已存在預設的程式集路徑")
+   "已存在預設的collection路徑")
 
   ;; title of this section of the dialog (possibly the word
   ;; `Collection' should not be translated)
-  (ml-cp-collection-paths "程式集路徑")
+  (ml-cp-collection-paths "collection路徑")
 
   ;; button labels
   ;;  The package manager uses these, too
@@ -1757,7 +1754,7 @@ please adhere to these guidelines:
   (ml-cp-raise "上移")
   (ml-cp-lower "下移")
 
-  (ml-always-show-#lang-line "在模組語言中一律顯示 #lang 行")
+  (ml-always-show-#lang-line "在module語言中一律顯示 #lang 行")
 
   ;; Profj
   (profj-java "Java")
@@ -1842,7 +1839,7 @@ please adhere to these guidelines:
   (test-engine-enable-disable-tests-only-in-teaching-languages
    "「啟用/停用測試」選單項目僅用於停用或啟用 HtDP"
    " 與 DMdA 教學語言的測試支援。請在語言對話框的「顯示詳細資料」區段"
-   " 中控制在「Racket 語言」中執行的子模組。")
+   " 中控制在「Racket 語言」中執行的子module。")
 
   (test-engine-ran-1-test "已執行 1 個測試。")
   (test-engine-ran-1-check "已執行 1 次檢查。")
@@ -2014,7 +2011,7 @@ please adhere to these guidelines:
   ;; the user switches to a tab where planet hasn't been used
   (planet-no-status "PLaneT")
 
-  (bug-report-field-pkg "套件系統資訊")
+  (bug-report-field-pkg "package系統資訊")
 
   ;; string normalization. To see this, paste some text with a ligature into DrRacket
   ;; the first three strings are in the dialog that appears. The last one is in the preferences dialog
@@ -2064,15 +2061,15 @@ please adhere to these guidelines:
   (install-pkg-install-installed "目前已安裝")    ; tab label
   (install-pkg-migrate-from "從版本複製")           ; tab label
   (install-pkg-settings "設定")                        ; tab label
-  (install-pkg-menu-item... "安裝套件…")
-  (install-pkg-dialog-title "安裝套件")
-  (install-pkg-source-label "套件來源")
-  (install-pkg-package-name "套件名稱")
+  (install-pkg-menu-item... "安裝package…")
+  (install-pkg-dialog-title "安裝package")
+  (install-pkg-source-label "Package來源")
+  (install-pkg-package-name "Package名稱")
   (install-pkg-package-source-desc
-   "套件來源可以是套件名稱、檔案、目錄、URL 或 GitHub 參照")
+   "package來源可以是package名稱、檔案、目錄、URL 或 GitHub 參照")
   (install-pkg-infer "推斷")
   (install-pkg-use "使用") ; as opposed to "Infer", label for text box
-  (install-pkg-type-label "套件來源類型")
+  (install-pkg-type-label "Package來源類型")
   (install-pkg-file "檔案")
   (install-pkg-link "連結")
   (install-pkg-static-link "靜態連結")
@@ -2089,7 +2086,7 @@ please adhere to these guidelines:
   (install-pkg-replace? "更新可取代現有安裝")
   (install-pkg-dry-run? "試跑（不做安裝變更）")
   (install-pkg-command-line "等效命令列：")
-  (install-pkg-error-installing-title "安裝套件時發生錯誤")
+  (install-pkg-error-installing-title "安裝package時發生錯誤")
   (install-pkg-action-label "要執行的動作")
   (install-pkg-install "安裝")
   (install-pkg-update "更新")
@@ -2102,20 +2099,20 @@ please adhere to these guidelines:
   (install-pkg-action-inferred-to-be-install "推斷動作為安裝")
   (install-pkg-action-inferred-to-be-update+setup "推斷動作為更新並設定")
   (install-pkg-default "預設")
-  (install-pkg-scope-label "套件範圍")
-  (install-pkg-default-scope-label "預設套件範圍") ; for picking the scope to be default
+  (install-pkg-scope-label "Package範圍")
+  (install-pkg-default-scope-label "預設package範圍") ; for picking the scope to be default
   (install-pkg-default-scope-changed "已成功將預設範圍變更為 ~a") ; confirming message after change
   (install-pkg-installation "特定 Racket 安裝")
   (install-pkg-user "特定使用者與 Racket 版本")
   (install-pkg-set-as-default "設為預設")
-  (install-pkg-scope-is "套件範圍為 ~a") ; ~a gets install-pkg-{installation,user,shared}
-  (install-pkg-select-package-directory "選擇套件目錄")
-  (install-pkg-select-package-file "選擇套件檔案")
-  (install-pkg-update-package-list "更新套件清單")
+  (install-pkg-scope-is "Package範圍為 ~a") ; ~a gets install-pkg-{installation,user,shared}
+  (install-pkg-select-package-directory "選擇package目錄")
+  (install-pkg-select-package-file "選擇package檔案")
+  (install-pkg-update-package-list "更新package清單")
   (install-pkg-stop-update "停止更新")
   (install-pkg-filter "過濾")
   (install-pkg-match "~a/~a 個相符")
-  (install-pkg-package "套件")
+  (install-pkg-package "Package")
   (install-pkg-author "作者")
   (install-pkg-description "描述")
   (install-pkg-tags "標籤")
@@ -2129,7 +2126,7 @@ please adhere to these guidelines:
   (install-pkg-database-recorded-are "資料庫記錄的目錄為")
   (install-pkg-update-catalogs "更新")
   (install-pkg-do-not-update-catalogs "不要更新")
-  (install-pkg-really-remove? "確定要移除下列選取的套件嗎？")
+  (install-pkg-really-remove? "確定要移除下列選取的package嗎？")
   (install-pkg-promote "自自動安裝升級")
   (install-pkg-demote "降級為自動安裝")
   (install-pkg-abort-install "中止安裝")
@@ -2147,20 +2144,20 @@ please adhere to these guidelines:
   ;; all ~a will be substituted with the different single characters
   ;; conveying the state, by default these are ✓*!=@
   (install-pkg-legend "~a：已安裝 ~a：自動安裝 ~a：非預設範圍 ~a：以連結方式安裝；~a：自 URL 安裝")
-  (pkg-manager-menu-item "套件管理員…")
-  (install-pkg-title "套件管理員")
+  (pkg-manager-menu-item "Package管理員…")
+  (install-pkg-title "Package管理員")
   ;; where ~a gets an installation name:
-  (install-pkg-packages-for "適用於 ~a 的套件")
+  (install-pkg-packages-for "適用於 ~a 的Package")
   (install-pkg-really-remove-installation
-   "確定要移除 ~a 的所有已安裝套件與資訊嗎？")
-  (install-pkg-installer "套件安裝器")
+   "確定要移除 ~a 的所有已安裝package與資訊嗎？")
+  (install-pkg-installer "Package安裝器")
   (install-pkg-copy "複製訊息")
   (install-pkg-installation "安裝")
   (install-pkg-user "使用者")
   (install-pkg-any "任何") ;; any file type
   (install-pkg-bad "不支援") ;; bad (not supported) file type
-  (install-pkg-catalogs "套件目錄")
-  (install-pkg-updating "正在更新套件清單…")
+  (install-pkg-catalogs "package目錄")
+  (install-pkg-updating "正在更新package清單…")
   (install-pkg-updating-from "正在從 ~a 更新…")
   (install-pkg-details-from "正在從 ~a 取得 ~a 的詳細資訊…")
 
@@ -2184,12 +2181,12 @@ please adhere to these guidelines:
   ;; or `install-pkg-dependencies-search-auto':
   (install-pkg-deps-is "預設相依性模式為 ~a")
 
-  (install-pkg-package-catalogs "套件目錄") ; label for a list box
-  (install-pkg-add-package-catalog "新增套件目錄")
+  (install-pkg-package-catalogs "Package目錄") ; label for a list box
+  (install-pkg-add-package-catalog "新增package目錄")
 
   (install-pkg-not-rentrant "安裝與更新不能同時進行；"
                             " 請中止目前作業或等待完成。")
-  (install-pkg-generic-action-in-progress "仍有套件管理作業在進行中。"
+  (install-pkg-generic-action-in-progress "仍有package管理作業在進行中。"
                                           " 確定要關閉視窗並中止此作業嗎？"
                                           " 這可能使你的安裝處於不一致狀態。")
 
@@ -2210,23 +2207,21 @@ please adhere to these guidelines:
   ; first and third ~a are filled with /etc/paths.d/racket (or some other path like it in the future)
   ; and the second one is filled with the path to the bin directory that was put into that file.
   (added-racket/bin-to-path
-   "你現在應可在命令列使用 racket 與其工具。"
-   " \n\n系統已為所有使用者設定預設 PATH，"
+   "你現在應可在命令列使用 racket 與其工具。\n\n"
+   " 系統已為所有使用者設定預設 PATH，"
    " 透過新增檔案 ~a 指向 ~a。你可以刪除 ~a"
    " 以復原此設定。")
   (adding-racket/bin-no-paths.d
-   "由於不存在 /etc/paths.d，無法將 racket 加入命令列。"
-   " \n\n你可以在終端機視窗中執行下列指令以建立該目錄：\n"
-   "    sudo mkdir /etc/paths.d\n然後再試一次。")
+   "由於不存在 /etc/paths.d，無法將 racket 加入命令列。\n\n"
+   " 你可以在終端機視窗中執行下列指令以建立該目錄：\n"
+   "   sudo mkdir /etc/paths.d\n然後再試一次。")
   (added-racket/bin-to-path/windows
-   "你現在應可在命令列使用 racket 與其工具。"
-   " \n\n已透過機碼"
-   " HKEY_CURRENT_USER\\Environment\\Path 設定預設 %PATH%，"
+   "你現在應可在命令列使用 racket 與其工具。\n\n"
+   " 已透過機碼 HKEY_CURRENT_USER\\Environment\\Path 設定預設 %PATH%，"
    " 指向 ~a 與 ~a。")
   (didnt-add-racket/bin-to-path/unix
    "DrRacket 無法在 Unix 下更新你的 PATH；若你知道如何自行調整 PATH，"
-   " 請將\n\n  ~a\n\n"
-   " 加入其中。")
+   " 請將\n\n  ~a\n\n 加入其中。")
   (add-racket/bin-to-path "設定 Racket 的命令列…") ;; menu item label
   
   ;; quickscript messages
