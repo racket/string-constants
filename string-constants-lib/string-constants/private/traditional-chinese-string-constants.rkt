@@ -597,10 +597,10 @@ please adhere to these guidelines:
   (editor-prefs-panel-label "編輯")
   (general-prefs-panel-label "一般")
   (editor-general-prefs-panel-label "一般編輯")
-  (highlight-parens "在相符括號之間進行染色標示")
-  (fixup-open-brackets "自動調整開啟的方括號")
-  (fixup-close-parens "自動調整關閉括號")
-  (flash-paren-match "閃爍顯示括號配對")
+  (highlight-parens "將相應的括號染色標示")
+  (fixup-open-brackets "自動調整左邊的方括號")
+  (fixup-close-parens "自動調整右邊的圓括號")
+  (flash-paren-match "閃爍顯示相應的括號")
   (backup-unsaved-files "為未儲存的檔案建立備份")
   (first-change-files "建立首次變更檔")
   (map-delete-to-backspace "將 Delete 對應為 Backspace")
@@ -1304,8 +1304,8 @@ please adhere to these guidelines:
   (exact-lucky-search-help-desk-for "在說明中心進行精確幸運搜尋「~a」")
 
   ;; collapse and expand popup menu items
-  (collapse-sexp "摺疊 S-運算式")
-  (expand-sexp "展開 S-運算式")
+  (collapse-sexp "摺疊 S-表達式")
+  (expand-sexp "展開 S-表達式")
 
   ;;; fraction dialog
   (enter-fraction "輸入分數")
@@ -2044,7 +2044,7 @@ please adhere to these guidelines:
   (spelling-dictionaries "拼字字典")
   (default-spelling-dictionary "預設字典") ; first item in menu from previous line
   (misspelled-text-color "拼字檢查色彩") ;; in the preferences dialog
-  (cannot-find-ispell-or-aspell-path "找不到 aspell 或 ispell 執行檔")
+  (cannot-find-ispell-or-aspell-path "找不到 aspell 或 ispell 的二進制檔案")
   ; puts the path to the spell program in the ~a and then the error message
   ; is put following this string (with a blank line in between)
   (spell-program-wrote-to-stderr-on-startup "拼字程式（~a）輸出了一則錯誤訊息：")
