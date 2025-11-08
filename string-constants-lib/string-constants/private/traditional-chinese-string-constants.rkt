@@ -144,8 +144,9 @@ please adhere to these guidelines:
   ;; having an issue (replaces the bug report form, whose string constants are below)
   (have-an-issue? "遇到問題嗎？…")
   (use-github-or-the-mailing-list-for-issues
-   "如果你發現了 Racket 或 DrRacket 的錯誤，請到 GitHub 建立 issue。\n\n"
-   " 如果你遇到不合理的行為，但不確定是否為錯誤，請到郵件論壇詢問。")
+   "如果你發現了 Racket 或 DrRacket 的錯誤，"
+   " 請到 GitHub 建立 issue。\n\n如果你遇到不合理的行為，"
+   " 但你不確定是否為錯誤，請到郵件論壇詢問。")
   (visit-mailing-lists "前往郵件論壇") ;; button in dialog
   (visit-github "前往 GitHub") ;; button in dialog, goes to 'open issue' page
 
@@ -195,7 +196,8 @@ please adhere to these guidelines:
   ;; list of bug report subjects (as buttons)
   (error-sending-bug-report "錯誤回報傳送失敗")
   (error-sending-bug-report-expln
-   "傳送這份錯誤回報時發生錯誤。如果你的網路連線正常，請造訪：\n\n"
+   "傳送這份錯誤回報時發生錯誤。"
+   " 如果你的網路連線正常，請造訪：\n\n"
    "    https://github.com/racket/racket/issues/new\n\n"
    " 並透過 GitHub 回報。造成不便，敬請見諒。\n\n錯誤訊息如下：\n~a")
   (illegal-bug-report "不合法的錯誤回報")
@@ -444,16 +446,18 @@ please adhere to these guidelines:
   (plt:hd:refreshing-manuals-finished "完成。")
   (plt:hd:about-help-desk "關於說明中心")
   (plt:hd:help-desk-about-string
-   "說明中心是 Racket 軟體的完整資訊來源。\n\n"
+   "說明中心有 Racket 軟體的完整資訊。\n\n"
    " 版本 ~a\n著作權 (c) ~a-~a PLT")
   (plt:hd:help-on-help "說明的說明")
   (plt:hd:help-on-help-details
-   "若要取得使用說明中心的協助，請在說明中心首頁點選第一個連結「說明中心」。"
-   " （若你不在首頁，請按視窗上方的「首頁」按鈕。）")
+   "若要瞭解如何使用說明中心，請在說明中心的首頁點選第一個連結 `Help Desk' 。"
+   " （若你尚未在首頁，請按一下 `Home'"
+   " 按鈕，該按鈕位於說明中心視窗上方。）")
   (reload "重新載入") ;; refresh the page in a web browser
   (plt:hd:ask-about-separate-browser
-   "你選擇了指向網頁的連結。"
-   " 要在說明中心內建瀏覽器中檢視，還是使用外部瀏覽器？")
+   "你已點選一個指向全球資訊網內容的連結。"
+   " 你想在說明中心的瀏覽器中檢視它，還是"
+   " 你想使用其他瀏覽器程式來檢視它？")
   (plt:hd:homebrew-browser "說明中心瀏覽器") ;; choice for the above string (in a button)
   (plt:hd:separate-browser "外部瀏覽器") ;; other choice for the above string (also in a button)
   (plt:hd:external-link-in-help "說明中的外部連結")
@@ -479,13 +483,16 @@ please adhere to these guidelines:
 
   ;; the next four are all in the same dialog box (only one of the first two appears)
   (help-desk-materialize-docs-something-changed
-   "DrRacket 偵測到文件索引可能有問題。"
-   " 要嘗試修復嗎（可能需要一些時間）？\n\n詳情：文件目錄 ~a 不存在，"
+   "DrRacket 偵測到說明文件的索引可能有問題。"
+   " 是否要嘗試修復（可能需要一點"
+   " 時間）？\n\n更詳細地說，說明文件目錄 ~a 不存在，"
    " 因此在瀏覽器中的搜尋很可能會失敗。")
   (help-desk-materialize-docs-first-time
-   "DrRacket 偵測到文件索引可能有問題。"
-   " 要嘗試修復嗎（可能需要一些時間）？\n\n詳情：DrRacket 之前未具現化"
-   " 使用者文件，因此在瀏覽器中的搜尋可能會失敗。")
+   "DrRacket 偵測到說明文件索引可能有問題。"
+   " 是否要嘗試修復（可能需要一點"
+   " 時間）？\n\n更詳細地說，DrRacket 之前尚未產生"
+   " 使用者說明文件，因此"
+   " 在瀏覽器中的搜尋可能會失敗。")
   (help-desk-do-nothing "不進行任何動作")
   (help-desk-materialize-user-docs "具現化使用者文件")
   ; this is used in a dialog to let the user know that work is being done based on
@@ -533,9 +540,11 @@ please adhere to these guidelines:
   (install-plt-filename "檔名：")
   (install-plt-url "URL：")
   ; an error message from a primitive operation is appended to the end of this message.
-  (install-plt-error-downloading "下載 .plt 檔案時發生錯誤。\n\n詳情：\n")
+  (install-plt-error-downloading "下載 .plt 檔案時"
+                                 " 發生錯誤。\n\n詳情：\n")
   (install-plt-error-header
-   "檢查已下載的 .plt 檔案有效性時發生錯誤。請確認 URL 後再試一次。")
+   "檢查已下載的 .plt 檔案有效性時發生錯誤。"
+   " 請確認 URL 後再試一次。")
 
   ;; install plt file when opened in drscheme strings
   (install-plt-file "要安裝 ~a 還是開啟以編輯？")
@@ -588,7 +597,7 @@ please adhere to these guidelines:
    "偏好設定檔案仍然被鎖定（因為檔案 ~a 存在），"
    " 因此你的偏好變更將不會被儲存。")
   (prefs-file-locked-nothing-doing
-   "偏好設定檔案已被鎖定（經由 ~s），因此無法儲存偏好變更。")
+   "偏好設定檔案已被（~s）鎖定，因此無法儲存偏好變更。")
   ;; the  ~s is filled with the lockfile; this string is (currently) used only on
   ;; windows where lockfiles are less friendly (and there is no steal fallback)
 
@@ -676,8 +685,7 @@ please adhere to these guidelines:
   (editor-x-selection-mode "貼上前需明確執行複製"
                            " ／不要自動複製選取內容")
 
-  ; should have entire alphabet
-  ; 英文字型測試句子不應該翻譯，繁體中文版也加入白居易的詩句，包含永字八法。
+  ; should have entire alphabet. 英文字型測試句子不應該翻譯，繁體中文版也加入白居易的詩句，包含永字八法。
   (font-example-string "The quick brown fox jumped over the lazy dogs. 永豐西角荒園裏，盡日無人屬阿誰。")
 
   (change-font-button-label "變更")
@@ -747,12 +755,12 @@ please adhere to these guidelines:
   ;;; find/replace
   (search-next "下一個")
   (search-previous "上一個")
-  (search-match "比對")  ;;; this one and the next one are singular/plural variants of each other
-  (search-matches "比對項")
+  (search-match "個符合")  ;;; this one and the next one are singular/plural variants of each other
+  (search-matches "個符合")
   (search-replace "取代")
   (search-skip "略過")
-  (search-show-replace "顯示取代")
-  (search-hide-replace "隱藏取代")
+  (search-show-replace "顯示取代功能")
+  (search-hide-replace "隱藏取代功能")
   (find-case-sensitive "區分大小寫")  ;; the check box in both the docked & undocked search
   (find-anchor-based "使用錨點搜尋")
 
@@ -767,7 +775,7 @@ please adhere to these guidelines:
   (mfs-string-match/graphics "字串比對（可處理含圖形的檔案）")
   (mfs-regexp-match/no-graphics "正規表示式（僅限純文字檔）")
   (mfs-searching... "正在搜尋…")
-  (mfs-configure-search "設定搜尋") ;; dialog title
+  (mfs-configure-search "設置搜尋") ;; dialog title
   (mfs-files-section "檔案")   ;; section in config dialog
   (mfs-search-section "搜尋") ;; section in config dialog
   (mfs-dir "目錄")
@@ -824,11 +832,11 @@ please adhere to these guidelines:
   ;;; versions below, once the &s have been stripped.
   ;;; if they don't, DrRacket's menus will appear
   ;;; in the wrong order.
-  (file-menu "檔案(&F)")
-  (edit-menu "編輯(&E)")
-  (help-menu "說明(&H)")
-  (windows-menu "視窗(&W)")
-  (tabs-menu "分頁(&T)") ;; this is the name of the "Windows" menu under linux & windows
+  (file-menu "檔案")
+  (edit-menu "編輯")
+  (help-menu "說明")
+  (windows-menu "視窗")
+  (tabs-menu "分頁") ;; this is the name of the "Windows" menu under linux & windows
 
   ;;; menus
   ;;; - in menu labels, the & indicates a alt-key based shortcut.
@@ -864,7 +872,7 @@ please adhere to these guidelines:
   (print-info "將此檔案送至印表機")
   (print-menu-item "列印(&P)…")
 
-  (page-setup-info "設定列印參數")
+  (page-setup-info "設置列印參數")
   (page-setup-menu-item "頁面設定…")
 
   (close-info "關閉此檔案")
@@ -931,7 +939,7 @@ please adhere to these guidelines:
 
   (enable-automatic-parens "啟用自動插入括號、方括號與引號")
 
-  (preferences-info "設定你的偏好設定")
+  (preferences-info "設置你的偏好設定")
   (preferences-menu-item "偏好設定…")
 
   (keybindings-info "顯示目前啟用的快捷鍵")
@@ -954,9 +962,9 @@ please adhere to these guidelines:
 
   (user-defined-keybinding-error "執行快捷鍵 ~a 時發生錯誤\n\n~a")
   (user-defined-keybinding-malformed-file
-   "檔案 ~a 不包含以 framework/keybinding-lang 撰寫的module。")
+   "檔案 ~a 不包含以 framework/keybinding-lang 語言撰寫的module。")
   (user-defined-keybinding-malformed-file/found-lang
-   "檔案 ~a 不包含以 framework/keybinding-lang 撰寫的module。"
+   "檔案 ~a 不包含以 framework/keybinding-lang 語言撰寫的module。"
    " 發現的語言為 ~s。")
 
   ;; menu items in the "special" menu
@@ -997,7 +1005,7 @@ please adhere to these guidelines:
 
   ;; open here's new menu item
   (create-new-window-or-clear-current
-   "要建立新視窗，或清除此視窗？")
+   "您想要建立新視窗，或清除此視窗？")
   (clear-current "清除此視窗")
   (new-window "新視窗")
 
@@ -1022,7 +1030,7 @@ please adhere to these guidelines:
 
   ;;; autosaving
   (error-autosaving "自動儲存「~a」時發生錯誤。") ;; ~a will be a filename
-  (autosaving-turned-off "自動儲存已關閉\n直到檔案被儲存。")
+  (autosaving-turned-off "直到儲存檔案之前\n將不進行自動儲存。")
   (recover-autosave-files-frame-title "復原檔案")
   (autosave-details "詳細資料")
   (autosave-recover "復原")
@@ -1031,24 +1039,25 @@ please adhere to these guidelines:
   ;;; autoloading
   ;; the ~a is replaced with a path
   (autoload-file-changed-on-disk/with-name
-   "檔案：\n  ~a\n已在磁碟上變更。是否要將緩衝區內容還原為與磁碟上的檔案一致？")
+   "檔案：\n  ~a\n已在硬碟上變更。"
+   " 您是否想要將緩衝區內容還原為與硬碟上的檔案一致？")
   ;; One file per line is appended to the end of this message
   (autoload-files-changed-on-disk/with-name
-   "有些檔案已在磁碟上變更。是否要將它們的"
-   " 緩衝區內容還原為與磁碟上的檔案一致？\n\n已變更的檔案：")
+   "有些檔案已在硬碟上變更。是否要將它們的"
+   " 緩衝區內容還原為與硬碟上的檔案一致？\n\n已變更的檔案：")
   ;; the ~a is replaced with a path
   (autoload-file-changed-on-disk-editor-dirty/with-name
-   "檔案：\n  ~a\n已在磁碟上變更，且在編輯器中也有修改。"
-   " 是否要將緩衝區內容還原為與磁碟上的檔案一致？")
+   "檔案：\n  ~a\n已在硬碟上變更，且在編輯器中也有修改。"
+   " 是否要將緩衝區內容還原成跟硬碟上的檔案一致？")
   ;; One file per line is appended to the end of this message
   (autoload-files-changed-on-disk-editor-dirty/with-name
-   "有些檔案已在磁碟上變更，且在編輯器中也有修改。"
-   " 是否要將它們的緩衝區內容還原為與磁碟上的檔案一致？\n\n"
+   "有些檔案已在硬碟上變更，且在編輯器中也有修改。"
+   " 是否要將它們的緩衝區內容還原為與硬碟上的檔案一致？\n\n"
    " 已變更的檔案：")
   ;; One file per line is appended to the end of this message
   (autoload-files-changed-on-disk-editor-dirty&clean/with-name
-   "有些檔案已在磁碟上變更，其中部分也在編輯器中被修改。"
-   " 是否要將它們的緩衝區內容還原為與磁碟上的檔案一致？\n\n"
+   "有些檔案已在硬碟上變更，其中部分也在編輯器中被修改。"
+   " 是否要將它們的緩衝區內容還原為與硬碟上的檔案一致？\n\n"
    " 已變更的檔案（◇ 表示編輯器中的版本已修改）：")
   ;; a specialized version of dont-ask-again-always-current
   (dont-ask-again-always-current/clean-buffer
@@ -1085,7 +1094,7 @@ please adhere to these guidelines:
   (autosave-done "完成")
 
   ;; appears in the file dialog
-  (autosave-restore-to-where? "選擇儲存備份檔案的位置。")
+  (autosave-restore-to-where? "選擇儲存後援備份檔案的位置。")
 
   ;;; file modified warning
   (file-has-been-modified
@@ -1108,13 +1117,13 @@ please adhere to these guidelines:
   ; check box in the dialog and also used in the preferences dialog
   (save-after-switching-tabs "切換分頁或視窗時自動儲存檔案")
   (dont-ask-about-saving-after-switching-tabs
-   "按下執行且有未儲存分頁或視窗時，不要詢問也不要儲存")
+   "當按下執行時若有未儲存分頁或視窗，不要詢問也不要儲存")
   
   (drscheme-internal-error "DrRacket 內部錯誤")
 
   ;;; tools
   (invalid-tool-spec
-   "集合 ~a 的 info.rkt 檔案中的工具規格無效。"
+   "collection ~a 的 info.rkt 檔案中的 tool specification 無效。"
    " 預期為字串或非空的字串清單，收到：~e")
   (error-invoking-tool-title "呼叫工具 ~s 時發生錯誤；~s")
   ;; ~s filled with a path, ~a filled with an error message from an exn
@@ -1134,7 +1143,7 @@ please adhere to these guidelines:
   (tool-error-phase2 "工具 ~s 的第 2 階段錯誤；~s")
   ;; tool preferences panel
   (tool-config-changes
-   "變更工具設定將於下次啟動 DrRacket 時生效。")
+   "所變更的工具設定將於下次啟動 DrRacket 時生效。")
   (installed-tools "已安裝的工具")
   (tool-prefs-panel-tool:-label "工具： ")
   (tool-prefs-panel-title "工具")
@@ -1152,7 +1161,7 @@ please adhere to these guidelines:
   (sort-by-position "依檔案位置排序")
   (no-definitions-found "<<找不到定義>>")
   (jump-to-defn "跳至 ~a 的定義")
-  (define-menu-configure "設定") ;; label of a submenu to configure the (define ...) popup menu
+  (define-menu-configure "設置") ;; label of a submenu to configure the (define ...) popup menu
 
   (recent-items-sort-by-age "依時間排序")
   (recent-items-sort-by-name "依名稱排序")
@@ -1209,7 +1218,7 @@ please adhere to these guidelines:
   (force-quit-menu-item-help-string "使用 custodian-shutdown-all 中止目前的求值")
   (limit-memory-menu-item-label "限制記憶體…")
   (limit-memory-msg-1 "此限制將於下次執行程式時生效，")
-  (limit-memory-msg-2 "且至少需為 8 兆位元組。")
+  (limit-memory-msg-2 "且至少需為 8 MB。")
   (limit-memory-unlimited "不限制")
   (limit-memory-limited "有限制")
   (limit-memory-megabytes "MB")
@@ -1243,9 +1252,12 @@ please adhere to these guidelines:
   (create-executable-menu-item-label "建立可執行檔(&E)…")
   (create-executable-title "建立可執行檔")
   (drracket-creates-executables-only-in-some-languages
-   "在 DrRacket 建立可執行檔僅支援以下情況：於語言對話框選擇教材語言（DMdA 或 HtDP），"
-   " 或於語言對話框選擇「The Racket Language」且你的程式開頭的 #lang 行指定了語言。\n\n"
-   " 可考慮改用命令列工具 raco exe。")
+   "欲在 DrRacket 中建立可執行檔，"
+   " 需在 DrRacket 的語言對話框中"
+   " 選擇任一教學語言（DMdA、HtDP），或 “The Racket Language”，"
+   " 且程式有 #lang 行來指定語言。"
+   " 如此才能建立可執行檔。\n\n建議"
+   " 改用 raco exe 命令列工具。")
   (must-save-before-executable "建立可執行檔之前必須先儲存程式。")
   (save-a-mred-launcher "儲存 GRacket 啟動器")
   (save-a-mzscheme-launcher "儲存 Racket 啟動器")
@@ -1257,7 +1269,8 @@ please adhere to these guidelines:
   (error-creating-executable "建立可執行檔發生錯誤：")
 
   (definitions-not-saved
-    "定義視窗尚未儲存。可執行檔將使用定義視窗最新一次儲存的版本。是否繼續？")
+    "定義視窗尚未儲存。"
+    " 可執行檔將使用定義視窗最新一次儲存的版本。是否繼續？")
   ;; The "-explanatory-label" variants are the labels used for the radio buttons in
   ;;  the "Create Executable..." dialog for the "(module ...)" language.
   (launcher "啟動器")
@@ -1294,7 +1307,7 @@ please adhere to these guidelines:
 
   ;;; buttons
   (execute-button-label "執行")
-  (execute-button-configure-label "設定執行")
+  (execute-button-configure-label "設置執行")
   (save-button-label "儲存")
   (break-button-label "停止")
   (break-button-kill-label "強制中止")
@@ -1353,7 +1366,8 @@ please adhere to these guidelines:
   ; ~a is filled with a list of language names. Each name is separated
   ; by a newline and is indented two spaces (no commas, no 'and')
   (teachpacks-only-in-languages
-   "教材包選單僅在以下語言可用：~a\n\n在其他語言中，請改用 'require'。")
+   "教材包選單僅在以下語言可用：~a\n\n"
+   " 在其他語言中，請改用 'require'。")
 
 
   ;;; Language dialog
@@ -1369,7 +1383,7 @@ please adhere to these guidelines:
   (true-false-empty-style-label "常數樣式")
   (true-false-empty-style-read "#true #false '()") ; 這是程式碼不要翻譯
   (true-false-empty-style-ids "true false empty") ; 這是程式碼不要翻譯
-  (sharing-printing-label "在值中顯示共享結構")
+  (sharing-printing-label "在值中顯示共享")
   (use-pretty-printer-label "在輸出值中插入換行")
   (input-syntax "輸入語法")
   (dynamic-properties "動態屬性")
@@ -1413,8 +1427,8 @@ please adhere to these guidelines:
 
   ;;; languages
   (beginning-one-line-summary "define、cond、結構、常數與原始運算元")
-  (beginning/abbrev-one-line-summary "初學者；REPL 以清單風格列印")
-  (intermediate-one-line-summary "初學者加上詞法作用域")
+  (beginning/abbrev-one-line-summary "初階；REPL 以清單風格列印")
+  (intermediate-one-line-summary "初階加上詞法作用域")
   (intermediate/lambda-one-line-summary "中階加上高階函式")
   (advanced-one-line-summary "中階加上 lambda 與可變動作")
   (pretty-big-scheme "Pretty Big")
@@ -1541,7 +1555,8 @@ please adhere to these guidelines:
   (profiling-hide-profile "隱藏分析")
   (profiling-unknown-src "<<未知>>")
   (profiling-no-information-available
-   "沒有可用的效能分析資訊。請確認語言已啟用效能分析，且你已執行程式。")
+   "沒有可用的效能分析資訊。"
+   " 請確認語言已啟用效能分析，且你已執行程式。")
   (profiling-clear?
    "變更定義視窗會使效能分析資訊失效。要繼續嗎？")
 
@@ -1562,12 +1577,14 @@ please adhere to these guidelines:
   (tracing-show-tracing-window "顯示追蹤")
   (tracing-hide-tracing-window "隱藏追蹤")
   (tracing-tracing-nothing-to-show
-   "目前沒有可用的追蹤結果。（請確認你的語言支援追蹤，且追蹤已啟用。）")
+   "目前沒有可用的追蹤結果。（請確認你的語言支援追蹤，"
+   " 且追蹤已啟用。）")
 
   ;;; repl stuff
   (evaluation-terminated "求值已終止")
   (evaluation-terminated-explanation
-   "求值執行緒已終止，直到下次執行前無法進行求值。")
+   "求值執行緒已終止，"
+   " 直到下次執行前無法進行求值。")
 
   ; The next three constants show up in the same dialog as the above evaluation-terminated string
   ; constants.
@@ -1601,7 +1618,7 @@ please adhere to these guidelines:
   (kill-evaluation? "要強制終止求值嗎？")
   (just-break "僅中斷")
   (kill "強制終止")
-  (kill? "要強制終止嗎？")
+  (kill? "要強制終止？")
 
   ;;; version checker
   (version:update-menu-item   "檢查更新…")
@@ -1679,23 +1696,23 @@ please adhere to these guidelines:
   (xml-tool-leave-whitespace-alone
    "保留空白不變")
 
-  (show-recent-items-window-menu-item "在獨立視窗顯示最近開啟的檔案")
+  (show-recent-items-window-menu-item "在另外一個視窗顯示最近開啟的檔案")
   (show-recent-items-window-label "最近開啟的檔案")
   (number-of-open-recent-items "最近項目的數量")
   (switch-anyway "仍要切換檔案")
 
-  (stepper-program-has-changed "警告：程式已變更。")
-  (stepper-program-window-closed "警告：程式視窗已關閉。")
+  (stepper-program-has-changed "※警告：程式已變更。")
+  (stepper-program-window-closed "※警告：程式視窗已關閉。")
 
   (stepper-name "步進器")
   (stepper-language-level-message "步進器無法用於語言「~a」。")
-  (stepper-button-label "逐步")
+  (stepper-button-label "步進")
 
-  (stepper-previous "逐步")
-  (stepper-next "逐步")
+  (stepper-previous "步進")
+  (stepper-next "步進")
   (stepper-jump "跳至…")
-  (stepper-jump-to-beginning "開頭")
-  (stepper-jump-to-end "結尾")
+  (stepper-jump-to-beginning "到開頭")
+  (stepper-jump-to-end "到結尾")
   (stepper-jump-to-selected "所選區段的開頭")
   (stepper-jump-to-previous-application "上一個應用步驟")
   (stepper-jump-to-next-application "下一個應用步驟")
@@ -1728,7 +1745,7 @@ please adhere to these guidelines:
 
   ;; ml-command-line-arguments is for the command line arguments
   ;; label in the module language details in the language dialog.
-  (ml-command-line-arguments "以可讀語法表示的字串向量形式之命令列參數")
+  (ml-command-line-arguments "於 read syntax 終將命令列參數視作字串向量")
 
   ;; ml-cp names are all for the module language collection path
   ;; configuration. See the details portion of the language dialog
@@ -1998,8 +2015,8 @@ please adhere to these guidelines:
 
   ; buttons in the dialog that lists the recorded bug reports
   (bug-track-report "送出錯誤回報")
-  (bug-track-forget "移除")
-  (bug-track-forget-all "全部移除")
+  (bug-track-forget "廢棄")
+  (bug-track-forget-all "全部廢棄")
 
   ;; planet status messages in the bottom of the drscheme window;
   ;; the ~a is filled with the name of the package
@@ -2121,8 +2138,8 @@ please adhere to these guidelines:
   (install-pkg-catalog "目錄")
   (install-pkg-scope "範圍")
   (install-pkg-name "名稱")
-  (install-pkg-update-catalogs? "將資料庫更新為與已設定目錄一致？")
-  (install-pkg-currently-configured-are "目前設定的目錄為")
+  (install-pkg-update-catalogs? "將資料庫更新為與已設置目錄一致？")
+  (install-pkg-currently-configured-are "目前設置的目錄為")
   (install-pkg-database-recorded-are "資料庫記錄的目錄為")
   (install-pkg-update-catalogs "更新")
   (install-pkg-do-not-update-catalogs "不要更新")
@@ -2184,7 +2201,8 @@ please adhere to these guidelines:
   (install-pkg-package-catalogs "Package目錄") ; label for a list box
   (install-pkg-add-package-catalog "新增package目錄")
 
-  (install-pkg-not-rentrant "安裝與更新不能同時進行；請中止目前作業或等待完成。")
+  (install-pkg-not-rentrant "安裝與更新不能同時進行；"
+                            " 請中止目前作業或等待完成。")
   (install-pkg-generic-action-in-progress "仍有package管理作業在進行中。"
                                           " 確定要關閉視窗並中止此作業嗎？"
                                           " 這可能使你的安裝處於不一致狀態。")
@@ -2201,26 +2219,33 @@ please adhere to these guidelines:
   ; second ~a is filled with /etc/paths.d/racket (or some other path like it in the future)
   ; third ~a is filled with the path to the bin directory of the current drracket
   (adding-racket/bin-to-path-failed
-   "嘗試將 racket 支援加入命令列失敗。~a詳細如下：無法於「~a」建立內容「~a」。")
+   "嘗試將 racket 支援加入命令列失敗。~a詳細如下："
+   " 無法於「~a」建立內容「~a」。")
   ; first and third ~a are filled with /etc/paths.d/racket (or some other path like it in the future)
   ; and the second one is filled with the path to the bin directory that was put into that file.
   (added-racket/bin-to-path
-   "你現在應可在命令列使用 racket 與其工具。\n\n"
-   " 系統已為所有使用者設定預設 PATH，"
-   " 透過新增檔案 ~a 指向 ~a。你可以刪除 ~a"
-   " 以復原此設定。")
+   "你現在應該已能在"
+   " 命令列使用 racket 與其工具。\n\n"
+   " 已為所有使用者設置預設的 PATH ，方式是新增檔案"
+   " ~a 來指向 ~a。你可以透過刪除"
+   " ~a 來還原此設定。")
   (adding-racket/bin-no-paths.d
-   "由於不存在 /etc/paths.d，無法將 racket 加入命令列。\n\n"
-   " 你可以在終端機視窗中執行下列指令以建立該目錄：\n"
-   "   sudo mkdir /etc/paths.d\n然後再試一次。")
+   "未能將 racket 加入命令列，因為 /etc/paths.d 不存在。"
+   " \n\n你可以嘗試在終端機視窗執行下列指令以"
+   " 建立該目錄：\n"
+   "    sudo mkdir /etc/paths.d\n然後再試一次。")
   (added-racket/bin-to-path/windows
-   "你現在應可在命令列使用 racket 與其工具。\n\n"
-   " 已透過機碼 HKEY_CURRENT_USER\\Environment\\Path 設定預設 %PATH%，"
-   " 指向 ~a 與 ~a。")
+   "你現在應該已能在"
+   " 命令列使用 racket 與其工具。\n\n"
+   " 預設的 %PATH% 已透過登錄機碼"
+   " HKEY_CURRENT_USER\\Environment\\Path"
+   " 設定為指向 ~a 與 ~a。")
   (didnt-add-racket/bin-to-path/unix
-   "DrRacket 無法在 Unix 下更新你的 PATH；若你知道如何自行調整 PATH，"
-   " 請將\n\n  ~a\n\n 加入其中。")
-  (add-racket/bin-to-path "設定 Racket 的命令列…") ;; menu item label
+   "DrRacket 無法在 Unix 環境下更新你的 PATH，但如果你"
+   " 知道如何自行調整 PATH，"
+   " 加入\n\n  ~a\n\n"
+   " 到其中。")
+  (add-racket/bin-to-path "設置 Racket 的命令列…") ;; menu item label
   
   ;; quickscript messages
   (qs-my-first-script "我的第一個腳本")
