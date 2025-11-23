@@ -233,6 +233,8 @@ please adhere to these guidelines:
   (cs-name-duplication-error
    "The new name you have chosen, ~s, conflicts with an already established name in this scope.")
   (cs-rename-anyway "Rename Anyway")
+  (cs-add-require-prefix "Add Require Prefix")
+  (cs-remove-unused-requires "Remove Unused Requires")
   (cs-status-init "Check Syntax: Initializing environment for user code")
   (cs-status-coloring-program "Check Syntax: coloring expression")
   (cs-status-eval-compile-time "Check Syntax: eval compile time")
