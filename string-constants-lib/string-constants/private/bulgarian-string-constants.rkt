@@ -330,6 +330,7 @@
   ;; Help Desk
   (help "Помощ")
   (racket-documentation "Документация на Racket")
+  (x-documentation "Документация на ~a") ;; ~a is filled with a language family name, eg Racket, Rhombus, or HtDP
   (help-desk "Ръководство")
   (plt:hd:search "Търсене")
   (plt:hd:feeling-lucky "Първото намерено")

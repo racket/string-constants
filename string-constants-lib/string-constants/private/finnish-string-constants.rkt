@@ -420,6 +420,7 @@ please adhere to these guidelines:
   ;; Help Desk
   (help "Ohje")
   (racket-documentation "Racket-Dokumentaatio")
+  (x-documentation "~a-Dokumentaatio") ;; ~a is filled with a language family name, eg Racket, Rhombus, or HtDP
   (help-desk "Tukipalvelu")
   (plt:hd:search "Haku")
   (plt:hd:feeling-lucky "Onnekas olo")

@@ -418,6 +418,7 @@
   ;; Help Desk
   (help "Aide")
   (racket-documentation "Documentation Racket")
+  (racket-documentation "Documentation ~a") ;; ~a is filled with a language family name, eg Racket, Rhombus, or HtDP
   (help-desk "Aide")
   (plt:hd:search "Chercher")
   (plt:hd:feeling-lucky "D'humeur chanceuse")

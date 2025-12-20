@@ -268,6 +268,7 @@
   ;; Help Desk
   (help "幫助")
   (racket-documentation "Racket文檔")
+  (x-documentation "~a文檔") ;; ~a is filled with a language family name, eg Racket, Rhombus, or HtDP
   (help-desk "幫助台")
   (plt:hd:search "搜索")
   (plt:hd:feeling-lucky "手氣不錯")

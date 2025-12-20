@@ -7,7 +7,7 @@
 
 (define pkg-authors '(robby))
 
-(define version "1.53")
+(define version "1.54")
 
 (define license
   '(Apache-2.0 OR MIT))
