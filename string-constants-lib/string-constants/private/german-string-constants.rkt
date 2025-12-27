@@ -119,6 +119,8 @@
  (cs-rename-var-to "„~a“ umbenennen nach:")
  (cs-name-duplication-error "Der neugewählte Name, ~s, ist hier schon gebunden.")
  (cs-rename-anyway "Trotzdem umbenennen")
+ (cs-add-require-prefix "Require-Präfix hinzufügen")
+ (cs-remove-unused-requires "Unbenutzte Requires entfernen")
  (cs-status-init "Syntaxprüfung: Umgebung für den User-Code initialisieren")
  (cs-status-coloring-program "Syntaxprüfung: Ausdruck einfärben")
  (cs-status-eval-compile-time "Syntaxprüfung: Compile-Time-Code ausführen")
@@ -515,6 +517,19 @@
  ; drracket additions to the color scheme dialog; two buttons
  (design-your-own-color-schemes "Farbschemata selbst machen") ; pointer to (english-only) docs
  (style-and-color-names "Stil && Farbnamen")
+  (dark-mode-color-scheme "Farbschema für Dark Mode")
+  (light-mode-color-scheme "Farbschema für Light Mode")
+  (revert-colors-to-color-scheme-defaults "Farben zurücksetzen zu Standardfarben des Farbschemas")
+  (color-mode "Color Mode")
+  ;; on macos and linux, racket can detect the OS's dark/light mode so
+  ;; the control will have the next three strings in it.
+  (use-os-dark-mode-selection "Eingebauten Light oder Dark Mode benutzen")
+  (always-light-mode "Immer Light Mode benutzen")
+  (always-dark-mode "Immer Dark Mode benutzen")
+  ;; under windows, racket cannot detect the OS's dark/light mode, so
+  ;; the control will have just two options, which needs slightly different wording
+  (light-mode "Light Mode")
+  (dark-mode "Dark Mode")
 
  (add-spacing-between-lines "Ein Pixel Extra-Platz zwischen den Zeilen")
 
