@@ -683,8 +683,8 @@ please adhere to these guidelines:
   ; drracket additions to the color scheme dialog; two buttons
   (design-your-own-color-schemes "Design Your Own Color Schemes") ; pointer to (english-only) docs
   (style-and-color-names "Style && Color Names")
-  (dark-mode-color-scheme "Dark Mode Color Scheme")
-  (light-mode-color-scheme "Light Mode Color Scheme")
+  (dark-color-scheme "Dark Color Scheme")
+  (light-color-scheme "Light Color Scheme")
   (revert-colors-to-color-scheme-defaults "Revert Colors to Color Scheme’s Default Colors")
   (color-mode "Color Mode")
   ;; on macos and linux, racket can detect the OS's dark/light mode so
