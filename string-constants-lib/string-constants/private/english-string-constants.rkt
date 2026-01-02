@@ -619,7 +619,7 @@ please adhere to these guidelines:
   (verify-exit "Verify exit")
   (ask-before-changing-format "Ask before changing save format")
   (wrap-words-in-editor-buffers "Wrap words in editor buffers")
-  (show-status-line "Show status-line")
+  (show-status-line "Show status line")
   (count-columns-from-one "Count column numbers from one")
   (display-line-numbers "Display line numbers in buffer; not character offsets")
   ; used for popup menu; right click on line/column box in bottom of drs window
