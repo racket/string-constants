@@ -233,6 +233,8 @@
   (cs-name-duplication-error
    "Le nouveau nom que vous avez choisi, ~s, est en conflit avec un autre nom préexistant dans le même contexte.")
   (cs-rename-anyway "Renommer quand même")
+  (cs-add-require-prefix "Ajouter un préfixe Require")
+  (cs-remove-unused-requires "Enlever les Requires inutilisés")
   (cs-status-init "Vérificateur de syntaxe : initialisation de l'environnement pour le code de l'utilisateur")
   (cs-status-coloring-program "Vérificateur de syntaxe : coloriage d'une expression")
   (cs-status-eval-compile-time "Vérificateur de syntaxe : évaluation pour l'expansion") ; peut mieux faire?
@@ -418,7 +420,7 @@
   ;; Help Desk
   (help "Aide")
   (racket-documentation "Documentation Racket")
-  (racket-documentation "Documentation ~a") ;; ~a is filled with a language family name, eg Racket, Rhombus, or HtDP
+  (x-documentation "Documentation ~a") ;; ~a is filled with a language family name, eg Racket, Rhombus, or HtDP
   (help-desk "Aide")
   (plt:hd:search "Chercher")
   (plt:hd:feeling-lucky "D'humeur chanceuse")
@@ -672,6 +674,7 @@
   ;; used in the preferences dialog to undo preference changes
   (undo-changes "Fermer sans rien changer")
 
+  ;;; this next section has to do with Color Schemes and configuring them
   (color-schemes "Régime de couleurs") ;; the label in the preferences dialog for the color scheme panel
   (classic-color-scheme "Classique") ;; formerly called 'black on white'
   (modern-color-scheme "Moderne")   ;; an attempt to be more color-blind friendly
@@ -680,6 +683,19 @@
   ; drracket additions to the color scheme dialog; two buttons
   (design-your-own-color-schemes "Concevoir vos propres régimes de couleurs") ; pointer to (english-only) docs
   (style-and-color-names "Noms de styles et de couleurs")
+  (dark-color-scheme "Palette de couleurs sombres")
+  (light-color-scheme "Palette de couleurs claires")
+  (revert-colors-to-color-scheme-defaults "Retouner les couleurs aux couleurs par défaut de la palette de couleurs")
+  (color-mode "Mode couleur")
+  ;; on macos and linux, racket can detect the OS's dark/light mode so
+  ;; the control will have the next three strings in it.
+  (use-os-dark-mode-selection "Utiliser le mode de couleur du système d'exploitation")
+  (always-light-mode "Toujours utiliser le mode de couleur claire")
+  (always-dark-mode "Toujours utiliser le mode de couleur sombre")
+  ;; under windows, racket cannot detect the OS's dark/light mode, so
+  ;; the control will have just two options, which needs slightly different wording
+  (light-mode "Mode de couleur claire")
+  (dark-mode "Mode de couleur sombre")
 
   (add-spacing-between-lines "Ajouter un pixel d'espace supplémentaire entre les lignes")
 
@@ -1308,6 +1324,7 @@
 
   ;;; buttons
   (execute-button-label "Exécuter")
+  (execute-button-configure-label "Configurer l'exécution")
   (save-button-label "Sauvegarder")
   (break-button-label "Stopper")
   (break-button-kill-label "Tuer")
@@ -1887,6 +1904,14 @@
 
   ; The ~F is special marker for the offending values, which may be
   ; printed specially in DrRacket.
+  (test-engine-check-range-encountered-error
+   "check-range a rencontré l'erreur suivante au lieu d'une valeur dans l'interval [~F, ~F]. ~n   :: ~a")
+  (test-engine-check-member-of-encountered-error
+   "check-member-of a rencontré l'erreur suivante au lieu d'une valeur appartenant à ~L.~n   :: ~a")
+  ; obsolete version of this
+  (test-engine-check-*-encountered-error
+   "~a a rencontré l'erreur suivante au lieu de la valeur attendue, ~F. ~n   :: ~a")
+  ; deprecated:
   (test-engine-check-encountered-error
    "check-expect a rencontré l'erreur suivante au lieu de la valeur attendue, ~F. ~n   :: ~a")
   (test-engine-check-error-cause
@@ -2099,12 +2124,14 @@
   (install-pkg-action-label "Action à prendre")
   (install-pkg-install "Installer")
   (install-pkg-update "Mettre à jour")
-  (install-pkg-setup "Configuration") ; for button
+  (install-pkg-setup "Configurer") ; for button
+  (install-pkg-update+setup "Mettre à jour et configurer") ; for button
   (install-pkg-setup-long "Configurer l'installation actuelle") ; for menu
   (install-pkg-remove "Supprimer")
   (install-pkg-do-not-remove "Ne pas supprimer")
   (install-pkg-action-inferred-to-be-update "L'action inférée est une mise à jour")
   (install-pkg-action-inferred-to-be-install "L'action inférée est une installation")
+  (install-pkg-action-inferred-to-be-update+setup "L'action inférée est une mise à jour et configuration")
   (install-pkg-default "Par défaut")
   (install-pkg-scope-label "Champ d'application du paquetage")
   (install-pkg-default-scope-label "Champ d'application par défaut pour le paquetage") ; for picking the scope to be default
@@ -2144,6 +2171,7 @@
   (install-pkg-abort-migrate "Abandonner la migration")
   (install-pkg-abort-setup "Abandonner la configuration")
   (install-pkg-abort-generic-action "Abandonner l'action")
+  (install-pkg-continue-generic-action "Continuer l'action")
   (install-pkg-close-terminal-output "Fermer la sortie de données")
   (install-pkg-show-all-options "Montrer toutes les options")
   (install-pkg-migrate-available-installations "Installations disponibles")
@@ -2192,6 +2220,9 @@
 
   (install-pkg-not-rentrant "Installation et mise à jour ne peuvent avoir lieu en même temps;"
                             " abandonnez l'installation ou la mise à jour actuelle, ou attendez-en la fin.")
+  (install-pkg-generic-action-in-progress "Une action pour la gestion des paquetages est encore en cours."
+                                          " Êtes-vous sûr de vouloir fermer la fenêtre et d'avorter cette action,"
+                                          " qui pourrait laisser votre systeme dans un état inconsistant ?")
   
   ;; open a file via a collection path (new "Open" menu item in DrRacket)
   (open-require-path "Ouvrir un chemin pour « require »…")
@@ -2232,4 +2263,72 @@
    " ajoutez-y\n\n  ~a\n\n"
    " .")
   (add-racket/bin-to-path "Configurer la ligne de commande pour racket…") ;; menu item label
+  
+  ;; quickscript messages
+  (qs-my-first-script "Mon premier script")
+  (qs-script-library "Bibliothèque de scripts")
+  (qs-directories "Répertoires")
+  (qs-add "&Ajouter")
+  (qs-remove "Enleve&r")
+  (qs-scripts "Scripts")
+  (qs-disable "Désa&ctiver")
+  (qs-enable "A&ctiver")
+  (qs-shadow "Script dans l'ombre")
+  (qs-recompiling  "Recompilation des quickscripts…")
+  (qs-recompiling-wait "Recompilation des quickscripts, veuillez attendre…")
+  (qs-scripts "&Scripts")
+  (qs-manage "Gérer")
+  (qs-compilation-error "Quickscript: erreur durant la compilation")
+  (qs-caught-exception  "Quickscript a attrapé une exception")
+  (qs-recompiling-library "Recompilation de la bibliothèque")
+  (qs-my-script "Mon script incroyable")
+  (qs-script-help "La help-string pour ce script.")
+  (qs-compiling-scripts "Compilation des scripts")
+  ;; ~a is a script file including its path
+  (qs-compiling "Compilation de ~a")
+  ;; ~a is a script file including its path
+  (qs-file-not-found "Fichier non trouvé : ~a")
+  (qs-invalid-hook "Nom de hook invalide.\n Noms valides :\n") ; crochet / point d'ancrage / point d'attache / point d'injection ... qui dit mieux ?
+  ;; the  three `qs-error-detail-*` string constants are put into the same message
+  (qs-error-detail-overview "~a erreur(s) ont été attrapées.") ; the ~a is number of errors
+  (qs-error-detail-summary "Résumé :")
+  (qs-error-detail-details "Détails :")
+  (qs-script-name "Nom du script")
+  (qs-script-name-enter "Spécifiez le nom du nouveau script :")
+  (qs-open-script "Ouvrir un script")
+  ;; ~a is the name of a script file
+  (qs-error-run "Exécution : erreur dans le fichier script ~s:\n" )
+  (qs-output "Résultats") ;; not repl-out-color where it means color of the output
+  (qs-load-script-menu "Chargement du menu Scripts")
+  (qs-loading-file "Chargement du fichier ")
+  ;; ~a is the name of a script file
+  (qs-script-file "Fichier script ~s:")
+  (qs-build-menu "Construction du menu script")
+  ;; ~a is number of rebuilds
+  (qs-menu-rebuild "Reconstruction du menu script #~a...")
+  (qs-delete-menu "Effacement des éléments du menu")
+  ;; ~a is a a script entry in menu
+  (qs-delete-menu-item "Effacement de l'élément menu ~a... ")
+  (qs-new-script "&Nouveau script…")
+  (qs-open-script "&Ouvrir un script…")
+  (qs-disable-scripts "&Désactiver les scripts…")
+  (qs-library "Bibliothèque…")
+  (qs-reload-menu "&Recharger le menu")
+  (qs-compile-scripts "&Compiler les scripts")
+  (qs-stop-scripts "&Stopper les scripts persistants")
+  (qs-report-issue "S&ignaler un problème")
+  (qs-error-load "Quickscript : erreurs pendant le chargement des propriétés du script")
+
+  ;; macro stepper
+  ; used in the button label and menu item and title for some dialog boxes
+  (macro-stepper "Macro Stepper")
+
+  ; these next three are in the same dialog; first a message and then two button labels
+  (macro-stepper-warning-message
+   "L'expansion des macros utilise un numbre de pas soupçonneusement grand.\n\nCliquez"
+   " Stopper pour stopper l'expansion des macros et voir les pas pris jusqu'à présent,"
+   " ou cliquez Continuer pour laisser l'expansion exécuter un peu plus longtemps.")
+  (macro-stepper-continue "Continuer")
+  (macro-stepper-stop "Stopper")
+
   ); aâàbcçdeéêèëfghiîïjklmnoôpqrstuûùüvwxyz AÂÀBCÇDEÉÊÈËFGHIÎÏJKLMNOÔPQRSTUÛÙÜVWXYZ “” «  » …
