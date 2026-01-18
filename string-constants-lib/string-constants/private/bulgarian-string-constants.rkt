@@ -1,6 +1,6 @@
-;; Bulgarian translation of Racket string constants file, version: 1.52
+;; Bulgarian translation of Racket string constants file, version: 1.56
 ;; This file is distributed under the same terms as Racket
-;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025.
+;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025, 2026.
 
 (module bulgarian-string-constants "string-constant-lang.rkt"
   ;;; when translating this constant, substitute name of actual language for `English'
@@ -146,6 +146,8 @@
   (cs-name-duplication-error
    "Избраното име „~s“ повтаря друго име в този обхват.")
   (cs-rename-anyway "Преименуване въпреки това")
+  (cs-add-require-prefix "Добавяне на префикси за зависимости")
+  (cs-remove-unused-requires "Премахване на неизползваните префикси за зависимости")
   (cs-status-init "Проверка на синтаксиса: първоначална подготовка на средата за потребителския код")
   (cs-status-coloring-program "Проверка на синтаксиса: оцветяване на израз")
   (cs-status-eval-compile-time "Проверка на синтаксиса: изчисляване при компилиране")
@@ -330,7 +332,7 @@
   ;; Help Desk
   (help "Помощ")
   (racket-documentation "Документация на Racket")
-  (x-documentation "Документация на ~a") ;; ~a is filled with a language family name, eg Racket, Rhombus, or HtDP
+  (x-documentation "Документация на „~a“") ;; ~a is filled with a language family name, eg Racket, Rhombus, or HtDP
   (help-desk "Ръководство")
   (plt:hd:search "Търсене")
   (plt:hd:feeling-lucky "Първото намерено")
@@ -578,6 +580,7 @@
   ;; used in the preferences dialog to undo preference changes
   (undo-changes "Отмяна на промените и затваряне")
 
+  ;;; this next section has to do with Color Schemes and configuring them
   (color-schemes "Цветови схеми") ;; the label in the preferences dialog for the color scheme panel
   (classic-color-scheme "Класическа") ;; formerly called 'black on white'
   (modern-color-scheme "Модерна")   ;; an attempt to be more color-blind friendly
@@ -585,6 +588,19 @@
   ; drracket additions to the color scheme dialog; two buttons
   (design-your-own-color-schemes "Собствена цветова схема") ; pointer to (english-only) docs
   (style-and-color-names "&Имена на стилове и цветове")
+  (dark-color-scheme "Тъмна цветова схема")
+  (light-color-scheme "Светла цветова схема")
+  (revert-colors-to-color-scheme-defaults "Връщане на цветовете към стандартните за схемата")
+  (color-mode "Режим на интерфейса")
+  ;; on macos and linux, racket can detect the OS's dark/light mode so
+  ;; the control will have the next three strings in it.
+  (use-os-dark-mode-selection "Да се ползва вградения светъл или тъмен режим")
+  (always-light-mode "Винаги да се ползва светлият режим")
+  (always-dark-mode "Винаги да се ползва тъмният режим")
+  ;; under windows, racket cannot detect the OS's dark/light mode, so
+  ;; the control will have just two options, which needs slightly different wording
+  (light-mode "Светъл режим")
+  (dark-mode "Тъмен режим")
 
   (add-spacing-between-lines "Добавяне по пиксел между редовете")
 
@@ -2003,6 +2019,7 @@
   (install-pkg-install "Инсталиране")
   (install-pkg-update "Обновяване")
   (install-pkg-setup "Настройки") ; for button
+  (install-pkg-update+setup "Обновяване и настройки") ; for button
   (install-pkg-setup-long "Настройки на инсталацията") ; for menu
   (install-pkg-remove "Деинсталиране")
   (install-pkg-do-not-remove "Да не се деинсталира")
