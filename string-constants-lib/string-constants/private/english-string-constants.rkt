@@ -1411,6 +1411,7 @@ please adhere to these guidelines:
   (debugging "Debugging")
   (debugging-and-profiling "Debugging and profiling")
   (test-coverage "Syntactic test suite coverage")
+  (use-hash-langs-instrumentation "Use the #lang's default choice for instrumentation")
   (show-details-button-label "Show Details")
   (hide-details-button-label "Hide Details")
   (choose-language-menu-item-label "Choose Language…")
