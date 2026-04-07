@@ -517,10 +517,10 @@
  ; drracket additions to the color scheme dialog; two buttons
  (design-your-own-color-schemes "Farbschemata selbst machen") ; pointer to (english-only) docs
  (style-and-color-names "Stil && Farbnamen")
- ;(dark-mode-color-scheme "Farbschema für Dark Mode") ; no longer has "Mode" in English
- ;(light-mode-color-scheme "Farbschema für Light Mode") ; no longer has "Mode" in English
+  (dark-color-scheme "Dunkles Farbschema")
+  (light-color-scheme "Helles Farbschema")
   (revert-colors-to-color-scheme-defaults "Farben zurücksetzen zu Standardfarben des Farbschemas")
-  (color-mode "Color Mode")
+  (color-mode "Light/Dark Mode")
   ;; on macos and linux, racket can detect the OS's dark/light mode so
   ;; the control will have the next three strings in it.
   (use-os-dark-mode-selection "Eingebauten Light oder Dark Mode benutzen")
@@ -1211,6 +1211,7 @@
  (debugging "Debugging")
  (debugging-and-profiling "Debugging und Profiling")
  (test-coverage "Syntaktische Test-Suiten-Abdeckung")
+ (use-hash-langs-instrumentation "Standard-Instrumentierung für #lang benutzen")
  (show-details-button-label "Details einblenden")
  (hide-details-button-label "Details ausblenden")
  (choose-language-menu-item-label "Sprache auswählen…")
