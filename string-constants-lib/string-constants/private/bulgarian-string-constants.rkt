@@ -2201,7 +2201,7 @@
   (qs-build-menu "Изграждане на менюто със скриптове")
   ;; ~a is number of rebuilds
   (qs-menu-rebuild "Менюто със скриптове се изгради  #~a… път")
-  (qs-delete-menu "Deleting menu items")
+  (qs-delete-menu "Изтриване на елементи от меню")
   ;; ~a is a a script entry in menu
   (qs-delete-menu-item "Изтриване на елемент от меню „~a“…  ")
   (qs-new-script "&Нов скрипт…")
