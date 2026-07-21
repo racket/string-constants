@@ -17,7 +17,8 @@
          (prefix-in bulgarian: "private/bulgarian-string-constants.rkt")
          (prefix-in russian: "private/russian-string-constants.rkt")
          (prefix-in ukrainian: "private/ukrainian-string-constants.rkt")
-         (prefix-in finnish: "private/finnish-string-constants.rkt"))
+         (prefix-in finnish: "private/finnish-string-constants.rkt")
+         (prefix-in polish: "private/polish-string-constants.rkt"))
 
 (provide string-constant string-constants
          string-constant-in-current-language?
@@ -104,7 +105,8 @@
    (make-sc 'bulgarian bulgarian:string-constants #f)
    (make-sc 'russian russian:string-constants #f)
    (make-sc 'ukrainian ukrainian:string-constants #f)
-   (make-sc 'finnish finnish:string-constants #f)))
+   (make-sc 'finnish finnish:string-constants #f)
+   (make-sc 'polish polish:string-constants #f)))
 
 (define (get-available-string-constant-sets)
   (sort
