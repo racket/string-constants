@@ -1425,6 +1425,7 @@ please adhere to these guidelines:
   (automatically-compile "Populate “compiled” directories (for faster loading)")
   (preserve-stacktrace-information "Preserve stacktrace (disable some optimizations)")
   (enforce-module-constants-checkbox-label "Enforce constant definitions (enables some inlining)")
+  (run-in-separate-process-checkbox-label "Run program in separate process")
   (expression-level-stacktrace "Expression-level stacktrace")
   (function-level-stacktrace "Function-level stacktrace")
   (submodules-to-run "Submodules to Run")
@@ -1612,7 +1613,8 @@ please adhere to these guidelines:
   ;; ~a is filled in with a number between 1 and 255
   (exited-with-error-code "Exited with error code ~a.")
   (program-ran-out-of-memory "The program ran out of memory.")
-
+  (separate-executable-terminated "The separate executable terminated")
+  (separate-executable-terminated-abnormally "The separate executable terminated with a non-zero exit code, ~a")
   (show-evaluation-terminated-dialog "Show the ‘evaluation terminated’ dialog")
   (evaluation-terminated-ask "Show this dialog next time")
 
