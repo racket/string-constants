@@ -1226,6 +1226,7 @@
  (automatically-compile "„compiled“-Verzeichnisse bestücken (für schnelleres laden)")
  (preserve-stacktrace-information "Stack-Trace behalten (einige Optimierungen werden abgeschaltet)")
  (enforce-module-constants-checkbox-label "Konstantendefinitionen durchsetzen (sorgt für etwas Inlining)")
+ (run-in-separate-process-checkbox-label "Programm in separatem Prozess ausführen")
  (expression-level-stacktrace "Stack-Trace mit Ausdrücken")
  (function-level-stacktrace "Stack-Trace mit Funktionen")
  (submodules-to-run "Submodule zum Ausführen")
@@ -1397,6 +1398,8 @@
   (exited-successfully "Erfolgreich beendet.")
   (exited-with-error-code "Beendet mit Fehlercode ~a.") ;; ~a is filled in with a number between 1 and 255
   (program-ran-out-of-memory "Dem Programm ist der Speicher ausgegangen.")
+  (separate-executable-terminated "Separate Programmdatei beendet")
+  (separate-executable-terminated-abnormally "Separate Programmdatei mit Ergebnis ungleich 0 beendet, ~a")
   
   (show-evaluation-terminated-dialog "Den Dialog ‘Auswertung abgebrochen’ zeigen")
   (evaluation-terminated-ask "Diesen Dialog das nächste Mal anzeigen")
