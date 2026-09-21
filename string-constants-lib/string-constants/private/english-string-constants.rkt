@@ -1135,6 +1135,8 @@ please adhere to these guidelines:
   (save-after-switching-tabs "Save files whenever switching tabs or windows")
   (dont-ask-about-saving-after-switching-tabs
    "Don't ask and don't save files when clicking Run with unsaved tabs or windows")
+  (show-stacktraces-in-syntax-exns?
+   "Show stacktrace for exn:fail:syntax exceptions?")
   
   (drscheme-internal-error "DrRacket Internal Error")
 
