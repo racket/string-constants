@@ -955,6 +955,8 @@
 
  (dont-ask-about-saving-after-switching-tabs
   "Nicht fragen und nicht speichern, wenn Start gedrückt wurde bei nicht gespeicherten Tabs oder Fenstern")
+ (show-stacktraces-in-syntax-exns?
+  "Stack-Trace für exn:fail:syntax zeigen?")
 
  (drscheme-internal-error "Interner Fehler in DrRacket")
  
