@@ -233,6 +233,8 @@ please adhere to these guidelines:
   (cs-name-duplication-error
    "你選擇的新名稱 ~s 與此作用域中既有名稱衝突。")
   (cs-rename-anyway "仍要重新命名")
+  (cs-add-require-prefix "增加 require 前綴")
+  (cs-remove-unused-requires "移除未使用的 require")
   (cs-status-init "語法檢查：初始化使用者程式環境")
   (cs-status-coloring-program "語法檢查：染色標示程式")
   (cs-status-eval-compile-time "語法檢查：求值編譯期")
@@ -680,6 +682,19 @@ please adhere to these guidelines:
   ; drracket additions to the color scheme dialog; two buttons
   (design-your-own-color-schemes "設計你自己的配色方案") ; pointer to (english-only) docs
   (style-and-color-names "樣式與色彩名稱")
+  (dark-color-scheme "深色佈景主題")
+  (light-color-scheme "淺色佈景主題")
+  (revert-colors-to-color-scheme-defaults "還原為佈景主題預設配色")
+  (color-mode "深淺色模式")
+  ;; on macos and linux, racket can detect the OS's dark/light mode so
+  ;; the control will have the next three strings in it.
+  (use-os-dark-mode-selection "自動偵測作業系統設定")
+  (always-light-mode "設定為淺色")
+  (always-dark-mode "設定為深色")
+  ;; under windows, racket cannot detect the OS's dark/light mode, so
+  ;; the control will have just two options, which needs slightly different wording
+  (light-mode "淺色系")
+  (dark-mode "深色系")
 
   (add-spacing-between-lines "在行與行之間額外加入 1 像素間距")
 
@@ -1119,6 +1134,8 @@ please adhere to these guidelines:
   (save-after-switching-tabs "切換分頁或視窗時自動儲存檔案")
   (dont-ask-about-saving-after-switching-tabs
    "當按下執行時若有未儲存分頁或視窗，不要詢問也不要儲存")
+  (show-stacktraces-in-syntax-exns?
+   "顯示 exn:fail:syntax 例外的堆疊追蹤")
   
   (drscheme-internal-error "DrRacket 內部錯誤")
 
@@ -1394,7 +1411,8 @@ please adhere to these guidelines:
   (no-debugging-or-profiling "不除錯也不效能分析")
   (debugging "除錯")
   (debugging-and-profiling "除錯與效能分析")
-  (test-coverage "語法測試套裝涵蓋率")
+  (test-coverage "測試套裝程式碼涵蓋率")
+  (use-hash-langs-instrumentation "使用 #lang 預設的分析設定（除錯、效能分析、涵蓋率等等）")
   (show-details-button-label "顯示詳細資訊")
   (hide-details-button-label "隱藏詳細資訊")
   (choose-language-menu-item-label "選擇語言…")
@@ -1408,6 +1426,7 @@ please adhere to these guidelines:
   (automatically-compile "填入 “compiled” 目錄（以加快載入）")
   (preserve-stacktrace-information "保留堆疊追蹤（停用部分最佳化）")
   (enforce-module-constants-checkbox-label "強制常數定義（啟用部分內嵌）")
+  (run-in-separate-process-checkbox-label "用獨立的處理序執行程式")
   (expression-level-stacktrace "運算式層級堆疊追蹤")
   (function-level-stacktrace "函式層級堆疊追蹤")
   (submodules-to-run "要執行的子module")
@@ -1595,7 +1614,8 @@ please adhere to these guidelines:
   ;; ~a is filled in with a number between 1 and 255
   (exited-with-error-code "以錯誤碼 ~a 結束。")
   (program-ran-out-of-memory "程式的記憶體已耗盡。")
-
+  (separate-executable-terminated "求值處理序已終止")
+  (separate-executable-terminated-abnormally "求值處理序意外終止，錯誤碼 ~a")
   (show-evaluation-terminated-dialog "顯示「求值已終止」對話框")
   (evaluation-terminated-ask "下次顯示此對話框")
 
