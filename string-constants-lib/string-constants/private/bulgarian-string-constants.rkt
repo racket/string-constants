@@ -1,4 +1,4 @@
-;; Bulgarian translation of Racket string constants file, version: 1.57
+;; Bulgarian translation of Racket string constants file, version: 1.59
 ;; This file is distributed under the same terms as Racket
 ;; Copyright on translation: Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025, 2026.
 
@@ -1040,6 +1040,8 @@
   (save-after-switching-tabs "Запазване на файловете при смяна на подпрозорец")
   (dont-ask-about-saving-after-switching-tabs
    "Без питане и запазване на незапазени прозорци и подпрозорци при натискането на „Изпълнение“")
+  (show-stacktraces-in-syntax-exns?
+   "Да се извежда ли стека на извикванията за изключения exn:fail:syntax?")
 
   (drscheme-internal-error "Вътрешна грешка на DrRacket")
 
@@ -1326,6 +1328,7 @@
   (automatically-compile "Използване на директориите „compiled“ (за по-бързо зареждане)")
   (preserve-stacktrace-information "Запазване на стека с извикванията (това предотвратява някои оптимизации)")
   (enforce-module-constants-checkbox-label "Строго прилагане на дефинирането на константи (позволява повторението на стойности)")
+  (run-in-separate-process-checkbox-label "Изпълняване на програмата като отдѐлен процес")
   (expression-level-stacktrace "Стек с извиквания на ниво израз")
   (function-level-stacktrace "Стек с извиквания на ниво функция")
   (submodules-to-run "Подмодули за изпълнение")
@@ -1511,7 +1514,8 @@
   ;; ~a is filled in with a number between 1 and 255
   (exited-with-error-code "Изпълнението завърши с код за грешка ~a.")
   (program-ran-out-of-memory "Привърши паметта за програмата.")
-
+  (separate-executable-terminated "Отделният процес завърши работа")
+  (separate-executable-terminated-abnormally "Отделният процес завърши работа с ненулев изходен код: ~a")
   (show-evaluation-terminated-dialog "Показване на прозореца за „Прекъснато изчисление“")
   (evaluation-terminated-ask "Показване на този прозорец отново")
 
@@ -1612,7 +1616,7 @@
   (xml-tool-leave-whitespace-alone
    "Оставяне на празните знаци както са си")
 
-  (show-recent-items-window-menu-item "Показване на скоро отваряните файлове в отделен прозорец")
+  (show-recent-items-window-menu-item "Показване на скоро отваряните файлове в отдѐлен прозорец")
   (show-recent-items-window-label "Скоро отваряни файлове")
   (number-of-open-recent-items "Брой на скоро отваряните елементи")
   (switch-anyway "Смяна на файла въпреки това")
